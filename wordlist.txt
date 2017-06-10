@@ -1,0 +1,52 @@
+0 01 06 07 1 10 11 112 12 12pt 13 15 17 172 18 1957 1975 1i 1pt 2 20
+2017 2017q2 24 27 2pt 3 333 4 47 4pt 5 6 60 67 7 8 88 9 9999 a above ad
+addition adjacent after algol all among an and anne answer answers any
+apl application applies apply aragon are argument arguments array arrow
+as assigned at awk b back backus bar base bash basic bcpl be belongs
+beyond bjarne blanks bnf boleyn books bool brary break bugs built bums
+business but by b�hm c caar cadr calculator called caller calling can
+car carried catherine cause cdar cddr cdr cell cells ch checking child
+choice choose chop circle circlerad class closure clumsy cmps cmps112
+cobol coding column come computation computer cons considered contains
+continue contribution control conversion corrado correct creates criminal
+cripples cs current d data days declaration deduct deducted define defined
+delim depth described design designed designers developed diagram dijkstra
+disease disorder dispatch distinguish do does don donald double downward
+dr draw dynamic dynamically d�mon e each edge edsger edu edward element
+elements elizabeth else elsewhere email en enter entrate environment eq
+even ewd ewd04xx ewd498 exam examboxes exhibited expensive experiments
+exposure extend extends extension f fac facts failwith false fatal
+father fib field fill filling final first fol fold following foo for
+forget format forth fortran from fun function functional functions
+future g generation generics giuseppe given go good grace grading
+graph greek guage h had harmful has haskell have hd heap helper henry
+here higher hoc hold hope hopelessly hopper horizontal how http hurt
+i ibm id identifiers idiotic if immediately implementing impossible
+in inadequate inappropriate included inclusion inconsistent incorrect
+indicates infantile influenced inheritance inner int intercal internet
+into is it its ja jacopini jane java just kind knuth lambda lan language
+languages lasciate left length less let letter li like line lisp list log
+lots lowing m main maintain map mary match max maximum maybe mentally
+message messy methods might mind missing mistake ml mm monad more most
+mother much multiple mutilated n n1 n2 n3 n4 n5 name naur nearly negative
+nested new niklaus nil no nodes not noted notes now null number numeric
+o object ocaml occurrences odd oddlen of offence ogni old on one ones
+only or order oriented other outer overloading page parametric parent
+parentheses parents parody pascal pass past pe perfection perhaps perl
+permits phi phone physicists picture pl point pointer pointing points
+polymorphism potential practically predicate presented presumed prior
+problem processing product prof programmers programming programs prolog
+provided ps pure question rec recursion referenced regarded regeneration
+regex remember repeated represent respond return returns reverse right
+risk risky rules runtime s same scheme scientific score scratch second
+see set seymour share shared should silly simula simulation size small
+smalltalk so solution some space spaces special speranza spring st
+stack state statement static stick string strong stroustrup structure
+structured structures students style sub substitute sum sup sure swer
+syntax t table tail taken teach teaching techniques tell templates
+than that the then therefore these they this through throw thunk tl to
+today too total transcriptions tree true truths twice two type types
+undirected universal unreadable up use used users using utexas v va val
+value variable variables vector vi vii viii virtual voi void w want was
+way we weak what whatever when where which will wirth with without work
+worth write wrong www x years york you your z
