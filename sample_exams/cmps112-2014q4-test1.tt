@@ -1,0 +1,195 @@
+gnroff-1.18.1.1 -mgm -Tlatin1 cmps112-2014q4-exam1.qrf               1
+2014-10-23
+
+cmps112-2014q4-exam1.mm:277: backtrace: string `Fmark'
+cmps112-2014q4-exam1.mm:278: warning: can't find special character
+`dg'
+
+.PS
+examboxes(3)
+.PE
+
+No books;  No calculator;  No computer;  No email;  No internet;  No
+notes;  No phone.  Neatness counts!  Do your scratch work elsewhere
+and enter only your final answer into the spaces provided.
+
+.EQ
+delim $$
+.EN
+
+1. For each language described here, fill in the name of the language.
+   Choose from among the following languages:  Algol 60, AWK, Basic,
+   C++, C, COBOL, FORTRAN, Haskell, Intercal, Java, Lisp, ML, OCaml,
+   Pascal, Perl, PL/I, Prolog, Simula 67.  (Grading:  deduct 1/2 point
+   for each wrong or missing answer, but do not score less than 0.)
+   [3pt]
+
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Bjarne Stroustrup's most noted contribution to language design.                  |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Business data processing language, designers included Grace Hopper.              |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Designed in Europe to express algorithms in a structured way.                    |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |First version of Unix was 9000 lines of this language (plus some assembly code). |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |List processing language typically used in artificial intelligence.              |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Numeric and scientific computation language developed at IBM.                    |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Simulation language that influenced the design of C++.                           |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Small language for structured programming designed by Niklaus Wirth.             |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Sun Microsystems claimed this language is ``write once, run anywhere''.          |
+   +--------------+---------------------------------------------------------------------------------+
+
+2. Write a program in perl which reads in lines using <>.  Each line
+   consists of three numbers.  At end of file print out the totals of
+   each of the three columns of numbers.  [3pt]
+
+3. Define a Smalltalk class Complex.  [4pt]
+   (a) It has two instance fields real and imag.
+   (b) Define the instance methods real:  (sets imag to 0), imag:
+      (sets real to 0), and real:imag:  (sets both).
+   (c) Define the binary operator +, which assumes the operand is
+      another Complex and returns the sum.
+
+4. Using a loop, not recursion, write a function whose single argument
+   is a number and which returns the factorial of that number.  Return
+   1 for any number less-equal 0.  Do not consider what happens when
+   the result is very large.
+
+    (a) In Perl, write a sub.  [1pt]
+
+    (b) In Smalltalk, extend the class Number with the unary selector
+        fac.  [2pt]
+
+5. Name two kinds if universal polymorphism and give an extremely
+   brief example of each in Java or C++.  [2pt]
+
+6. Name two kinds if ad hoc polymorphism and give an extremely brief
+   example of each in Java or C++.  [2pt]
+
+7. Using Perl, write a program that reads lines from files using <>,
+   and splits each line into words.  A word is any sequence of
+   characters delimited by m/\W+/, that is non-alphanumeric
+   characters.  Count the frequency of occurrence of each word.  At
+   end of file, print out the ten most frequently occurring words in
+   descending order, along with the number of times each appeared in
+   the input.  [3pt]
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write Z if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [12pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   12 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+ 1. Which of the following C operators uses lazy evaluation?
+    (A) !=
+    (B) *=
+    (C) >>
+    (D) ? :
+
+ 2. The Perl variable equivalent to strerror(errno) is:
+    (A) $!
+    (B) $0
+    (C) $?
+    (D) $_
+
+ 3. In Smalltalk, a-b*c+d is equivalent to:
+    (A) ((a-b)*c)+d
+    (B) (a-(b*c))+d
+    (C) (a-b)*(c+d)
+    (D) a-(b*(c+d))
+
+ 4. In Smalltalk, what produces 13?
+    (A) '4+9' value
+    (B) (4+9) value
+    (C) [4+9] value
+    (D) {4+9} value
+
+ 5. Assuming pure Java code with no native methods written in C, if M
+    = memory leaks and D = dangling references, then which are
+    possible?
+    (A) D is possible, but not M.
+    (B) M is possible, but not D.
+    (C) both M and D.
+    (D) neither M nor D.
+
+ 6. In C and C++, when is an external variable bound to a particular
+    address?
+    (A) When the preprocessor is run.
+    (B) When the program is compiled.
+    (C) When the program is linked.
+    (D) When the main function is called.
+
+ 7. In Perl, to apply a block to every element of an array, what
+    function is used?
+    (A) grep
+    (B) join
+    (C) map
+    (D) split
+
+ 8. If $p is a reference to a Perl hash and $k is a key whose
+    corresponding value is a scalar, how is the value extracted?
+    (A) $p->{$k}
+    (B) $p{$k}
+    (C) %p->{$k}
+    (D) %p{$k}
+
+ 9. If we define the block sum := [:i :j| i + j] in Smalltalk, how
+    might we obtain the number 7?
+    (A) 3 4 sum
+    (B) 3 sum: 4
+    (C) sum 3 value 4 value
+    (D) sum value: 3 value: 4
+
+10. What is not false in Perl?
+    (A) 0
+    (B) 0.0/0.0
+    (C) ""
+    (D) undef
+
+11. What does the static link in a stack frame point at?
+    (A) The call instruction that activated this function.
+    (B) The heap allocated closure in which escaping variables are
+        stored.
+    (C) The stack frame of the function in which this function is
+        nested.
+    (D) The stack frame of the function that called this function.
+
+12. Structured programming demands the elimination of what statement?
+    (A) goto
+    (B) switch
+    (C) throw
+    (D) while
+
+____________________
+
+ EWD498:   How do we tell truths that might hurt?  Prof. Dr. Edsger W.
+ Dijkstra, June 1975.
+ · FORTRAN, ``the infantile disorder'', by now nearly 20 years old, is
+   hopelessly inadequate for whatever computer application you have in
+   mind today:  it is now too clumsy, too risky, and too expensive  to
+   use.
+ · PL/I,  ``the  fatal disease'', belongs more to the problem set than
+   to the solution set.
+ · It is practically impossible to teach good programming to  students
+   that  have had a prior exposure to BASIC:  as potential programmers
+   they are mentally mutilated beyond hope of regeneration.
+ · The  use  of  COBOL  cripples  the  mind;   its  teaching   should,
+   therefore, be regarded as a criminal offence.
+

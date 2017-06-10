@@ -1,0 +1,182 @@
+CMPS-112 · Comparative Programming Languages · Spring 2011 pages1 of 1
+$Id: cmps112-2011q2-exam2.mm,v 1.52 2011-05-12 19:33:05-07 - - $
+
+.PS
+examboxes(3)
+.PE
+
+No books;  No calculator;  No computer;  No email;  No internet;  No
+notes;  No phone.  Neatness counts!  Do your scratch work elsewhere
+and enter only your final answer into the spaces provided.
+
+.EQ
+delim $$
+.EN
+
+ 1. Some fragmentary examples of polymorphism are given in each entry
+    in the following table.  Identify the general category by writing
+    universal or ad hoc beside each.  Further identify them with one
+    of the terms conversion;  generic;  inclusion;  or overloading.
+    [2pt]
+
+    +-------------------------------+-------------------------------+
+    |let rec len = function         |template <typename item_t>     |
+    |  | [] -> 0                    |class stack { };               |
+    |  | _::cdr -> 1 + len cdr      |stack<int> si;                 |
+    +-------------------------------+-------------------------------+
+    |class foo {                    |double sqrt (double);          |
+    |   foo () {}                   |n = sqrt (6);                  |
+    |   foo (int a) {}              |                               |
+    +-------------------------------+-------------------------------+
+
+ 2. Scheme:  Define a function that will return the largest number in
+    a list of numbers.  Return 'undef if the list is empty.  The
+    function max will return the largest of its arguments.  You must
+    either use an inner tail-recursive function, or correctly use
+    apply.  [2pt]
+    (define (maxlist list)
+
+ 3. Scheme:  Define a function to reverse a list.  Your solution must
+    be tail-recursive.  Hint:  You will need an internal helper
+    function.  [3pt]
+    (define (rev list)
+
+ 4. Smalltalk:  Assuming a class Complex has instance fields real and
+    imag, and methods of the same name that may be used to enquire of
+    another object, define two methods:
+
+     (a) real:imag:  will replace the real and imaginary fields of the
+         receiver.  [1pt]
+
+     (b) The binary message + will return a new object with the sum of
+         the reciever and its argument.  (Add the real fields, add the
+         imaginary fields.)  Assume a class method real:imag:.  [2pt]
+
+ 5. Ocaml:  Define a function contains which accepts a predicate and a
+    list and returns true if the predicate is true for some element in
+    the list.  [2pt]
+    # contains ((=)3) [1;2;3;4];;
+    - : bool = true
+    # contains ((<)9) [1;2;3;4];;
+    - : bool = false
+
+ 6. Ocaml:  Define a function merge whose arguments are a binary
+    predicate returning a relative ordering and two lists that are
+    assumed sorted.  Return a merged with combining the two lists into
+    a single sorted list.  [3pt]
+    # merge (<=) [1;5;7;9] [2;4;6;88];;
+    - : int list = [1; 2; 4; 5; 6; 7; 9; 88]
+    # merge (>) [9;5;3;1] [100;13];;
+    - : int list = [100; 13; 9; 5; 3; 1]
+
+ 7. Ocaml:  Define a function zip which takes two lists and returns a
+    list of tuples, pairing each corresponding element.  If the lists
+    are of different lengths, ignore excess elements in the longer
+    list.  [2pt]
+    # zip [1;2;3] ['a';'b';'c';'d'];;
+    - : (int * char) list = [(1, 'a'); (2, 'b'); (3, 'c')]
+
+ 8. Ocaml:  Define a function unzip which takes a list of tuples and
+    returns a tuple of lists, the first list containing the first item
+    in each tuple, and the second list, the second item.  [3pt]
+    # let l1, l2 = unzip [(1, 'a'); (2, 'b'); (3, 'c')];;
+    val l1 : int list = [1; 2; 3]
+    val l2 : char list = ['a'; 'b'; 'c']
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write Z if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [11pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   11 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+ 1. Lazy evaluation of functions is the default in which language?
+    (A) Fortran
+    (B) Haskell
+    (C) Ocaml
+    (D) Scheme
+
+ 2. In Smalltalk, $ sqrt 2 $ can be computed with the following
+    expression:
+    (A) (sqrt 2)
+    (B) 2 sqrt
+    (C) sqrt (2)
+    (D) sqrt 2.0;;
+
+ 3. In Smalltalk, an expression to which the value message may be sent
+    in order to retrieve the value 9 is:
+    (A) (4 + 5)
+    (B) <4 + 5>
+    (C) [4 + 5]
+    (D) {4 + 5}
+
+ 4. In a language with garbage collection, where the function free is
+    unavailable, which of the following is impossible?
+    (A) dangling pointers
+    (B) memory leak
+    (C) null pointer exception
+    (D) segmentation fault
+
+ 5. A function which accepts a unit value, a function, and a list, and
+    which produces a single value in an eager language using $ O ( 1 )
+    $ stack space is:
+    (A) filter
+    (B) fold_left
+    (C) fold_right
+    (D) map
+
+ 6. What is the type of the Ocaml expression
+       map ((+)3)
+    (A) ('a -> 'b) -> 'a list -> 'b list
+    (B) int list -> (int -> int) list
+    (C) int list -> int list
+    (D) int list
+
+ 7. How would the first element (the element with the smallest
+    subscript) of a Smalltalk array be set?
+    (A) (set! a 1 6).
+    (B) a at:1 put:6.
+    (C) a put:6 at:1.
+    (D) a[1] := 6.
+
+ 8. What is the value of
+       (cdr (car (cons '(1 2 3) '(4 5 6))))
+    (A) ((1 2 3) 4 5 6)
+    (B) (1 2 3)
+    (C) (2 3)
+    (D) (cons '(1 2 3) '(4 5 6))
+
+ 9. The Ocaml function List.tl functions like cdr in Scheme.  Its type
+    is:
+    (A) 'a list -> 'a
+    (B) 'a list -> 'a list -> 'a list
+    (C) 'a list -> 'a list
+    (D) 'a list -> int
+
+10. The style of programming in Smalltalk is:
+    (A) functional
+    (B) imperative
+    (C) logic
+    (D) object-oriented
+
+11. Smalltalk was originally designed at:
+    (A) Bell Labs
+    (B) INRIA
+    (C) MIT AI Lab
+    (D) Xerox PARC
+The Antikythera mechanism, built ca. 150-100 BCE, is the oldest known
+complex scientific calculator, and is sometimes called the first known
+analog computer, with operational instructions written in Greek.
+http://en.wikipedia.org/wiki/Antikythera_mechanism
+

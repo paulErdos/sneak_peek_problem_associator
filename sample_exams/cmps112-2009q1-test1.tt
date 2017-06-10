@@ -1,0 +1,190 @@
+CMPS-112 · Comparative Programming Languages · Winter 2009 · page 11of 3
+$Id: cmps112-2009q1-exam1.mm,v 9.38 2009-01-29 19:51:02-08 - - $
+
+.PS
+examboxes(3,30)
+.PE
+
+No books;  No calculator;  No computer;  No email;  No internet;  No
+notes;  No phone.  Neatness counts!  Do your scratch work elsewhere and
+enter only your final answer into the spaces provided.
+
+ 1. In the following table, there are fragmentary examples of various
+    kinds of polymorphism.  In each box, identify the example by writing
+    one of the words:  ad hoc;  universal.  Then further identify them
+    by writing one of the words:  conversion;  inheritance;
+    overloading;  template.  [2pt]
+
+    +-------------------------------+-------------------------------+
+    |class foo {void f(); }         |class stack<item_t> {          |
+    |class bar: public foo {        |void push (item_t); }          |
+    |void f(); }                    |                               |
+    +-------------------------------+-------------------------------+
+    |int add (int x, int y);        |double f (double x);           |
+    |double add (double x,          |f (6);                         |
+    |double y);                     |                               |
+    +-------------------------------+-------------------------------+
+
+ 2. Write a Perl program which reads in a sequence of lines using <>.
+    Each line consists of a key and a value separated by an equal (=)
+    sign.  Strip off leading and trailing whitespace from each key and
+    value.  Put the key and value into a hash.  Print an error message
+    if any line does not have an equal sign, but ignore any line
+    containing only whitespace.  At end of file, print out each key and
+    value pair in lexicographic order.  You need not use strict or use
+    warnings.  [4pt]
+
+ 3. Write a function in Perl which takes a filename as an argument and
+    prints out a lexicographically sorted list of words in the file.
+    Each word is printed only once, followed by a list of line numbers
+    where they occur.  A word is any sequence of characters that match
+    \S+ (Note the capital S, meaning non-whitespace.)  [4pt]
+
+    sub makexref ($) {                                             Example output:   bar 7 7 88 88 9
+       my ($filename) = @_;                                                          foo 3 44 98
+       open my $file, "<$filename" or die "$0: $filename: $!\n";
+
+ 4. Write the prototypes for the four default members of class box that
+    are automatically added to a class if not explicitly overriden.
+    [2pt]
+
+    class box {
+
+ 5. In perl, lexical scope is introduced by the my declaration, while
+    dynamic scope is introduced via a local declaration.  Lacking a
+    declaration implies global scope.  What is the output of running
+    this program with each of the statements on the right?  [2pt]
+
+    +-----------------------------------------------------------------+---------------------+
+    |                                                                 | scope.perl 0        |
+    |                                                                 |                     |
+    |%fn = ("0" => sub {print "0=$var."},                             +---------------------+
+    |       "d" => sub {local $var = "dyn"; yes(); print "d=$var. "}, | scope.perl s        |
+    |       "s" => sub {my $var = "stat"; yes(); print "s=$var. "},   |                     |
+    |       "g" => sub {$var = "foo"; yes(); print "f=$var. "},       +---------------------+
+    |      );                                                         | scope.perl d        |
+    |sub yes {$var = "yes"}                                           |                     |
+    |$var = "glo"; $fn{$ARGV[0]}(); print "//$var\n";                 +---------------------+
+    |                                                                 | scope.perl g        |
+    |                                                                 |                     |
+    +-----------------------------------------------------------------+---------------------+
+
+ 6. Inheritance in C++.  Your answers should be as minimal as possible,
+    provided the question is answered.  You don't need to provide a main
+    function nor any constructors.
+
+     (a) Define a base class base with an abstract function
+         void print().  Define a class dstr which is derived form base
+         with a private string field and which overrides the base's
+         function print.  Define a class dint which does the same, but
+         with an int field.  Show only what goes in base.h and do not
+         define any inline functions.  If we have a variable base *p,
+         then p->print();  should print the string or integer field, as
+         appropriate.  [3pt]
+
+     (b) Show the implementation of both print functions as they would
+         appear in base.cc.  [3pt]
+
+.EQ
+delim $$
+.EN
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write `Z' if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [11pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   11 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+ 1. Which expression is not valid, given the following two declarations?
+       int *p; int i;
+    (A) i + i
+    (B) i + p
+    (C) p + i
+    (D) p + p
+
+ 2. C++ is primarily thought of as an example of what kind of language?
+    (A) functional
+    (B) imperative
+    (C) logic
+    (D) object oriented
+
+ 3. The address of a static variable in C++ is determined at what time?
+    (A) compile
+    (B) during a function call
+    (C) link
+    (D) program exec
+
+ 4. What time is the address returned by new determinaed?
+    (A) compile
+    (B) during a function call
+    (C) link
+    (D) program exec
+
+ 5. What is the name of the C++ variable used to print error messages?
+    (A) STDERR
+    (B) System.err
+    (C) cerr
+    (D) stderr
+
+ 6. The following two declarations are examples of:
+    ostream &operator<< (ostream &,
+                const string &);
+    template <typename item_t>
+    ostream &operator<< (ostream &,
+                const vector<item_t> &);
+    (A) overhanging
+    (B) overlapping
+    (C) overloading
+    (D) overriding
+
+ 7. In C++, a protected field of a class foo is visible only to
+    functions which are members:
+    (A) of foo, and any class that inherits from foo.
+    (B) of foo, any class that inherits from foo, and any class that foo
+        names as a friend
+    (C) of foo, any class that inherits from foo, and any class that
+        names foo as a friend
+    (D) only of foo.
+
+ 8. Of the following languages, which is oldest?
+    (A) Algol 60
+    (B) C++
+    (C) Fortran
+    (D) Java
+
+ 9. Which of these is a C++ keyword that might cause a pointer to become
+    dangling?
+    (A) delete
+    (B) free
+    (C) malloc
+    (D) new
+
+10. In C++, if we have a call of the form a.f(x,y), inside the function
+    f, how is a field x in the object a referred to?
+    (A) this->*x
+    (B) this->x
+    (C) this.x
+    (D) this[x]
+
+11. A Case against the GO TO Statement.
+    (A) Edsger Dijkstra
+    (B) Grace Hopper
+    (C) Donald Knuth
+    (D) Niklaus Wirth
+
+____________________
+
+   Total:  31 *
+

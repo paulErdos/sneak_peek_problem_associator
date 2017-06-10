@@ -3,8 +3,8 @@
 import os
 import re
 import sys
-import datetime
-import numpy as np
+#import numpy as np
+from sets import Set
 
 def init():
     """
@@ -20,82 +20,62 @@ def init():
     # Make sure the program is being called correctly. If it isn't, print some
     # helpful information and exit.
     if len(sys.argv) is not 4:
-        print "Usage: $./compute.py word_list input_file output_file"
+        print "Usage: $" + sys.argv[0] + " word_list sample_exam output_file"
         sys.exit(-1)
 
-    # Check that arguments are formatted properly
-    try:
-        start_year, start_month, start_day = sys.argv[1].split('-')
-        end_year, end_month, end_day = sys.argv[2].split('-')
-
-        start =\
-            datetime.date(int(start_year), int(start_month), int(start_day))
-        end =\
-             datetime.date(int(end_year), int(end_month), int(end_day))
-    except:
-        print "Error: Cannot make sense of date arguments!\n"
-        print "The arguments in question:"
-        print "Argument 1: " + sys.argv[1]
-        print "Argument 2: " + sys.argv[2]
-        print "\nQuitting!"
-        exit(-1)
-
-    # Verify that the dates are in order
-    if not start < end:
-        print "Error: Start date does not precede end date.\n"
-        exit(-1)
-
-    return {'start': start, 'end': end, 'ctype': sys.argv[3]}
+    return {'word_list'  : sys.argv[1],
+            'sample_exam': sys.argv[2],
+            'output_file': sys.argv[3]}
 
 
-def read_and_format(ctype):
+def read_wordlist(filename):
     """
-    This function takes a commodity name and returns its price history.
-    The file corresponding to the commodity type is opened, and its contents
-    are read in. Date information is converted to the python datetime.date
-    type, while prices are converted to floats. Tuples of dates and prices are
-    then stored in a list, which is returned.
+    Reads all the words from the wordlist into a set, and returns the set.
     """
 
-    table = []
+    word_set = Set()
 
-    months = {
-        "Jan": 1,
-        "Feb": 2,
-        "Mar": 3,
-        "Apr": 4,
-        "May": 5,
-        "Jun": 6,
-        "Jul": 7,
-        "Aug": 8,
-        "Sep": 9,
-        "Oct": 10,
-        "Nov": 11,
-        "Dec": 12,
-    }
-
-    # Select the specified data file
-    filename = 'data_' + ctype + '.csv'
     if os.path.isfile(filename):
         with open(filename) as f:
-            # Discard the header line
-            f.readline()
             for line in f:
-                # Remove the trailing newline character
-                line = line.rstrip()
-                date, price = line.split(',')
+                # Split on whitespace
+                word_set.union(line.split(' '))
 
-                # Convert the first column into date objects
-                month, day, year = date.split(' ')
-                month = months[month]
-                date = datetime.date(int(year), month, int(day))
+    return word_set
 
-                # Reformat the price
-                price = float(price)
+def read_sample_exam(filename):
+    """
+    Reads the file into a string and returns that string.
+    """
+    if os.path.isfile(filename):
+        with open(filename) as f:
+            return f.read()
 
-                # Store the data in the table
-                table.append((date, price))
-    return table
+def parse_problems(sample_exam):
+    """
+    Segments the sample exam into a list of problems, and returns the list.
+
+    A problem is a list of lines that starts on a
+    ^[ ]*[0-9]+\. [A-Z].*$
+    and ends on a newline just before the next occurrence of same,
+    or the end of file.
+    """
+
+    # Let's start by seeing if we can print the beginning line of each problem
+    #problem_pattern = r"^[ ]*[0-9]+\. [A-Z].*$(^.+$)+\n[ ]*[0-9]+\. [A-Z]"
+    problem_pattern = r"^[ ]*[0-9]+\. [A-Z].*(\n.*)+?\n(?=^[ ]*[0-9]+\. [A-Z])"
+    problem_regex   = re.compile(problem_pattern, re.MULTILINE)
+    problems        = re.finditer(problem_regex, sample_exam)
+    for problem_group in problems:
+        print "Foo"
+        print problem_group.group()
+        print "Bar"
+#    stop_pattern  = r"
+
+#    for line in sample_exam_lines:
+ #       problem_start = re.match(start_pattern, line)
+  #      if problem_start:
+   #         print problem_start.group()
 
 def select(start, end, table):
     """
@@ -119,10 +99,14 @@ def select(start, end, table):
 # Print the mean and variance of the price of a commodity over a given date
 # range.
 Parameters = init()
-Table = read_and_format(Parameters['ctype'])
+Words = read_wordlist(Parameters['word_list'])
+Sample_Exam = read_sample_exam(Parameters['sample_exam'])
+parse_problems(Sample_Exam)
+"""
 Selection = select(Parameters['start'], Parameters['end'], Table)
 
 mean = np.mean(Selection)
 variance = np.var(Selection)
 
 print "%s %0.2f %0.2f" % (Parameters['ctype'], mean, variance)
+"""
