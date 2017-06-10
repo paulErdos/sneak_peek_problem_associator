@@ -93,14 +93,44 @@ def match_problems_with_wordlist(problems, words):
     first_line_regex = re.compile(first_line_pattern)
 
     for problem in problems:
-        print "\n"
+        # Print a newline to separate, and print the first line of the problem
+#        print "\n"
         first_line_matches = re.search(first_line_regex, problem)
-        print first_line_matches.group(0)
+#        print first_line_matches.group(0)
+
+        # Form a set of all the words in the problem; convert to lowercase
         word_matches = re.findall(word_regex, problem)
         lowered_matches = list(map(lambda x: x.lower(), word_matches))
         lowered_set = Set(lowered_matches)
-        print len(lowered_set)
-        print sorted(list(lowered_set.intersection(words)))
+
+        # Print the size of the set of words in the problem
+        size_problem = len(lowered_set)
+#        print len(lowered_set)
+
+        # Intersect the set of words in the problem with
+        #           the set of words in the wordlist, and
+        # print its size
+        intersection = lowered_set.intersection(words)
+        size_intersection = len(intersection)
+
+        likeness = float(size_intersection)/float(size_problem)
+
+        if likeness == 1.0:
+            if os.path.isfile(sys.argv[3]):
+                with open(sys.argv[3], "a+") as o:
+                    o.write("Likeness: {}".format(likeness))
+                    o.write("\n" + sys.argv[2])
+                    o.write("\n" + problem)
+                    o.write("\n")
+            print 'Likeness: {}'.format(likeness)
+            print sys.argv[2]
+            print problem
+            print ""
+#        print "bar"
+#        print len(intersection)
+
+        # Sort the intersection alphabetically and print it
+ #       print sorted(list(lowered_set.intersection(words)))
 
 Parameters = init()
 Words = read_wordlist(Parameters['word_list'])

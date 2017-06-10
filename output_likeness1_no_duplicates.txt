@@ -1,0 +1,208 @@
+Likeness: 1.0
+sample_exams/cmps112-2009q1-final.tt
+ 2. What is 6?
+    (A) ((lambda (x)(+ x 3 ))3)
+    (B) (cdar '(7 6 5 4 3))
+    (C) (if (2 < 3) 4 6)
+    (D) (map * '(1 2 3))
+
+Likeness: 1.0
+sample_exams/cmps112-2009q1-test2.tt
+ 4. In Ocaml, what is the type of the function (+)?
+    (A) int * int * int
+    (B) int * int -> int
+    (C) int -> int * int
+    (D) int -> int -> int
+
+Likeness: 1.0
+sample_exams/cmps112-2011q2-final.tt
+ 9. In Ocaml, the type of (+) is:
+    (A) int * int * int
+    (B) int * int -> int
+    (C) int -> int * int
+    (D) int -> int -> int
+
+Likeness: 1.0
+sample_exams/cmps112-2011q2-final.tt
+10. In Ocaml, what is the type of List.map?
+    (A) ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+    (B) ('a -> 'b) -> 'a list -> 'b list
+    (C) ('a -> bool) -> 'a list -> 'a list
+    (D) ('a -> bool) -> 'a list -> bool
+
+Likeness: 1.0
+sample_exams/cmps112-2011q2-test2.tt
+ 8. What is the value of
+       (cdr (car (cons '(1 2 3) '(4 5 6))))
+    (A) ((1 2 3) 4 5 6)
+    (B) (1 2 3)
+    (C) (2 3)
+    (D) (cons '(1 2 3) '(4 5 6))
+
+Likeness: 1.0
+sample_exams/cmps112-2011q2-test2.tt
+ 9. The Ocaml function List.tl functions like cdr in Scheme.  Its type
+    is:
+    (A) 'a list -> 'a
+    (B) 'a list -> 'a list -> 'a list
+    (C) 'a list -> 'a list
+    (D) 'a list -> int
+
+Likeness: 1.0
+sample_exams/cmps112-2012q1-test1.tt
+ 5. What is the value of:
+       (cadr '((1 2 3) (4 5 6) (7 8 9)))
+    (A) 1
+    (B) (4 5 6)
+    (C) (2 3)
+    (D) ((7 8 9))
+
+Likeness: 1.0
+sample_exams/cmps112-2012q1-test1.tt
+ 7. Data types in Perl and Scheme are:
+    (A) strong and dynamic.
+    (B) strong and static.
+    (C) weak and dynamic.
+    (D) weak and static.
+
+Likeness: 1.0
+sample_exams/cmps112-2012q1-test2.tt
+ 5. A closure is:
+    (A) A special field of a structure or class used to point at a
+        base class when implementing shared multiple inheritance.
+    (B) A special type declaration in Ocaml used to distinguish sum
+        types from product types.
+    (C) A structure on the heap, used to hold variables of an outer
+        function when referenced by an inner function.
+    (D) A table used to dynamically dispatch virtual functions in an
+        object-oriented environment.
+
+Likeness: 1.0
+sample_exams/cmps112-2012q1-test2.tt
+ 8. The type of [1; 2; 3; 4] is:
+    (A) 'a list
+    (B) int list
+    (C) list<Object>
+    (D) list<int>
+
+Likeness: 1.0
+sample_exams/cmps112-2014q4-final.tt
+ 2. Which languages do not have parametric polymorphism?
+    (A) C++
+    (B) Java
+    (C) Ocaml
+    (D) Smalltalk
+
+Likeness: 1.0
+sample_exams/cmps112-2014q4-final.tt
+ 5. In Java or C++, which statement can cause control to pass from the
+    current function to the calling function, or perhaps the caller of
+    the caller, or perhaps even all the way back to the main function?
+    (A) break
+    (B) continue
+    (C) return
+    (D) throw
+
+Likeness: 1.0
+sample_exams/cmps112-2014q4-test2.tt
+ 2. What is 2?
+    (A) (caar '(1 2 3))
+    (B) (cadr '(1 2 3))
+    (C) (cdar '(1 2 3))
+    (D) (cddr '(1 2 3))
+
+Likeness: 1.0
+sample_exams/cmps112-2014q4-test2.tt
+ 3. What is ((lambda (x) x) (+ 2 3))?
+    (A) (+ 2 3)
+    (B) +
+    (C) 5
+    (D) x
+
+Likeness: 1.0
+sample_exams/cmps112-2014q4-test2.tt
+11. In Smalltalk and Scheme, type checking is:
+    (A) strong and dynamic.
+    (B) strong and static.
+    (C) weak and dynamic.
+    (D) weak and static.
+
+Likeness: 1.0
+sample_exams/cmps112-2015q4-final.tt
+ 7. In Ocaml, what is 7?
+    (A) (+) (3, 4);;
+    (B) (+) 3 4;;
+    (C) (+) 3, 4;;
+    (D) 3 (+) 4;;
+
+Likeness: 1.0
+sample_exams/cmps112-2015q4-final.tt
+ 8. What function is called immediately after d() if d() is true?
+    for (a(); b(); c()){
+       if (d()) continue;
+       e();
+       if (f()) break;
+       g();
+    }
+    h();
+    (A) b()
+    (B) c()
+    (C) e()
+    (D) h()
+
+Likeness: 1.0
+sample_exams/cmps112-2015q4-test1.tt
+ 2. What is ((lambda (f x) (f x)) + 3)?
+    (A) '(+ 3)
+    (B) '(f x)
+    (C) 3
+    (D) 6
+
+Likeness: 1.0
+sample_exams/cmps112-2015q4-test1.tt
+ 4. What is?
+    (car (cdr (cons '(1 2 3) '(4 5 6))))
+    (A) '(1 2 3)
+    (B) '(4 5 6)
+    (C) 1
+    (D) 4
+
+Likeness: 1.0
+sample_exams/cmps112-2015q4-test2.tt
+ 3. What is ((lambda (x) x) (+ 2 3))?
+    (A) (+ 2 3)
+    (B) +
+    (C) 10
+    (D) 5
+
+Likeness: 1.0
+sample_exams/cmps112-2015q4-test2.tt
+ 9. What is 7 in Smalltalk?
+    (A) (+) 3 4.
+    (B) (3+4) value.
+    (C) [3+4] value.
+    (D) {3+4} value.
+
+Likeness: 1.0
+sample_exams/cmps112-2016q4-midterm.tt
+ 2. How much stack space does the following function use?
+    let rec f n = match n with
+        | 0 -> 0
+        | 1 -> 1
+        | n -> f (n - 1) + f (n - 2)
+    (A) $ O ( 1 ) $
+    (B) $ O ( log n ) $
+    (C) $ O ( n ) $
+    (D) $ O ( 2 sup n ) $
+
+Likeness: 1.0
+sample_exams/cmps112-2016q4-midterm.tt
+ 9. Given:
+    # List.map ((+)3) [1;2;3];;
+    - : int list = [4; 5; 6]
+    what is the type of List.map ((+)3)?
+    (A) int -> int
+    (B) int -> int list
+    (C) int list -> int
+    (D) int list -> int list
+

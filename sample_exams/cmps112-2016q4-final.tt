@@ -1,0 +1,371 @@
+CMPS-112 · Programming Languages · Fall 2016 · Final Exam       1 of 1
+$Id: cmps112-2016q4-final.mm,v 1.47 2016-11-22 17:55:43-08 - - $
+
+.PS
+examboxes(5)
+.PE
+
+No books;  No calculator;  No computer;  No email;  No internet;  No
+notes;  No phone.  Do your scratch work elsewhere and enter only your
+final answer into the spaces provided.  Points will be deducted for
+messy answers.  Unreadable answers will be presumed incorrect.
+
+.EQ
+delim $$
+.EN
+
+1. For each language described here, fill in the name of the language.
+   Choose from among the following languages:  Algol 60, AWK, Bash,
+   Basic, BCPL, C, C++, COBOL, Forth, FORTRAN, Haskell, Intercal,
+   Java, Lisp, ML, OCaml, Pascal, Perl, PL/I, Prolog, Simula 67,
+   Smalltalk.  Grading:  deduct ½ point for each wrong or missing
+   answer, but do not score less than 0.  [3pt]
+
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Bjarne Stroustrup's most noted contribution to language design.                  |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Business data processing language, designers included Grace Hopper.              |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Designed in Europe to express algorithms in a structured way.                    |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |First version of Unix was 9000 lines of this language (plus some assembly code). |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |List processing language typically used in artificial intelligence.              |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Numeric and scientific computation language developed at IBM.                    |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Simulation language that influenced the design of C++.                           |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Small language for structured programming designed by Niklaus Wirth.             |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Sun Microsystems claimed this language is ``write once, run anywhere''.          |
+   +--------------+---------------------------------------------------------------------------------+
+
+2. Prolog.  Define some facts called arrow which describe this graph.
+   If a->b, then a is the first argument and b is the second argument.
+   [2pt]
+
+   .PS 1i
+   arrowht = circlerad
+   arrowwid = circlerad/2
+   A: circle "a"
+   B: circle "b" at A+(5*circlerad,0)
+   C: circle "c" at A+(3*circlerad,-5.196152*circlerad)
+   D: circle "d" at C+(5*circlerad,0)
+   E: circle "e" at B+(5*circlerad,0)
+   arrow from A to B chop
+   arrow from A to C chop
+   arrow from B to C chop
+   arrow from C to D chop
+   arrow from D to E chop
+   arrow from B to E chop
+   .PE
+
+3. Prolog.  Write a relation ispath(X,Y) if there is a path from X to
+   Y in one or more steps.  It fails if X=Y.  Assume an acyclic graph.
+   [2pt]
+
+4. Prolog.  Write a relation findpath(X,Y,P) so that if there is a
+   path from X to Y in the previous question, it returns the path.
+   For example, in the first question, findpath(a,e,P) could return
+   P=[a,c,d,e] or P=[a,b,e], etc.  Assume an acyclic graph.  [3pt]
+
+5. Ocaml.  Define the function max which finds the largest element in
+   a list, given a comparison operator and a list.  Use failwith if
+   the list is empty.  The solution must be tail-recursive.  Do not
+   use a higher-order function.  [4pt]
+   # max;;
+   - : ('a -> 'a -> bool) -> 'a list -> 'a = <fun>
+   # max (>) [1;2;3;4];;
+   - : int = 4
+   # max (<) [1;2;3;4];;
+   - : int = 1
+   # max (>) [];;
+   Exception: Failure "max".
+
+6. Ocaml:  Define a function zip which takes two lists and returns a
+   list of tuples, pairing each corresponding element.  If the lists
+   are of different lengths, ignore excess elements in the longer
+   list.  [2pt]
+   # zip [1;2;3] ['a';'b';'c';'d'];;
+   - : (int * char) list = [(1, 'a'); (2, 'b'); (3, 'c')]
+
+7. Ocaml:  Define a function unzip which takes a list of tuples and
+   returns a tuple of lists, the first list containing the first item
+   in each tuple, and the second list, the second item.  [2pt]
+   # let l1, l2 = unzip [(1, 'a'); (2, 'b'); (3, 'c')];;
+   val l1 : int list = [1; 2; 3]
+   val l2 : char list = ['a'; 'b'; 'c']
+
+8. Prolog.  Write rules for determining the greatest common divisor of
+   two positive integers.  Write code equivalent to the following C
+   function:
+   int gcd (int x, int y) {
+      while (x != y) if (x > y) x -= y; else y -= x;
+      return x;
+   }
+   An example of interaction is given here.  [2pt]
+   | ?- gcd(111,259,Z).
+   Z = 37 ?
+   (1 ms) yes
+
+9. Name the two general types of polymorphism, and for each of them,
+   name the specific kinds that represents each of them.  [2pt]
+
+   +-------------------------------+-------------------------------+
+   |           general             |           specific            |
+   +-------------------------------+-------------------------------+
+   |                               |                               |
+   |                               +-------------------------------+
+   |                               |                               |
+   +-------------------------------+-------------------------------+
+   |                               |                               |
+   |                               +-------------------------------+
+   |                               |                               |
+   +-------------------------------+-------------------------------+
+
+10. Scheme.  Write a function that takes two lists as arguments and
+   which returns a single list where each element is a list of
+   corresponding pairs.  If the lists are of different lengths,
+   trailing elements of the longer list are ignored.  [2pt]
+   > (pairthem '(1 2 3 4) '(a b c d e))
+   ((1 a) (2 b) (3 c) (4 d))
+   > (pairthem '(1 2 3 4 5) '(a b))
+   ((1 a) (2 b))
+
+11. Smalltalk:  Define the class Stack.  Internally it has an array of
+   fixed size and no attempt is made to verify pre- or post-
+   conditions.  It simply crashes on overflow or underflow.  Define
+   the following methods:  [6pt]
+    (a) Class method new uses new: to create a stack of maximum
+        capacity 10.
+    (b) Class method new: creates a stack of the size given by its
+        argument.
+    (c) Instance method init: initializes the array representation and
+        sets the top to 0
+    (d) Instance method pop removes and returns the top item on the
+        stack.
+    (e) Instance method push: pushes a new item onto the top of the
+        stack.
+    (f) Instance method empty reports on whether the stack is empty or
+        not.
+   bash-3.2$ cat stack.test.st
+   FileStream fileIn: 'stack.st'.
+   s := Stack new.
+   s push: 1; push: 5; push: 10.
+   s inspect.
+   [s empty not] whileTrue: [
+      stdout << s pop << Character nl].
+   bash-3.2$ gst <stack.test.st
+   An instance of Stack
+     array: (1 5 10 nil nil nil nil nil nil nil )
+     top: 3
+   10
+   5
+   1
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write Z if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [12pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   12 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+ 1. Language designed primarily to handle scalars, vectors, matrices,
+    and higher order arrays.
+    (A) APL
+    (B) COBOL
+    (C) FORTRAN
+    (D) PL/I
+
+ 2. Scripting language covered during the last few lectures.
+    (A) Bash
+    (B) Perl
+    (C) Python
+    (D) Ruby
+
+ 3. First two characters of a script source file.
+    (A) #!
+    (B) /*
+    (C) //
+    (D) ;;
+
+ 4. Earliest language which is an ancestor of Scheme.
+    (A) BCPL
+    (B) Cobol
+    (C) Fortran
+    (D) Lisp
+
+ 5. Besides C, the object-oriented language which is an ancestor of
+    C++.
+    (A) Algol 60
+    (B) Fortran IV
+    (C) Pascal
+    (D) Simula 67
+
+ 6. In Smalltalk:  $ sqrt 2.0 $
+    (A) (sqrt 2.0)
+    (B) 2.0 sqrt
+    (C) 2.718281828459045
+    (D) sqrt (2.0)
+
+ 7. In a ``lazy'' language, unevaluated arguments are passed into
+    functions by means of a:
+    (A) closure
+    (B) curry
+    (C) thunk
+    (D) tuple
+
+ 8. Lisp was designed when, by whom, and where?
+    (A) 1953, John Backus.
+    (B) 1958, John McCarthy.
+    (C) 1959, Grace Hopper, et al.
+    (D) 1964, John Kemeny, Thomas Kurtz.
+
+ 9. Unification is part of the static type checking algorithm used by
+    what language?
+    (A) C++
+    (B) Ocaml
+    (C) Prolog
+    (D) Smalltalk
+
+10. Prolog:
+    | ?- X is sin(pi).
+    (A) X = -1.0
+    (B) X = 1.2246467991473532e-16
+    (C) X = 2.7182818284590451
+    (D) X = 3.1415926535897931
+
+11. Smalltalk determines if an object can respond to a message by the
+    method of:
+    (A) same as in Java
+    (B) duck-typing
+    (C) generic parameters
+    (D) multiple inheritance
+
+12. A C++ compiler does object-oriented dispatch via:
+    (A) duck typing
+    (B) heap allocated closure
+    (C) type inference
+    (D) virtual function table
+The Antikythera mechanism, built ca. 150-100 BCE, is the oldest known
+complex scientific calculator, and is sometimes called the first known
+analog computer, with operational instructions written in Greek.
+http://en.wikipedia.org/wiki/Antikythera_mechanism
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write Z if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [12pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   12 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+ 1. A closure is:
+    (A) A special field of a structure or class used to point at a
+        base class when implementing shared multiple inheritance.
+    (B) A special type declaration in Ocaml used to distinguish sum
+        types from product types.
+    (C) A structure on the heap, used to hold variables of an outer
+        function when referenced by an inner function.
+    (D) A table used to dynamically dispatch virtual functions in an
+        object-oriented environment.
+
+ 2. The classic paper ``Go To Statement Considered Harmful'', CACM,
+    1968, was written by:
+    (A) John Backus
+    (B) Edsger Dijkstra
+    (C) Grace Hopper
+    (D) Donald Knuth
+
+ 3. What Perl regex matches a sequence of letters, digits, and
+    underscores?
+    (A) \d+
+    (B) \n+
+    (C) \s+
+    (D) \w+
+
+ 4. Which of the following C++ operators is ``lazy''?
+    (A) *=
+    (B) ==
+    (C) >>
+    (D) ? :
+
+ 5. What is 6?
+    (A) (apply + '(1 2 3))
+    (B) (cons + '(1 2 3))
+    (C) (list + '(1 2 3))
+    (D) (map + '(1 2 3))
+
+ 6. Where is the variable a kept, given the following function
+    definition?
+    int f() { int a; return a; }
+    (A) function call stack
+    (B) heap
+    (C) initialized data segment
+    (D) uninitialized data segment
+
+ 7. The PL/1 language allows a non-local goto directly from a function
+    to a label in a function deeper down in the function call stack,
+    thus returning past several levels of function calls.  In Java,
+    something similar can be accomplished by what statement?
+    (A) goto
+    (B) implements
+    (C) synchronized
+    (D) throw
+
+ 8. What kind of memory management fails to handle a cyclic data
+    structure?
+    (A) copying collector with semispaces
+    (B) malloc and free
+    (C) mark and sweep
+    (D) reference counting
+
+ 9. If multiple threads sharing global variables are not synchronized
+    by means of a critical section, what program problem will appear?
+    (A) deadlock
+    (B) race condition
+    (C) segmentation fault
+    (D) semaphores
+
+10. What is the type of
+    let f x y z = x + y + z;;
+    (A) val f : int * int * int -> int
+    (B) val f : int * int -> int -> int
+    (C) val f : int -> int * int -> int
+    (D) val f : int -> int -> int -> int
+
+11. Which expression causes a list of length zero to be passed into
+    the function f?
+    (A) (f '())
+    (B) (f ())
+    (C) (f null?)
+    (D) (f nullptr)
+
+12. What is the signature of Ocaml's List.map?
+    (A) ('a -> 'b) -> 'a list -> 'b list
+    (B) ('a -> bool) -> 'a list -> 'a list
+    (C) ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+    (D) 'a list -> int
+
