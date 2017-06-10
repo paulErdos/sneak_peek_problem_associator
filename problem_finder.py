@@ -61,21 +61,23 @@ def parse_problems(sample_exam):
     or the end of file.
     """
 
+    # Python multiline regexing does not differentiate between the end of
+    # a line and the end of the string. So add a sentinel value to the
+    # end of the string.
+    sample_exam = sample_exam + "#####"
+
     # Let's start by seeing if we can print the beginning line of each problem
     #problem_pattern = r"^[ ]*[0-9]+\. [A-Z].*$(^.+$)+\n[ ]*[0-9]+\. [A-Z]"
-    problem_pattern = r"^[ ]*[0-9]+\. [A-Z].*(\n.*)+?\n(?=^[ ]*[0-9]+\. [A-Z])"
+    problem_pattern =\
+        r"^[ ]*[0-9]+\. [A-Z].*(\n.*)+?(?=\n^[ ]*[0-9]+\. [A-Z]|#####)"
     problem_regex   = re.compile(problem_pattern, re.MULTILINE)
-    problems        = re.finditer(problem_regex, sample_exam)
-    for problem_group in problems:
-        print "Foo"
-        print problem_group.group()
-        print "Bar"
-#    stop_pattern  = r"
+    problem_matches = re.finditer(problem_regex, sample_exam)
 
-#    for line in sample_exam_lines:
- #       problem_start = re.match(start_pattern, line)
-  #      if problem_start:
-   #         print problem_start.group()
+    return [x.group() for x in problem_matches]
+#    for problem_group in problems:
+#        print "foo"
+#        print problem_group.group()
+#        print "bar"
 
 def select(start, end, table):
     """
