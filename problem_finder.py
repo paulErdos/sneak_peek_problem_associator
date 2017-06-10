@@ -38,8 +38,10 @@ def read_wordlist(filename):
     if os.path.isfile(filename):
         with open(filename) as f:
             for line in f:
+                # Remove newline
+                line = line.rstrip()
                 # Split on whitespace
-                word_set.union(line.split(' '))
+                word_set = word_set.union(Set(line.split(' ')))
 
     return word_set
 
@@ -73,37 +75,38 @@ def parse_problems(sample_exam):
     problem_regex   = re.compile(problem_pattern, re.MULTILINE)
     problem_matches = re.finditer(problem_regex, sample_exam)
 
-    return [x.group() for x in problem_matches]
-#    for problem_group in problems:
+    problems = []
+    for problem_group in problem_matches:
 #        print "foo"
-#        print problem_group.group()
-#        print "bar"
+        problems.append(problem_group.group(0))
+ #       print "bar"
+  #      print problems[-1]
+  #      print "baz"
 
-def select(start, end, table):
-    """
-    Returns a list of prices corresponding to the given date range.
-    This function also verifies that the given dates are within the bounds of
-    the table.
-    """
+    return problems
 
-    # Make sure start and end dates are strictly on the table
-    if start < (table[-1])[0]:
-        print "Error: Start date before earliest datum."
-        exit(-1)
-    if end > (table[0])[0]:
-        print "Error: End date after latest datum."
-        exit(-1)
+def match_problems_with_wordlist(problems, words):
+    word_pattern = r"\w+"
+    word_regex   = re.compile(word_pattern, re.MULTILINE)
 
-    # Grab the prices we're interested in
-    selection = [x[1] for x in table if x[0] >= start and x[0] <= end]
-    return selection
+    first_line_pattern = r"^.*"
+    first_line_regex = re.compile(first_line_pattern)
 
-# Print the mean and variance of the price of a commodity over a given date
-# range.
+    for problem in problems:
+        print "\n"
+        first_line_matches = re.search(first_line_regex, problem)
+        print first_line_matches.group(0)
+        word_matches = re.findall(word_regex, problem)
+        lowered_matches = list(map(lambda x: x.lower(), word_matches))
+        lowered_set = Set(lowered_matches)
+        print len(lowered_set)
+        print sorted(list(lowered_set.intersection(words)))
+
 Parameters = init()
 Words = read_wordlist(Parameters['word_list'])
 Sample_Exam = read_sample_exam(Parameters['sample_exam'])
-parse_problems(Sample_Exam)
+Problems = parse_problems(Sample_Exam)
+match_problems_with_wordlist(Problems, Words)
 """
 Selection = select(Parameters['start'], Parameters['end'], Table)
 

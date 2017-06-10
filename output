@@ -1,0 +1,175 @@
+
+
+1. For each language described here, fill in the name of the language.
+116
+Set(['less', 'developed', 'hopper', 'pascal', 'computation', '1', 'than', 'languages', '0', 'stroustrup', 'choose', 'do', 'niklaus', 'not', 'designers', 'name', 'lisp', 'list', 'this', 'each', 'small', 'noted', 'deduct', 'some', 'numeric', 'design', 'for', 'grading', 'score', 'forth', 'scientific', 'business', 'missing', 'processing', 'here', 'described', 'by', 'bash', 'c', 'language', 'of', 'programming', 'ocaml', 'simulation', 's', 'contribution', 'or', 'designed', 'among', 'point', '60', 'haskell', '67', 'from', 'to', 'structured', 'perl', 'way', 'basic', 'was', 'pl', 'that', 'but', 'simula', 'grace', 'ibm', 'bjarne', 'ml', 'following', 'algol', 'prolog', 'and', 'is', 'cobol', 'at', 'in', 'smalltalk', 'fill', 'influenced', 'write', 'answer', 'used', 'wirth', 'most', 'wrong', 'awk', 'bcpl', 'included', 'intercal', 'data', 'a', 'java', 'i', 'fortran', 'the', 'first'])
+
+
+2. Prolog.  Define some facts called arrow which describe this graph.
+40
+Set(['and', 'is', 'some', 'argument', 'second', 'at', 'facts', 'if', 'ps', 'from', 'to', 'graph', '0', '3', '2', 'circlerad', 'which', 'pe', '1i', '5', 'circle', 'define', 'then', '2pt', 'a', 'c', 'b', 'e', 'd', 'this', 'chop', 'arrow', 'the', 'first', 'called', 'prolog'])
+
+
+3. Prolog.  Write a relation ispath(X,Y) if there is a path from X to
+26
+Set(['a', 'from', '2pt', 'graph', 'is', 'it', 'one', 'write', 'to', '3', 'prolog', 'in', 'an', 'x', 'more', 'or', 'if'])
+
+
+4. Prolog.  Write a relation findpath(X,Y,P) so that if there is a
+39
+Set(['is', 'it', 'an', 'in', 'if', 'from', 'for', 'graph', 'question', 'write', 'to', 'returns', '4', 'return', 'that', 'a', 'c', 'b', 'e', 'd', 'so', 'x', 'the', 'prolog', 'or', 'first'])
+
+
+5. Ocaml.  Define the function max which finds the largest element in
+41
+Set(['and', 'be', 'int', 'is', 'ocaml', 'in', 'if', 'given', '3', '1', 'tail', '4pt', '5', '4', 'which', 'bool', 'define', 'function', 'do', 'max', 'use', 'not', '2', 'a', 'list', 'solution', 'element', 'fun', 'the', 'higher', 'failwith', 'order'])
+
+
+6. Ocaml:  Define a function zip which takes two lists and returns a
+38
+Set(['and', 'int', 'are', 'in', 'if', 'two', '1', '3', '2', 'which', '6', 'returns', 'define', 'function', 'elements', '2pt', 'a', 'c', 'b', 'd', 'of', 'list', 'ocaml', 'element', 'each', 'the'])
+
+
+7. Ocaml:  Define a function unzip which takes a list of tuples and
+34
+Set(['and', 'int', 'second', 'in', 'val', 'returns', '1', '3', '2', '7', 'which', 'define', 'function', '2pt', 'let', 'a', 'c', 'b', 'of', 'list', 'ocaml', 'each', 'the', 'first'])
+
+
+8. Prolog.  Write rules for determining the greatest common divisor of
+42
+Set(['int', 'is', 'an', 'if', '1', 'given', 'for', 'two', 'write', 'to', '8', 'function', 'return', '2pt', 'rules', 'here', 'else', 'c', 'of', 'following', 'x', 'the', 'z', 'prolog'])
+
+
+9. Name the two general types of polymorphism, and for each of them,
+17
+Set(['and', 'polymorphism', 'name', 'for', 'that', 'of', 'two', 'each', '9', 'the', 'types', '2pt'])
+
+
+10. Scheme.  Write a function that takes two lists as arguments and
+43
+Set(['and', 'returns', 'is', 'as', 'are', 'if', '1', 'two', 'write', '3', '2', '5', '4', 'which', 'scheme', 'arguments', 'function', 'elements', '2pt', 'that', 'a', '10', 'c', 'b', 'e', 'd', 'of', 'list', 'element', 'each', 'the', 'where'])
+
+
+11. Smalltalk:  Define the class Stack.  Internally it has an array of
+119
+Set(['and', 'returns', 'methods', '12pt', 'is', 'stack', 'number', '10', 'an', 'indicates', 'it', 'are', 'want', 'array', 'total', 'its', 'smalltalk', 'size', '1', 'given', 'to', 'that', 'question', 'negative', 'your', 'write', '0', '3', '2', '5', 'answer', 'new', 'you', 'has', 'correct', 'define', 'a', 'multiple', 'risk', 'nil', 'missing', 'max', 'class', 'argument', 'answers', 'choice', 'wrong', '12', 'if', 'letter', 'st', 'not', 'e', 'by', 'bash', '11', 'on', 'c', 'b', 'don', 'd', 'f', 'column', 'of', 'no', 'maximum', 'worth', 'creates', 's', 'points', 't', 'each', 'following', 'the', 'z', 'or', 'left'])
+
+
+ 1. Language designed primarily to handle scalars, vectors, matrices,
+22
+Set(['and', 'a', 'c', 'b', 'd', 'language', 'fortran', 'i', '1', 'to', 'cobol', 'designed', 'apl', 'order', 'pl', 'higher'])
+
+
+ 2. Scripting language covered during the last few lectures.
+17
+Set(['a', 'c', 'b', 'd', 'language', 'perl', '2', 'the', 'bash'])
+
+
+ 3. First two characters of a script source file.
+12
+Set(['a', 'c', 'b', 'd', 'of', 'two', '3', 'first'])
+
+
+ 4. Earliest language which is an ancestor of Scheme.
+17
+Set(['a', 'c', 'b', 'd', 'language', 'lisp', 'of', 'is', 'an', 'fortran', 'cobol', '4', 'which', 'scheme', 'bcpl'])
+
+
+ 5. Besides C, the object-oriented language which is an ancestor of
+22
+Set(['a', 'oriented', 'c', 'b', 'd', 'language', 'of', 'is', 'object', 'an', '60', 'fortran', 'pascal', '5', 'which', '67', 'simula', 'algol', 'the'])
+
+
+ 6. In Smalltalk:  $ sqrt 2.0 $
+11
+Set(['a', 'c', 'b', 'd', 'in', '0', '2', '6', 'smalltalk'])
+
+
+ 7. In a ``lazy'' language, unevaluated arguments are passed into
+21
+Set(['a', 'closure', 'c', 'b', 'd', 'language', 'of', 'into', 'functions', 'thunk', 'arguments', '7', 'in', 'by', 'are'])
+
+
+ 8. Lisp was designed when, by whom, and where?
+27
+Set(['and', 'a', 'c', 'b', 'd', 'lisp', 'hopper', 'when', 'grace', 'where', 'designed', '8', 'was', 'by', 'backus'])
+
+
+ 9. Unification is part of the static type checking algorithm used by
+21
+Set(['a', 'what', 'used', 'd', 'language', 'checking', 'of', 'is', 'c', 'ocaml', 'b', 'static', '9', 'the', 'type', 'by', 'smalltalk', 'prolog'])
+
+
+10. Prolog:
+18
+Set(['a', '10', 'c', 'b', 'd', 'is', '1', '0', '3', '2', 'x', 'prolog'])
+
+
+11. Smalltalk determines if an object can respond to a message by the
+28
+Set(['respond', 'an', 'as', 'in', 'message', 'smalltalk', 'if', 'java', 'inheritance', 'same', 'to', '11', 'multiple', 'object', 'by', 'a', 'c', 'b', 'd', 'of', 'can', 'the'])
+
+
+12. A C++ compiler does object-oriented dispatch via:
+88
+Set(['and', 'en', 'letter', '12pt', 'calculator', 'number', 'dispatch', 'indicates', 'computer', 'are', 'want', 'in', 'table', '1', 'total', 'your', 'scientific', 'write', 'built', '0', 'left', 'that', 'question', 'negative', 'virtual', 'oriented', 'to', 'does', 'answer', 'you', 'if', 'type', 'correct', 'function', 'a', 'multiple', 'risk', 'missing', 'max', 'object', 'answers', 'choice', 'wrong', 'b', 'heap', 'with', 'is', 'closure', 'c', '12', 'don', 'd', 'column', 'of', 'http', 'worth', 'greek', 'points', 't', 'each', 'the', 'z', 'called', 'first'])
+
+
+ 1. A closure is:
+51
+Set(['referenced', 'point', 'is', 'dispatch', 'an', 'at', 'in', 'table', 'variables', 'special', 'oriented', 'functions', 'from', 'inheritance', 'sum', 'when', 'virtual', 'class', '1', 'to', 'inner', 'shared', 'type', 'dynamically', 'function', 'a', 'product', 'used', 'multiple', 'structure', 'object', 'implementing', 'base', 'heap', 'declaration', 'distinguish', 'outer', 'hold', 'by', 'types', 'closure', 'on', 'c', 'b', 'd', 'environment', 'of', 'ocaml', 'field', 'the', 'or'])
+
+
+ 2. The classic paper ``Go To Statement Considered Harmful'', CACM,
+26
+Set(['a', 'edsger', 'c', 'b', 'd', 'considered', 'hopper', 'donald', 'grace', 'harmful', 'to', 'dijkstra', '2', 'statement', 'go', 'knuth', 'the', 'was', 'by', 'backus'])
+
+
+ 3. What Perl regex matches a sequence of letters, digits, and
+18
+Set(['regex', 'a', 'what', 'b', 'and', '3', 'of', 'c', 'perl', 's', 'w', 'n', 'd'])
+
+
+ 4. Which of the following C++ operators is ``lazy''?
+12
+Set(['a', 'c', 'b', 'd', 'of', 'is', '4', 'which', 'following', 'the'])
+
+
+ 5. What is 6?
+15
+Set(['a', 'map', 'what', 'b', 'd', 'is', 'list', 'c', '1', '3', 'cons', '5', '6', '2', 'apply'])
+
+
+ 6. Where is the variable a kept, given the following function
+24
+Set(['function', 'a', 'given', 'b', 'return', 'd', 'f', 'int', 'where', 'is', 'c', 'following', 'heap', '6', 'variable', 'the', 'data', 'stack'])
+
+
+ 7. The PL/1 language allows a non-local goto directly from a function
+42
+Set(['past', 'in', 'what', 'from', 'stack', '1', 'to', 'statement', 'pl', 'function', 'be', '7', 'by', 'java', 'throw', 'a', 'c', 'b', 'd', 'language', 'of', 'can', 'the'])
+
+
+ 8. What kind of memory management fails to handle a cyclic data
+27
+Set(['and', 'a', 'what', 'b', 'd', 'with', 'c', 'to', 'of', '8', 'data', 'kind', 'structure'])
+
+
+ 9. If multiple threads sharing global variables are not synchronized
+30
+Set(['a', 'what', 'b', 'multiple', 'd', 'of', 'variables', 'c', 'will', 'not', 'are', '9', 'problem', 'by', 'if'])
+
+
+10. What is the type of
+17
+Set(['a', '10', 'what', 'b', 'd', 'val', 'f', 'int', 'of', 'is', 'c', 'let', 'x', 'the', 'z', 'type'])
+
+
+11. Which expression causes a list of length zero to be passed into
+21
+Set(['11', 'a', 'c', 'b', 'd', 'be', 'function', 'of', 'into', 'f', 'list', 'to', 'length', 'which', 'the', 'null'])
+
+
+12. What is the signature of Ocaml's List.map?
+16
+Set(['a', 'map', 'what', '12', 'd', 'int', 'of', 'is', 'list', 'c', 'ocaml', 's', 'b', 'bool', 'the'])
