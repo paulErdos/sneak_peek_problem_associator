@@ -1,0 +1,128 @@
+Likeness: 0.46
+sample_exams/cmps112-2011q2-test2.tt
+11. Smalltalk was originally designed at:
+    (A) Bell Labs
+    (B) INRIA
+    (C) MIT AI Lab
+    (D) Xerox PARC
+The Antikythera mechanism, built ca. 150-100 BCE, is the oldest known
+complex scientific calculator, and is sometimes called the first known
+analog computer, with operational instructions written in Greek.
+http://en.wikipedia.org/wiki/Antikythera_mechanism
+
+
+Words from problem not in sneak peek:
+wiki, 150, bell, ai, ca, oldest, analog, wikipedia, mechanism, operational,
+written, complex, antikythera, mit, parc, xerox, lab, labs, inria, known, org,
+100, instructions, bce, originally, sometimes, antikythera_mechanism
+
+Words from problem yes in sneak peek:
+and, en, calculator, computer, at, in, smalltalk, built, was, is, 11, http,
+scientific, designed, with, a, c, b, d, greek, the, called, first
+
+
+Likeness: 0.461538461538
+sample_exams/cmps112-2012q1-test1.tt
+ 7. Write a complete program in Perl that reads in words from all of
+    the filenames specified in @ARGV, and after end of file of the
+    last file, prints out each word, one per line, sorted
+    lexicographically, with each word followed by a count of the
+    number of times it occurred.  Exit status is 0 for success and 1
+    if any file could not be opened.  Print suitable error messaages
+    for files that could not be opened.  If no files are specified,
+    read the standard input.  Do not use the <> operator.  Use /\w+/
+    to match words or /\W+/ to split delimiters.  If @ARGV is empty,
+    use "-" (standard input).  [5pt]
+
+    #!/usr/bin/perl
+    use strict;
+    use warnings;
+    $0 =~ s|.*/||;
+
+Words from problem not in sneak peek:
+bin, prints, followed, reads, file, specified, operator, out, end, opened, per,
+strict, program, exit, usr, print, input, 5pt, lexicographically, empty, split,
+files, complete, warnings, read, occurred, argv, filenames, words, sorted,
+standard, messaages, count, word, last, success, could, times, delimiters,
+status, error, suitable
+
+Words from problem yes in sneak peek:
+and, all, do, is, number, one, are, in, any, if, write, use, from, for, no,
+perl, 1, 0, 7, match, be, to, that, after, it, not, line, with, by, a, of, s, w,
+each, the, or
+
+
+Likeness: 0.48
+sample_exams/cmps112-2014q4-test1.tt
+2. Write a program in perl which reads in lines using <>.  Each line
+   consists of three numbers.  At end of file print out the totals of
+   each of the three columns of numbers.  [3pt]
+
+Words from problem not in sneak peek:
+end, lines, 3pt, three, totals, print, reads, program, numbers, file, consists,
+columns, out
+
+Words from problem yes in sneak peek:
+a, of, each, perl, write, 2, at, which, in, using, line, the
+
+
+Likeness: 0.480519480519
+sample_exams/cmps112-2015q4-final.tt
+6. Perl.  Write a program which prints out the file size, modification
+   time, and filename for each file mentioned in @ARGV.  Hints:  The
+   result of the stat function is an array where $stat[7] is the file
+   size and $stat[9] is the modification time.  Use the strftime
+   format "%b %e %H:%S" to print out the time.  Print a suitable error
+   message if @stat has length 0.  [3pt]
+   -bash-60$ ls.perl *.perl
+         84 Nov 12 13:37 count.perl
+        240 Nov 16 12:39 euclid.perl
+        253 Nov 25 19:03 ls.perl
+        110 Dec  5 17:53 range.perl
+         91 Mar 14 21:31 wc.perl
+
+Words from problem not in sneak peek:
+prints, result, file, mentioned, 253, euclid, 84, out, 03, 21, filename,
+program, ls, print, stat, mar, wc, 25, time, 3pt, argv, modification, 240, 91,
+nov, hints, count, 39, dec, 14, 16, 19, 31, 37, 53, range, error, suitable,
+strftime, 110
+
+Words from problem yes in sneak peek:
+and, is, an, 60, in, array, message, size, use, for, 0, s, perl, write, to, 5,
+7, 6, 9, has, function, which, format, b, if, bash, a, 13, 12, e, 17, of,
+length, each, the, h, where
+
+
+Likeness: 0.481481481481
+sample_exams/cmps112-2016q4-final.tt
+ 8. What kind of memory management fails to handle a cyclic data
+    structure?
+    (A) copying collector with semispaces
+    (B) malloc and free
+    (C) mark and sweep
+    (D) reference counting
+
+Words from problem not in sneak peek:
+malloc, management, handle, reference, fails, semispaces, cyclic, sweep, free,
+mark, copying, memory, counting, collector
+
+Words from problem yes in sneak peek:
+and, a, what, b, d, with, c, to, of, 8, data, kind, structure
+
+
+Likeness: 0.470588235294
+sample_exams/cmps112-2017q2-midterm.tt
+ 3. A garbage collector automatically recycles what kind of objects?
+    (A) dead
+    (B) live
+    (C) reachable
+    (D) unreachable
+
+Words from problem not in sneak peek:
+garbage, recycles, dead, live, objects, reachable, unreachable, collector,
+automatically
+
+Words from problem yes in sneak peek:
+a, what, b, d, of, c, kind, 3
+
+
