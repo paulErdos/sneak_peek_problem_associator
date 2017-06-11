@@ -1,0 +1,179 @@
+Likeness: 0.866666666667
+sample_exams/cmps112-2009q1-final.tt
+10. Ocaml:  Write the function reverse which reverses list.  Do not use
+    any higher-order functions.  Your function must be tail-recursive or
+    use a local tail-recursive helper.  [2pt]
+    # reverse;;
+    - : 'a list -> 'a list
+    # reverse [1;2;3];;
+    - : int list = [3; 2; 1]
+
+Words from problem not in sneak peek:
+must, local, recursive, reverses
+
+Words from problem yes in sneak peek:
+helper, do, int, any, write, use, 3, your, 1, tail, 2, which, higher, function,
+be, 2pt, functions, not, a, 10, reverse, list, ocaml, or, the, order
+
+
+Likeness: 0.818181818182
+sample_exams/cmps112-2009q1-final.tt
+14. Prolog:  Define the function product, which produces the product of
+    all the numbers in a list.  [2pt]
+    | ?- product(N,[1,2,3,4,5]).
+    N = 120
+    | ?- product(N,[]).
+    N = 1
+
+Words from problem not in sneak peek:
+120, numbers, 14, produces
+
+Words from problem yes in sneak peek:
+function, a, all, 2pt, of, list, product, n, 1, 3, 2, 5, 4, which, in, the,
+prolog, define
+
+
+Likeness: 0.869565217391
+sample_exams/cmps112-2009q1-final.tt
+15. Scheme:  Write the function elim, which takes a symbol and a list
+    and returns a list consisting of elements of the list starting with
+    the first one that is eqv?  to its first argument;  or the empty
+    list, if none.  [2pt]
+    > (elim 3 '(5 4 3 2 1))
+    (3 2 1)
+    > (elim 9 '(1 2 3))
+    ()
+    > (elim 1 '(1 2 3 4))
+    (1 2 3 4)
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write Z if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [11pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   11 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+Words from problem not in sneak peek:
+none, takes, elim, symbol, eqv, 11pt, starting, consisting, empty
+
+Words from problem yes in sneak peek:
+and, 2pt, is, number, one, indicates, are, want, total, its, if, 1, to, that,
+question, 3, your, write, 0, returns, 2, 5, 4, which, 9, you, scheme, correct,
+first, function, a, elements, multiple, risk, missing, max, answers, argument,
+answer, wrong, negative, letter, 15, choice, with, 11, c, b, don, column, of,
+list, worth, points, t, each, the, z, or, left
+
+
+Likeness: 0.833333333333
+sample_exams/cmps112-2009q1-final.tt
+ 1. Haskell is a purely functional language which maintains state using
+    a:
+    (A) closure
+    (B) daemon
+    (C) monad
+    (D) thunk
+
+Words from problem not in sneak peek:
+purely, daemon, maintains
+
+Words from problem yes in sneak peek:
+a, closure, c, b, d, language, monad, is, functional, 1, thunk, state, haskell,
+which, using
+
+
+Likeness: 0.875
+sample_exams/cmps112-2009q1-final.tt
+10. If a is a list, which expression produces the same list?
+    (A) (car (cdr (cons a))
+    (B) (car (cons a (cdr a))
+    (C) (cons (car a) (cdr a))
+    (D) (cons (cdr a) (car a))
+
+Words from problem not in sneak peek:
+expression, produces
+
+Words from problem yes in sneak peek:
+a, 10, c, cons, d, car, is, list, same, b, cdr, which, the, if
+
+
+Likeness: 0.833333333333
+sample_exams/cmps112-2009q1-final.tt
+11. The Java class that permits a process to have multiple things done
+    concurrently is:
+    (A) Daemon
+    (B) Runnable
+    (C) Task
+    (D) Thread
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write Z if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [11pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   11 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+Words from problem not in sneak peek:
+concurrently, runnable, thread, process, things, daemon, 11pt, task, done
+
+Words from problem yes in sneak peek:
+have, is, number, indicates, are, want, total, your, if, 1, java, to, that,
+question, negative, write, 0, answer, you, worth, 11, multiple, risk, missing,
+max, answers, choice, wrong, letter, class, a, c, b, don, d, permits, column,
+of, correct, points, t, each, the, z, left
+
+
+Likeness: 0.875
+sample_exams/cmps112-2009q1-final.tt
+ 1. What is the type of swap?
+    let swap f x y = f y x;;
+    (A) ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+    (B) ('a -> 'b -> 'b) -> 'a list -> 'b -> 'b
+    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+    (D) ('a -> 'b) -> ('c -> 'a) -> 'c -> 'b
+
+Words from problem not in sneak peek:
+y, swap
+
+Words from problem yes in sneak peek:
+a, what, b, d, f, of, is, list, c, 1, let, x, the, type
+
+
+Likeness: 0.894736842105
+sample_exams/cmps112-2009q1-final.tt
+ 8. Which of the following data structures violates the spirit of
+    functional programming?
+    (A) array
+    (B) list
+    (C) stack
+    (D) tree
+
+Words from problem not in sneak peek:
+spirit, violates
+
+Words from problem yes in sneak peek:
+a, the, c, b, d, of, programming, functional, tree, data, list, which,
+following, 8, array, structures, stack
+
+

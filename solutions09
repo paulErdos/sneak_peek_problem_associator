@@ -1,0 +1,41 @@
+Question 3.
+
+# Many ways of coding it.
+sub filter {
+   my ($fn, @arr) = @_;
+   my @result;
+   for $elt (@arr) {push @result, $elt if $fn->($elt)}
+   return @result;
+}
+
+________________________________________________________________________
+
+Question 4.
+
+1 pt.  if picture correct
+1 pt:
+adjacent(A,B):-edge(A,B).
+adjacent(A,B):-edge(B,A).
+
+________________________________________________________________________
+
+Question 9.
+
+let rec map f lis = match lis with 
+    | [] -> []
+    | h::t -> f h :: map f t;;
+
+________________________________________________________________________
+
+ 6.    (D) int -> int -> int
+
+
+ 3.    (A) $ O ( 1 ) $
+
+
+ 5.    (B) $ O ( n ) $
+
+
+ 7.    (B) $ O ( n ) $
+
+

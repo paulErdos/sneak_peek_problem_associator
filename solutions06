@@ -1,0 +1,68 @@
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+

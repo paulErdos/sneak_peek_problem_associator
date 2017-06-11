@@ -99,6 +99,8 @@ def parse_problems(sample_exam):
     problem_regex   = re.compile(problem_pattern, re.MULTILINE)
     problem_matches = re.finditer(problem_regex, sample_exam)
 
+#    print("number of problems: {}".format(len([problem_group.group(0) for problem_group in problem_matches])))
+
     return [problem_group.group(0) for problem_group in problem_matches]
 
 def parse_solutions(sample_solutions):
@@ -145,16 +147,24 @@ def parse_solutions(sample_solutions):
     solution_regex   = re.compile(solution_pattern, re.MULTILINE)
     solution_matches = re.finditer(solution_regex, sample_solutions)
 
+#    print("number of solutions: {}".format(len([solution_group.group(0) for solution_group in solution_matches])))
+
     return [solution_group.group(0) for solution_group in solution_matches]
 
-def match_problems_with_wordlist(problems, words):
+def match_problems_with_wordlist(problems, solutions, words):
     word_pattern = r"\w+"
     word_regex   = re.compile(word_pattern, re.MULTILINE)
 
     first_line_pattern = r"^.*"
     first_line_regex = re.compile(first_line_pattern)
 
-    for problem in problems:
+    # Sanity check
+    if len(problems) != len(solutions):
+        print("Error! Unequal numbers of problems and solutions!")
+        exit()
+
+#    for problem in problems:
+    for problem, solution in zip(problems, solutions):
         # Form a set of all the words in the problem; convert to lowercase
         problem_word_matches = re.findall(word_regex, problem)
         lowered_matches = list(map(lambda x: x.lower(), problem_word_matches))
@@ -182,9 +192,9 @@ def match_problems_with_wordlist(problems, words):
         percentiles = map(lambda x: float(x)/10.0, range(0, 12, 1))
         for i in range(0, len(percentiles) - 1):
             if percentiles[i] <= likeness and likeness < percentiles[i + 1]:
-                filename =\
-                 "out" + re.sub(r"\.", "", str(percentiles[i]))
-                with open(filename, "a+") as o:
+                problems_filename =\
+                 "problems" + re.sub(r"\.", "", str(percentiles[i]))
+                with open(problems_filename, "a+") as o:
                     o.write("Likeness: {}\n".format(likeness))
                     o.write(sys.argv[2] + "\n")
                     o.write(problem + "\n")
@@ -193,6 +203,10 @@ def match_problems_with_wordlist(problems, words):
                     o.write("Words from problem yes in sneak peek:\n"
                                  + intersection_string)
                     o.write("\n\n\n")
+                solutions_filename =\
+                 "solutions" + re.sub(r"\.", "", str(percentiles[i]))
+                with open(solutions_filename, "a+") as o:
+                    o.write(solution + "\n\n")
 
 Parameters = init()
 Words = read_wordlist(Parameters['word_list'])
@@ -200,5 +214,4 @@ Sample_Exam = read_sample(Parameters['sample_exam'])
 Sample_Solutions = read_sample(Parameters['sample_solutions'])
 Problems = parse_problems(Sample_Exam)
 Solutions = parse_solutions(Sample_Solutions)
-
-#match_problems_with_wordlist(Problems, Words)
+match_problems_with_wordlist(Problems, Solutions, Words)

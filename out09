@@ -1289,3 +1289,126 @@ a, polymorphism, conversion, b, d, inclusion, of, universal, c, two,
 overloading, 5, are, parametric
 
 
+Likeness: 0.925925925926
+sample_exams/cmps112-2009q1-final.tt
+ 3. Perl:  Write a function that will accept a function and an array and
+    return all elements of the array in the same order, for which the
+    function applied to an element of the array returns true.  [2pt]
+
+Words from problem not in sneak peek:
+applied, accept
+
+Words from problem yes in sneak peek:
+and, all, an, in, array, for, returns, same, perl, write, to, 3, which,
+function, elements, return, 2pt, that, true, a, of, element, will, the, order
+
+
+Likeness: 0.909090909091
+sample_exams/cmps112-2009q1-final.tt
+ 4. Prolog:  Draw a picture of the undirected graph represented by the
+    facts given below.  Write a function adjacent which will succeed if
+    two nodes in the graph are adjacent to each other.  [2pt]
+    edge(a,b).
+    edge(b,c).
+    edge(c,d).
+    edge(d,a).
+    edge(a,c).
+
+Words from problem not in sneak peek:
+represented, below, succeed
+
+Words from problem yes in sneak peek:
+are, in, facts, if, given, graph, two, write, to, other, 4, which, nodes,
+undirected, function, picture, draw, 2pt, by, a, c, b, d, adjacent, of, will,
+edge, each, the, prolog
+
+
+Likeness: 0.933333333333
+sample_exams/cmps112-2009q1-final.tt
+ 9. Ocaml:  Define the function map, which a unary function to a list
+    and returns the list of results.  Use recursion.  Do not use a
+    higher-order function.  [2pt]
+    # map;;
+    - : ('a -> 'b) -> 'a list -> 'b list
+    # map ((+)2) [1;2;3;4];;
+    - : int list = [3; 4; 5; 6]
+
+Words from problem not in sneak peek:
+unary, results
+
+Words from problem yes in sneak peek:
+and, map, int, use, recursion, 3, 1, to, returns, 2, 5, 4, which, 6, 9, higher,
+function, do, 2pt, not, a, b, of, list, ocaml, the, define, order
+
+
+Likeness: 0.933333333333
+sample_exams/cmps112-2009q1-final.tt
+ 6. What is the type of f?
+    let f x y = x + y;;
+    (A) int * int * int
+    (B) int * int -> int
+    (C) int -> int * int
+    (D) int -> int -> int
+
+Words from problem not in sneak peek:
+y
+
+Words from problem yes in sneak peek:
+a, what, b, d, f, int, of, is, c, let, 6, x, the, type
+
+
+Likeness: 0.92
+sample_exams/cmps112-2009q1-final.tt
+ 3. The function List.fold_left uses up how much stack space on a list
+    of length $n$?
+    (A) $ O ( 1 ) $
+    (B) $ O ( 2 sup n ) $
+    (C) $ O ( log sub 2 n ) $
+    (D) $ O ( n ) $
+
+Words from problem not in sneak peek:
+fold_left, uses
+
+Words from problem yes in sneak peek:
+log, space, 1, how, 3, much, sup, function, 2, stack, sub, a, on, c, b, d, of,
+list, up, o, n, length, the
+
+
+Likeness: 0.958333333333
+sample_exams/cmps112-2009q1-final.tt
+ 5. What is the stack efficiency of this function?
+    let rec f n =
+        if n <= 1 then n
+        else f (n - 1) + f (n - 2);;
+    (A) $ O ( 1 ) $
+    (B) $ O ( n ) $
+    (C) $ O ( n sup 2 ) $
+    (D) $ O ( 2 sup n ) $
+
+Words from problem not in sneak peek:
+efficiency
+
+Words from problem yes in sneak peek:
+is, if, what, 1, 2, 5, sup, rec, function, then, else, let, stack, a, c, b, d,
+f, this, of, o, n, the
+
+
+Likeness: 0.958333333333
+sample_exams/cmps112-2009q1-final.tt
+ 7. What is the stack efficiency of this function?
+    let rec f n =
+        if n <= 1 then n
+        else f (n - 1) + f (n - 2);;
+    (A) $ O ( 1 ) $
+    (B) $ O ( n ) $
+    (C) $ O ( n sup 2 ) $
+    (D) $ O ( 2 sup n ) $
+
+Words from problem not in sneak peek:
+efficiency
+
+Words from problem yes in sneak peek:
+is, if, what, 1, 2, 7, sup, rec, function, then, else, let, stack, a, c, b, d,
+f, this, of, o, n, the
+
+
