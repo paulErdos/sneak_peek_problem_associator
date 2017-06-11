@@ -7,14 +7,6 @@ sample_exams/cmps112-2009q1-final.tt
     (D) (map * '(1 2 3))
 
 Likeness: 1.0
-sample_exams/cmps112-2009q1-test2.tt
- 4. In Ocaml, what is the type of the function (+)?
-    (A) int * int * int
-    (B) int * int -> int
-    (C) int -> int * int
-    (D) int -> int -> int
-
-Likeness: 1.0
 sample_exams/cmps112-2011q2-final.tt
  9. In Ocaml, the type of (+) is:
     (A) int * int * int

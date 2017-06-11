@@ -1,0 +1,691 @@
+Likeness: 0.925925925926
+sample_exams/cmps112-2009q1-final.tt
+ 3. Perl:  Write a function that will accept a function and an array and
+    return all elements of the array in the same order, for which the
+    function applied to an element of the array returns true.  [2pt]
+
+Likeness: 0.909090909091
+sample_exams/cmps112-2009q1-final.tt
+ 4. Prolog:  Draw a picture of the undirected graph represented by the
+    facts given below.  Write a function adjacent which will succeed if
+    two nodes in the graph are adjacent to each other.  [2pt]
+    edge(a,b).
+    edge(b,c).
+    edge(c,d).
+    edge(d,a).
+    edge(a,c).
+
+Likeness: 0.933333333333
+sample_exams/cmps112-2009q1-final.tt
+ 9. Ocaml:  Define the function map, which a unary function to a list
+    and returns the list of results.  Use recursion.  Do not use a
+    higher-order function.  [2pt]
+    # map;;
+    - : ('a -> 'b) -> 'a list -> 'b list
+    # map ((+)2) [1;2;3;4];;
+    - : int list = [3; 4; 5; 6]
+
+Likeness: 0.933333333333
+sample_exams/cmps112-2009q1-final.tt
+ 6. What is the type of f?
+    let f x y = x + y;;
+    (A) int * int * int
+    (B) int * int -> int
+    (C) int -> int * int
+    (D) int -> int -> int
+
+Likeness: 0.92
+sample_exams/cmps112-2009q1-final.tt
+ 3. The function List.fold_left uses up how much stack space on a list
+    of length $n$?
+    (A) $ O ( 1 ) $
+    (B) $ O ( 2 sup n ) $
+    (C) $ O ( log sub 2 n ) $
+    (D) $ O ( n ) $
+
+Likeness: 0.958333333333
+sample_exams/cmps112-2009q1-final.tt
+ 5. What is the stack efficiency of this function?
+    let rec f n =
+        if n <= 1 then n
+        else f (n - 1) + f (n - 2);;
+    (A) $ O ( 1 ) $
+    (B) $ O ( n ) $
+    (C) $ O ( n sup 2 ) $
+    (D) $ O ( 2 sup n ) $
+
+Likeness: 0.958333333333
+sample_exams/cmps112-2009q1-final.tt
+ 7. What is the stack efficiency of this function?
+    let rec f n =
+        if n <= 1 then n
+        else f (n - 1) + f (n - 2);;
+    (A) $ O ( 1 ) $
+    (B) $ O ( n ) $
+    (C) $ O ( n sup 2 ) $
+    (D) $ O ( 2 sup n ) $
+
+Likeness: 0.9375
+sample_exams/cmps112-2009q1-test1.tt
+ 8. Of the following languages, which is oldest?
+    (A) Algol 60
+    (B) C++
+    (C) Fortran
+    (D) Java
+
+Likeness: 0.92
+sample_exams/cmps112-2009q1-test2.tt
+ 5. Fold right (foldr) uses up how much stack space on a list of length
+    $n$?
+    (A) $ O ( 1 ) $
+    (B) $ O ( 2 sup n ) $
+    (C) $ O ( log sub 2 n ) $
+    (D) $ O ( n ) $
+
+Likeness: 0.904761904762
+sample_exams/cmps112-2009q1-test2.tt
+ 6. In the following statement, continue goes to what part ?
+          for (i = 0; i < n; ++i) {
+             f (); continue; g ();
+          } h ();
+    (A) ++i
+    (B) h ();
+    (C) i < n
+    (D) i = 0
+
+Likeness: 0.942857142857
+sample_exams/cmps112-2011q2-final.tt
+ 6. Scheme:  Using apply and max, define the Scheme function depth.
+    The depth of anything that is not a list is 0.  The depth of a
+    list is one more than the maximum depth of its constituent
+    elements.  [2pt]
+
+    > (depth '(1 2 (3 4 (5 6)) 88))
+    3
+    > (depth '(a b c))
+    1
+    > (depth '())
+    1
+    > (depth 7)
+    0
+
+Likeness: 0.909090909091
+sample_exams/cmps112-2011q2-final.tt
+11. Scheme:  Define the function iota, which returns a list of all
+    integers from 1 to the argument given.  It returns an empty list
+    for an argument less than 1.  [2pt]
+
+    > (iota -5)
+    ()
+    > (iota 0)
+    ()
+    > (iota 1)
+    (1)
+    > (iota 8)
+    (1 2 3 4 5 6 7 8)
+
+Likeness: 0.92
+sample_exams/cmps112-2011q2-final.tt
+ 9. In C++, templates such as stack<int> are an example of what kind
+    of polymorphism?
+    (A) ad-hoc conversion
+    (B) ad-hoc overloading
+    (C) universal inclusion
+    (D) universal parametric
+
+Likeness: 0.921052631579
+sample_exams/cmps112-2011q2-test1.tt
+ 5. Define a function in Scheme whose first argument is a predicate (a
+    function of one argument which returns either #t or #f) and whose
+    second argument is a list.  If the predicate returns #t for any
+    element of the list, contains returns #t, otherwise it returns #f.
+    [2pt]
+
+    > (contains (lambda (x) (= x 3)) '(1 2 3 4))
+    #t
+    > (contains (lambda (x) (> x 9)) '(1 2 3 4))
+    #f
+
+Likeness: 0.925925925926
+sample_exams/cmps112-2011q2-test1.tt
+ 4. For a list of length $n$, foldr, which does not use tail
+    recursion, will take up how much stack space?
+    (A) $ O ( 1 ) $
+    (B) $ O ( log n ) $
+    (C) $ O ( n ) $
+    (D) $ O ( n log n ) $
+
+Likeness: 0.944444444444
+sample_exams/cmps112-2011q2-test1.tt
+ 8. Perl and Scheme are languages whose type checking is:
+    (A) Strong and dynamic.
+    (B) Strong and static.
+    (C) Weak and dynamic.
+    (D) Weak and static.
+
+Likeness: 0.964285714286
+sample_exams/cmps112-2011q2-test2.tt
+ 5. Ocaml:  Define a function contains which accepts a predicate and a
+    list and returns true if the predicate is true for some element in
+    the list.  [2pt]
+    # contains ((=)3) [1;2;3;4];;
+    - : bool = true
+    # contains ((<)9) [1;2;3;4];;
+    - : bool = false
+
+Likeness: 0.9375
+sample_exams/cmps112-2011q2-test2.tt
+ 6. What is the type of the Ocaml expression
+       map ((+)3)
+    (A) ('a -> 'b) -> 'a list -> 'b list
+    (B) int list -> (int -> int) list
+    (C) int list -> int list
+    (D) int list
+
+Likeness: 0.947368421053
+sample_exams/cmps112-2012q1-final.tt
+ 7. Ocaml:  Define a function exclude which does the same.  [2pt]
+    # exclude 2 [1;2;3;4;5];;
+    - : int list = [3; 4; 5]
+    # exclude (-5) [1;2;3;4;5];;
+    - : int list = [1; 2; 3; 4; 5]
+    # exclude 10 [1;2;3];;
+    - : int list = []
+
+Likeness: 0.944444444444
+sample_exams/cmps112-2012q1-final.tt
+ 3. In Ocaml, what is the type of List.tl?  (Hint:  like cdr in
+    Scheme).
+    (A) 'a list * 'a list -> 'a list
+    (B) 'a list -> 'a
+    (C) 'a list -> 'a list
+    (D) 'a list -> 'a list -> 'a list
+
+Likeness: 0.947368421053
+sample_exams/cmps112-2012q1-final.tt
+10. Which of the following programs will cause a dangling pointer?
+    (A) int *f() {int i = 6; return &i; }
+    (B) int *f() {int i = 6; return *i; }
+    (C) int *f() {int i = 6; return  i; }
+    (D) int  f() {int i = 6; return  i; }
+
+Likeness: 0.952380952381
+sample_exams/cmps112-2012q1-final.tt
+11. The first language to be described using Backus-Naur form was:
+    (A) Algol 60
+    (B) Basic
+    (C) Cobol
+    (D) Fortran
+
+
+Likeness: 0.935483870968
+sample_exams/cmps112-2012q1-test1.tt
+ 1. Define a function grep in Scheme whose first argument is a
+    predicate and second argument a list.  It returns a new list of
+    all of the elements of the argument list for which the predicate
+    is true.  Do not use a higher-order function.  [2pt]
+
+Likeness: 0.96
+sample_exams/cmps112-2012q1-test1.tt
+ 3. Define a function sum which returns the sum of all elements of a
+    list.  Do not use any higher-order functions.  Use constant ($ O (
+    1 ) $) stack space.  [2pt]
+
+Likeness: 0.913043478261
+sample_exams/cmps112-2012q1-test1.tt
+ 3. What is the running time of the following function?
+       (define (f n)
+          (if (< n 2) n
+              (+ (f (- n 1)) (f (- n 2)))))
+    (A) $ O ( n ) $
+    (B) $ O ( log sub 2 n ) $
+    (C) $ O ( n sup 2 ) $
+    (D) $ O ( 2 sup n ) $
+
+Likeness: 0.916666666667
+sample_exams/cmps112-2012q1-test1.tt
+ 4. What amount of stack space is taken up by evaluating that same
+    function?
+    (A) $ O ( n ) $
+    (B) $ O ( log sub 2 n ) $
+    (C) $ O ( n sup 2 ) $
+    (D) $ O ( 2 sup n ) $
+
+Likeness: 0.913043478261
+sample_exams/cmps112-2014q4-final.tt
+1. Ocaml.  Define the function reverse which reverses a list.  Use an
+   inner function that is tail recursive.  Do not use a higher-order
+   function.  [2pt]
+   val reverse : 'a list -> 'a list
+
+Likeness: 0.928571428571
+sample_exams/cmps112-2014q4-final.tt
+7. Ocaml.  Given the function at the left, fill in the table at the
+   right giving the Ocaml types for each item.  [2pt]
+
+                                             +------+--------------------------------+
+   let fac n =                               | fac  |                                |
+       if n < 0                              +------+--------------------------------+
+       then failwith "fac n | n < 0"         | n    |                                |
+       else let rec fac' n' m' =             +------+--------------------------------+
+                if n' = 0                    | 0    |                                |
+                then m'                      +------+--------------------------------+
+                else fac' (n' - 1) (n' * m') | fac' |                                |
+            in fac' n 1                      +------+--------------------------------+
+   ;;                                        | n'   |                                |
+                                             +------+--------------------------------+
+                                             | m'   |                                |
+                                             +------+--------------------------------+
+                                             | -    |                                |
+                                             +------+--------------------------------+
+                                             | *    |                                |
+                                             +------+--------------------------------+
+
+Likeness: 0.941176470588
+sample_exams/cmps112-2014q4-final.tt
+9. Scheme.  Define the functions map and filter.  [2pt]
+   > (map (lambda (n) (+ 1 n)) '(3 4 5))
+   (4 5 6)
+   > (filter (lambda (n) (> n 4)) '(3 4 5 6 7))
+   (5 6 7)
+
+Likeness: 0.916666666667
+sample_exams/cmps112-2014q4-final.tt
+ 4. What is the required amount of stack space for fold left and fold
+    right on a list of length $n$?
+    (A) fold left $ O ( 1 ) $;  fold right $ O ( 1 ) $
+    (B) fold left $ O ( 1 ) $;  fold right $ O ( n ) $
+    (C) fold left $ O ( n ) $;  fold right $ O ( 1 ) $
+    (D) fold left $ O ( n ) $;  fold right $ O ( n ) $
+
+Likeness: 0.941176470588
+sample_exams/cmps112-2014q4-final.tt
+ 8. What is the type of the Ocaml function
+    let g () = 3;;
+    (A) int * unit
+    (B) int -> unit
+    (C) unit * int
+    (D) unit -> int
+
+Likeness: 0.923076923077
+sample_exams/cmps112-2014q4-final.tt
+ 4. In Ocaml, what is the type of (/.)?
+    (A) float * float * float
+    (B) float * float -> float
+    (C) float -> float * float
+    (D) float -> float -> float
+
+Likeness: 0.904761904762
+sample_exams/cmps112-2014q4-final.tt
+ 8. Given the Smalltalk statement a:=[:x|x+1].
+    What expression would return the number 4?
+    (A) 3 to: a.
+    (B) a 3.
+    (C) a at: 3.
+    (D) a value: 3.
+
+Likeness: 0.923076923077
+sample_exams/cmps112-2014q4-final.tt
+10. What is not false in Perl?
+    (A) 0
+    (B) 0.0/0.0
+    (C) ""
+    (D) undef
+
+Likeness: 0.925925925926
+sample_exams/cmps112-2014q4-final.tt
+11. In Smalltalk, what is 9?
+    (A) (4 + 5) value.
+    (B) [4 + 5] value.
+    (C) "4 + 5" value.
+    (D) {4 + 5} value.
+
+12. ``Go To Statement Considered Harmful''
+    (A) Edsger Dijkstra
+    (B) C.A.R. Hoare
+    (C) Donald Knuth
+    (D) Niklaus Wirth
+
+
+Likeness: 0.916666666667
+sample_exams/cmps112-2014q4-test1.tt
+ 4. In Smalltalk, what produces 13?
+    (A) '4+9' value
+    (B) (4+9) value
+    (C) [4+9] value
+    (D) {4+9} value
+
+Likeness: 0.923076923077
+sample_exams/cmps112-2014q4-test1.tt
+10. What is not false in Perl?
+    (A) 0
+    (B) 0.0/0.0
+    (C) ""
+    (D) undef
+
+Likeness: 0.93137254902
+sample_exams/cmps112-2014q4-test1.tt
+12. Structured programming demands the elimination of what statement?
+    (A) goto
+    (B) switch
+    (C) throw
+    (D) while
+
+____________________
+
+ EWD498:   How do we tell truths that might hurt?  Prof. Dr. Edsger W.
+ Dijkstra, June 1975.
+ · FORTRAN, ``the infantile disorder'', by now nearly 20 years old, is
+   hopelessly inadequate for whatever computer application you have in
+   mind today:  it is now too clumsy, too risky, and too expensive  to
+   use.
+ · PL/I,  ``the  fatal disease'', belongs more to the problem set than
+   to the solution set.
+ · It is practically impossible to teach good programming to  students
+   that  have had a prior exposure to BASIC:  as potential programmers
+   they are mentally mutilated beyond hope of regeneration.
+ · The  use  of  COBOL  cripples  the  mind;   its  teaching   should,
+   therefore, be regarded as a criminal offence.
+
+
+Likeness: 0.928571428571
+sample_exams/cmps112-2014q4-test2.tt
+8. Scheme.  Using foldl, define the function length, which returns the
+   length of a list.  [1pt]
+
+Likeness: 0.925925925926
+sample_exams/cmps112-2014q4-test2.tt
+9. Smalltalk.  Define a block called product so that when given a
+   vector as its value: argument, it returns the product of the
+   vector.  [2pt]
+
+   product := [
+
+   ].
+   product value: #(1 2 3 4 5).
+   120
+
+Likeness: 0.964912280702
+sample_exams/cmps112-2014q4-test2.tt
+11. Scheme.  Define the function reverse, which reverses a list.  Do
+   not use any higher-order functions.  Do not use append.  [2pt]
+
+   (define (reverse list)
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write Z if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [12pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   12 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+Likeness: 0.931818181818
+sample_exams/cmps112-2015q4-final.tt
+3. Scheme.  Using apply, map, max, and cons, define the function depth
+   for any argument.  If it is null?, its depth is 1.  Otherwise, if
+   it is not a pair?, its depth is 0.  The depth of anything else (a
+   list) is one more than the maximum depth of the elements of the
+   list.  [2pt]
+   > (depth '(1 2 (3 4 (5 6)) 88))
+   3
+   > (depth '(a b c))
+   1
+   > (depth '())
+   1
+   > (depth 7)
+   0
+
+Likeness: 0.958333333333
+sample_exams/cmps112-2015q4-final.tt
+ 8. If we have a function not (bool -> bool) and a function even (int
+    -> bool), how might the function odd be defined?
+    (A) let odd = compose not even
+    (B) let odd = map not even
+    (C) let odd = not even
+    (D) let odd x = not even x
+
+Likeness: 0.954545454545
+sample_exams/cmps112-2015q4-final.tt
+11. What is the type of car in the following?
+    let car s = match s with | x::xs -> x
+    (A) val car : 'a -> 'a = <fun>
+    (B) val car : 'a -> 'a list = <fun>
+    (C) val car : 'a list -> 'a = <fun>
+    (D) val car : 'a list -> 'a list = <fun>
+
+Likeness: 0.982456140351
+sample_exams/cmps112-2015q4-final.tt
+12. What is the type of tail in the following?
+    let cdr s = match s with | x::xs -> xs
+    (A) val cdr : 'a -> 'a = <fun>
+    (B) val cdr : 'a -> 'a list = <fun>
+    (C) val cdr : 'a list -> 'a = <fun>
+    (D) val cdr : 'a list -> 'a list = <fun>
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write Z if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [12pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   12 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+Likeness: 0.952380952381
+sample_exams/cmps112-2015q4-final.tt
+ 9. The following interaction indicates what kind of polymorphism?
+    # List.length;;
+    - : 'a list -> int = <fun>
+    (A) conversion
+    (B) inclusion
+    (C) overloading
+    (D) parametric
+
+Likeness: 0.954545454545
+sample_exams/cmps112-2015q4-final.tt
+12. Go To Statement Considered Harmful
+    (A) Corrado Böhm & Giuseppe Jacopini
+    (B) Donald E. Knuth
+    (C) Edsger W. Dijkstra
+    (D) Niklaus Wirth
+
+
+Likeness: 0.966666666667
+sample_exams/cmps112-2015q4-test1.tt
+3. Define the function length, which returns the length of a list.
+   Use tail-recursion:  the function must use $ O ( 1 ) $ stack.  Do
+   not use a higher-order function.
+
+    (a) Scheme.  [1pt]
+        > (length '(1 2 3 4 5))
+        5
+
+    (b) Ocaml.  [1pt]
+        # length;;
+        - : 'a list -> int = <fun>
+        # length [1;2;3;4;5];;
+        - : int = 5
+
+Likeness: 0.9375
+sample_exams/cmps112-2015q4-test1.tt
+ 6. The type system in Scheme are:
+    (A) strong and dynamic
+    (B) strong and static
+    (C) weak and dynamic
+    (D) weak and static
+
+Likeness: 0.9375
+sample_exams/cmps112-2015q4-test1.tt
+ 7. The type system in Ocaml are:
+    (A) strong and dynamic
+    (B) strong and static
+    (C) weak and dynamic
+    (D) weak and static
+
+Likeness: 0.904761904762
+sample_exams/cmps112-2015q4-test1.tt
+12. In 1968, Edsger W. Dijkstra published a paper entitled ``___
+    statement considered harmful''.
+    (A) call
+    (B) goto
+    (C) switch
+    (D) throw
+
+____________________
+
+*EWD498:   How do we tell truths that might hurt?  Prof. Dr. Edsger W.
+ Dijkstra, June 1975.
+ · FORTRAN, ``the infantile disorder'', by now nearly 20 years old, is
+   hopelessly inadequate for whatever computer application you have in
+   mind today:  it is now too clumsy, too risky, and too expensive  to
+   use.
+ · PL/I,  ``the  fatal disease'', belongs more to the problem set than
+   to the solution set.
+ · It is practically impossible to teach good programming to  students
+   that  have had a prior exposure to BASIC:  as potential programmers
+   they are mentally mutilated beyond hope of regeneration.
+ · The  use  of  COBOL  cripples  the  mind;   its  teaching   should,
+   therefore, be regarded as a criminal offence.
+
+
+Likeness: 0.925925925926
+sample_exams/cmps112-2015q4-test2.tt
+4. Smalltalk.  Define a block called sum which when sent the value:
+   message with an array argument, returns the sum of the elements of
+   the array.  [2pt]
+
+   st> sum value: #(1 2 3 4 5).
+   15
+
+Likeness: 0.909090909091
+sample_exams/cmps112-2015q4-test2.tt
+ 1. Backus-Naur Form, used to define syntax, was first used in the
+    definition of:
+    (A) ALGOL
+    (B) BASIC
+    (C) COBOL
+    (D) FORTRAN
+
+Likeness: 0.916666666667
+sample_exams/cmps112-2015q4-test2.tt
+ 5. What is the running time of let rec f n = if n <= 1 then n else f
+    (n - 1) + f (n - 2)?
+    (A) $ O ( log sub 2 n ) $
+    (B) $ O ( n ) $
+    (C) $ O ( 2 sup n ) $
+    (D) $ O ( n sup 2 ) $
+
+Likeness: 0.96
+sample_exams/cmps112-2015q4-test2.tt
+ 7. For a list of length $n$, how much function call stack space is
+    used by fold left and fold right?
+    (A) fold left $ O ( 1 ) $ and fold right $ O ( 1 ) $
+    (B) fold left $ O ( 1 ) $ and fold right $ O ( n ) $
+    (C) fold left $ O ( n ) $ and fold right $ O ( 1 ) $
+    (D) fold left $ O ( n ) $ and fold right $ O ( n ) $
+
+Likeness: 0.941176470588
+sample_exams/cmps112-2016q4-final.tt
+10. What is the type of
+    let f x y z = x + y + z;;
+    (A) val f : int * int * int -> int
+    (B) val f : int * int -> int -> int
+    (C) val f : int -> int * int -> int
+    (D) val f : int -> int -> int -> int
+
+Likeness: 0.9375
+sample_exams/cmps112-2016q4-final.tt
+12. What is the signature of Ocaml's List.map?
+    (A) ('a -> 'b) -> 'a list -> 'b list
+    (B) ('a -> bool) -> 'a list -> 'a list
+    (C) ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+    (D) 'a list -> int
+
+
+Likeness: 0.918918918919
+sample_exams/cmps112-2016q4-midterm.tt
+1. Ocaml.  Define a tail-recursive function evenlen which returns true
+   if its argument is a list of even length and false if there are an
+   odd number of elements in the list.  Do not use a higher-order
+   function.  [2pt]
+   # evenlen [];;
+   - : bool = true
+   # evenlen [1];;
+   - : bool = false
+   # evenlen [1;2];;
+   - : bool = true
+
+Likeness: 0.965517241379
+sample_exams/cmps112-2016q4-midterm.tt
+2. Scheme.  Define a tail-recursive function oddlen which returns #t
+   if the list has an odd number of elements, and #f if not.  Do not
+   use a higher-order function.  [2pt]
+   > (oddlen '())
+   #f
+   > (oddlen '(1))
+   #t
+   > (oddlen '(1 2))
+   #f
+
+Likeness: 0.9375
+sample_exams/cmps112-2016q4-midterm.tt
+ 1. What is the Scheme value of:
+    (caddr '(1 2 3 4 5))
+    (A) (3 4 5)
+    (B) (4 5)
+    (C) 2
+    (D) 3
+
+Likeness: 0.923076923077
+sample_exams/cmps112-2016q4-midterm.tt
+ 3. What is the Ocaml type signature of:
+    (/);;
+    (A) - : int * int * int
+    (B) - : int * int -> int
+    (C) - : int -> int * int
+    (D) - : int -> int -> int
+
+Likeness: 0.909090909091
+sample_exams/cmps112-2016q4-midterm.tt
+ 6. Which line is a comment in Scheme?
+    (A) (*...*)
+    (B) /*...*/
+    (C) //...
+    (D) ;;...
+
+Likeness: 0.944444444444
+sample_exams/cmps112-2017q2-midterm.tt
+ 4. What kind of polymorphism is vector<string> an example of?
+    (A) conversion
+    (B) inclusion
+    (C) overloading
+    (D) parametric
+
+Likeness: 0.933333333333
+sample_exams/cmps112-2017q2-midterm.tt
+ 5. Two kinds of universal polymorphism are:
+    (A) conversion & overloading
+    (B) inclusion & parametric
+    (C) overloading & inclusion
+    (D) parametric & overloading
+

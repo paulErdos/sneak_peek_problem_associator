@@ -115,7 +115,9 @@ def match_problems_with_wordlist(problems, words):
 
         likeness = float(size_intersection)/float(size_problem)
 
-        if likeness == 1.0:
+        if 1.0 > likeness and likeness > 0.9:
+#            if intersection == lowered_set:
+ #               print "Intersection == lowered_set!"
             if os.path.isfile(sys.argv[3]):
                 with open(sys.argv[3], "a+") as o:
                     o.write("Likeness: {}".format(likeness))
