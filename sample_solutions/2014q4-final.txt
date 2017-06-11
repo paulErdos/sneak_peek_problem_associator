@@ -1,0 +1,192 @@
+$Id: 2014q4-soln3,v 1.2 2014-12-11 13:28:47-08 - - $
+Answers to 2014q4-test3, page 1
+
+________________________________________________________________________
+Question 1. [2]
+
+let reverse list =
+    let rec rev' in out = match in with
+        | [] -> out
+        | h::t -> rev' t (h::out)
+    in rev' list []
+
+________________________________________________________________________
+Question 2. [3]
+
+let reverse = List.fold_left (fun tl hd -> hd::tl) []
+let sum = List.fold_left (+) 0
+let length = List.fold_left (fun _ n -> n + 1) 0
+
+________________________________________________________________________
+Question 3. [3]
+
+let collatz n =
+    let rec collatz' n rest =
+        if n <= 1
+           then 1::rest
+           else if even n
+                   then collatz' (n / 2) (n::rest)
+                   else collatz' (n * 3 + 1) (n::rest)
+    in  reverse (collatz' n [])
+
+________________________________________________________________________
+Question 4. [2]
+
+(define (takex n list)
+    (if (or (null? list) (<= n 0)) '()
+        (cons (car list) (takex (- n 1) (cdr list)))))
+
+
+Answers to 2014q4-test3, page 2
+
+________________________________________________________________________
+Question 5. [2]
+
+   It may return a result (including unit or void).
+   It may raise (throw) an exception.
+   It may never return (infinite loop or recursion).
+   It may exit the program.
+
+________________________________________________________________________
+Question 6. [2]
+
+Applicative order    Normal order
+(\x. * x x) 5        (* (+ 2 3) (+ 2 3))
+(* 5 5)              (* 5 5)
+25                   25
+
+________________________________________________________________________
+Question 7. [2]
+
+fac  : int -> int
+n    : int
+0    : int
+fac' : int -> int -> int
+n'   : int
+m'   : int
+-    : int -> int -> int
+*    : int -> int -> int
+
+________________________________________________________________________
+Question 8. [2]
+
+edge(a,b).       % Note: the edge facts may be listed in either order.
+edge(a,c).       % e.g., edge(a,b) and edge(b,a) mean the same thing.
+edge(a,d).
+edge(b,c).
+edge(c,d).
+adjacent(X,Y) :- edge(X,Y).
+adjacent(X,Y) :- edge(Y,X).
+
+________________________________________________________________________
+Question 9. [2]
+
+(define (map f list)
+    (if (null? list) '()
+        (cons (f (car list)) (map f (cdr list)))))
+
+(define (filter p list)
+    (if (null? list) '()
+        (let ((hd (car list))
+              (tl (filter p (cdr list))))
+             (if (p hd) (cons hd tl)
+                        (tl)))))
+
+
+Answers to 2014q4-test3, page 3
+
+________________________________________________________________________
+Question 10. [1]
+
+print while <>;
+
+________________________________________________________________________
+Question 11. [2]
+
+mother(Mother,Child) :- parents(_,Mother,Child).
+father(Father,Child) :- parents(Father,_,Child).
+
+________________________________________________________________________
+Question 12. [3]
+
+let rec range n m =
+    if n > m then []
+             else n::range (n+1) m;;
+
+(define (range n m)
+    (if (> n m) '()
+        (cons n (range (+ n 1) m))))
+
+sub range {
+   my ($n,$m) = @_;
+   return $n..$m;
+}
+
+________________________________________________________________________
+Question 13. [4]
+
+(define (pairthem l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (list (car l1) (car l2))
+              (pairthem (cdr l1) (cdr l2)))))
+
+let rec pairthem l1 l2 = match l1, l2 with
+   | [], _ -> []
+   | _, [] -> []
+   | h1::t1, h2::t2 -> (h1,h2):: pairthem t1 t2;;
+
+
+Answers to 2014q4-test3, page 4
+
+ 1.    (B) lambda
+
+ 2.    (D) Smalltalk
+
+ 3.    (D) fold left $ O ( n ) $;  fold right $ O ( n ) $
+
+ 4.    (B) fold left $ O ( 1 ) $;  fold right $ O ( n ) $
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+ 6.    (C) ('a -> 'b) -> 'a list -> 'b list
+
+ 7.    (A) The message +4 is sent to the object 3.
+
+ 8.    (D) unit -> int
+
+ 9.    (C) ML and Ocaml
+
+10.    (C) reachable
+
+11.    (D) virtual function table
+
+12.    (C) Donald Knuth
+
+
+Answers to 2014q4-test3, page 5
+
+ 1.    (A) C++
+
+ 2.    (A) (*...*)
+
+ 3.    (D) reference counting
+
+ 4.    (D) float -> float -> float
+
+ 5.    (D) throw
+
+ 6.    (C) a pointer to the stack frame in which the current
+           function is nested.
+
+ 7.    (A) Haskell
+
+ 8.    (D) a value: 3.
+
+ 9.    (D) print `date`;
+
+10.    (B) 0.0/0.0
+
+11.    (B) [4 + 5] value.
+
+12.    (A) Edsger Dijkstra
+

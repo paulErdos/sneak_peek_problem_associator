@@ -1,0 +1,213 @@
+$Id: 2011q2-test3,v 1.3 2011-06-09 15:13:05-07 - - $
+Answers to 2011q2-test3, page 1.
+
+_________________________________________________________________
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+Question 3.
+
+- return a value
+- throw an exception
+- not return (infinite loop or recursion)
+- exit the program
+
+_________________________________________________________________
+Question 4.
+
+Object subclass: List [
+   |car cdr|
+   List class >> new [
+      ^ nil
+   ]
+   List class >> cons: car with: cdr [
+      |r|
+      r := super new.
+      r setcar: car setcdr: cdr.
+      ^ r
+   ]
+   setcar: xcar setcdr: xcdr [
+      car := xcar.
+      cdr := xcdr.
+   ]
+   car [
+      ^car
+   ]
+   cdr [
+      ^ cdr
+   ]
+]
+
+
+Answers to 2011q2-test3, page 2.
+
+_________________________________________________________________
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+Question 6.
+
+(define (depth list)
+   (if (not (list? list)) 0
+       (+ 1 (apply max (cons 0 (map depth list)))))
+)
+
+_________________________________________________________________
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+Question 8.
+
+while(<>) {
+   $lc++;
+   $cc += length $_;
+   $wc++ while s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+_________________________________________________________________
+Question 9.
+
+let collatz n =
+    let even n = n mod 2 = 0 in
+    let rec collatz' n c =
+        if n <= 1
+           then c
+           else if even n
+                   then collatz' (n / 2) (c + 1)
+                   else collatz' (n * 3 + 1) (c + 1)
+    in  collatz' n 0;;
+
+
+Answers to 2011q2-test3, page 3.
+
+_________________________________________________________________
+Question 10.
+
+sc := SortedCollection new.
+sc add: 23; add: 498; add: 33; add: 87; add: 10.
+sc do: [:x | stdout << x << Character nl].
+
+_________________________________________________________________
+Question 11.
+
+(define (iota n)
+   (define (iota_ n_ lis)
+      (if (< n_ 1) lis
+          (iota_ (- n_ 1) (cons n_ lis)))
+   )
+   (iota_ n '())
+)
+
+_________________________________________________________________
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+Question 14.
+
+let rec zipwith f l1 l2 = match l1, l2 with
+    | [], [] -> []
+    | [], _ -> raise (Invalid_argument "zipwith")
+    | _, [] -> raise (Invalid_argument "zipwith")
+    | h1::t1, h2::t2 -> f h1 h2 :: zipwith f t1 t2
+
+let rec zipwith f l1 l2 = match l1, l2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> f h1 h2 :: zipwith f t1 t2
+    | _, _ -> raise (Invalid_argument "zipwith")
+
+
+Answers to 2011q2-test3, page 4.
+
+ 1.    (B) The message +4 is sent to the number 3.
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+ 3.    (D) M but neither D nor U
+
+ 4.    (C) throw
+
+ 5.    (B) Prolog
+
+ 6.    (C) a heap allocated structure which points at a function and
+           contains the values of all non-local variables used by that
+           function.
+
+ 7.    (D) a structure which holds an unevauated expression used when
+           parameters are passed in normal form.
+
+ 8.    (B) \s+
+
+ 9.    (D) universal parametric
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+ 3.    (A) $h{$k}
+
+ 4.    (D) (cddr '(1 2 3))
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+ 6.    (B) operator overloading
+
+ 7.    (B) $0
+
+ 8.    (A) curried
+
+ 9.    (D) int -> int -> int
+
+10.    (B) ('a -> 'b) -> 'a list -> 'b list
+
+11.    (A) ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+
+

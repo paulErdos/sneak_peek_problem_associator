@@ -1,0 +1,185 @@
+$Id: test3.answers,v 1.2 2009-03-19 16:08:28-07 - - $
+Answers to test2, page 1.
+
+________________________________________________________________________
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+Question 3.
+
+# Many ways of coding it.
+sub filter {
+   my ($fn, @arr) = @_;
+   my @result;
+   for $elt (@arr) {push @result, $elt if $fn->($elt)}
+   return @result;
+}
+
+________________________________________________________________________
+Question 4.
+
+1 pt.  if picture correct
+1 pt:
+adjacent(A,B):-edge(A,B).
+adjacent(A,B):-edge(B,A).
+
+________________________________________________________________________
+Question 5.
+
+drop(_,[],[]).
+drop(H,[H|T],[H|T]).
+drop(H,[_|T],X):-drop(H,T,X).
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+Question 6.
+
+let rec merge less list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | (car1::cdr1 as list1), (car2::cdr2 as list2) ->
+      if less car1 car2 then car1 :: merge less cdr2 list2
+                        else car2 :: merge less list1 cdr2
+
+________________________________________________________________________
+Question 7.
+
+let sum = List.fold_left (+) 0;;
+
+________________________________________________________________________
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+Question 9.
+
+let rec map f lis = match lis with 
+    | [] -> []
+    | h::t -> f h :: map f t;;
+
+________________________________________________________________________
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+Question 11.
+
+let iota n =
+    let rec iota' n list = 
+        if n <= 0 then list else iota' (n - 1) (n :: list)
+    in iota' n [];;
+
+________________________________________________________________________
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+ 1.    (C) monad
+
+ 2.    (A) closure
+
+ 3.    (B) at link (ld) time.
+
+ 4.    (C) when the class is loaded.
+
+ 5.    (B) heap
+
+ 6.    (D) int -> int -> int
+
+ 7.    (A) applicative
+
+ 8.    (B) copying collector with semispaces
+
+ 9.    (B) referential transparency
+
+10.    (C) (cons (car a) (cdr a))
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+ 2.    (A) ((lambda (x)(+ x 3 ))3)
+
+ 3.    (A) $ O ( 1 ) $
+
+ 4.    (A) virtual function table
+
+ 5.    (B) $ O ( n ) $
+
+ 6.    (A) find(X) :- guess(X), verify(X).
+
+ 7.    (B) $ O ( n ) $
+
+ 8.    (A) array
+
+ 9.    (A) name
+
+10.    (A) access (static) link
+
+11.    (B) R6RS
+

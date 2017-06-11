@@ -1,0 +1,131 @@
+$Id: 2012q1-soln1,v 1.1 2012-02-13 14:59:58-08 - - $
+Answers to 2012a1-test1, page 1
+
+Note: answers which are correct, but different from the key,
+still get full points.
+
+_________________________________________________________________
+Question 1. [2]
+
+(define (grep pred? list)
+        (if (null? list) '()
+            (let ((head (car list))
+                  (tail (grep pred? (cdr list))))
+                 (if (pred? head) (cons head tail)
+                                  tail))))
+
+_________________________________________________________________
+Question 2. [1]
+
+(define (positives list)
+        (grep (lambda (x) (> x 0)) list))
+
+_________________________________________________________________
+Question 3. [2]
+
+(define (sum list)
+        (define (sum2 list acc)
+                (if (null? list) acc
+                    (sum2 (cdr list) (+ (car list) acc))))
+        (sum2 list 0))
+
+_________________________________________________________________
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+Question 5. [2]
+
+Hundreds of answers:
+- inclusion (or subtype) polymorphism
+     - example shows something object-oriented
+- generic (or template) polymorphism
+     - example shows someting using Java generics or C++ templates
+       or equivalent in another language
+
+_________________________________________________________________
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+Question 7. [5]
+
+use strict;
+use warnings;
+$0 =~ s|.*/||;
+my $status = 0;
+my %hash;
+for my $fname (@ARGV ? @ARGV : "-") {
+   open my $file, "<$fname"
+        or print STDERR "$0: $fname: $!\n" and $status = 1 and next;
+   while (defined (my $line = <$file>)) {
+      map {++$hash{$_}} $line =~ m/(\w+)/g;
+      ##alternate: map {++$hash{$_}} split m/\W+/, $line;
+   }
+}
+map {print "$_ $hash{$_}\n"} sort keys %hash;
+exit $status;
+
+_________________________________________________________________
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+Question 10. [1]
+
+print "@ARGV\n";
+
+
+Answers to 2012a1-test1, page 3
+
+ 1.    (A) Haskell
+
+ 2.    (A) &&
+
+ 3.    (D) $ O ( 2 sup n ) $
+
+ 4.    (A) $ O ( n ) $
+
+ 5.    (B) (4 5 6)
+
+ 6.    (B) When the program is linked.
+
+ 7.    (A) strong and dynamic.
+
+ 8.    (C) the stack frame of the function in which this function is
+        nested.
+
+ 9.    (D) only M, but neither D nor U.
+
+10.    (A) &(&p)
+
+11.    (C) FORTRAN
+

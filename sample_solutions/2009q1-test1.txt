@@ -1,0 +1,128 @@
+$Id: test1.answers,v 1.4 2009-02-03 19:45:40-08 - - $
+Answers to test1, page 1
+
+________________________________________________________________________
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+Question 2.
+
+while ($line = <>) {
+   next unless $line =~ m/\S/;
+   if ($line =~ m/^(.*)=(.*)$/) {
+      ($key, $value) = ($1, $2);
+      $key =~ s/^\s*//; $key =~ s/\s*$//;
+      $value =~ s/^\s*//; $value =~ s/\s*$//;
+      $hash{$key} = $value;
+   }else {
+      print STDERR "invalid line: $line";
+   }
+}
+for $key (sort keys %hash) {
+   print "$key = $hash{$key}\n";
+}
+________________________________________________________________________
+Question 3.
+
+sub makexref ($) {
+   my ($filename) = @_;
+   open my $file, "<$filename" or die "$0: $filename: $!\n";
+   while (defined (my $line = <$file>)) {
+      while ($line =~ s/^\s*(\S+)//) {
+         push @{$hash{$1}}, $.;
+      }
+   }
+   map {print "$_ @{$hash{$_}}\n"} sort keys %hash;
+}
+
+
+Answers to test1, page 2
+
+________________________________________________________________________
+Question 4.
+
+box ();
+box (const box &);
+box &operator= (const box &);
+~box ();
+
+________________________________________________________________________
+Question 5.
+
+scope.perl 0            0=glo.//glo
+
+scope.perl s            s=stat. //yes
+
+scope.perl d            d=yes. //glo
+
+scope.perl g            f=yes. //yes
+
+________________________________________________________________________
+Question 6(a).
+
+class base {
+   public:
+      virtual void print() = 0;
+};
+
+class dstr: public base {
+   public:
+      virtual void print();
+   private:
+      string s;
+};
+
+class dint: public base {
+   public:
+      virtual void print();
+   private:
+      int i;
+};
+
+________________________________________________________________________
+Question 6(b).
+
+#include <iostream>
+
+using namespace std;
+
+#include "base.h"
+
+void dstr::print () {
+   cout << s << endl;
+}
+
+void dint::print () {
+   cout << i << endl;
+}
+
+
+Answers to test1, page 3
+
+ 1.    (D) p + p
+
+ 2.    (D) object oriented
+
+ 3.    (C) link
+
+ 4.    (B) during a function call
+
+ 5.    (C) cerr
+
+ 6.    (C) overloading
+
+ 7.    (B) of foo, any class that inherits from foo, and any
+	   class that foo names as a friend
+
+ 8.    (C) Fortran
+
+ 9.    (A) delete
+
+10.    (B) this->x
+
+11.    (A) Edsger Dijkstra
+

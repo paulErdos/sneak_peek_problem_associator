@@ -1,0 +1,112 @@
+$Id: test2.answers,v 1.2 2009-02-24 16:51:18-08 - - $
+Answers to test2, page 1.
+
+________________________________________________________________________
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+Question 5.
+
+(define (evaltree tree) {
+   (if (symbol? tree) (hash-ref symtab tree)
+       ((hash-ref hash (car tree)) (evaltree (cadr tree))
+                                   (evaltree (caddr tree)))))
+
+________________________________________________________________________
+Question 6.
+
+sub fold ($$$) {
+   my ($fn, $unit, $array) = @_;
+   $unit = $fn->($unit, $_) for @$array;
+   $unit;
+}
+
+________________________________________________________________________
+Question 7.
+
+(define (split lst)
+    (if (or (null? lst) (null? (cdr lst)))
+        (list lst ())
+        (let ((rem (split (cddr lst))))
+             (list (cons (car lst) (car rem))
+                   (cons (cadr lst) (cadr rem)))))
+)
+
+________________________________________________________________________
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+ 1.    (D) (cddr '(1 2 3))
+
+ 2.    (D) $@
+
+ 3.    (B) delete
+
+ 4.    (D) int -> int -> int
+
+ 5.    (D) $ O ( n ) $
+
+ 6.    (A) ++i
+
+ 7.    (B) map <string, int> m;
+
+ 8.    (A) strong and dynamic.
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+10.    (A) &&
+
+11.    (C) $_
+

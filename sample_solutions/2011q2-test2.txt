@@ -1,0 +1,116 @@
+$Id: 2011q2-test2,v 1.1 2011-05-17 15:14:40-07 - - $
+Answers to 2011q2-test2, page 1.
+
+_________________________________________________________________
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+Question 2.
+
+;;;; Tail recursive version.
+(define (maxlist list)
+   (define (maxl max list)
+      (cond ((null? list) max)
+            ((> max (car list)) (maxl max (cdr list)))
+            (true (maxl (car list) (cdr list)))))
+   (if (null? list) 'undef
+       (maxl (car list) (cdr list))))
+
+;;;; Version using apply.
+(define (maxlist list)
+   (if (null? list) 'undef
+       (apply max list)))
+
+_________________________________________________________________
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+Question 5.
+
+let rec contains p list = match list with
+    | [] -> false
+    | h::_ when p h -> true
+    | _::t -> contains p t
+;;
+
+_________________________________________________________________
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+ 1.    (B) Haskell
+
+ 2.    (B) 2 sqrt
+
+ 3.    (C) [4 + 5]
+
+ 4.    (A) dangling pointers
+
+ 5.    (B) fold_left
+
+ 6.    (C) int list -> int list
+
+ 7.    (B) a at:1 put:6.
+
+ 8.    (C) (2 3)
+
+ 9.    (C) 'a list -> 'a list
+
+10.    (D) object-oriented
+
+11.    (D) Xerox PARC
+
+

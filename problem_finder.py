@@ -21,12 +21,14 @@ def init():
     # Make sure the program is being called correctly. If it isn't, print some
     # helpful information and exit.
     if len(sys.argv) is not 4:
-        print "Usage: $" + sys.argv[0] + " word_list sample_exam output_file"
+        print "Usage: $"\
+                + sys.argv[0]\
+                + " word_list sample_exam sample_solutions"
         sys.exit(-1)
 
     return {'word_list'  : sys.argv[1],
             'sample_exam': sys.argv[2],
-            'output_file': sys.argv[3]}
+            'sample_solutions': sys.argv[3]}
 
 
 def read_wordlist(filename):
@@ -46,7 +48,7 @@ def read_wordlist(filename):
 
     return word_set
 
-def read_sample_exam(filename):
+def read_sample(filename):
     """
     Reads the file into a string and returns that string.
     """
@@ -77,6 +79,7 @@ def parse_problems(sample_exam):
     problem_matches = re.finditer(problem_regex, sample_exam)
 
     return [problem_group.group(0) for problem_group in problem_matches]
+
 
 def match_problems_with_wordlist(problems, words):
     word_pattern = r"\w+"
@@ -127,6 +130,9 @@ def match_problems_with_wordlist(problems, words):
 
 Parameters = init()
 Words = read_wordlist(Parameters['word_list'])
-Sample_Exam = read_sample_exam(Parameters['sample_exam'])
+Sample_Exam = read_sample(Parameters['sample_exam'])
+Sample_Solutions = read_sample(Parameters['sample_solutions'])
 Problems = parse_problems(Sample_Exam)
-match_problems_with_wordlist(Problems, Words)
+#Solutions = parse_solutions(Sample_Solutions)
+
+#match_problems_with_wordlist(Problems, Words)
