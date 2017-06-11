@@ -72,7 +72,28 @@ def parse_problems(sample_exam):
     sample_exam = sample_exam + "#####"
 
     # Let's start by seeing if we can print the beginning line of each problem
-    #problem_pattern = r"^[ ]*[0-9]+\. [A-Z].*$(^.+$)+\n[ ]*[0-9]+\. [A-Z]"
+    # So this means
+    # Match the beginning of a line,
+    # Then 0 or more spaces,
+    # Then 1 or more numbers,
+    # Then a dot,
+    # Then a space,
+    # Then a capital alpha character,
+    # Then any number of any type of character aside from a newline,
+    # Then one or more, but as few as possible, of:
+    #     Newline, followed by 0 or more non-newlines,
+    # But only match the above if the following lookahead assertion holds:
+    # Only match above if the above is followed by
+    # Either: 
+    # 1. A newline,
+    #    Then the beginning of a line,
+    #    Then zero or more spaces,
+    #    Then one or more digits,
+    #    Then a dot,
+    #    Then a space,
+    #    Then one capital alpha character.
+    # Or:
+    # 2. Our end-of-file marker.
     problem_pattern =\
         r"^[ ]*[0-9]+\. [A-Z].*(\n.*)+?(?=\n^[ ]*[0-9]+\. [A-Z]|#####)"
     problem_regex   = re.compile(problem_pattern, re.MULTILINE)
@@ -80,6 +101,51 @@ def parse_problems(sample_exam):
 
     return [problem_group.group(0) for problem_group in problem_matches]
 
+def parse_solutions(sample_solutions):
+    """
+    Segments the solution file into a list of problems and returns that list.
+    """
+
+    # Python multiline regexing does not differentiate between the end of
+    # a line and the end of the string. So add a sentinel value to the
+    # end of the string.
+    sample_solutions = sample_solutions + "#####"
+
+    # Solutions start with a line that starts with
+    # The beginning of a line,
+    # Then
+    # Either:
+    # 1. "Question",
+    #    Then any number of non-newlines.
+    # Or:
+    # 2. Any number of spaces,
+    #    Then one or more digits,
+    #    Then a dot,
+    #    Then any number of non-newlines.
+    # Then one or more, but as few as possible of:
+    #     Newline, followed by any number of non-newlines,
+    # But match the above only if followed by:
+    # A newline,
+    # Then a beginning of a line,
+    # Then
+    # Either:
+    # 1. Either:
+    #    1. "Question",
+    #        Then any number of non-newlines.
+    #    Or:
+    #    2. Any number of spaces,
+    #       Then one or more digits,
+    #       Then a dot,
+    #       Then any number of non-newlines.
+    # Or:
+    # 2: Our end-of-file marker.
+    solution_pattern =\
+          r"^((Question.*)|([ ]*[0-9]+\..*))"\
+        + r"(\n.*)+?(?=\n^(((Question.*)|([ ]*[0-9]+\..*)))|#####)"
+    solution_regex   = re.compile(solution_pattern, re.MULTILINE)
+    solution_matches = re.finditer(solution_regex, sample_solutions)
+
+    return [solution_group.group(0) for solution_group in solution_matches]
 
 def match_problems_with_wordlist(problems, words):
     word_pattern = r"\w+"
@@ -133,6 +199,6 @@ Words = read_wordlist(Parameters['word_list'])
 Sample_Exam = read_sample(Parameters['sample_exam'])
 Sample_Solutions = read_sample(Parameters['sample_solutions'])
 Problems = parse_problems(Sample_Exam)
-#Solutions = parse_solutions(Sample_Solutions)
+Solutions = parse_solutions(Sample_Solutions)
 
 #match_problems_with_wordlist(Problems, Words)
