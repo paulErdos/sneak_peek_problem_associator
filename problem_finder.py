@@ -76,12 +76,7 @@ def parse_problems(sample_exam):
     problem_regex   = re.compile(problem_pattern, re.MULTILINE)
     problem_matches = re.finditer(problem_regex, sample_exam)
 
-#    problems = []
-#    for problem_group in problem_matches:
-#        problems.append(problem_group.group(0))
-#
     return [problem_group.group(0) for problem_group in problem_matches]
-#    return problems
 
 def match_problems_with_wordlist(problems, words):
     word_pattern = r"\w+"
@@ -109,26 +104,17 @@ def match_problems_with_wordlist(problems, words):
         size_problem = len(lowered_problem_words)
         likeness = float(len(intersection))/float(len(lowered_problem_words))
 
-        # For matches with likeness != 1, capitalize words in the problem that
-        # are not in the wordset
-#        for word in problem:
- #           if re.match(r"[a-zA-Z]+", word):
-  #              word = word.upper()
-#
-#        problem_nonmatched_highlighted =\
-#            [word.upper() for word in problem if re.match(r"[a-zA-Z]+", word)]
-
         # Get the words that are in the problem but are not in the wordlist
         difference = lowered_problem_words.difference(words)
         difference_string = ", ".join(list(difference))
         difference_string = textwrap.wrap(difference_string, 80)
         difference_string = "\n".join(difference_string)
 
-        percentiles = map(lambda x: float(x)/10.0, range(0, 11, 1))
+        percentiles = map(lambda x: float(x)/10.0, range(0, 12, 1))
         for i in range(0, len(percentiles) - 1):
             if percentiles[i] <= likeness and likeness < percentiles[i + 1]:
                 filename =\
-                 "out" + re.sub(r"\.", "", str(percentiles[i + 1]))
+                 "out" + re.sub(r"\.", "", str(percentiles[i]))
                 with open(filename, "a+") as o:
                     o.write("Likeness: {}\n".format(likeness))
                     o.write(sys.argv[2] + "\n")
@@ -138,31 +124,9 @@ def match_problems_with_wordlist(problems, words):
                     o.write("Words from problem yes in sneak peek:\n"
                                  + intersection_string)
                     o.write("\n\n\n")
-#        if 1.0 > likeness and likeness > 0.9:
-#            if os.path.isfile(sys.argv[3]):
-#                with open(sys.argv[3], "a+") as o:
-#                    o.write("Likeness: {}".format(likeness))
-#                    o.write("\n" + sys.argv[2])
-#                    o.write("\n" + problem)
-#                    o.write("\n")
-#            print 'Likeness: {}'.format(likeness)
-#            print sys.argv[2]
-#            print problem
-#            print difference
-#            print intersection
-#            print ""
-#
 
 Parameters = init()
 Words = read_wordlist(Parameters['word_list'])
 Sample_Exam = read_sample_exam(Parameters['sample_exam'])
 Problems = parse_problems(Sample_Exam)
 match_problems_with_wordlist(Problems, Words)
-"""
-Selection = select(Parameters['start'], Parameters['end'], Table)
-
-mean = np.mean(Selection)
-variance = np.var(Selection)
-
-print "%s %0.2f %0.2f" % (Parameters['ctype'], mean, variance)
-"""
