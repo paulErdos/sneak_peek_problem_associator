@@ -17,15 +17,13 @@ let sum = List.fold_left (+) 0;;
 let length = List.fold_left (fun x _ -> x + 1) 0;;
 
 _________________________________________________________________
-Question 3(a). [2]
-
+Question 3. [2]
+part a:
 let rec fold_left fn unit list = match list with
     | [] -> unit
     | x::xs -> fold_left fn (fn unit x) xs;;
 
-_________________________________________________________________
-Question 3(b). [2]
-
+part b:
 (define (fold_left fn unit list)
         (if (null? list) unit
             (fold_left fn (fn unit (car list)) (cdr list))))

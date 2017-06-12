@@ -1,0 +1,8964 @@
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+ 1.    (B) \beta-reduction
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+
+ 3.    (C) link
+
+
+ 5.    (C) cerr
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+ 1.    (B) \beta-reduction
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+
+ 3.    (C) link
+
+
+ 5.    (C) cerr
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+ 1.    (B) \beta-reduction
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+
+ 3.    (C) link
+
+
+ 5.    (C) cerr
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+ 1.    (B) \beta-reduction
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+
+ 3.    (C) link
+
+
+ 5.    (C) cerr
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+ 1.    (B) \beta-reduction
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+
+ 3.    (C) link
+
+
+ 5.    (C) cerr
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+ 1.    (B) \beta-reduction
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+
+ 3.    (C) link
+
+
+ 5.    (C) cerr
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+ 1.    (B) \beta-reduction
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+
+ 3.    (C) link
+
+
+ 5.    (C) cerr
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+ 1.    (B) \beta-reduction
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+
+ 3.    (C) link
+
+
+ 5.    (C) cerr
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+ 1.    (B) \beta-reduction
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+
+ 3.    (C) link
+
+
+ 5.    (C) cerr
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+ 1.    (B) \beta-reduction
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+
+ 3.    (C) link
+
+
+ 5.    (C) cerr
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 3. [3]
+
+let collatz n =
+    let rec collatz' n rest =
+        if n <= 1
+           then 1::rest
+           else if even n
+                   then collatz' (n / 2) (n::rest)
+                   else collatz' (n * 3 + 1) (n::rest)
+    in  reverse (collatz' n [])
+
+________________________________________________________________________
+
+Question 5. [2]
+
+   It may return a result (including unit or void).
+   It may raise (throw) an exception.
+   It may never return (infinite loop or recursion).
+   It may exit the program.
+
+________________________________________________________________________
+
+Question 6. [2]
+
+Applicative order    Normal order
+(\x. * x x) 5        (* (+ 2 3) (+ 2 3))
+(* 5 5)              (* 5 5)
+25                   25
+
+________________________________________________________________________
+
+Question 10. [1]
+
+print while <>;
+
+________________________________________________________________________
+
+11.    (D) virtual function table
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+8. Refer to the solution PDF for this exam.
+
+
+9. Refer to the solution PDF for this exam.
+
+
+10. Refer to the solution PDF for this exam.
+
+
+14. Refer to the solution PDF for this exam.
+
+
+21. Refer to the solution PDF for this exam.
+
+
+27. Refer to the solution PDF for this exam.
+
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+ 1.    (B) \beta-reduction
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+
+ 3.    (C) link
+
+
+ 5.    (C) cerr
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 3. [3]
+
+let collatz n =
+    let rec collatz' n rest =
+        if n <= 1
+           then 1::rest
+           else if even n
+                   then collatz' (n / 2) (n::rest)
+                   else collatz' (n * 3 + 1) (n::rest)
+    in  reverse (collatz' n [])
+
+________________________________________________________________________
+
+Question 5. [2]
+
+   It may return a result (including unit or void).
+   It may raise (throw) an exception.
+   It may never return (infinite loop or recursion).
+   It may exit the program.
+
+________________________________________________________________________
+
+Question 6. [2]
+
+Applicative order    Normal order
+(\x. * x x) 5        (* (+ 2 3) (+ 2 3))
+(* 5 5)              (* 5 5)
+25                   25
+
+________________________________________________________________________
+
+Question 10. [1]
+
+print while <>;
+
+________________________________________________________________________
+
+11.    (D) virtual function table
+
+
+Question 3. [4]
+
+Object subclass: Complex [
+   |real imag|
+   real [ ^ real ]
+   imag [ ^ imag ]
+   real: r [ real := r. imag := 0. ] 
+   imag: i [ real := 0. imag := i. ] 
+   real: r imag: i [ real := r. imag := i. ] 
+   + other [ 
+      |r|
+      r := Complex new.
+      r real: self real + other real imag: self imag + other imag.
+      ^ r
+   ]
+]
+
+
+Answers to 2014q4-test1, page 2
+
+________________________________________________________________________
+
+Question 7. [3]
+
+while ($line = <>) {
+   ++$count{$_} for split m/\W+/, $line;
+}
+
+push @array, sprintf "%10d %s\n", $count{$_}, $_ for keys %count;
+@array = sort { $b cmp $a } @array;
+print $array[$_] for 0..9;
+
+
+Answers to 2014q4-test1, page 3
+
+
+ 1.    (D) ? :
+
+
+ 5.    (B) M is possible, but not D.
+
+
+ 6.    (C) When the program is linked.
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+8. Refer to the solution PDF for this exam.
+
+
+9. Refer to the solution PDF for this exam.
+
+
+10. Refer to the solution PDF for this exam.
+
+
+14. Refer to the solution PDF for this exam.
+
+
+21. Refer to the solution PDF for this exam.
+
+
+27. Refer to the solution PDF for this exam.
+
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+ 1.    (B) \beta-reduction
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+
+ 3.    (C) link
+
+
+ 5.    (C) cerr
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 3. [3]
+
+let collatz n =
+    let rec collatz' n rest =
+        if n <= 1
+           then 1::rest
+           else if even n
+                   then collatz' (n / 2) (n::rest)
+                   else collatz' (n * 3 + 1) (n::rest)
+    in  reverse (collatz' n [])
+
+________________________________________________________________________
+
+Question 5. [2]
+
+   It may return a result (including unit or void).
+   It may raise (throw) an exception.
+   It may never return (infinite loop or recursion).
+   It may exit the program.
+
+________________________________________________________________________
+
+Question 6. [2]
+
+Applicative order    Normal order
+(\x. * x x) 5        (* (+ 2 3) (+ 2 3))
+(* 5 5)              (* 5 5)
+25                   25
+
+________________________________________________________________________
+
+Question 10. [1]
+
+print while <>;
+
+________________________________________________________________________
+
+11.    (D) virtual function table
+
+
+Question 3. [4]
+
+Object subclass: Complex [
+   |real imag|
+   real [ ^ real ]
+   imag [ ^ imag ]
+   real: r [ real := r. imag := 0. ] 
+   imag: i [ real := 0. imag := i. ] 
+   real: r imag: i [ real := r. imag := i. ] 
+   + other [ 
+      |r|
+      r := Complex new.
+      r real: self real + other real imag: self imag + other imag.
+      ^ r
+   ]
+]
+
+
+Answers to 2014q4-test1, page 2
+
+________________________________________________________________________
+
+Question 7. [3]
+
+while ($line = <>) {
+   ++$count{$_} for split m/\W+/, $line;
+}
+
+push @array, sprintf "%10d %s\n", $count{$_}, $_ for keys %count;
+@array = sort { $b cmp $a } @array;
+print $array[$_] for 0..9;
+
+
+Answers to 2014q4-test1, page 3
+
+
+ 1.    (D) ? :
+
+
+ 5.    (B) M is possible, but not D.
+
+
+ 6.    (C) When the program is linked.
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+8. Refer to the solution PDF for this exam.
+
+
+9. Refer to the solution PDF for this exam.
+
+
+10. Refer to the solution PDF for this exam.
+
+
+14. Refer to the solution PDF for this exam.
+
+
+21. Refer to the solution PDF for this exam.
+
+
+27. Refer to the solution PDF for this exam.
+
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+ 1.    (B) \beta-reduction
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+
+ 3.    (C) link
+
+
+ 5.    (C) cerr
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 3. [3]
+
+let collatz n =
+    let rec collatz' n rest =
+        if n <= 1
+           then 1::rest
+           else if even n
+                   then collatz' (n / 2) (n::rest)
+                   else collatz' (n * 3 + 1) (n::rest)
+    in  reverse (collatz' n [])
+
+________________________________________________________________________
+
+Question 5. [2]
+
+   It may return a result (including unit or void).
+   It may raise (throw) an exception.
+   It may never return (infinite loop or recursion).
+   It may exit the program.
+
+________________________________________________________________________
+
+Question 6. [2]
+
+Applicative order    Normal order
+(\x. * x x) 5        (* (+ 2 3) (+ 2 3))
+(* 5 5)              (* 5 5)
+25                   25
+
+________________________________________________________________________
+
+Question 10. [1]
+
+print while <>;
+
+________________________________________________________________________
+
+11.    (D) virtual function table
+
+
+Question 3. [4]
+
+Object subclass: Complex [
+   |real imag|
+   real [ ^ real ]
+   imag [ ^ imag ]
+   real: r [ real := r. imag := 0. ] 
+   imag: i [ real := 0. imag := i. ] 
+   real: r imag: i [ real := r. imag := i. ] 
+   + other [ 
+      |r|
+      r := Complex new.
+      r real: self real + other real imag: self imag + other imag.
+      ^ r
+   ]
+]
+
+
+Answers to 2014q4-test1, page 2
+
+________________________________________________________________________
+
+Question 7. [3]
+
+while ($line = <>) {
+   ++$count{$_} for split m/\W+/, $line;
+}
+
+push @array, sprintf "%10d %s\n", $count{$_}, $_ for keys %count;
+@array = sort { $b cmp $a } @array;
+print $array[$_] for 0..9;
+
+
+Answers to 2014q4-test1, page 3
+
+
+ 1.    (D) ? :
+
+
+ 5.    (B) M is possible, but not D.
+
+
+ 6.    (C) When the program is linked.
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+8. Refer to the solution PDF for this exam.
+
+
+9. Refer to the solution PDF for this exam.
+
+
+10. Refer to the solution PDF for this exam.
+
+
+14. Refer to the solution PDF for this exam.
+
+
+21. Refer to the solution PDF for this exam.
+
+
+27. Refer to the solution PDF for this exam.
+
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+ 1.    (B) \beta-reduction
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 9.    (A) name
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+
+ 3.    (C) link
+
+
+ 5.    (C) cerr
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+11.    (C) $_
+
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+ 9.      (C) $?
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 4.    (A) dangling pointers
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 2.    (C) List.fold_right
+
+
+ 9.    (B) access (static) link
+
+
+Question 3. [3]
+
+let collatz n =
+    let rec collatz' n rest =
+        if n <= 1
+           then 1::rest
+           else if even n
+                   then collatz' (n / 2) (n::rest)
+                   else collatz' (n * 3 + 1) (n::rest)
+    in  reverse (collatz' n [])
+
+________________________________________________________________________
+
+Question 5. [2]
+
+   It may return a result (including unit or void).
+   It may raise (throw) an exception.
+   It may never return (infinite loop or recursion).
+   It may exit the program.
+
+________________________________________________________________________
+
+Question 6. [2]
+
+Applicative order    Normal order
+(\x. * x x) 5        (* (+ 2 3) (+ 2 3))
+(* 5 5)              (* 5 5)
+25                   25
+
+________________________________________________________________________
+
+Question 10. [1]
+
+print while <>;
+
+________________________________________________________________________
+
+11.    (D) virtual function table
+
+
+Question 3. [4]
+
+Object subclass: Complex [
+   |real imag|
+   real [ ^ real ]
+   imag [ ^ imag ]
+   real: r [ real := r. imag := 0. ] 
+   imag: i [ real := 0. imag := i. ] 
+   real: r imag: i [ real := r. imag := i. ] 
+   + other [ 
+      |r|
+      r := Complex new.
+      r real: self real + other real imag: self imag + other imag.
+      ^ r
+   ]
+]
+
+
+Answers to 2014q4-test1, page 2
+
+________________________________________________________________________
+
+Question 7. [3]
+
+while ($line = <>) {
+   ++$count{$_} for split m/\W+/, $line;
+}
+
+push @array, sprintf "%10d %s\n", $count{$_}, $_ for keys %count;
+@array = sort { $b cmp $a } @array;
+print $array[$_] for 0..9;
+
+
+Answers to 2014q4-test1, page 3
+
+
+ 1.    (D) ? :
+
+
+ 5.    (B) M is possible, but not D.
+
+
+ 6.    (C) When the program is linked.
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+Question 4. [2]
+let rec sub' num1 num2 carry = match (num1, num2, carry) with
+    | list1, [], 0 -> list1
+    | list1, [], carry -> sub' list1 [- carry] 0
+    | [], _::_, _ -> raise (Invalid_argument "sub'")
+    | h1::t1, h2::t2, carry ->
+      let diff = h1 - h2 + carry + 10
+      in diff mod 10 :: sub' t1 t2 (diff / 10 - 1)
+
+
+Answers to cmps112-2015q4-exam1, page 2
+
+________________________________________________________________________
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+ 4.    (B) M but not D
+
+
+ 6.    (B) duck typing
+
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 3.    (A) #!
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+8. Refer to the solution PDF for this exam.
+
+
+9. Refer to the solution PDF for this exam.
+
+
+10. Refer to the solution PDF for this exam.
+
+
+14. Refer to the solution PDF for this exam.
+
+
+21. Refer to the solution PDF for this exam.
+
+
+27. Refer to the solution PDF for this exam.
+
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+ 1.    (B) \beta-reduction
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+

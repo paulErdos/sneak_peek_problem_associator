@@ -95,7 +95,7 @@ def parse_problems(sample_exam):
     # Or:
     # 2. Our end-of-file marker.
     problem_pattern =\
-        r"^[ ]*[0-9]+\. [A-Z].*(\n.*)+?(?=\n^[ ]*[0-9]+\. [A-Z]|#####)"
+        r"^[ ]*[0-9]+\. [`A-Z\\].*(\n.*)+?(?=\n^[ ]*[0-9]+\. [`A-Z\\]|#####)"
     problem_regex   = re.compile(problem_pattern, re.MULTILINE)
     problem_matches = re.finditer(problem_regex, sample_exam)
 
@@ -161,6 +161,15 @@ def match_problems_with_wordlist(problems, solutions, words):
     # Sanity check
     if len(problems) != len(solutions):
         print("Error! Unequal numbers of problems and solutions!")
+        print("Problems: {}".format(len(problems)))
+        print("Solutions: {}".format(len(solutions)))
+#        for problem, solution in zip(problems, solutions):
+#            print "foo"
+#            print problem
+#            print "bar"
+#            print solution
+#            print "baz"
+#            print ""
         exit()
 
 #    for problem in problems:

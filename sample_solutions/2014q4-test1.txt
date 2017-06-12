@@ -45,8 +45,9 @@ Object subclass: Complex [
 Answers to 2014q4-test1, page 2
 
 ________________________________________________________________________
-Question 4(a). [1]
+Question 4. [1]
 
+Part a:
 sub fac{
    my ($n) = @_;
    my $s = 1;
@@ -54,9 +55,7 @@ sub fac{
    return $s;
 }
 
-________________________________________________________________________
-Question 4(b). [2]
-
+Part b:
 Number extend [
    fac [
       |s|

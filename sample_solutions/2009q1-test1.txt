@@ -62,8 +62,9 @@ scope.perl d            d=yes. //glo
 scope.perl g            f=yes. //yes
 
 ________________________________________________________________________
-Question 6(a).
+Question 6.
 
+Part a:
 class base {
    public:
       virtual void print() = 0;
@@ -83,9 +84,7 @@ class dint: public base {
       int i;
 };
 
-________________________________________________________________________
-Question 6(b).
-
+Part b:
 #include <iostream>
 
 using namespace std;

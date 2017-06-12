@@ -9,30 +9,32 @@ Question 1. [2]
 (d) Go into an endless loop or recursion.
 
 ________________________________________________________________________
-Question 2(a). [2]
+Question 2. [2]
+
+Part a:
 (define (filter p? list)
         (if (null? list) '()
             (let ((a (car list))
                   (fd (filter p? (cdr list))))
                  (if (p? a) (cons a fd) fd))))
 
-________________________________________________________________________
-Question 2(b). [2]
+Part b:
 let rec filter p list = match list with
     | [] -> []
     | car::cdr -> if p car then car::filter p cdr
                            else filter p cdr
 
 ________________________________________________________________________
-Question 3(a). [1]
+Question 3. [1]
+
+Part a:
 (define (length x)
         (define (len x n)
                 (if (null? x) n
                     (len (cdr x) (+ n 1))))
         (len x 0))
 
-________________________________________________________________________
-Question 3(b). [1]
+Part b:
 let length x =
     let rec len x n = match x with
         | [] -> n
@@ -53,19 +55,22 @@ let rec sub' num1 num2 carry = match (num1, num2, carry) with
 Answers to cmps112-2015q4-exam1, page 2
 
 ________________________________________________________________________
-Question 5(a). [2]
+Question 5. [2]
+
+Part a:
 (define (fold_left fn unit list)
         (if (null? list) unit
             (fold_left fn (fn unit (car list)) (cdr list))))
 
-________________________________________________________________________
-Question 5(b). [2]
+Part b:
 let rec fold_left fn unit list = match list with
     | [] -> unit
     | car::cdr -> fold_left fn (fn unit car) cdr
 
 ________________________________________________________________________
-Question 6(a). [2]
+Question 6. [2]
+
+Part a:
 ---- The following is 2 points, if correct.
 (define (reverse list)
         (define (rev list m)
@@ -77,8 +82,7 @@ Question 6(a). [2]
 (define (reverse list) (fold_left snoc '() list))
 (define (reverse list) (fold_left (lambda (d a) (cons a d)) '() list))
 
-________________________________________________________________________
-Question 6(b). [2]
+Part b:
 ---- The following is 2 points, if correct.
 let reverse list =
     let rec rev' src out = match src with

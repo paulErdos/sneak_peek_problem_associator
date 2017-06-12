@@ -1,0 +1,8092 @@
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+ 8.    (D) 1959 COBOL
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+10.    (B) this->x
+
+
+11.    (A) Edsger Dijkstra
+
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+ 8.    (D) 1959 COBOL
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+10.    (B) this->x
+
+
+11.    (A) Edsger Dijkstra
+
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+ 8.    (D) 1959 COBOL
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+10.    (B) this->x
+
+
+11.    (A) Edsger Dijkstra
+
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+ 8.    (D) 1959 COBOL
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+10.    (B) this->x
+
+
+11.    (A) Edsger Dijkstra
+
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+ 8.    (D) 1959 COBOL
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+10.    (B) this->x
+
+
+11.    (A) Edsger Dijkstra
+
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+ 8.    (D) 1959 COBOL
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+10.    (B) this->x
+
+
+11.    (A) Edsger Dijkstra
+
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+ 8.    (D) 1959 COBOL
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+10.    (B) this->x
+
+
+11.    (A) Edsger Dijkstra
+
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+ 8.    (D) 1959 COBOL
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+10.    (B) this->x
+
+
+11.    (A) Edsger Dijkstra
+
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+ 8.    (D) 1959 COBOL
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+10.    (B) this->x
+
+
+11.    (A) Edsger Dijkstra
+
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+ 8.    (D) 1959 COBOL
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+10.    (B) this->x
+
+
+11.    (A) Edsger Dijkstra
+
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 2. [3]
+
+let reverse = List.fold_left (fun tl hd -> hd::tl) []
+let sum = List.fold_left (+) 0
+let length = List.fold_left (fun _ n -> n + 1) 0
+
+________________________________________________________________________
+
+Question 8. [2]
+
+edge(a,b).       % Note: the edge facts may be listed in either order.
+edge(a,c).       % e.g., edge(a,b) and edge(b,a) mean the same thing.
+edge(a,d).
+edge(b,c).
+edge(c,d).
+adjacent(X,Y) :- edge(X,Y).
+adjacent(X,Y) :- edge(Y,X).
+
+________________________________________________________________________
+
+Question 12. [3]
+
+let rec range n m =
+    if n > m then []
+             else n::range (n+1) m;;
+
+(define (range n m)
+    (if (> n m) '()
+        (cons n (range (+ n 1) m))))
+
+sub range {
+   my ($n,$m) = @_;
+   return $n..$m;
+}
+
+________________________________________________________________________
+
+Question 13. [4]
+
+(define (pairthem l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (list (car l1) (car l2))
+              (pairthem (cdr l1) (cdr l2)))))
+
+let rec pairthem l1 l2 = match l1, l2 with
+   | [], _ -> []
+   | _, [] -> []
+   | h1::t1, h2::t2 -> (h1,h2):: pairthem t1 t2;;
+
+
+Answers to 2014q4-test3, page 4
+
+
+ 1.    (B) lambda
+
+
+ 3.    (D) fold left $ O ( n ) $;  fold right $ O ( n ) $
+
+
+ 1.    (A) C++
+
+
+ 7.    (A) Haskell
+
+
+ 9.    (D) print `date`;
+
+
+12.    (A) Edsger Dijkstra
+
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+3. Refer to the solution PDF for this exam.
+
+
+7. Refer to the solution PDF for this exam.
+
+
+13. Refer to the solution PDF for this exam.
+
+
+17. Refer to the solution PDF for this exam.
+
+
+25. Refer to the solution PDF for this exam.
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+ 8.    (D) 1959 COBOL
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+10.    (B) this->x
+
+
+11.    (A) Edsger Dijkstra
+
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 2. [3]
+
+let reverse = List.fold_left (fun tl hd -> hd::tl) []
+let sum = List.fold_left (+) 0
+let length = List.fold_left (fun _ n -> n + 1) 0
+
+________________________________________________________________________
+
+Question 8. [2]
+
+edge(a,b).       % Note: the edge facts may be listed in either order.
+edge(a,c).       % e.g., edge(a,b) and edge(b,a) mean the same thing.
+edge(a,d).
+edge(b,c).
+edge(c,d).
+adjacent(X,Y) :- edge(X,Y).
+adjacent(X,Y) :- edge(Y,X).
+
+________________________________________________________________________
+
+Question 12. [3]
+
+let rec range n m =
+    if n > m then []
+             else n::range (n+1) m;;
+
+(define (range n m)
+    (if (> n m) '()
+        (cons n (range (+ n 1) m))))
+
+sub range {
+   my ($n,$m) = @_;
+   return $n..$m;
+}
+
+________________________________________________________________________
+
+Question 13. [4]
+
+(define (pairthem l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (list (car l1) (car l2))
+              (pairthem (cdr l1) (cdr l2)))))
+
+let rec pairthem l1 l2 = match l1, l2 with
+   | [], _ -> []
+   | _, [] -> []
+   | h1::t1, h2::t2 -> (h1,h2):: pairthem t1 t2;;
+
+
+Answers to 2014q4-test3, page 4
+
+
+ 1.    (B) lambda
+
+
+ 3.    (D) fold left $ O ( n ) $;  fold right $ O ( n ) $
+
+
+ 1.    (A) C++
+
+
+ 7.    (A) Haskell
+
+
+ 9.    (D) print `date`;
+
+
+12.    (A) Edsger Dijkstra
+
+
+
+Question 1. [3]
+
+C++      |Bjarne Stroustrup's most noted contribution to language design
+COBOL    |Business data processing language, designers included Grace
+Algol 60 |Designed in Europe to express algorithms in a structured way.
+C        |First version of Unix was 9000 lines of this language
+Lisp     |List processing language typically used in artificial
+FORTRAN  |Numeric and scientific computation language developed at IBM.
+Simula 67|Simulation language that influenced the design of C++.
+Pascal   |Small language for structured programming designed by Niklaus
+Java     |Sun Microsystems claimed this language is ``write once, run
+
+________________________________________________________________________
+
+ 9.    (D) sum value: 3 value: 4
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+3. Refer to the solution PDF for this exam.
+
+
+7. Refer to the solution PDF for this exam.
+
+
+13. Refer to the solution PDF for this exam.
+
+
+17. Refer to the solution PDF for this exam.
+
+
+25. Refer to the solution PDF for this exam.
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+ 8.    (D) 1959 COBOL
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+10.    (B) this->x
+
+
+11.    (A) Edsger Dijkstra
+
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 2. [3]
+
+let reverse = List.fold_left (fun tl hd -> hd::tl) []
+let sum = List.fold_left (+) 0
+let length = List.fold_left (fun _ n -> n + 1) 0
+
+________________________________________________________________________
+
+Question 8. [2]
+
+edge(a,b).       % Note: the edge facts may be listed in either order.
+edge(a,c).       % e.g., edge(a,b) and edge(b,a) mean the same thing.
+edge(a,d).
+edge(b,c).
+edge(c,d).
+adjacent(X,Y) :- edge(X,Y).
+adjacent(X,Y) :- edge(Y,X).
+
+________________________________________________________________________
+
+Question 12. [3]
+
+let rec range n m =
+    if n > m then []
+             else n::range (n+1) m;;
+
+(define (range n m)
+    (if (> n m) '()
+        (cons n (range (+ n 1) m))))
+
+sub range {
+   my ($n,$m) = @_;
+   return $n..$m;
+}
+
+________________________________________________________________________
+
+Question 13. [4]
+
+(define (pairthem l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (list (car l1) (car l2))
+              (pairthem (cdr l1) (cdr l2)))))
+
+let rec pairthem l1 l2 = match l1, l2 with
+   | [], _ -> []
+   | _, [] -> []
+   | h1::t1, h2::t2 -> (h1,h2):: pairthem t1 t2;;
+
+
+Answers to 2014q4-test3, page 4
+
+
+ 1.    (B) lambda
+
+
+ 3.    (D) fold left $ O ( n ) $;  fold right $ O ( n ) $
+
+
+ 1.    (A) C++
+
+
+ 7.    (A) Haskell
+
+
+ 9.    (D) print `date`;
+
+
+12.    (A) Edsger Dijkstra
+
+
+
+Question 1. [3]
+
+C++      |Bjarne Stroustrup's most noted contribution to language design
+COBOL    |Business data processing language, designers included Grace
+Algol 60 |Designed in Europe to express algorithms in a structured way.
+C        |First version of Unix was 9000 lines of this language
+Lisp     |List processing language typically used in artificial
+FORTRAN  |Numeric and scientific computation language developed at IBM.
+Simula 67|Simulation language that influenced the design of C++.
+Pascal   |Small language for structured programming designed by Niklaus
+Java     |Sun Microsystems claimed this language is ``write once, run
+
+________________________________________________________________________
+
+ 9.    (D) sum value: 3 value: 4
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+3. Refer to the solution PDF for this exam.
+
+
+7. Refer to the solution PDF for this exam.
+
+
+13. Refer to the solution PDF for this exam.
+
+
+17. Refer to the solution PDF for this exam.
+
+
+25. Refer to the solution PDF for this exam.
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+ 8.    (D) 1959 COBOL
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+10.    (B) this->x
+
+
+11.    (A) Edsger Dijkstra
+
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 2. [3]
+
+let reverse = List.fold_left (fun tl hd -> hd::tl) []
+let sum = List.fold_left (+) 0
+let length = List.fold_left (fun _ n -> n + 1) 0
+
+________________________________________________________________________
+
+Question 8. [2]
+
+edge(a,b).       % Note: the edge facts may be listed in either order.
+edge(a,c).       % e.g., edge(a,b) and edge(b,a) mean the same thing.
+edge(a,d).
+edge(b,c).
+edge(c,d).
+adjacent(X,Y) :- edge(X,Y).
+adjacent(X,Y) :- edge(Y,X).
+
+________________________________________________________________________
+
+Question 12. [3]
+
+let rec range n m =
+    if n > m then []
+             else n::range (n+1) m;;
+
+(define (range n m)
+    (if (> n m) '()
+        (cons n (range (+ n 1) m))))
+
+sub range {
+   my ($n,$m) = @_;
+   return $n..$m;
+}
+
+________________________________________________________________________
+
+Question 13. [4]
+
+(define (pairthem l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (list (car l1) (car l2))
+              (pairthem (cdr l1) (cdr l2)))))
+
+let rec pairthem l1 l2 = match l1, l2 with
+   | [], _ -> []
+   | _, [] -> []
+   | h1::t1, h2::t2 -> (h1,h2):: pairthem t1 t2;;
+
+
+Answers to 2014q4-test3, page 4
+
+
+ 1.    (B) lambda
+
+
+ 3.    (D) fold left $ O ( n ) $;  fold right $ O ( n ) $
+
+
+ 1.    (A) C++
+
+
+ 7.    (A) Haskell
+
+
+ 9.    (D) print `date`;
+
+
+12.    (A) Edsger Dijkstra
+
+
+
+Question 1. [3]
+
+C++      |Bjarne Stroustrup's most noted contribution to language design
+COBOL    |Business data processing language, designers included Grace
+Algol 60 |Designed in Europe to express algorithms in a structured way.
+C        |First version of Unix was 9000 lines of this language
+Lisp     |List processing language typically used in artificial
+FORTRAN  |Numeric and scientific computation language developed at IBM.
+Simula 67|Simulation language that influenced the design of C++.
+Pascal   |Small language for structured programming designed by Niklaus
+Java     |Sun Microsystems claimed this language is ``write once, run
+
+________________________________________________________________________
+
+ 9.    (D) sum value: 3 value: 4
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+3. Refer to the solution PDF for this exam.
+
+
+7. Refer to the solution PDF for this exam.
+
+
+13. Refer to the solution PDF for this exam.
+
+
+17. Refer to the solution PDF for this exam.
+
+
+25. Refer to the solution PDF for this exam.
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+ 8.    (D) 1959 COBOL
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 8.    (A) array
+
+
+10.    (B) this->x
+
+
+11.    (A) Edsger Dijkstra
+
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 3.    (B) delete
+
+
+ 8.    (A) strong and dynamic.
+
+
+10.    (A) &&
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+10.      (A) (f '())
+
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+ 1.    (B) Haskell
+
+
+ 2.    (B) 2 sqrt
+
+
+ 3.    (C) [4 + 5]
+
+
+ 7.    (B) a at:1 put:6.
+
+
+10.    (D) object-oriented
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 6.    (C) $_
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 1. overloading
+
+
+ 5.    (A) array
+
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 2.    (A) &&
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+10.    (D) Smalltalk
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 2. [3]
+
+let reverse = List.fold_left (fun tl hd -> hd::tl) []
+let sum = List.fold_left (+) 0
+let length = List.fold_left (fun _ n -> n + 1) 0
+
+________________________________________________________________________
+
+Question 8. [2]
+
+edge(a,b).       % Note: the edge facts may be listed in either order.
+edge(a,c).       % e.g., edge(a,b) and edge(b,a) mean the same thing.
+edge(a,d).
+edge(b,c).
+edge(c,d).
+adjacent(X,Y) :- edge(X,Y).
+adjacent(X,Y) :- edge(Y,X).
+
+________________________________________________________________________
+
+Question 12. [3]
+
+let rec range n m =
+    if n > m then []
+             else n::range (n+1) m;;
+
+(define (range n m)
+    (if (> n m) '()
+        (cons n (range (+ n 1) m))))
+
+sub range {
+   my ($n,$m) = @_;
+   return $n..$m;
+}
+
+________________________________________________________________________
+
+Question 13. [4]
+
+(define (pairthem l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (list (car l1) (car l2))
+              (pairthem (cdr l1) (cdr l2)))))
+
+let rec pairthem l1 l2 = match l1, l2 with
+   | [], _ -> []
+   | _, [] -> []
+   | h1::t1, h2::t2 -> (h1,h2):: pairthem t1 t2;;
+
+
+Answers to 2014q4-test3, page 4
+
+
+ 1.    (B) lambda
+
+
+ 3.    (D) fold left $ O ( n ) $;  fold right $ O ( n ) $
+
+
+ 1.    (A) C++
+
+
+ 7.    (A) Haskell
+
+
+ 9.    (D) print `date`;
+
+
+12.    (A) Edsger Dijkstra
+
+
+
+Question 1. [3]
+
+C++      |Bjarne Stroustrup's most noted contribution to language design
+COBOL    |Business data processing language, designers included Grace
+Algol 60 |Designed in Europe to express algorithms in a structured way.
+C        |First version of Unix was 9000 lines of this language
+Lisp     |List processing language typically used in artificial
+FORTRAN  |Numeric and scientific computation language developed at IBM.
+Simula 67|Simulation language that influenced the design of C++.
+Pascal   |Small language for structured programming designed by Niklaus
+Java     |Sun Microsystems claimed this language is ``write once, run
+
+________________________________________________________________________
+
+ 9.    (D) sum value: 3 value: 4
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+10.    (B) 2 sqrt
+
+
+Question 2. [2]
+
+Part a:
+(define (filter p? list)
+        (if (null? list) '()
+            (let ((a (car list))
+                  (fd (filter p? (cdr list))))
+                 (if (p? a) (cons a fd) fd))))
+
+Part b:
+let rec filter p list = match list with
+    | [] -> []
+    | car::cdr -> if p car then car::filter p cdr
+                           else filter p cdr
+
+________________________________________________________________________
+
+Question 5. [2]
+
+Part a:
+(define (fold_left fn unit list)
+        (if (null? list) unit
+            (fold_left fn (fn unit (car list)) (cdr list))))
+
+Part b:
+let rec fold_left fn unit list = match list with
+    | [] -> unit
+    | car::cdr -> fold_left fn (fn unit car) cdr
+
+________________________________________________________________________
+
+ 1.    (D) parametric
+
+
+ 8.    (D) ||
+
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 4.    (D) Lisp
+
+
+ 5.    (D) Simula 67
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 9.    (B) Ocaml
+
+
+ 4.    (D) ? :
+
+
+3. Refer to the solution PDF for this exam.
+
+
+7. Refer to the solution PDF for this exam.
+
+
+13. Refer to the solution PDF for this exam.
+
+
+17. Refer to the solution PDF for this exam.
+
+
+25. Refer to the solution PDF for this exam.
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+ 8.    (D) 1959 COBOL
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+
