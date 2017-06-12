@@ -1,0 +1,2339 @@
+Likeness: 0.787878787879
+sample_exams/cmps112-2009q1-final.tt
+ 5. Prolog:  Write drop/3 such that it returns all elements of the
+    second argument, starting with the one that matches the first
+    argument, or none, if none match.  The third argument is the result.
+    [2pt]
+    | ?- drop(3,[5,4,3,2,1],X).
+    X = [3,2,1]
+    | ?- drop(9,[1,2,3],X).
+    X = []
+    | ?- drop(1,[1,2,3,4],X).
+    X = [1,2,3,4]
+
+Words from problem not in sneak peek:
+none, third, matches, drop, result, such, starting
+
+Words from problem yes in sneak peek:
+all, is, argument, one, second, if, 1, returns, write, 3, 2, 5, 4, 9, match,
+elements, 2pt, that, it, with, of, x, the, first, or, prolog
+
+
+Likeness: 0.764705882353
+sample_exams/cmps112-2009q1-final.tt
+ 6. Ocaml:  Define the function merge which takes a predicate as an
+    argument and a pair of sorted lists.  The result is a single list in
+    sorted order.  [3pt]
+    # merge;;
+    - : ('a -> 'a -> bool) -> 'a list -> 'a list -> 'a list
+    # merge (<) [1;3;5] [2;4;8;9];;
+    - : int list = [1; 2; 4; 4; 8; 9; 9]
+
+Words from problem not in sneak peek:
+takes, 3pt, lists, merge, single, result, pair, sorted
+
+Words from problem yes in sneak peek:
+and, int, is, argument, an, as, in, 1, 3, 2, bool, 4, which, 6, 9, 5, define,
+function, predicate, 8, a, of, list, ocaml, the, order
+
+
+Likeness: 0.785714285714
+sample_exams/cmps112-2009q1-final.tt
+ 7. Ocaml:  Define the function sum in terms of List.fold_left in a
+    curried manner to sum a list of integers.  Do not write a recursive
+    function.  [1pt]
+    # sum;;
+    - : int list -> int
+    # sum [1;2;3;4;5];;
+    - : int = 15
+
+Words from problem not in sneak peek:
+integers, terms, recursive, fold_left, manner, curried
+
+Words from problem yes in sneak peek:
+int, in, 1, sum, write, to, 3, 2, 5, 4, 7, define, function, do, not, 1pt, a,
+15, of, list, ocaml, the
+
+
+Likeness: 0.744186046512
+sample_exams/cmps112-2009q1-final.tt
+11. Ocaml:  Write a function iota which has an integer argument $n$ and
+    returns a list of numbers from $1$ to $n$ inclusive.  The empty list
+    is returned for non-positive numbers.  Use a local helper function
+    to make your solution tail-recursive.  [2pt]
+    # iota;;
+    - : int -> int list = <fun>
+    # iota 5;;
+    - : int list = [1; 2; 3; 4; 5]
+    # iota (-5);;
+    - : int list = []
+
+Words from problem not in sneak peek:
+non, recursive, inclusive, positive, make, numbers, integer, local, iota, empty,
+returned
+
+Words from problem yes in sneak peek:
+and, helper, int, is, argument, an, your, 1, use, ocaml, from, for, returns,
+write, to, tail, 2, 5, 4, which, has, function, 11, 2pt, 3, a, of, list,
+solution, n, fun, the
+
+
+Likeness: 0.705882352941
+sample_exams/cmps112-2009q1-final.tt
+ 2. Partial parameterization of a currried function keeps arguments in
+    a:
+    (A) closure
+    (B) daemon
+    (C) monad
+    (D) thunk
+
+Words from problem not in sneak peek:
+currried, daemon, parameterization, partial, keeps
+
+Words from problem yes in sneak peek:
+a, function, c, b, d, monad, of, thunk, 2, arguments, in, closure
+
+
+Likeness: 0.703703703704
+sample_exams/cmps112-2009q1-final.tt
+ 4. In Java, a static variable is allocated:
+    (A) at translation time.
+    (B) when the class files are put in a jar.
+    (C) when the class is loaded.
+    (D) when an object is created with new.
+
+Words from problem not in sneak peek:
+files, created, jar, time, put, loaded, allocated, translation
+
+Words from problem yes in sneak peek:
+a, c, b, java, d, is, object, when, at, an, static, are, in, variable, new, the,
+with, class, 4
+
+
+Likeness: 0.736842105263
+sample_exams/cmps112-2009q1-final.tt
+ 5. From what segment does a call to new in C++ allocate memory?
+    (A) data
+    (B) heap
+    (C) stack
+    (D) text
+
+Words from problem not in sneak peek:
+text, segment, call, allocate, memory
+
+Words from problem yes in sneak peek:
+a, what, b, from, d, c, to, does, 5, heap, in, new, data, stack
+
+
+Likeness: 0.76
+sample_exams/cmps112-2009q1-final.tt
+ 9. Of the ones listed here, the attribute most associated with
+    functional programming is:
+    (A) dynamic dispatch
+    (B) referential transparency
+    (C) static type checking
+    (D) unification
+
+Words from problem not in sneak peek:
+associated, attribute, referential, unification, listed, transparency
+
+Words from problem yes in sneak peek:
+a, c, b, d, checking, with, is, dynamic, functional, dispatch, programming,
+most, ones, static, here, of, 9, the, type
+
+
+Likeness: 0.714285714286
+sample_exams/cmps112-2009q1-final.tt
+ 4. An object-oriented language such as C++ does dynamic dispatching of
+    method calls by means of a:
+    (A) virtual function table
+    (B) template declaration
+    (C) heap-allocated closure
+    (D) friend function
+
+Words from problem not in sneak peek:
+calls, means, dispatching, template, such, allocated, method, friend
+
+Words from problem yes in sneak peek:
+function, closure, c, b, d, language, of, a, object, dynamic, virtual, an,
+oriented, as, does, 4, heap, declaration, table, by
+
+
+Likeness: 0.710526315789
+sample_exams/cmps112-2009q1-final.tt
+ 6. If guess is a predicate that searches a database to return one of
+    its elements, and verify checks to see if the thing found is good,
+    then we may define the predicate find, which returns a valid entry
+    from the database as:
+    (A) find(X) :- guess(X), verify(X).
+    (B) find(X) :- guess(X).
+        find(X) :- verify(X).
+    (C) find(X) :- verify(X), guess(X).
+    (D) guess(X) :- find(X), verify(X).
+
+Words from problem not in sneak peek:
+searches, guess, database, may, verify, checks, thing, valid, found, entry, find
+
+Words from problem yes in sneak peek:
+and, is, predicate, one, see, elements, its, if, from, to, returns, which, 6,
+define, then, we, good, return, that, a, c, b, d, of, as, x, the
+
+
+Likeness: 0.740740740741
+sample_exams/cmps112-2009q1-test1.tt
+ 6. Inheritance in C++.  Your answers should be as minimal as possible,
+    provided the question is answered.  You don't need to provide a main
+    function nor any constructors.
+
+     (a) Define a base class base with an abstract function
+         void print().  Define a class dstr which is derived form base
+         with a private string field and which overrides the base's
+         function print.  Define a class dint which does the same, but
+         with an int field.  Show only what goes in base.h and do not
+         define any inline functions.  If we have a variable base *p,
+         then p->print();  should print the string or integer field, as
+         appropriate.  [3pt]
+
+     (b) Show the implementation of both print functions as they would
+         appear in base.cc.  [3pt]
+
+.EQ
+delim $$
+.EN
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write `Z' if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [11pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   11 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+Words from problem not in sneak peek:
+show, cc, abstract, constructors, private, appropriate, dint, need, appear,
+would, implementation, answered, goes, print, minimal, provide, form, derived,
+3pt, possible, dstr, integer, nor, both, overrides, p, 11pt, inline
+
+Words from problem yes in sneak peek:
+and, en, have, a, be, int, is, delim, number, an, indicates, as, variable, are,
+want, in, total, eq, your, risk, provided, what, to, that, question, negative,
+same, should, 1, 0, only, does, which, 6, answer, letter, you, main, correct,
+define, function, then, we, multiple, string, do, missing, any, max, void, of,
+points, functions, answers, choice, wrong, base, if, but, they, not, with,
+class, 11, c, b, don, column, h, inheritance, worth, s, write, t, each, field,
+the, z, or, left
+
+
+Likeness: 0.777777777778
+sample_exams/cmps112-2009q1-test1.tt
+ 1. Which expression is not valid, given the following two declarations?
+       int *p; int i;
+    (A) i + i
+    (B) i + p
+    (C) p + i
+    (D) p + p
+
+Words from problem not in sneak peek:
+p, declarations, expression, valid
+
+Words from problem yes in sneak peek:
+a, given, b, d, i, is, c, two, 1, int, not, which, following, the
+
+
+Likeness: 0.75
+sample_exams/cmps112-2009q1-test1.tt
+ 2. C++ is primarily thought of as an example of what kind of language?
+    (A) functional
+    (B) imperative
+    (C) logic
+    (D) object oriented
+
+Words from problem not in sneak peek:
+thought, imperative, example, primarily, logic
+
+Words from problem yes in sneak peek:
+a, c, b, d, language, what, of, is, object, functional, an, oriented, as, 2,
+kind
+
+
+Likeness: 0.777777777778
+sample_exams/cmps112-2009q1-test1.tt
+ 7. In C++, a protected field of a class foo is visible only to
+    functions which are members:
+    (A) of foo, and any class that inherits from foo.
+    (B) of foo, any class that inherits from foo, and any class that foo
+        names as a friend
+    (C) of foo, any class that inherits from foo, and any class that
+        names foo as a friend
+    (D) only of foo.
+
+Words from problem not in sneak peek:
+inherits, visible, protected, names, members, friend
+
+Words from problem yes in sneak peek:
+and, a, functions, b, from, which, to, c, is, that, only, class, field, as, of,
+are, 7, in, foo, any, d
+
+
+Likeness: 0.714285714286
+sample_exams/cmps112-2009q1-test1.tt
+ 9. Which of these is a C++ keyword that might cause a pointer to become
+    dangling?
+    (A) delete
+    (B) free
+    (C) malloc
+    (D) new
+
+Words from problem not in sneak peek:
+malloc, keyword, dangling, free, become, delete
+
+Words from problem yes in sneak peek:
+a, c, b, d, that, these, of, is, to, which, 9, new, cause, pointer, might
+
+
+Likeness: 0.731707317073
+sample_exams/cmps112-2009q1-test2.tt
+ 6. Perl:  Define a function fold, which uses a loop to join all
+    elements of an array into a single value.  Its first argument is a
+    reference to a binary function, it second argument is a unit value,
+    and its third argument is a reference to an array.  [2pt]
+
+    print fold sub{$_[0]+$_[1]}, 0, [1, 2, 3, 4, 5, 6];
+    21
+
+Words from problem not in sneak peek:
+binary, join, 21, reference, third, single, uses, _, loop, print, unit
+
+Words from problem yes in sneak peek:
+and, all, is, argument, an, fold, second, array, its, sub, to, perl, 1, 0, 3, 2,
+5, 4, which, 6, into, define, function, elements, 2pt, it, a, of, value, first
+
+
+Likeness: 0.738095238095
+sample_exams/cmps112-2009q1-test2.tt
+ 7. Scheme:  Define a function split that takes a single list argument
+    and returns a list of two elements, with the car of the result
+    containing the odd numberd elements (counting from 1) cdr the even
+    numbered elements.  The elements remain in the same relative order.
+    [3pt]
+
+    > (split '(1 2 3 4 5 6 7 8 9))
+    ((1 3 5 7 9) (2 4 6 8))
+
+Words from problem not in sneak peek:
+numbered, numberd, takes, 3pt, containing, relative, single, result, remain,
+counting, split
+
+Words from problem yes in sneak peek:
+and, argument, cdr, in, odd, even, from, two, same, 1, returns, 2, 5, 4, 7, 6,
+9, 8, scheme, define, function, elements, that, 3, with, a, of, list, car, the,
+order
+
+
+Likeness: 0.777777777778
+sample_exams/cmps112-2009q1-test2.tt
+ 2. What variable in a command in a Makefile has as its value the target
+    of the recipe?
+    (A) $*
+    (B) $<
+    (C) $?
+    (D) $@
+
+Words from problem not in sneak peek:
+recipe, command, makefile, target
+
+Words from problem yes in sneak peek:
+a, what, b, d, of, c, value, as, 2, in, variable, the, has, its
+
+
+Likeness: 0.714285714286
+sample_exams/cmps112-2009q1-test2.tt
+ 7. What declares a variable m of type map whose keys are strings and
+    whose values are ints?
+    (A) m: (string, int) map;
+    (B) map <string, int> m;
+    (C) map [int, string] m;
+    (D) map m <string, int>;
+
+Words from problem not in sneak peek:
+whose, keys, values, declares, ints, strings
+
+Words from problem yes in sneak peek:
+a, map, what, b, and, int, of, m, c, are, 7, variable, type, string, d
+
+
+Likeness: 0.733333333333
+sample_exams/cmps112-2011q2-final.tt
+ 3. What are the four general things that a function may do when
+    called?  [2pt]
+
+Words from problem not in sneak peek:
+may, things, four, general
+
+Words from problem yes in sneak peek:
+a, function, what, 2pt, do, that, when, 3, are, the, called
+
+
+Likeness: 0.71875
+sample_exams/cmps112-2011q2-final.tt
+ 4. Smalltalk:  Define a class List in which supports the class
+    messages new and cons:with:;  and the instance messages car, cdr,
+    and setcar:setcdr:.  Note that cons:with:  has to call setcar:
+    setcdr:  to initialize the instance just created.  [4pt]
+
+    st> a := List cons: 3 with: (List cons: 4 with: List new).
+    a List
+    st> a car.
+    3
+    st> a cdr.
+    a List
+    st> a cdr car.
+    4
+    st> a cdr cdr.
+    nil
+
+Words from problem not in sneak peek:
+created, setcar, messages, note, instance, setcdr, call, initialize, supports
+
+Words from problem yes in sneak peek:
+and, cons, just, cdr, in, smalltalk, to, 3, 4pt, 4, which, new, has, define,
+nil, that, with, class, a, car, list, st, the
+
+
+Likeness: 0.716666666667
+sample_exams/cmps112-2011q2-final.tt
+ 9. Ocaml:  The Collatz conjecture states that for any positive
+    integer $n$, if it is replaced by $n / 2$ when even and $3 n + 1$
+    when odd, eventually it converges to the integer $1$.  Write a
+    function which accepts any integer and returns the number of steps
+    necessary to reach the value of $1$.  Your solution must be tail-
+    recursive.  Do not handle a case where $n < 1$ or is larger than
+    the maximum integer.  [2pt]
+
+    # collatz 1;;
+    - : int = 0
+    # collatz 2;;
+    - : int = 1
+    # collatz 3;;
+    - : int = 7
+    # collatz 10;;
+    - : int = 6
+
+Words from problem not in sneak peek:
+case, eventually, conjecture, accepts, handle, recursive, positive, collatz,
+larger, reach, replaced, converges, states, necessary, steps, integer, must
+
+Words from problem yes in sneak peek:
+and, do, int, is, it, maximum, n, odd, any, if, even, 1, by, ocaml, for, 0,
+when, returns, your, write, to, 3, 2, which, 6, 9, function, be, 2pt, that,
+number, not, than, a, 10, tail, of, solution, value, 7, the, where, or
+
+
+Likeness: 0.756097560976
+sample_exams/cmps112-2011q2-final.tt
+14. Ocaml:  Define the function zipwith whose arguments are a function
+    of two curried arguments, and two lists.  The lists must have
+    element types acceptable to the function, and the result is a
+    single list computed by applying the function to pair elements of
+    the lists.  Do not compute the lengths of the lists.  If the lists
+    are of different lengths, raise (Invalid_argument "zipwith").
+    [3pt]
+
+    # zipwith;;
+    - : ('a -> 'b -> 'c) -> 'a list -> 'b list -> 'c list = <fun>
+    # zipwith (+);;
+    - : int list -> int list -> int list = <fun>
+    # zipwith (+) [1;3;5] [2;4;6];;
+    - : int list = [3; 7; 11]
+    # zipwith (+) [1;3;5] [2];;
+    Exception: Invalid_argument "zipwith".
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write Z if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [11pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   11 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+Words from problem not in sneak peek:
+whose, different, compute, computed, 14, lengths, invalid_argument, acceptable,
+3pt, exception, lists, single, 11pt, result, applying, pair, curried, must,
+zipwith, raise
+
+Words from problem yes in sneak peek:
+and, have, int, is, number, two, indicates, are, want, total, your, if, write,
+0, missing, question, negative, 1, to, 3, 2, 5, 4, 7, 6, answer, you, correct,
+arguments, function, do, elements, multiple, risk, that, max, answers, choice,
+define, wrong, a, letter, element, not, by, types, 11, c, b, don, column, of,
+list, ocaml, worth, points, t, each, fun, the, z, left
+
+
+Likeness: 0.740740740741
+sample_exams/cmps112-2011q2-final.tt
+ 1. In Smalltalk, the expression 3+4 means:
+    (A) The message + is sent to the number 3, the result of which is
+        a function that accepts the message 4.
+    (B) The message +4 is sent to the number 3.
+    (C) The message 3+ is sent to the number 4.
+    (D) The messages 3 and 4 are sent to the operator +.
+
+Words from problem not in sneak peek:
+means, messages, accepts, result, operator, expression, sent
+
+Words from problem yes in sneak peek:
+and, function, c, b, d, that, of, is, number, 1, to, 3, a, 4, which, in,
+message, the, smalltalk, are
+
+
+Likeness: 0.710526315789
+sample_exams/cmps112-2011q2-final.tt
+ 4. Some early languages, like PL/I, allowed non-local gotos, i.e.,
+    the ability to use a goto to transfer control to a different
+    function.  A structured way of doing this in Java is with:
+    (A) break
+    (B) continue
+    (C) throw
+    (D) try
+
+Words from problem not in sneak peek:
+try, non, goto, doing, transfer, different, early, gotos, allowed, local,
+ability
+
+Words from problem yes in sneak peek:
+control, is, some, in, use, java, structured, languages, to, 4, way, pl,
+function, break, with, throw, like, a, c, b, e, d, i, of, this, continue, the
+
+
+Likeness: 0.75
+sample_exams/cmps112-2011q2-final.tt
+ 5. Unification is an important algorithm in determining the flow of
+    control in:
+    (A) Ocaml
+    (B) Prolog
+    (C) Scheme
+    (D) Smalltalk
+
+Words from problem not in sneak peek:
+unification, determining, important, flow, algorithm
+
+Words from problem yes in sneak peek:
+control, a, c, b, d, of, is, ocaml, an, 5, in, the, scheme, smalltalk, prolog
+
+
+Likeness: 0.789473684211
+sample_exams/cmps112-2011q2-final.tt
+ 8. A Perl pattern that matches one or more white space characters is:
+    (A) \d+
+    (B) \s+
+    (C) \t+
+    (D) \w+
+
+Words from problem not in sneak peek:
+matches, pattern, white, characters
+
+Words from problem yes in sneak peek:
+a, c, b, d, that, is, space, perl, s, t, w, 8, one, or, more
+
+
+Likeness: 0.75
+sample_exams/cmps112-2011q2-final.tt
+ 3. If %h is a hash in Perl, and $k is its key, the value is obtained
+    by the expression:
+    (A) $h{$k}
+    (B) %h{$k}
+    (C) &h{$k}
+    (D) @h{$k}
+
+Words from problem not in sneak peek:
+obtained, expression, k, hash, key
+
+Words from problem yes in sneak peek:
+a, and, c, b, d, h, is, value, perl, 3, in, the, its, by, if
+
+
+Likeness: 0.777777777778
+sample_exams/cmps112-2011q2-final.tt
+ 6. Ocaml does *not* have:
+    (A) applicative order evaluation
+    (B) operator overloading
+    (C) parametric polymorphism
+    (D) type inference
+
+Words from problem not in sneak peek:
+operator, applicative, evaluation, inference
+
+Words from problem yes in sneak peek:
+a, polymorphism, c, b, d, parametric, ocaml, overloading, does, have, 6, not,
+type, order
+
+
+Likeness: 0.705882352941
+sample_exams/cmps112-2011q2-final.tt
+ 7. In Perl, the name of the script being run is:
+    (A) $!
+    (B) $0
+    (C) $ARGV[0]
+    (D) $ENV{SCRIPT}
+
+Words from problem not in sneak peek:
+being, run, env, argv, script
+
+Words from problem yes in sneak peek:
+a, c, b, name, of, is, perl, 0, 7, in, the, d
+
+
+Likeness: 0.722222222222
+sample_exams/cmps112-2011q2-final.tt
+ 8. What kind of function is
+       let f x y = x + y
+    (A) curried
+    (B) thunked
+    (C) tupled
+    (D) unified
+
+Words from problem not in sneak peek:
+thunked, unified, tupled, y, curried
+
+Words from problem yes in sneak peek:
+function, a, what, b, d, f, of, is, c, let, 8, x, kind
+
+
+Likeness: 0.790697674419
+sample_exams/cmps112-2011q2-test1.tt
+ 7. Define a Scheme function map2 whose arguments are a binary
+    function and two lists.  It returns a list whose length is the
+    same as the shorter list consisting of elements by using the
+    function to combine corresponding elements of the list.  [3pt]
+
+    > (map2 * '(1 2 3) '(4 5 6))
+    (4 10 18)
+    > (map2 = '(1 2 3) '(1 4 3 8 9))
+    (#t #f #t)
+
+Words from problem not in sneak peek:
+whose, corresponding, binary, 3pt, lists, shorter, combine, map2, consisting
+
+Words from problem yes in sneak peek:
+and, returns, is, it, as, are, two, same, 1, to, 3, 2, 5, arguments, 7, 6, 9, 8,
+scheme, define, function, elements, using, by, 4, a, 10, f, of, list, length, t,
+18, the
+
+
+Likeness: 0.742857142857
+sample_exams/cmps112-2011q2-test1.tt
+ 8. Define a function foldl which takes a function, a unit value, and
+    a list, and returns a single value by applying the function
+    between each member of the list.  It must be tail recursive.
+    [2pt]
+
+    > (foldl + 0 '(4 10 18))
+    27
+    > (foldl cons '() '(1 2 3))
+    (((() . 1) . 2) . 3)
+
+Words from problem not in sneak peek:
+applying, recursive, member, single, foldl, between, must, unit, takes
+
+Words from problem yes in sneak peek:
+and, cons, it, 27, tail, 1, 0, 3, 2, 4, which, 8, returns, define, function, be,
+2pt, each, by, a, 10, 18, list, value, of, the
+
+
+Likeness: 0.714285714286
+sample_exams/cmps112-2011q2-test1.tt
+ 9. Define a function ip which computes the inner product of two lists
+    by using map2 and foldl.  Elements of the two lists are pair-wise
+    multiplied together, and the sum is taken.  [1pt]
+
+    > (ip '(1 2 3) '(4 5 6))
+    32
+
+Words from problem not in sneak peek:
+multiplied, wise, ip, lists, map2, computes, together, foldl, 32, pair
+
+Words from problem yes in sneak peek:
+and, is, are, sum, two, 1, 3, 2, 5, 4, which, 6, taken, inner, define, function,
+product, elements, 9, using, by, 1pt, a, of, the
+
+
+Likeness: 0.714285714286
+sample_exams/cmps112-2011q2-test1.tt
+ 1. Which of the following Java operators uses lazy evaluation?
+    (A) &&
+    (B) ++
+    (C) ==
+    (D) >>
+
+Words from problem not in sneak peek:
+evaluation, lazy, uses, operators
+
+Words from problem yes in sneak peek:
+a, c, b, java, d, of, 1, which, following, the
+
+
+Likeness: 0.733333333333
+sample_exams/cmps112-2011q2-test1.tt
+ 3. Which of the following is a higher-order function whose arguments
+    are a function and a list, and whose result is a list containing
+    the results of having applied the function to each element of the
+    list?
+    (A) filter
+    (B) foldl
+    (C) lambda
+    (D) map
+
+Words from problem not in sneak peek:
+applied, whose, containing, results, filter, result, foldl, having
+
+Words from problem yes in sneak peek:
+and, is, are, to, 3, arguments, which, higher, function, map, a, c, b, d, of,
+list, element, each, following, the, order, lambda
+
+
+Likeness: 0.764705882353
+sample_exams/cmps112-2011q2-test1.tt
+ 6. A variable declared inside a C or Java function has:
+    (A) Dynamic scope and dynamic lifetime.
+    (B) Dynamic scope and static lifetime.
+    (C) Static scope and dynamic lifetime.
+    (D) Static scope and static lifetime.
+
+Words from problem not in sneak peek:
+lifetime, declared, inside, scope
+
+Words from problem yes in sneak peek:
+a, function, and, b, java, d, dynamic, c, static, 6, variable, has, or
+
+
+Likeness: 0.742857142857
+sample_exams/cmps112-2011q2-test2.tt
+ 2. Scheme:  Define a function that will return the largest number in
+    a list of numbers.  Return 'undef if the list is empty.  The
+    function max will return the largest of its arguments.  You must
+    either use an inner tail-recursive function, or correctly use
+    apply.  [2pt]
+    (define (maxlist list)
+
+Words from problem not in sneak peek:
+undef, recursive, either, numbers, correctly, largest, maxlist, empty, must
+
+Words from problem yes in sneak peek:
+is, number, an, in, apply, its, if, use, arguments, tail, 2, inner, you, scheme,
+define, function, return, 2pt, that, max, a, of, list, will, the, or
+
+
+Likeness: 0.714285714286
+sample_exams/cmps112-2011q2-test2.tt
+ 5. A function which accepts a unit value, a function, and a list, and
+    which produces a single value in an eager language using $ O ( 1 )
+    $ stack space is:
+    (A) filter
+    (B) fold_left
+    (C) fold_right
+    (D) map
+
+Words from problem not in sneak peek:
+produces, accepts, fold_right, fold_left, filter, eager, single, unit
+
+Words from problem yes in sneak peek:
+and, function, c, b, d, language, space, is, list, o, an, 1, map, 5, a, which,
+in, using, value, stack
+
+
+Likeness: 0.714285714286
+sample_exams/cmps112-2012q1-final.tt
+ 5. Name the two general kinds of polymorphism, and for each of them,
+    name the two sub-kinds of polymporhism into which they may be
+    classified.  [1pt]
+
+Words from problem not in sneak peek:
+them, kinds, may, classified, general, polymporhism
+
+Words from problem yes in sneak peek:
+and, polymorphism, name, for, be, of, into, each, two, 5, they, which, the, 1pt,
+sub
+
+
+Likeness: 0.789473684211
+sample_exams/cmps112-2012q1-final.tt
+ 6. Scheme:  Define a function exclude which takes a count and a list
+    and returns a list with the first count items removed.  A negative
+    count is the same as 0.  If more items are excluded than exist in
+    the list, return the empty list.  [2pt]
+    > (exclude 2 '(1 2 3 4 5))
+    (3 4 5)
+    > (exclude -5 '(1 2 3 4 5))
+    (1 2 3 4 5)
+    > (exclude 10 '(1 2 3))
+    ()
+
+Words from problem not in sneak peek:
+count, takes, items, exist, excluded, exclude, removed, empty
+
+Words from problem yes in sneak peek:
+and, returns, is, as, are, in, if, negative, same, 1, 0, 3, 2, 5, 4, which, 6,
+scheme, define, function, return, 2pt, with, than, a, 10, list, the, more, first
+
+
+Likeness: 0.717948717949
+sample_exams/cmps112-2012q1-final.tt
+ 8. Prolog:  Define A function exclude/3 with the same semantics.  The
+    first two arguments are as before, and the third argument is the
+    output list.  Do not consider the result of backtracking from the
+    ? prompt.  [2pt]
+    | ?- exclude(2,[1,2,3,4,5],U).
+    U = [3,4,5] ?
+    yes
+    | ?- exclude(-5,[1,2,3,4,5],U).
+    U = [1,2,3,4,5] ?
+    yes
+    | ?- exclude(10,[1,2,3],U).
+    U = [] ?
+    yes
+
+Words from problem not in sneak peek:
+prompt, consider, third, semantics, u, result, output, exclude, yes,
+backtracking, before
+
+Words from problem yes in sneak peek:
+and, is, argument, as, are, from, arguments, two, same, 1, 3, 2, 5, 4, 8,
+define, function, do, 2pt, not, with, a, 10, of, list, the, first, prolog
+
+
+Likeness: 0.742857142857
+sample_exams/cmps112-2012q1-final.tt
+ 9. Smalltalk:  Define a class Find with a single class method key:
+    array: which accepts a key and an array and returns the first
+    position in the array equal to the key.  If not found, return V>=
+    nil.  [3pt]
+    st> Find key: 5 array: #(1 3 5 7 9).
+    3
+    st> Find key: 11 array: #(1 3 5 7 9).
+    nil
+
+Words from problem not in sneak peek:
+accepts, 3pt, equal, method, single, key, position, found, find
+
+Words from problem yes in sneak peek:
+and, an, in, array, smalltalk, if, 3, 1, to, returns, 5, 7, 9, define, a,
+return, which, nil, not, with, class, 11, st, v, the, first
+
+
+Likeness: 0.730769230769
+sample_exams/cmps112-2012q1-final.tt
+ 4. What kind of type equivalence is used to determine if two
+    different typedefs in C declare the same type?
+    (A) anonymous
+    (B) name
+    (C) structural
+    (D) value
+
+Words from problem not in sneak peek:
+different, determine, equivalence, typedefs, anonymous, declare, structural
+
+Words from problem yes in sneak peek:
+a, value, what, used, d, c, is, of, two, same, name, to, b, 4, in, the, type,
+kind, if
+
+
+Likeness: 0.758620689655
+sample_exams/cmps112-2012q1-final.tt
+ 7. Which of the following functions is a higher-order function whose
+    arguments are a function and a list, and whose result is a list
+    containing the result of applying the function to each of the
+    elements of the list?
+    (A) filter
+    (B) foldl
+    (C) foldr
+    (D) map
+
+Words from problem not in sneak peek:
+whose, containing, applying, foldr, filter, result, foldl
+
+Words from problem yes in sneak peek:
+and, is, are, functions, to, arguments, which, higher, function, map, elements,
+7, a, c, b, d, of, list, each, following, the, order
+
+
+Likeness: 0.75
+sample_exams/cmps112-2012q1-final.tt
+ 8. Which of the following functions can take a function, a unit, and
+    a list as arguments, and which applies the function between each
+    element of the list, along with the unit at one end, and which can
+    use up constant stack space?
+    (A) filter
+    (B) foldl
+    (C) foldr
+    (D) map
+
+Words from problem not in sneak peek:
+end, foldr, filter, take, foldl, between, constant, along, unit
+
+Words from problem yes in sneak peek:
+and, one, as, at, functions, space, arguments, which, 8, function, map, each,
+use, with, stack, a, c, b, d, of, list, up, element, can, applies, following,
+the
+
+
+Likeness: 0.714285714286
+sample_exams/cmps112-2012q1-final.tt
+ 9. How might one declare an array variable in Perl with lexical
+    scope?
+    (A) local @a;
+    (B) my @a;
+    (C) our @a;
+    (D) use @a;
+
+Words from problem not in sneak peek:
+my, lexical, scope, our, local, declare
+
+Words from problem yes in sneak peek:
+a, c, b, d, might, one, use, perl, how, in, variable, 9, array, an, with
+
+
+Likeness: 0.739130434783
+sample_exams/cmps112-2012q1-final.tt
+ 2. In Java, if two functions in different classes have the same
+    signature, but one of the classes is a subclass of another, this
+    is referred to as:
+    (A)
+
+Words from problem not in sneak peek:
+different, subclass, classes, another, signature, referred
+
+Words from problem yes in sneak peek:
+a, functions, java, this, of, is, two, same, one, to, as, 2, but, have, in, the,
+if
+
+
+Likeness: 0.714285714286
+sample_exams/cmps112-2012q1-final.tt
+ 4. In an object-oriented language like C++, a virtual function
+    (instance method) is called based on a:
+    (A) duck-typing response
+    (B) generic declaration
+    (C) heap-allocated closure
+    (D) virtual function table
+
+Words from problem not in sneak peek:
+based, generic, duck, response, instance, typing, allocated, method
+
+Words from problem yes in sneak peek:
+function, closure, declaration, b, d, language, on, is, object, c, virtual, an,
+oriented, a, 4, heap, in, table, called, like
+
+
+Likeness: 0.739130434783
+sample_exams/cmps112-2012q1-final.tt
+ 7. Unification is an important algorithm in performing automatic type
+    inference in which of these languages?
+    (A) Java
+    (B) Ocaml
+    (C) Prolog
+    (D) Scheme
+
+Words from problem not in sneak peek:
+inference, algorithm, performing, important, unification, automatic
+
+Words from problem yes in sneak peek:
+a, c, b, java, 7, these, of, is, ocaml, an, languages, prolog, which, in,
+scheme, type, d
+
+
+Likeness: 0.764705882353
+sample_exams/cmps112-2012q1-final.tt
+ 8. Given the declarations int *p;  and int i;, which C expression is
+    not valid?
+    (A) i + i
+    (B) i + p
+    (C) p + i
+    (D) p + p
+
+Words from problem not in sneak peek:
+p, declarations, expression, valid
+
+Words from problem yes in sneak peek:
+and, a, given, b, d, i, is, c, int, which, not, 8, the
+
+
+Likeness: 0.736842105263
+sample_exams/cmps112-2012q1-final.tt
+ 9. From what memory segment does the malloc(3) function allocate
+    memory?
+    (A) test
+    (B) data
+    (C) heap
+    (D) stack
+
+Words from problem not in sneak peek:
+test, malloc, segment, allocate, memory
+
+Words from problem yes in sneak peek:
+function, a, what, b, from, d, c, 3, does, heap, 9, the, data, stack
+
+
+Likeness: 0.766666666667
+sample_exams/cmps112-2012q1-test1.tt
+ 2. Define a function positives which uses grep (above) to accept a
+    list of numbers and return only the positive ones.  Use a lambda
+    expression, not a function name, as one of its arguments.  [1pt]
+
+Words from problem not in sneak peek:
+grep, positive, accept, uses, numbers, positives, expression
+
+Words from problem yes in sneak peek:
+and, one, as, its, use, to, only, 2, arguments, which, define, function, return,
+above, ones, not, 1pt, a, name, of, list, the, lambda
+
+
+Likeness: 0.785714285714
+sample_exams/cmps112-2012q1-test1.tt
+ 5. Name the two kinds of universal polymorphism and give an example
+    of each.  [2pt]
+
+Words from problem not in sneak peek:
+kinds, example, give
+
+Words from problem yes in sneak peek:
+and, polymorphism, name, of, universal, two, an, 5, each, the, 2pt
+
+
+Likeness: 0.789473684211
+sample_exams/cmps112-2012q1-test1.tt
+10. Write a program in Perl which prints out all of the command line
+    arguments (but not the program name) on one line, each separated
+    from the next with one space, but does not print a space in the
+    front or at the end.  It finishes by printing a newline character.
+    [1pt]
+
+    #!/usr/bin/perl
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write Z if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [11pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   11 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+Words from problem not in sneak peek:
+bin, separated, prints, end, finishes, newline, character, next, print, 11pt,
+program, command, usr, front, printing, out
+
+Words from problem yes in sneak peek:
+all, number, one, indicates, at, want, in, total, your, to, if, 1, from, space,
+missing, question, negative, perl, write, 0, does, arguments, which, answer,
+you, worth, 10, a, multiple, risk, that, max, but, it, wrong, answers, letter,
+not, line, choice, with, by, 1pt, 11, on, c, b, don, name, column, of, correct,
+left, points, t, each, the, z, or, are
+
+
+Likeness: 0.75
+sample_exams/cmps112-2012q1-test1.tt
+ 1. Which of these languages evaluates expressions in a lazy manner by
+    default?
+    (A) Haskell
+    (B) Lisp
+    (C) Perl
+    (D) Scheme
+
+Words from problem not in sneak peek:
+default, evaluates, lazy, manner, expressions
+
+Words from problem yes in sneak peek:
+a, 1, c, b, d, these, of, perl, languages, lisp, haskell, which, in, scheme, by
+
+
+Likeness: 0.730769230769
+sample_exams/cmps112-2012q1-test1.tt
+ 8. A static link in a stack frame points at:
+    (A) the address of the call instruction that activated this
+        function.
+    (B) the stack frame of the calling function.
+    (C) the stack frame of the function in which this function is
+        nested.
+    (D) the top of the function call stack.
+
+Words from problem not in sneak peek:
+frame, instruction, activated, link, address, call, top
+
+Words from problem yes in sneak peek:
+function, a, c, b, d, that, this, of, is, nested, points, static, at, which, in,
+8, the, calling, stack
+
+
+Likeness: 0.714285714286
+sample_exams/cmps112-2012q1-test1.tt
+10. Given the C declaration char **p;, which expression is invalid?
+    (A) &(&p)
+    (B) &(*p)
+    (C) *(&p)
+    (D) *(*p)
+
+Words from problem not in sneak peek:
+char, p, expression, invalid
+
+Words from problem yes in sneak peek:
+a, 10, given, b, d, is, c, which, declaration, the
+
+
+Likeness: 0.785714285714
+sample_exams/cmps112-2012q1-test1.tt
+11. John Backus, 1953, IBM 704.
+    (A) ALGOL
+    (B) COBOL
+    (C) FORTRAN
+    (D) LISP
+
+
+Words from problem not in sneak peek:
+704, john, 1953
+
+Words from problem yes in sneak peek:
+11, a, c, b, ibm, lisp, fortran, cobol, algol, backus, d
+
+
+Likeness: 0.764705882353
+sample_exams/cmps112-2012q1-test2.tt
+ 1. Haskell:  Define the function map whose first argument is a unary
+    function, and second argument list.  The result is a list of the
+    function applied to each element of the argument list.  The
+    definition is a one-liner using a list comprehension.  [1pt]
+    Prelude> map (+2) [1,3,5,6]
+    [3,5,7,8]
+    Prelude> map (3-) [1,2,5,6]
+    [2,1,-2,-3]
+
+Words from problem not in sneak peek:
+applied, whose, definition, liner, unary, result, prelude, comprehension
+
+Words from problem yes in sneak peek:
+and, is, argument, one, second, haskell, 1, to, 3, 2, 5, 7, 6, 8, define,
+function, map, using, 1pt, a, of, list, element, each, the, first
+
+
+Likeness: 0.741935483871
+sample_exams/cmps112-2012q1-test2.tt
+ 4. If you have a function not (bool->bool) and a function even
+    (int->bool), which higher-order function would be useful in
+    combining them to make a function called odd?
+    (A) compose
+    (B) filter
+    (C) fold_left
+    (D) map
+
+Words from problem not in sneak peek:
+them, compose, useful, would, make, filter, fold_left, combining
+
+Words from problem yes in sneak peek:
+and, be, int, have, in, odd, if, even, to, bool, 4, which, you, higher,
+function, map, not, a, c, b, d, order, called
+
+
+Likeness: 0.772727272727
+sample_exams/cmps112-2012q1-test2.tt
+ 6. After the following open statement, what can be used to read one
+    line from the file?
+       open my $file, "<$filename"
+    (A) $line = '$file';
+    (B) $line = <$file>;
+    (C) $line = "$file";
+    (D) $line = `$file`;
+
+Words from problem not in sneak peek:
+read, my, open, file, filename
+
+Words from problem yes in sneak peek:
+a, be, what, used, from, d, after, c, one, to, b, can, statement, 6, following,
+line, the
+
+
+Likeness: 0.714285714286
+sample_exams/cmps112-2012q1-test2.tt
+ 7. In a lazy language, unevaluated arguments are passed into
+    functions by means of a:
+    (A) closure
+    (B) curry
+    (C) thunk
+    (D) tuple
+
+Words from problem not in sneak peek:
+lazy, tuple, means, passed, unevaluated, curry
+
+Words from problem yes in sneak peek:
+a, closure, c, b, d, language, of, into, functions, thunk, arguments, 7, in, by,
+are
+
+
+Likeness: 0.758620689655
+sample_exams/cmps112-2014q4-final.tt
+4. Scheme.  Write a function take in Scheme which will make a copy of
+   the first $n$ elements of a list.  If there are fewer than $n$
+   elements in the list, it returns the complete list.  If $n <= 0$ it
+   returns the empty list.  [2pt]
+
+   (define (take n list)
+
+Words from problem not in sneak peek:
+complete, make, there, fewer, take, copy, empty
+
+Words from problem yes in sneak peek:
+it, are, in, if, write, 0, returns, 4, which, scheme, define, function,
+elements, 2pt, than, a, of, list, n, will, the, first
+
+
+Likeness: 0.735294117647
+sample_exams/cmps112-2014q4-final.tt
+11. Prolog.  Given facts like the ones presented at the left, define
+   the rules father and mother where the first argument is the parent
+   and the second argument is the child.  [2pt]
+
+   parents(henry_vii,elizabeth_of_york,henry_viii).
+   parents(henry_viii,catherine_of_aragon,mary_i).
+   parents(henry_viii,anne_boleyn,elizabeth_i).
+   parents(henry_viii,jane_seymour,edward_vi).
+   | ?- father(X,henry_viii).
+   X = henry_vii
+   | ?- father(henry_viii,X).
+   X = mary_i
+   X = elizabeth_i
+   X = edward_vi
+
+Words from problem not in sneak peek:
+edward_vi, mary_i, henry_viii, elizabeth_of_york, elizabeth_i, anne_boleyn,
+jane_seymour, catherine_of_aragon, henry_vii
+
+Words from problem yes in sneak peek:
+and, is, argument, second, at, facts, given, father, parents, define, 2pt,
+parent, rules, first, ones, child, 11, like, presented, mother, x, the, left,
+where, prolog
+
+
+Likeness: 0.710526315789
+sample_exams/cmps112-2014q4-final.tt
+ 5. If guess is a predicate that searches a database to return one of
+    its elements, and verify checks to see if the thing found is good,
+    then we may define the predicate find, which returns a valid entry
+    from the database as:
+    (A) find(X) :- guess(X), verify(X).
+    (B) find(X) :- guess(X).
+        find(X) :- verify(X).
+    (C) find(X) :- verify(X), guess(X).
+    (D) guess(X) :- find(X), verify(X).
+
+Words from problem not in sneak peek:
+searches, guess, database, may, verify, checks, thing, valid, found, entry, find
+
+Words from problem yes in sneak peek:
+and, is, predicate, one, see, elements, its, if, from, to, returns, 5, which,
+define, then, we, good, return, that, a, c, b, d, of, as, x, the
+
+
+Likeness: 0.791666666667
+sample_exams/cmps112-2014q4-final.tt
+ 7. In Smalltalk, the expression 3+4 means:
+    (A) The message +4 is sent to the object 3.
+    (B) The message 3 is sent to the function +, the result of which
+        is a function to which the message 4 is sent.
+    (C) The same as (+)3 4.
+    (D) The tuple message (3,4) is sent to the object +.
+
+Words from problem not in sneak peek:
+means, expression, result, sent, tuple
+
+Words from problem yes in sneak peek:
+function, a, c, b, 7, of, is, object, 3, same, to, as, 4, which, in, message,
+the, smalltalk, d
+
+
+Likeness: 0.791666666667
+sample_exams/cmps112-2014q4-final.tt
+ 9. Unification is a part of the static type checking algorithm used
+    by compilers of?
+    (A) C and C++
+    (B) Java and Smalltalk
+    (C) ML and Ocaml
+    (D) Perl and Python
+
+Words from problem not in sneak peek:
+python, part, unification, algorithm, compilers
+
+Words from problem yes in sneak peek:
+and, a, c, used, java, d, checking, of, is, ocaml, perl, b, static, ml, 9, the,
+type, by, smalltalk
+
+
+Likeness: 0.724137931034
+sample_exams/cmps112-2014q4-final.tt
+ 6. A static (access) link is:
+    (A) a pointer to the instruction which called the current
+        function.
+    (B) a pointer to the next free byte of storage on the heap.
+    (C) a pointer to the stack frame in which the current function is
+        nested.
+    (D) a pointer to the stack frame of the caller of the current
+        function.
+
+Words from problem not in sneak peek:
+frame, instruction, storage, free, next, access, link, byte
+
+Words from problem yes in sneak peek:
+function, 6, c, b, heap, on, of, is, caller, nested, current, to, called,
+static, a, which, in, the, pointer, stack, d
+
+
+Likeness: 0.75
+sample_exams/cmps112-2014q4-test1.tt
+4. Using a loop, not recursion, write a function whose single argument
+   is a number and which returns the factorial of that number.  Return
+   1 for any number less-equal 0.  Do not consider what happens when
+   the result is very large.
+
+    (a) In Perl, write a sub.  [1pt]
+
+    (b) In Smalltalk, extend the class Number with the unary selector
+        fac.  [2pt]
+
+Words from problem not in sneak peek:
+happens, whose, consider, factorial, large, equal, selector, unary, very,
+single, result, loop
+
+Words from problem yes in sneak peek:
+and, less, is, argument, in, any, smalltalk, 1, what, sub, for, recursion, when,
+perl, write, 0, returns, 4, which, function, do, return, 2pt, extend, that,
+number, not, using, with, class, 1pt, a, b, of, fac, the
+
+
+Likeness: 0.75
+sample_exams/cmps112-2014q4-test1.tt
+5. Name two kinds if universal polymorphism and give an extremely
+   brief example of each in Java or C++.  [2pt]
+
+Words from problem not in sneak peek:
+extremely, example, kinds, brief, give
+
+Words from problem yes in sneak peek:
+and, polymorphism, c, java, name, of, universal, each, two, an, 5, in, if, or,
+2pt
+
+
+Likeness: 0.761904761905
+sample_exams/cmps112-2014q4-test1.tt
+6. Name two kinds if ad hoc polymorphism and give an extremely brief
+   example of each in Java or C++.  [2pt]
+
+Words from problem not in sneak peek:
+extremely, example, kinds, brief, give
+
+Words from problem yes in sneak peek:
+and, polymorphism, c, java, ad, of, 6, each, two, name, 2pt, if, in, an, or, hoc
+
+
+Likeness: 0.733333333333
+sample_exams/cmps112-2014q4-test1.tt
+ 2. The Perl variable equivalent to strerror(errno) is:
+    (A) $!
+    (B) $0
+    (C) $?
+    (D) $_
+
+Words from problem not in sneak peek:
+errno, equivalent, strerror, _
+
+Words from problem yes in sneak peek:
+a, c, b, d, to, is, perl, 0, 2, variable, the
+
+
+Likeness: 0.782608695652
+sample_exams/cmps112-2014q4-test1.tt
+ 7. In Perl, to apply a block to every element of an array, what
+    function is used?
+    (A) grep
+    (B) join
+    (C) map
+    (D) split
+
+Words from problem not in sneak peek:
+grep, block, every, split, join
+
+Words from problem yes in sneak peek:
+function, map, what, used, d, of, is, c, an, to, b, a, 7, in, apply, array,
+perl, element
+
+
+Likeness: 0.757575757576
+sample_exams/cmps112-2014q4-test1.tt
+11. What does the static link in a stack frame point at?
+    (A) The call instruction that activated this function.
+    (B) The heap allocated closure in which escaping variables are
+        stored.
+    (C) The stack frame of the function in which this function is
+        nested.
+    (D) The stack frame of the function that called this function.
+
+Words from problem not in sneak peek:
+escaping, frame, instruction, activated, stored, call, link, allocated
+
+Words from problem yes in sneak peek:
+point, variables, nested, static, at, in, 11, what, does, which, is, function,
+a, that, heap, stack, closure, c, b, d, this, of, the, called, are
+
+
+Likeness: 0.764705882353
+sample_exams/cmps112-2014q4-test2.tt
+3. Smalltalk.  Extend class Object with the message fibonacci:, which
+   returns an array filled with the first $n$ Fibonacci numbers.
+   [3pt]
+                           |
+   Expected output.        | Your answer.
+   st> a := Object new.    | Object extend [
+   an Object               |    fibonacci: n [
+   st> a fibonacci: 10.    |
+   (0 1 1 2 3 5 8 13 21 34 |
+   )                       |
+                           |
+                           |
+                           |
+                           |
+
+Words from problem not in sneak peek:
+21, 3pt, 34, numbers, expected, output, filled, fibonacci
+
+Words from problem yes in sneak peek:
+an, array, n, your, smalltalk, 3, 1, 0, returns, 2, 5, which, answer, 8, extend,
+object, new, with, class, a, 10, 13, message, st, the, first
+
+
+Likeness: 0.702702702703
+sample_exams/cmps112-2014q4-test2.tt
+4. Scheme.  Define the function merge which takes two lists of numbers
+   sorted in ascending order and returns a list of these numbers
+   sorted into ascending order.  [3pt]
+                          |
+   Expected output.       | Your answer.
+   >(merge '(1 3 5) '(2 4 | (define (merge list1 list2)
+   6 8))                  |
+   (1 2 3 4 5 6 8)        |
+   >(merge '(0 1 1 2 3)   |
+   '(1 4 9))              |
+   (0 1 1 1 2 3 4 9)      |
+                          |
+                          |
+
+Words from problem not in sneak peek:
+takes, list1, 3pt, lists, list2, merge, numbers, output, expected, sorted,
+ascending
+
+Words from problem yes in sneak peek:
+and, into, in, your, two, 1, 0, 3, 2, 5, 4, which, 6, answer, 8, returns,
+define, function, 9, a, scheme, these, of, list, the, order
+
+
+Likeness: 0.727272727273
+sample_exams/cmps112-2014q4-test2.tt
+6. Scheme.  Define the higher-order function foldl whose arguments are
+   a binary function, an identity element, and a list in that order.
+   It folds them from left to right into a single value.  [2pt]
+
+   (define (foldl fn unit list)
+
+   )
+
+Words from problem not in sneak peek:
+whose, them, binary, folds, single, fn, foldl, identity, unit
+
+Words from problem yes in sneak peek:
+and, right, into, it, an, are, in, from, to, arguments, 6, scheme, define,
+function, 2pt, that, a, list, value, element, the, higher, order, left
+
+
+Likeness: 0.769230769231
+sample_exams/cmps112-2014q4-test2.tt
+ 4. What is the parenthesized equivalent of the Smalltalk expression a
+    b c: d?
+    (A) ((a b) c: d)
+    (B) (a (b c: d))
+    (C) (a b) (c: d)
+    (D) a ((b c:) d)
+
+Words from problem not in sneak peek:
+equivalent, expression, parenthesized
+
+Words from problem yes in sneak peek:
+a, what, b, d, of, is, c, 4, the, smalltalk
+
+
+Likeness: 0.7
+sample_exams/cmps112-2014q4-test2.tt
+ 8. Static type checking in C and C++ is done:
+    (A) by the preprocessor
+    (B) by the compiler
+    (C) by the linker
+    (D) at run time
+
+Words from problem not in sneak peek:
+run, linker, done, preprocessor, time, compiler
+
+Words from problem yes in sneak peek:
+and, a, c, b, d, checking, is, static, at, in, 8, the, type, by
+
+
+Likeness: 0.777777777778
+sample_exams/cmps112-2015q4-test1.tt
+1. What are the very general possibilities that a function might
+   exhibit when called?  [2pt]
+
+    (a)
+
+    (b)
+
+    (c)
+
+    (d)
+
+Words from problem not in sneak peek:
+possibilities, very, exhibit, general
+
+Words from problem yes in sneak peek:
+a, function, what, b, 2pt, that, when, c, 1, are, the, might, called, d
+
+
+Likeness: 0.716666666667
+sample_exams/cmps112-2015q4-test1.tt
+6. Define the function reverse which produces a list in reverse order
+   to that of its argument.  The function must use $ O ( 1 ) $ stack.
+   You may use a tail-recursive function, or make it very simple by a
+   call to fold_left.
+   Bonus points:  These two ``reverse'' questions are worth 3 points
+   each, not 2 points, if you correctly define them in terms of fold_
+   left instead of writing a recursive function.
+
+    (a) Scheme.  [2pt]  (3 points if you use fold_left correctly.)
+        > (reverse '(1 2 3 4 5))
+        (5 4 3 2 1)
+        > (reverse '())
+        ()
+
+    (b) Ocaml.  [2pt]  (3 points if you use fold_left correctly.)
+        # reverse;;
+        - : 'a list -> 'a list = <fun>
+        # reverse [1;2;3;4;5];;
+        - : int list = [5; 4; 3; 2; 1]
+        # reverse [];;
+        - : 'a list = []
+
+Words from problem not in sneak peek:
+them, terms, fold_, produces, simple, make, correctly, writing, bonus,
+fold_left, call, questions, very, instead, must, may, recursive
+
+Words from problem yes in sneak peek:
+int, argument, are, in, its, if, use, that, two, stack, 1, to, tail, 2, 5, 4,
+which, 6, you, scheme, worth, define, function, 2pt, 3, it, not, by, a, b,
+reverse, these, of, list, ocaml, o, order, points, each, fun, the, or, left
+
+
+Likeness: 0.786666666667
+sample_exams/cmps112-2015q4-test1.tt
+7. C or C++.  Code the function in C or C++ to reverse a list.  Do not
+   allocate or free any memory.  Do not cause memory leak or use
+   uninitialized memory.  Assume the nodes are properly initialized as
+   a valid linked list.  Use $ O ( 1 ) $ stack space.  [2pt]
+                             |
+   typedef struct node node; | node* reverse (node* head) {
+   struct node {             |
+      int value;             |
+      node* link;            |
+   };                        |
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write Z if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [12pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   12 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+Words from problem not in sneak peek:
+uninitialized, node, head, code, struct, assume, leak, typedef, free, valid,
+link, allocate, memory, initialized, properly, linked
+
+Words from problem yes in sneak peek:
+2pt, 0, o, int, 12pt, number, list, indicates, as, are, want, in, total, any,
+if, write, use, space, that, question, negative, stack, 1, to, 7, answer, you,
+cause, worth, function, do, multiple, risk, missing, max, answers, choice,
+wrong, b, letter, not, nodes, a, c, 12, don, reverse, column, of, your, value,
+correct, points, t, each, the, z, or, left
+
+
+Likeness: 0.777777777778
+sample_exams/cmps112-2015q4-test1.tt
+11. Which feature of imperative languages* is missing from Scheme?
+    (A) conditionals
+    (B) functions
+    (C) loops
+    (D) variables
+
+Words from problem not in sneak peek:
+loops, imperative, feature, conditionals
+
+Words from problem yes in sneak peek:
+11, a, functions, b, from, d, missing, of, is, c, languages, which, scheme,
+variables
+
+
+Likeness: 0.708333333333
+sample_exams/cmps112-2015q4-test2.tt
+2. Name two kinds of ad hoc polymorphism, and give a brief example of
+   each.  Do not use more than a few lines of code.  [2pt]
+
+    (a)
+
+    (b)
+
+Words from problem not in sneak peek:
+code, kinds, give, lines, brief, few, example
+
+Words from problem yes in sneak peek:
+and, do, use, b, ad, polymorphism, of, two, name, 2, 2pt, a, each, not, more,
+than, hoc
+
+
+Likeness: 0.794871794872
+sample_exams/cmps112-2015q4-test2.tt
+3. Scheme.  Define the function eval for arbitrarily nested arithmetic
+   expressions.  Use map and apply.  Assume the car of each list and
+   sublist is a function, and any operand that is not a number?  is a
+   subexpression.  [2pt]
+
+   > (map even '(1 2 3 4 5 6))
+   (#t #f #f #f #f #f)
+   > (apply + '(1 2))
+   3
+   > (eval `(,+ (,* 3 4) (,/ (,- 2 3) 4)))
+   47/4
+
+Words from problem not in sneak peek:
+arbitrarily, assume, sublist, subexpression, eval, operand, expressions,
+arithmetic
+
+Words from problem yes in sneak peek:
+and, is, number, nested, apply, any, even, use, for, 47, 1, 3, 2, 5, 4, 6,
+scheme, define, function, map, 2pt, that, each, not, a, f, of, list, t, car, the
+
+
+Likeness: 0.725490196078
+sample_exams/cmps112-2015q4-test2.tt
+5. Ocaml.  Define the function ip (inner product) which is the sum of
+   pairwise products of two lists.  Use tail recursion.  Raise an
+   exception if the lists are of different lengths.  The formula is
+   given mathematically here.  [2pt]
+
+   .EQ
+   p = sum from { i = 0 } to { n - 1 } u sub i v sub i
+   .EN
+
+   # ip;;
+   - : float list -> float list -> float = <fun>
+   # ip [1.;2.;3.] [4.;5.;6.];;
+   - : float = 32.
+
+Words from problem not in sneak peek:
+different, raise, lengths, ip, float, exception, lists, mathematically, formula,
+p, u, 32, pairwise, products
+
+Words from problem yes in sneak peek:
+en, is, an, are, eq, if, use, from, sub, to, recursion, sum, two, 1, 0, tail, 2,
+5, 4, which, 6, inner, define, function, product, 2pt, 3, given, here, i, of,
+list, ocaml, n, v, fun, the
+
+
+Likeness: 0.736842105263
+sample_exams/cmps112-2015q4-test2.tt
+6. Ocaml.  Define the function zip which takes two lists as arguments
+   and returns a single list of pairwise tuples with the same data.
+   Raise an exception of the lengths of the lists are different.
+   [2pt]
+   # zip;;
+   - : 'a list -> 'b list -> ('a * 'b) list = <fun>
+   # zip [1;2;3] [4;5;5];;
+   - : (int * int) list = [(1, 4); (2, 5); (3, 5)]
+
+Words from problem not in sneak peek:
+different, takes, zip, lengths, exception, lists, single, tuples, pairwise,
+raise
+
+Words from problem yes in sneak peek:
+and, int, an, as, are, data, two, same, 1, 3, 2, 5, arguments, which, 6,
+returns, define, function, 2pt, with, 4, a, b, of, list, ocaml, fun, the
+
+
+Likeness: 0.761904761905
+sample_exams/cmps112-2015q4-test2.tt
+7. Smalltalk.  Define a class List.  It has instance variables car and
+   cdr, and functions of the same name which return those values.  It
+   has class methods new which returns nil and car:cdr:  which create
+   a new List containing the two operands in the appropriate fields.
+   It has instance methods car:cdr:  which update the car and cdr
+   fields, and instance methods car and cdr which return them.  [4pt]
+
+   st> a := List car:1 cdr: (List car:2 cdr: (List car:3 cdr: (List new))).
+   st> a car.
+   1
+   st> a cdr car.
+   2
+   st> a cdr cdr car.
+   3
+   st> a cdr cdr cdr.
+   nil
+   st> a car:6 cdr:8.
+   a List
+   st> a car. a cdr.
+   6
+   8
+
+Words from problem not in sneak peek:
+them, operands, fields, create, update, containing, instance, appropriate,
+values, those
+
+Words from problem yes in sneak peek:
+and, methods, variables, it, cdr, in, smalltalk, functions, two, same, 1, 3,
+4pt, 7, 6, new, returns, define, return, which, nil, 8, 2, class, a, has, name,
+car, list, st, of, the
+
+
+Likeness: 0.775280898876
+sample_exams/cmps112-2015q4-test2.tt
+8. Smalltalk.  Define classes Num and Mul that can be used as a basis
+   for expression trees.  Num has an instance value number, a class
+   method new:  which sets the number;  and instance methods set:
+   which updates the number, and value which returns the number.  Mul
+   has two instance values which point at left and right
+   subexpressions, a class method left:right:  which creates a new
+   instance with pointers to other Nums and Muls, and instance methods
+   left:right:  which updates the left and right children of the
+   expression tree, and value which evaluates the expression.  [4pt]
+
+   st> a:= Num new: 6.
+   a Num
+   st> b:= Num new: 8.
+   a Num
+   st> a value.
+   6
+   st> b value.
+   8
+   st> c:= Mul left:a right:b.
+   a Mul
+   st> c value.
+   48
+   st> b set: 99.
+   a Num
+   st> c value.
+   594
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write Z if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [12pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   12 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+Words from problem not in sneak peek:
+subexpressions, 594, 48, basis, pointers, nums, sets, trees, children, 99,
+instance, num, values, updates, muls, mul, classes, expression, method,
+evaluates
+
+Words from problem yes in sneak peek:
+and, can, set, methods, point, 12pt, number, two, indicates, as, right, are,
+want, left, total, your, smalltalk, if, 1, for, 0, that, question, negative,
+write, to, returns, 4pt, which, 6, answer, new, you, has, correct, define, be,
+used, multiple, risk, missing, max, answers, choice, wrong, b, letter, 8, an,
+with, class, a, c, 12, don, column, of, tree, value, worth, creates, points, t,
+st, each, the, z, other, at
+
+
+Likeness: 0.7
+sample_exams/cmps112-2015q4-test2.tt
+10. Which function can be implemented using a constant amount of stack
+    space?
+    (A) filter
+    (B) fold_left
+    (C) fold_right
+    (D) map
+
+Words from problem not in sneak peek:
+constant, fold_right, amount, filter, fold_left, implemented
+
+Words from problem yes in sneak peek:
+function, 10, c, b, d, be, of, space, map, a, which, using, stack, can
+
+
+Likeness: 0.780487804878
+sample_exams/cmps112-2016q4-final.tt
+5. Ocaml.  Define the function max which finds the largest element in
+   a list, given a comparison operator and a list.  Use failwith if
+   the list is empty.  The solution must be tail-recursive.  Do not
+   use a higher-order function.  [4pt]
+   # max;;
+   - : ('a -> 'a -> bool) -> 'a list -> 'a = <fun>
+   # max (>) [1;2;3;4];;
+   - : int = 4
+   # max (<) [1;2;3;4];;
+   - : int = 1
+   # max (>) [];;
+   Exception: Failure "max".
+
+Words from problem not in sneak peek:
+comparison, exception, recursive, failure, largest, operator, finds, empty, must
+
+Words from problem yes in sneak peek:
+and, be, int, is, ocaml, in, if, given, 3, 1, tail, 4pt, 5, 4, which, bool,
+define, function, do, max, use, not, 2, a, list, solution, element, fun, the,
+higher, failwith, order
+
+
+Likeness: 0.705882352941
+sample_exams/cmps112-2016q4-final.tt
+7. Ocaml:  Define a function unzip which takes a list of tuples and
+   returns a tuple of lists, the first list containing the first item
+   in each tuple, and the second list, the second item.  [2pt]
+   # let l1, l2 = unzip [(1, 'a'); (2, 'b'); (3, 'c')];;
+   val l1 : int list = [1; 2; 3]
+   val l2 : char list = ['a'; 'b'; 'c']
+
+Words from problem not in sneak peek:
+containing, unzip, takes, tuple, lists, char, item, tuples, l2, l1
+
+Words from problem yes in sneak peek:
+and, int, second, in, val, returns, 1, 3, 2, 7, which, define, function, 2pt,
+let, a, c, b, of, list, ocaml, each, the, first
+
+
+Likeness: 0.705882352941
+sample_exams/cmps112-2016q4-final.tt
+9. Name the two general types of polymorphism, and for each of them,
+   name the specific kinds that represents each of them.  [2pt]
+
+   +-------------------------------+-------------------------------+
+   |           general             |           specific            |
+   +-------------------------------+-------------------------------+
+   |                               |                               |
+   |                               +-------------------------------+
+   |                               |                               |
+   +-------------------------------+-------------------------------+
+   |                               |                               |
+   |                               +-------------------------------+
+   |                               |                               |
+   +-------------------------------+-------------------------------+
+
+Words from problem not in sneak peek:
+specific, represents, them, kinds, general
+
+Words from problem yes in sneak peek:
+and, polymorphism, name, for, that, of, two, each, 9, the, types, 2pt
+
+
+Likeness: 0.744186046512
+sample_exams/cmps112-2016q4-final.tt
+10. Scheme.  Write a function that takes two lists as arguments and
+   which returns a single list where each element is a list of
+   corresponding pairs.  If the lists are of different lengths,
+   trailing elements of the longer list are ignored.  [2pt]
+   > (pairthem '(1 2 3 4) '(a b c d e))
+   ((1 a) (2 b) (3 c) (4 d))
+   > (pairthem '(1 2 3 4 5) '(a b))
+   ((1 a) (2 b))
+
+Words from problem not in sneak peek:
+ignored, different, corresponding, takes, lengths, pairs, lists, pairthem,
+trailing, single, longer
+
+Words from problem yes in sneak peek:
+and, returns, is, as, are, if, 1, two, write, 3, 2, 5, 4, which, scheme,
+arguments, function, elements, 2pt, that, a, 10, c, b, e, d, of, list, element,
+each, the, where
+
+
+Likeness: 0.727272727273
+sample_exams/cmps112-2016q4-final.tt
+ 1. Language designed primarily to handle scalars, vectors, matrices,
+    and higher order arrays.
+    (A) APL
+    (B) COBOL
+    (C) FORTRAN
+    (D) PL/I
+
+Words from problem not in sneak peek:
+handle, scalars, vectors, arrays, primarily, matrices
+
+Words from problem yes in sneak peek:
+and, a, c, b, d, language, fortran, i, 1, to, cobol, designed, apl, order, pl,
+higher
+
+
+Likeness: 0.714285714286
+sample_exams/cmps112-2016q4-final.tt
+ 7. In a ``lazy'' language, unevaluated arguments are passed into
+    functions by means of a:
+    (A) closure
+    (B) curry
+    (C) thunk
+    (D) tuple
+
+Words from problem not in sneak peek:
+lazy, tuple, means, passed, unevaluated, curry
+
+Words from problem yes in sneak peek:
+a, closure, c, b, d, language, of, into, functions, thunk, arguments, 7, in, by,
+are
+
+
+Likeness: 0.785714285714
+sample_exams/cmps112-2016q4-final.tt
+11. Smalltalk determines if an object can respond to a message by the
+    method of:
+    (A) same as in Java
+    (B) duck-typing
+    (C) generic parameters
+    (D) multiple inheritance
+
+Words from problem not in sneak peek:
+determines, parameters, generic, duck, typing, method
+
+Words from problem yes in sneak peek:
+respond, an, as, in, message, smalltalk, if, java, inheritance, same, to, 11,
+multiple, object, by, a, c, b, d, of, can, the
+
+
+Likeness: 0.727272727273
+sample_exams/cmps112-2016q4-final.tt
+12. A C++ compiler does object-oriented dispatch via:
+    (A) duck typing
+    (B) heap allocated closure
+    (C) type inference
+    (D) virtual function table
+The Antikythera mechanism, built ca. 150-100 BCE, is the oldest known
+complex scientific calculator, and is sometimes called the first known
+analog computer, with operational instructions written in Greek.
+http://en.wikipedia.org/wiki/Antikythera_mechanism
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write Z if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [12pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   12 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+Words from problem not in sneak peek:
+wiki, 150, via, inference, ca, duck, allocated, oldest, analog, wikipedia,
+mechanism, operational, written, complex, typing, antikythera, compiler, known,
+org, 100, instructions, bce, sometimes, antikythera_mechanism
+
+Words from problem yes in sneak peek:
+and, en, letter, 12pt, calculator, number, dispatch, indicates, computer, are,
+want, in, table, 1, total, your, scientific, write, built, 0, left, that,
+question, negative, virtual, oriented, to, does, answer, you, if, type, correct,
+function, a, multiple, risk, missing, max, object, answers, choice, wrong, b,
+heap, with, is, closure, c, 12, don, d, column, of, http, worth, greek, points,
+t, each, the, z, called, first
+
+
+Likeness: 0.769230769231
+sample_exams/cmps112-2016q4-final.tt
+ 2. The classic paper ``Go To Statement Considered Harmful'', CACM,
+    1968, was written by:
+    (A) John Backus
+    (B) Edsger Dijkstra
+    (C) Grace Hopper
+    (D) Donald Knuth
+
+Words from problem not in sneak peek:
+1968, classic, written, paper, cacm, john
+
+Words from problem yes in sneak peek:
+a, edsger, c, b, d, considered, hopper, donald, grace, harmful, to, dijkstra, 2,
+statement, go, knuth, the, was, by, backus
+
+
+Likeness: 0.722222222222
+sample_exams/cmps112-2016q4-final.tt
+ 3. What Perl regex matches a sequence of letters, digits, and
+    underscores?
+    (A) \d+
+    (B) \n+
+    (C) \s+
+    (D) \w+
+
+Words from problem not in sneak peek:
+matches, underscores, letters, digits, sequence
+
+Words from problem yes in sneak peek:
+regex, a, what, b, and, 3, of, c, perl, s, w, n, d
+
+
+Likeness: 0.75
+sample_exams/cmps112-2016q4-final.tt
+ 6. Where is the variable a kept, given the following function
+    definition?
+    int f() { int a; return a; }
+    (A) function call stack
+    (B) heap
+    (C) initialized data segment
+    (D) uninitialized data segment
+
+Words from problem not in sneak peek:
+uninitialized, definition, kept, call, initialized, segment
+
+Words from problem yes in sneak peek:
+function, a, given, b, return, d, f, int, where, is, c, following, heap, 6,
+variable, the, data, stack
+
+
+Likeness: 0.761904761905
+sample_exams/cmps112-2016q4-final.tt
+11. Which expression causes a list of length zero to be passed into
+    the function f?
+    (A) (f '())
+    (B) (f ())
+    (C) (f null?)
+    (D) (f nullptr)
+
+Words from problem not in sneak peek:
+expression, zero, nullptr, causes, passed
+
+Words from problem yes in sneak peek:
+11, a, c, b, d, be, function, of, into, f, list, to, length, which, the, null
+
+
+Likeness: 0.777777777778
+sample_exams/cmps112-2016q4-midterm.tt
+4. Ocaml.  Define the function reverse to reverse an arbitrary list.
+   Use $ O ( n ) $ time and $ O ( 1 ) $ stack.  You may code tail
+   recursion explicitly, or express the function as a one-liner using
+   List.fold_left.  [2pt]
+   val reverse : 'a list -> 'a list
+   # reverse [1;2;3;4];;
+   - : int list = [4; 3; 2; 1]
+
+Words from problem not in sneak peek:
+code, may, express, liner, fold_left, explicitly, time, arbitrary
+
+Words from problem yes in sneak peek:
+and, int, an, as, use, val, recursion, 3, 1, to, tail, 2, 4, you, define,
+function, 2pt, using, one, stack, a, reverse, list, ocaml, o, n, the, or
+
+
+Likeness: 0.790697674419
+sample_exams/cmps112-2016q4-midterm.tt
+5. Scheme.  Draw a picture of the following Scheme expression.  For
+   each cons cell, draw a small box with two arrows coming out of it.
+   Each arrow should point at either another cell or an atom.  Write
+   the Greek letter phi (\phi) to indicate a null pointer.  [2pt]
+   ((a) (b c) ((d e)))
+
+Words from problem not in sneak peek:
+box, atom, arrows, indicate, either, another, coming, expression, out
+
+Words from problem yes in sneak peek:
+cons, point, phi, an, at, null, pointer, write, for, two, should, cell, to, 5,
+scheme, picture, draw, 2pt, it, small, letter, with, a, c, b, e, d, of, greek,
+arrow, each, following, the, or
+
+
+Likeness: 0.705882352941
+sample_exams/cmps112-2016q4-midterm.tt
+6. Ocaml.  Define length and sum for a list using a \beta-reduced
+   version of the definitions.  Fill in the space with an appropriate
+   fun and another argument.  [2pt]
+   # let foldl = List.fold_left;;
+   val foldl : ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+
+   # let length = foldl
+   _____________________________________________;;
+   val length : '_a list -> int
+
+   # let sum = foldl _____________________________________________;;
+   val sum : int list -> int
+
+Words from problem not in sneak peek:
+fold_left, foldl, _____________________________________________, beta,
+appropriate, version, another, definitions, reduced, _a
+
+Words from problem yes in sneak peek:
+and, int, argument, an, in, fill, for, space, sum, 6, define, 2pt, let, using,
+with, a, b, val, of, list, ocaml, length, fun, the
+
+
+Likeness: 0.740740740741
+sample_exams/cmps112-2016q4-midterm.tt
+ 1. ``Go To Statement Considered Harmful'', Communications of the ACM,
+    Vol. 11, No. 3, March 1968.
+    (A) John Backus
+    (B) Edsger Dijkstra
+    (C) Donald Knuth
+    (D) John McCarthy
+
+Words from problem not in sneak peek:
+march, vol, acm, mccarthy, communications, 1968, john
+
+Words from problem yes in sneak peek:
+a, harmful, c, b, d, no, considered, of, donald, 3, 1, to, dijkstra, statement,
+11, go, knuth, the, edsger, backus
+
+
+Likeness: 0.733333333333
+sample_exams/cmps112-2016q4-midterm.tt
+ 4. In the expression (lambda (x) (+ x y))
+    (A) x is bound and y is bound.
+    (B) x is bound and y is free.
+    (C) x is free and y is bound.
+    (D) x is free and y is free.
+
+Words from problem not in sneak peek:
+y, expression, bound, free
+
+Words from problem yes in sneak peek:
+a, and, c, b, d, is, 4, in, x, the, lambda
+
+
+Likeness: 0.789473684211
+sample_exams/cmps112-2016q4-midterm.tt
+ 5. The make language can be referred to as:
+    (A) a functional language.
+    (B) a ``little'' language.
+    (C) a logic language.
+    (D) an object-oriented language.
+
+Words from problem not in sneak peek:
+little, referred, make, logic
+
+Words from problem yes in sneak peek:
+a, be, c, b, d, language, object, functional, an, oriented, to, as, 5, can, the
+
+
+Likeness: 0.736842105263
+sample_exams/cmps112-2016q4-midterm.tt
+ 7. What feature of imperative languages is typically missing from
+    functional languages?
+    (A) conditionals
+    (B) functions
+    (C) loops
+    (D) recursion
+
+Words from problem not in sneak peek:
+loops, typically, imperative, feature, conditionals
+
+Words from problem yes in sneak peek:
+a, what, b, from, d, missing, recursion, is, c, functions, functional,
+languages, 7, of
+
+
+Likeness: 0.75
+sample_exams/cmps112-2016q4-midterm.tt
+11. Backus-Naur format describes what about a language?
+    (A) environment
+    (B) linkage
+    (C) semantics
+    (D) syntax
+
+Words from problem not in sneak peek:
+about, describes, linkage, semantics
+
+Words from problem yes in sneak peek:
+11, a, what, b, d, language, format, naur, c, syntax, environment, backus
+
+
+Likeness: 0.761904761905
+sample_exams/cmps112-2016q4-midterm.tt
+12. What language was designed by John Kemeny and Thomas Kurtz in
+    1965?
+    (A) BASIC
+    (B) COBOL
+    (C) FORTRAN
+    (D) LISP
+
+
+Words from problem not in sneak peek:
+1965, thomas, kemeny, kurtz, john
+
+Words from problem yes in sneak peek:
+and, a, what, 12, d, language, lisp, in, c, fortran, b, cobol, designed, basic,
+was, by
+
+
+Likeness: 0.733333333333
+sample_exams/cmps112-2017q2-midterm.tt
+1. What are the four very general things a function might do when
+   called?  [2pt]
+
+   +-------------------------------+-------------------------------+
+   |                               |                               |
+   |                               |                               |
+   +-------------------------------+-------------------------------+
+   |                               |                               |
+   |                               |                               |
+   +-------------------------------+-------------------------------+
+
+Words from problem not in sneak peek:
+four, very, general, things
+
+Words from problem yes in sneak peek:
+a, do, what, 2pt, function, when, 1, are, the, might, called
+
+
+Likeness: 0.722222222222
+sample_exams/cmps112-2017q2-midterm.tt
+4. Define the function zipwith that takes a function and two lists and
+   uses the function to join the lists.  If the lists are of different
+   lengths, ignore the excess elements of the longer list.  [2pt]
+   # zipwith;;
+   - : ('a -> 'b -> 'c) -> 'a list -> 'b list -> 'c list = <fun>
+   # zipwith (+) [1;2;3] [4;5;6;7];;
+   - : int list = [5; 7; 9]
+
+Words from problem not in sneak peek:
+different, join, takes, lengths, zipwith, lists, ignore, uses, excess, longer
+
+Words from problem yes in sneak peek:
+and, int, are, if, two, 1, to, 3, 2, 5, 4, 7, 6, 9, define, function, elements,
+2pt, that, a, c, b, of, list, fun, the
+
+
+Likeness: 0.789473684211
+sample_exams/cmps112-2017q2-midterm.tt
+6. Ocaml.  Rewrite the second filter statement above using a fun (i.
+   e., lambda) expression instead of ((>)0).  [1pt]
+
+Words from problem not in sneak peek:
+filter, instead, expression, rewrite
+
+Words from problem yes in sneak peek:
+a, e, statement, i, of, ocaml, 0, second, above, 6, fun, using, the, 1pt, lambda
+
+
+Likeness: 0.764705882353
+sample_exams/cmps112-2017q2-midterm.tt
+9. Scheme.  Define the function sum.  You may use the function foldl
+   or explicitly write a tail-recursive function.  [1pt]
+
+Words from problem not in sneak peek:
+may, explicitly, recursive, foldl
+
+Words from problem yes in sneak peek:
+function, a, use, sum, you, write, tail, 9, the, scheme, or, 1pt, define
+
+
+Likeness: 0.714285714286
+sample_exams/cmps112-2017q2-midterm.tt
+13. Scheme.  Define the function map2 which takes three arguments:  a
+   binary function and two lists.  It returns a list with the two
+   lists merged using the function.  If the lists are of different
+   lengths, excess elements of the long list are ignored.  [2pt]
+   > (map2 + '(1 2 3) '(4 5 6 7))
+   (5 7 9)
+   > (map2 * '(1 2 3 4 5) '(6 7 8))
+   (6 14 24)
+
+Words from problem not in sneak peek:
+ignored, different, takes, binary, lengths, three, long, map2, lists, excess,
+merged, 14
+
+Words from problem yes in sneak peek:
+and, it, are, if, 24, two, 1, 3, 2, 5, arguments, which, 6, 9, 8, returns,
+define, function, elements, 2pt, using, with, 4, a, 13, scheme, of, list, 7, the
+
+
+Likeness: 0.708333333333
+sample_exams/cmps112-2017q2-midterm.tt
+ 6. Which of the following functions can be written tail-recursively
+    without the need for reversing the list?
+    (A) filter
+    (B) fold_left
+    (C) fold_right
+    (D) map
+
+Words from problem not in sneak peek:
+reversing, recursively, fold_right, written, filter, fold_left, need
+
+Words from problem yes in sneak peek:
+a, map, functions, b, d, for, be, of, list, c, tail, without, can, which, 6,
+following, the
+
+
+Likeness: 0.714285714286
+sample_exams/cmps112-2017q2-midterm.tt
+ 9. The address of a static variable in C and C++ is determined when?
+    (A) compile time
+    (B) link time
+    (C) exec time
+    (D) when a function is called
+
+Words from problem not in sneak peek:
+exec, address, compile, determined, link, time
+
+Words from problem yes in sneak peek:
+a, and, c, b, d, function, of, is, when, 9, static, in, variable, the, called
+
+

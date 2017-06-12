@@ -1,0 +1,233 @@
+ 8.    (B) copying collector with semispaces
+
+
+Question 2.
+
+while ($line = <>) {
+   next unless $line =~ m/\S/;
+   if ($line =~ m/^(.*)=(.*)$/) {
+      ($key, $value) = ($1, $2);
+      $key =~ s/^\s*//; $key =~ s/\s*$//;
+      $value =~ s/^\s*//; $value =~ s/\s*$//;
+      $hash{$key} = $value;
+   }else {
+      print STDERR "invalid line: $line";
+   }
+}
+for $key (sort keys %hash) {
+   print "$key = $hash{$key}\n";
+}
+________________________________________________________________________
+
+Question 3.
+
+sub makexref ($) {
+   my ($filename) = @_;
+   open my $file, "<$filename" or die "$0: $filename: $!\n";
+   while (defined (my $line = <$file>)) {
+      while ($line =~ s/^\s*(\S+)//) {
+         push @{$hash{$1}}, $.;
+      }
+   }
+   map {print "$_ @{$hash{$_}}\n"} sort keys %hash;
+}
+
+
+Answers to test1, page 2
+
+________________________________________________________________________
+
+Question 4.
+
+box ();
+box (const box &);
+box &operator= (const box &);
+~box ();
+
+________________________________________________________________________
+
+Question 5.
+
+scope.perl 0            0=glo.//glo
+
+scope.perl s            s=stat. //yes
+
+scope.perl d            d=yes. //glo
+
+scope.perl g            f=yes. //yes
+
+________________________________________________________________________
+
+ 4.    (B) during a function call
+
+
+ 6.    (C) overloading
+
+
+Question 5.
+
+(define (evaltree tree) {
+   (if (symbol? tree) (hash-ref symtab tree)
+       ((hash-ref hash (car tree)) (evaltree (cadr tree))
+                                   (evaltree (caddr tree)))))
+
+________________________________________________________________________
+
+Question 8.
+
+while(<>) {
+   $lc++;
+   $cc += length $_;
+   $wc++ while s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+_________________________________________________________________
+
+Question 10.
+
+sc := SortedCollection new.
+sc add: 23; add: 498; add: 33; add: 87; add: 10.
+sc do: [:x | stdout << x << Character nl].
+
+_________________________________________________________________
+
+ 3.    (D) M but neither D nor U
+
+
+ 6.    (C) a heap allocated structure which points at a function and
+           contains the values of all non-local variables used by that
+           function.
+
+
+ 7.    (D) a structure which holds an unevauated expression used when
+           parameters are passed in normal form.
+
+
+Question 4.
+
+#!/usr/bin/perl
+while (<STDIN>) {
+   $lc++;
+   $cc += length;
+   $wc++ while s/\S+//;
+}
+printf "%7d %7d %7d\n", $lc, $wc, $cc
+
+_________________________________________________________________
+
+Question 6.
+
+#!/usr/bin/perl
+use strict; use warnings;
+my %hash;
+while (my $line = <>) {
+   while ($line =~ s/\w+//) { ++$hash{$&}; }
+}
+for my $word (sort keys %hash) {
+   print "$word $hash{$word}\n";
+}
+
+
+Answers to 2011q2-test1, page 2.
+
+_________________________________________________________________
+
+ 5.      (B) When the linker produces an executable image.
+
+
+11.      (B) COBOL
+
+
+
+Question 4. [2]
+
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+
+Answers to 2012a1-test3, page 2
+
+_________________________________________________________________
+
+ 5.    (D) zombie
+
+
+10.    (A) daemon
+
+
+ 6.    (B) When the program is linked.
+
+
+ 9.    (D) only M, but neither D nor U.
+
+
+Question 5. [3]
+
+$0 =~ s|.*/||;
+my $status = 0;
+my %hash;
+for my $fname (@ARGV ? @ARGV : "-") {
+   open my $file, "<$fname"
+        or print STDERR "$0: $fname: $!\n" and $status = 1 and next;
+   while (defined (my $line = <$file>)) {
+      #map {++$hash{$_}} split m/\W+/, $line;
+      map {++$hash{$_}} $line =~ m/(\w+)/g;
+   }
+}
+map {print "$_ $hash{$_}\n"} sort keys %hash;
+exit $status;
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+10.    (C) reachable
+
+
+ 3.    (D) reference counting
+
+
+ 8.    (A) $p->{$k}
+
+
+12.    (B) 1958, John McCarthy, MIT.
+
+
+
+10.    (A) \lambda-calculus
+
+
+11.    (D) throw
+
+
+Question 8. [2]
+
+gcd( X, Y, Z ) :- X > Y, T is X - Y, gcd( T, Y, Z ).
+gcd( X, Y, Z ) :- X < Y, T is Y - X, gcd( X, T, Z ).
+gcd( X, X, X ).
+
+
+Answers to cmps112-2016q4-final, page 3
+
+________________________________________________________________________
+
+ 2.    (B) Perl
+
+
+ 8.    (B) 1958, John McCarthy.
+
+
+ 7.    (D) throw
+
+
+ 9.    (B) race condition
+
+
+22. Refer to the solution PDF for this exam.
+
+
+ 2.    (C) Alonzo Church
+
+

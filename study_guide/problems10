@@ -1,0 +1,471 @@
+Likeness: 1.0
+sample_exams/cmps112-2009q1-final.tt
+ 2. What is 6?
+    (A) ((lambda (x)(+ x 3 ))3)
+    (B) (cdar '(7 6 5 4 3))
+    (C) (if (2 < 3) 4 6)
+    (D) (map * '(1 2 3))
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, map, what, b, cdar, d, is, c, 1, 3, 2, 5, 4, 7, 6, x, lambda, if
+
+
+Likeness: 1.0
+sample_exams/cmps112-2009q1-test2.tt
+ 4. In Ocaml, what is the type of the function (+)?
+    (A) int * int * int
+    (B) int * int -> int
+    (C) int -> int * int
+    (D) int -> int -> int
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+function, a, what, b, d, int, of, is, c, ocaml, 4, in, the, type
+
+
+Likeness: 1.0
+sample_exams/cmps112-2011q2-final.tt
+ 9. In Ocaml, the type of (+) is:
+    (A) int * int * int
+    (B) int * int -> int
+    (C) int -> int * int
+    (D) int -> int -> int
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, c, b, d, int, of, is, ocaml, in, 9, the, type
+
+
+Likeness: 1.0
+sample_exams/cmps112-2011q2-final.tt
+10. In Ocaml, what is the type of List.map?
+    (A) ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+    (B) ('a -> 'b) -> 'a list -> 'b list
+    (C) ('a -> bool) -> 'a list -> 'a list
+    (D) ('a -> bool) -> 'a list -> bool
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, 10, what, b, d, map, of, is, list, c, ocaml, bool, in, the, type
+
+
+Likeness: 1.0
+sample_exams/cmps112-2011q2-test2.tt
+ 8. What is the value of
+       (cdr (car (cons '(1 2 3) '(4 5 6))))
+    (A) ((1 2 3) 4 5 6)
+    (B) (1 2 3)
+    (C) (2 3)
+    (D) (cons '(1 2 3) '(4 5 6))
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, what, cons, d, of, is, c, value, 1, 3, 2, 5, 4, cdr, 6, 8, the, b, car
+
+
+Likeness: 1.0
+sample_exams/cmps112-2011q2-test2.tt
+ 9. The Ocaml function List.tl functions like cdr in Scheme.  Its type
+    is:
+    (A) 'a list -> 'a
+    (B) 'a list -> 'a list -> 'a list
+    (C) 'a list -> 'a list
+    (D) 'a list -> int
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+function, a, functions, b, like, int, is, list, c, ocaml, tl, cdr, in, 9, the,
+scheme, type, its, d
+
+
+Likeness: 1.0
+sample_exams/cmps112-2012q1-test1.tt
+ 5. What is the value of:
+       (cadr '((1 2 3) (4 5 6) (7 8 9)))
+    (A) 1
+    (B) (4 5 6)
+    (C) (2 3)
+    (D) ((7 8 9))
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, what, b, d, of, is, c, value, 1, 3, 2, 5, 4, 7, 6, 9, 8, cadr, the
+
+
+Likeness: 1.0
+sample_exams/cmps112-2012q1-test1.tt
+ 7. Data types in Perl and Scheme are:
+    (A) strong and dynamic.
+    (B) strong and static.
+    (C) weak and dynamic.
+    (D) weak and static.
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+and, a, c, b, d, dynamic, weak, perl, static, are, 7, in, scheme, strong, data,
+types
+
+
+Likeness: 1.0
+sample_exams/cmps112-2012q1-test2.tt
+ 5. A closure is:
+    (A) A special field of a structure or class used to point at a
+        base class when implementing shared multiple inheritance.
+    (B) A special type declaration in Ocaml used to distinguish sum
+        types from product types.
+    (C) A structure on the heap, used to hold variables of an outer
+        function when referenced by an inner function.
+    (D) A table used to dynamically dispatch virtual functions in an
+        object-oriented environment.
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+referenced, point, is, dispatch, an, at, in, table, variables, special,
+environment, functions, from, inheritance, sum, when, virtual, class, oriented,
+to, 5, inner, shared, type, dynamically, function, a, product, used, multiple,
+structure, object, implementing, base, heap, declaration, distinguish, outer,
+hold, by, types, closure, on, c, b, d, of, ocaml, field, the, or
+
+
+Likeness: 1.0
+sample_exams/cmps112-2012q1-test2.tt
+ 8. The type of [1; 2; 3; 4] is:
+    (A) 'a list
+    (B) int list
+    (C) list<Object>
+    (D) list<int>
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, c, b, d, int, of, is, object, list, 1, 3, 2, 4, 8, the, type
+
+
+Likeness: 1.0
+sample_exams/cmps112-2014q4-final.tt
+ 2. Which languages do not have parametric polymorphism?
+    (A) C++
+    (B) Java
+    (C) Ocaml
+    (D) Smalltalk
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, do, c, b, java, have, polymorphism, ocaml, languages, 2, which, not,
+parametric, smalltalk, d
+
+
+Likeness: 1.0
+sample_exams/cmps112-2014q4-final.tt
+ 6. What is the type of List.map?
+    (A) ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+    (B) ('a -> 'b -> 'b) -> 'a list -> 'b -> 'b
+    (C) ('a -> 'b) -> 'a list -> 'b list
+    (D) ('a -> bool) -> 'a list -> 'a list
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, map, what, b, d, of, is, list, c, bool, 6, the, type
+
+
+Likeness: 1.0
+sample_exams/cmps112-2014q4-final.tt
+ 5. In Java or C++, which statement can cause control to pass from the
+    current function to the calling function, or perhaps the caller of
+    the caller, or perhaps even all the way back to the main function?
+    (A) break
+    (B) continue
+    (C) return
+    (D) throw
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+control, all, pass, back, way, in, even, java, perhaps, current, to, 5,
+statement, main, cause, function, return, which, break, from, throw, a, c, b, d,
+of, caller, calling, continue, can, the, or
+
+
+Likeness: 1.0
+sample_exams/cmps112-2014q4-final.tt
+11. In Smalltalk, what is 9?
+    (A) (4 + 5) value.
+    (B) [4 + 5] value.
+    (C) "4 + 5" value.
+    (D) {4 + 5} value.
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+11, a, what, b, d, is, c, value, 5, 4, in, 9, smalltalk
+
+
+Likeness: 1.0
+sample_exams/cmps112-2014q4-test2.tt
+ 2. What is 2?
+    (A) (caar '(1 2 3))
+    (B) (cadr '(1 2 3))
+    (C) (cdar '(1 2 3))
+    (D) (cddr '(1 2 3))
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, c, b, cdar, d, is, what, 1, 3, 2, cadr, caar, cddr
+
+
+Likeness: 1.0
+sample_exams/cmps112-2014q4-test2.tt
+ 3. What is ((lambda (x) x) (+ 2 3))?
+    (A) (+ 2 3)
+    (B) +
+    (C) 5
+    (D) x
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, c, b, d, is, what, 3, 2, 5, x, lambda
+
+
+Likeness: 1.0
+sample_exams/cmps112-2014q4-test2.tt
+ 7. What is ((lambda (x) x) '(+ 2 3))?
+    (A) (+ 2 3)
+    (B) +
+    (C) 5
+    (D) x
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, c, b, d, is, what, 3, 2, 5, 7, x, lambda
+
+
+Likeness: 1.0
+sample_exams/cmps112-2014q4-test2.tt
+11. In Smalltalk and Scheme, type checking is:
+    (A) strong and dynamic.
+    (B) strong and static.
+    (C) weak and dynamic.
+    (D) weak and static.
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+11, and, c, b, d, checking, dynamic, is, weak, static, a, in, scheme, strong,
+type, smalltalk
+
+
+Likeness: 1.0
+sample_exams/cmps112-2015q4-test1.tt
+ 2. What is ((lambda (f x) (f x)) + 3)?
+    (A) '(+ 3)
+    (B) '(f x)
+    (C) 3
+    (D) 6
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, what, b, d, f, is, c, 3, 2, 6, x, lambda
+
+
+Likeness: 1.0
+sample_exams/cmps112-2015q4-test1.tt
+ 3. What is type of (+) in Ocaml?
+    (A) int * int * int
+    (B) int * int -> int
+    (C) int -> int * int
+    (D) int -> int -> int
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, what, b, d, int, of, is, c, ocaml, 3, in, type
+
+
+Likeness: 1.0
+sample_exams/cmps112-2015q4-test1.tt
+ 4. What is?
+    (car (cdr (cons '(1 2 3) '(4 5 6))))
+    (A) '(1 2 3)
+    (B) '(4 5 6)
+    (C) 1
+    (D) 4
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, what, cons, d, car, is, c, 1, 3, 2, 5, 4, cdr, 6, b
+
+
+Likeness: 1.0
+sample_exams/cmps112-2015q4-test1.tt
+ 5. In Ocaml, what is the type of [1;2;3;4]?
+    (A) (list int)
+    (B) int list
+    (C) list->int
+    (D) list<int>
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, what, b, d, int, of, is, list, c, ocaml, 1, 3, 2, 5, 4, in, the, type
+
+
+Likeness: 1.0
+sample_exams/cmps112-2015q4-test1.tt
+ 9. What is 2?
+    (A) (caar '(1 2 3))
+    (B) (cadr '(1 2 3))
+    (C) (cdar '(1 2 3))
+    (D) (cddr '(1 2 3))
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, c, b, cdar, d, is, what, 1, 3, 2, 9, cadr, caar, cddr
+
+
+Likeness: 1.0
+sample_exams/cmps112-2015q4-test2.tt
+ 3. What is ((lambda (x) x) (+ 2 3))?
+    (A) (+ 2 3)
+    (B) +
+    (C) 10
+    (D) 5
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, 10, what, b, d, is, c, 3, 2, 5, x, lambda
+
+
+Likeness: 1.0
+sample_exams/cmps112-2015q4-test2.tt
+ 9. What is 7 in Smalltalk?
+    (A) (+) 3 4.
+    (B) (3+4) value.
+    (C) [3+4] value.
+    (D) {3+4} value.
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, c, b, d, is, what, value, 3, 4, 7, in, 9, smalltalk
+
+
+Likeness: 1.0
+sample_exams/cmps112-2016q4-final.tt
+ 1. A closure is:
+    (A) A special field of a structure or class used to point at a
+        base class when implementing shared multiple inheritance.
+    (B) A special type declaration in Ocaml used to distinguish sum
+        types from product types.
+    (C) A structure on the heap, used to hold variables of an outer
+        function when referenced by an inner function.
+    (D) A table used to dynamically dispatch virtual functions in an
+        object-oriented environment.
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+referenced, point, is, dispatch, an, at, in, table, variables, special,
+oriented, functions, from, inheritance, sum, when, virtual, class, 1, to, inner,
+shared, type, dynamically, function, a, product, used, multiple, structure,
+object, implementing, base, heap, declaration, distinguish, outer, hold, by,
+types, closure, on, c, b, d, environment, of, ocaml, field, the, or
+
+
+Likeness: 1.0
+sample_exams/cmps112-2016q4-final.tt
+ 5. What is 6?
+    (A) (apply + '(1 2 3))
+    (B) (cons + '(1 2 3))
+    (C) (list + '(1 2 3))
+    (D) (map + '(1 2 3))
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, map, what, b, d, is, list, c, 1, 3, cons, 5, 6, 2, apply
+
+
+Likeness: 1.0
+sample_exams/cmps112-2016q4-midterm.tt
+ 2. How much stack space does the following function use?
+    let rec f n = match n with
+        | 0 -> 0
+        | 1 -> 1
+        | n -> f (n - 1) + f (n - 2)
+    (A) $ O ( 1 ) $
+    (B) $ O ( log n ) $
+    (C) $ O ( n ) $
+    (D) $ O ( 2 sup n ) $
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+use, log, space, much, 1, 0, 2, sup, rec, match, function, how, let, with,
+stack, a, c, b, d, f, o, n, does, following, the
+
+
+Likeness: 1.0
+sample_exams/cmps112-2016q4-midterm.tt
+ 9. Given:
+    # List.map ((+)3) [1;2;3];;
+    - : int list = [4; 5; 6]
+    what is the type of List.map ((+)3)?
+    (A) int -> int
+    (B) int -> int list
+    (C) int list -> int
+    (D) int list -> int list
+
+Words from problem not in sneak peek:
+
+
+Words from problem yes in sneak peek:
+a, map, given, b, d, what, int, of, is, list, c, 1, 3, 2, 5, 4, 6, 9, the, type
+
+

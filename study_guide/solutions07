@@ -1,0 +1,833 @@
+Question 5.
+
+drop(_,[],[]).
+drop(H,[H|T],[H|T]).
+drop(H,[_|T],X):-drop(H,T,X).
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+Question 6.
+
+let rec merge less list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | (car1::cdr1 as list1), (car2::cdr2 as list2) ->
+      if less car1 car2 then car1 :: merge less cdr2 list2
+                        else car2 :: merge less list1 cdr2
+
+________________________________________________________________________
+
+Question 7.
+
+let sum = List.fold_left (+) 0;;
+
+________________________________________________________________________
+
+Question 11.
+
+let iota n =
+    let rec iota' n list = 
+        if n <= 0 then list else iota' (n - 1) (n :: list)
+    in iota' n [];;
+
+________________________________________________________________________
+
+ 2.    (A) closure
+
+
+ 4.    (C) when the class is loaded.
+
+
+ 5.    (B) heap
+
+
+ 9.    (B) referential transparency
+
+
+ 4.    (A) virtual function table
+
+
+ 6.    (A) find(X) :- guess(X), verify(X).
+
+
+Question 6.
+
+Part a:
+class base {
+   public:
+      virtual void print() = 0;
+};
+
+class dstr: public base {
+   public:
+      virtual void print();
+   private:
+      string s;
+};
+
+class dint: public base {
+   public:
+      virtual void print();
+   private:
+      int i;
+};
+
+Part b:
+#include <iostream>
+
+using namespace std;
+
+#include "base.h"
+
+void dstr::print () {
+   cout << s << endl;
+}
+
+void dint::print () {
+   cout << i << endl;
+}
+
+
+Answers to test1, page 3
+
+
+ 1.    (D) p + p
+
+
+ 2.    (D) object oriented
+
+
+ 7.    (B) of foo, any class that inherits from foo, and any
+	   class that foo names as a friend
+
+
+ 9.    (A) delete
+
+
+Question 6.
+
+sub fold ($$$) {
+   my ($fn, $unit, $array) = @_;
+   $unit = $fn->($unit, $_) for @$array;
+   $unit;
+}
+
+________________________________________________________________________
+
+Question 7.
+
+(define (split lst)
+    (if (or (null? lst) (null? (cdr lst)))
+        (list lst ())
+        (let ((rem (split (cddr lst))))
+             (list (cons (car lst) (car rem))
+                   (cons (cadr lst) (cadr rem)))))
+)
+
+________________________________________________________________________
+
+ 2.    (D) $@
+
+
+ 7.    (B) map <string, int> m;
+
+
+Question 3.
+
+- return a value
+- throw an exception
+- not return (infinite loop or recursion)
+- exit the program
+
+_________________________________________________________________
+
+Question 4.
+
+Object subclass: List [
+   |car cdr|
+   List class >> new [
+      ^ nil
+   ]
+   List class >> cons: car with: cdr [
+      |r|
+      r := super new.
+      r setcar: car setcdr: cdr.
+      ^ r
+   ]
+   setcar: xcar setcdr: xcdr [
+      car := xcar.
+      cdr := xcdr.
+   ]
+   car [
+      ^car
+   ]
+   cdr [
+      ^ cdr
+   ]
+]
+
+
+Answers to 2011q2-test3, page 2.
+
+_________________________________________________________________
+
+Question 9.
+
+let collatz n =
+    let even n = n mod 2 = 0 in
+    let rec collatz' n c =
+        if n <= 1
+           then c
+           else if even n
+                   then collatz' (n / 2) (c + 1)
+                   else collatz' (n * 3 + 1) (c + 1)
+    in  collatz' n 0;;
+
+
+Answers to 2011q2-test3, page 3.
+
+_________________________________________________________________
+
+Question 14.
+
+let rec zipwith f l1 l2 = match l1, l2 with
+    | [], [] -> []
+    | [], _ -> raise (Invalid_argument "zipwith")
+    | _, [] -> raise (Invalid_argument "zipwith")
+    | h1::t1, h2::t2 -> f h1 h2 :: zipwith f t1 t2
+
+let rec zipwith f l1 l2 = match l1, l2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> f h1 h2 :: zipwith f t1 t2
+    | _, _ -> raise (Invalid_argument "zipwith")
+
+
+Answers to 2011q2-test3, page 4.
+
+
+ 1.    (B) The message +4 is sent to the number 3.
+
+
+ 4.    (C) throw
+
+
+ 5.    (B) Prolog
+
+
+ 8.    (B) \s+
+
+
+ 3.    (A) $h{$k}
+
+
+ 6.    (B) operator overloading
+
+
+ 7.    (B) $0
+
+
+ 8.    (A) curried
+
+
+Question 7.
+
+(define (map2 fn list1 list2)
+        (if (or (null? list1) (null? list2)) '()
+            (cons (fn (car list1) (car list2))
+                  (map2 fn (cdr list1) (cdr list2)))))
+
+_________________________________________________________________
+
+Question 8.
+
+(define (foldl fn unit list)
+        (if (null? list) unit
+            (foldl fn (fn unit (car list)) (cdr list))))
+
+
+_________________________________________________________________
+
+Question 9.
+
+(define (ip list1 list2)
+        (foldl + 0 (map2 * list1 list2)))
+
+_________________________________________________________________
+
+ 1.      (A) &&
+
+
+ 3.      (D) map
+
+
+ 6.      (C) Static scope and dynamic lifetime.
+
+
+Question 2.
+
+;;;; Tail recursive version.
+(define (maxlist list)
+   (define (maxl max list)
+      (cond ((null? list) max)
+            ((> max (car list)) (maxl max (cdr list)))
+            (true (maxl (car list) (cdr list)))))
+   (if (null? list) 'undef
+       (maxl (car list) (cdr list))))
+
+;;;; Version using apply.
+(define (maxlist list)
+   (if (null? list) 'undef
+       (apply max list)))
+
+_________________________________________________________________
+
+ 5.    (B) fold_left
+
+
+Question 5. [1]
+
+universal: parametric (generic, template)
+           inclusion (subclassing, object-oriented)
+
+ad hoc: conversion (coercion)
+        overloading
+
+_________________________________________________________________
+
+Question 6. [2]
+
+(define (exclude n list)
+    (if (or (<= n 0) (null? list)) list
+        (exclude (- n 1) (cdr list))))
+
+_________________________________________________________________
+
+Question 8. [2]
+
+exclude( _, [], []).
+exclude( N, L, L) :- N =< 0.
+exclude( N, [H|T], U) :- M is N - 1, exclude( M, T, U).
+
+_________________________________________________________________
+
+Question 9. [3]
+
+Object subclass: Find [
+   Find class >> key: key array: array [
+      1 to: array size do: [:index|
+         (array at: index) = key ifTrue: [^ index]
+      ].
+      ^ nil.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 3
+
+_________________________________________________________________
+
+ 4.    (C) structural
+
+
+ 7.    (D) map
+
+
+ 8.    (B) foldl
+
+
+ 9.    (B) my @a;
+
+
+ 2. overriding
+
+
+ 4.    (D) virtual function table
+
+
+ 7.    (B) Ocaml
+
+
+ 8.    (D) p + p
+
+
+ 9.    (C) heap
+
+
+Question 2. [1]
+
+(define (positives list)
+        (grep (lambda (x) (> x 0)) list))
+
+_________________________________________________________________
+
+Question 5. [2]
+
+Hundreds of answers:
+- inclusion (or subtype) polymorphism
+     - example shows something object-oriented
+- generic (or template) polymorphism
+     - example shows someting using Java generics or C++ templates
+       or equivalent in another language
+
+_________________________________________________________________
+
+Question 10. [1]
+
+print "@ARGV\n";
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (A) Haskell
+
+
+ 8.    (C) the stack frame of the function in which this function is
+        nested.
+
+
+10.    (A) &(&p)
+
+
+11.    (C) FORTRAN
+
+
+
+Question 1. [1]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+ 4.    (A) compose
+
+
+ 6.    (B) $line = <$file>;
+
+
+ 7.    (C) thunk
+
+
+Question 4. [2]
+
+(define (takex n list)
+    (if (or (null? list) (<= n 0)) '()
+        (cons (car list) (takex (- n 1) (cdr list)))))
+
+
+Answers to 2014q4-test3, page 2
+
+________________________________________________________________________
+
+Question 11. [2]
+
+mother(Mother,Child) :- parents(_,Mother,Child).
+father(Father,Child) :- parents(Father,_,Child).
+
+________________________________________________________________________
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+ 7.    (A) The message +4 is sent to the object 3.
+
+
+ 9.    (C) ML and Ocaml
+
+
+ 6.    (C) a pointer to the stack frame in which the current
+           function is nested.
+
+
+Question 4. [1]
+
+Part a:
+sub fac{
+   my ($n) = @_;
+   my $s = 1;
+   $s *= $_ for 1..$n;
+   return $s;
+}
+
+Part b:
+Number extend [
+   fac [
+      |s|
+      s := 1.
+      1 to: self do: [:i | s := s * i].
+      ^ s
+   ]
+]
+
+________________________________________________________________________
+
+Question 5. [2]
+
+Parametric (template, generic):
+        template <typename T> class stack {...}
+        class stack<T> {...}
+Inclusion (inheritance):
+        class bar {...}
+        class foo extends bar {...}
+
+________________________________________________________________________
+
+Question 6. [2]
+
+Coercion (conversion):
+        int a; double b; a = b;
+Overloading:
+        void foo (double);
+        void foo (stringnt);
+
+________________________________________________________________________
+
+ 2.    (A) $!
+
+
+ 7.    (C) map
+
+
+11.    (C) The stack frame of the function in which this function is
+
+
+Question 3. [3]
+
+Object extend [
+   fibonacci: n [
+      |array a b c|
+      array := Array new: n.
+      a := 0.
+      b := 1.
+      1 to: n do: [:i|
+         array at: i put: a.
+         c := a + b. a := b. b := c.
+      ].
+      ^ array
+   ]
+]
+
+________________________________________________________________________
+
+Question 4. [4]
+
+(define (merge l1 l2)
+   (cond ((null? l1) l2)
+         ((null? l2) l1)
+         (else (let ((a1 (car l1))
+                     (a2 (car l2)))
+                    (if (< a1 a2)
+                        (cons a1 (merge (cdr l1) l2))
+                        (cons a2 (merge l1 (cdr l2)))
+)))))
+
+Answers to 2014q4-test2, page 2
+________________________________________________________________________
+
+Question 6. [2]
+
+(define (foldl fn unit list)
+        (if (null? list) unit
+            (foldl fn (fn unit (car list)) (cdr list))))
+
+________________________________________________________________________
+
+ 4.    (A) ((a b) c: d)
+
+
+ 8.    (B) by the compiler
+
+
+Question 1. [2]
+(a) Return a value (or void).
+(b) Throw an exception.
+(c) Exit the program.
+(d) Go into an endless loop or recursion.
+
+________________________________________________________________________
+
+Question 6. [2]
+
+Part a:
+---- The following is 2 points, if correct.
+(define (reverse list)
+        (define (rev list m)
+                (if (null? list) m
+                    (rev (cdr list) (cons (car list) m))))
+        (rev list '()))
+---- Either of the following for 3 points, if correct.
+(define (snoc cdr car) (cons car cdr))
+(define (reverse list) (fold_left snoc '() list))
+(define (reverse list) (fold_left (lambda (d a) (cons a d)) '() list))
+
+Part b:
+---- The following is 2 points, if correct.
+let reverse list =
+    let rec rev' src out = match src with
+        | [] -> out
+        | h::t -> rev' t (h::out)
+    in rev' list []
+---- Either of the following for 3 points, if correct.
+let reverse = List.fold_left (fun tl hd -> hd::tl) []
+let reverse = fold_left (fun tl hd -> hd::tl) []
+
+________________________________________________________________________
+
+Question 7. [2]
+node* reverse (node* head) { 
+   node* out = NULL;
+   while (head != NULL) {
+      node* t = head;
+      head = head->link;
+      t->link = out;
+      out = t;
+   }
+   return out;
+}
+
+
+Answers to cmps112-2015q4-exam1, page 3
+
+
+11.    (C) loops
+
+
+Question 2. [2]
+
+conversion       void f(double);    f(6)
+
+overloading      void f(double); void f(int);
+
+________________________________________________________________________
+
+Question 3. [2]
+
+(define (eval expr)
+   (if (number? expr) expr
+       (apply (car expr) (map eval (cdr expr)))))
+
+________________________________________________________________________
+
+Question 5. [2]
+
+
+let ip a b =
+    let rec ip' a b m = match a, b with
+        | [], [] -> m
+        | x::xs, y::ys -> ip' xs ys (m +. x *. y)
+        | _, _ -> raise (Invalid_argument "ip")
+    in ip' a b 0.0;;
+
+
+Answers to cmps112-2015q4-exam1, page 2
+
+________________________________________________________________________
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+    | _, _ -> failwith "zip";;
+
+________________________________________________________________________
+
+Question 7. [4]
+
+Object subclass: List [ |i_car i_cdr|
+   List class >> new [ ^ nil ]
+   List class >> car: a_car cdr: a_cdr [ |result|
+      result := super new.
+      result car: a_car cdr: a_cdr.
+      ^ result
+   ]
+   car: a_car cdr: a_cdr [
+      i_car := a_car.
+      i_cdr := a_cdr.
+   ]
+   car [ ^ i_car ]
+   cdr [ ^ i_cdr ]
+]
+
+________________________________________________________________________
+
+Question 8. [4]
+
+Object subclass: Num [ |val|
+   Num class >> new: n [ |r|
+      r := super new.
+      r set: n.
+      ^ r.
+   ]
+   set: n [ val := n. ]
+   value [ ^ val. ]
+]
+Object subclass: Mul [ |left right|
+   Mul class >> left: n right: m [ |r|
+      r := super new.
+      r left: n right: m.
+      ^ r.
+   ]
+   left: n right: m [ left := n.  right := m.  ]
+   value [ ^ left value * right value. ]
+]
+
+
+Answers to cmps112-2015q4-exam1, page 3
+
+
+10.    (B) fold_left
+
+
+Question 5. [4]
+
+let max gt list = match list with
+    | [] -> failwith "max"
+    | x::xs -> let rec max' x xs = match xs with
+                    | [] -> x
+                    | y::ys -> if gt x y then max' x ys
+                                         else max' y ys
+               in max' x xs
+;;
+
+________________________________________________________________________
+
+Question 7. [2]
+
+let rec unzip list = match list with
+    | [] -> ([],[])
+    | (a,b)::rest -> let (al,bl) = unzip rest
+                     in (a::al, b::bl);;
+
+________________________________________________________________________
+
+Question 9. [2]
+
+universal    parametric (template, generic)
+             inclusion (inheritance, OO)
+
+ad hoc       conversion (coercion)
+             overloading
+
+________________________________________________________________________
+
+Question 10. [2]
+
+(define (pairthem l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (list (car l1) (car l2))
+              (pairthem (cdr l1) (cdr l2)))))
+
+________________________________________________________________________
+
+ 1.    (A) APL
+
+
+ 7.    (C) thunk
+
+
+11.    (B) duck-typing
+
+
+12.    (D) virtual function table
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 2.    (B) Edsger Dijkstra
+
+
+ 3.    (D) \w+
+
+
+ 6.    (A) function call stack
+
+
+11.    (A) (f '())
+
+
+4. Refer to the solution PDF for this exam.
+
+
+5. Refer to the solution PDF for this exam.
+
+
+6. Refer to the solution PDF for this exam.
+
+
+12. Refer to the solution PDF for this exam.
+
+
+15. Refer to the solution PDF for this exam.
+
+
+16. Refer to the solution PDF for this exam.
+
+
+24. Refer to the solution PDF for this exam.
+
+
+28. Refer to the solution PDF for this exam.
+
+
+29. Refer to the solution PDF for this exam.
+
+
+Question 1. [2]
+
+- return a value
+- throw (raise) an exception
+- exit the program
+- infinite loop or recursion
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let rec zipwith fn list1 list2 = match list1, list2 with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> fn x y :: zipwith fn xs ys;;
+
+
+Answers to 2017q2-midterm, page 2
+
+_________________________________________________________________
+
+Question 6. [1]
+
+filter (fun x -> 0 > x) [1;2;-3;-4;8;-3];;
+
+_________________________________________________________________
+
+Question 9. [1]
+
+(define (sum list) (foldl + 0 list))
+or:
+(define (sum list)
+        (define (summ list acc)
+                (if (null? list) acc
+                    (summ (cdr list) (+ acc (car list)))))
+        (summ list 0))
+
+_________________________________________________________________
+
+Question 13. [2]
+
+(define (map2 op list1 list2)
+        (if (or (null? list1) (null? list2)) '()
+            (cons (op (car list1) (car list2))
+                  (map2 op (cdr list1) (cdr list2))))):w
+
+_________________________________________________________________
+
+ 6.    (B) fold_left
+
+
+ 9.    (B) link time
+
+

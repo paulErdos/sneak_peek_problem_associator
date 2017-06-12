@@ -1,0 +1,362 @@
+Question 3.
+
+# Many ways of coding it.
+sub filter {
+   my ($fn, @arr) = @_;
+   my @result;
+   for $elt (@arr) {push @result, $elt if $fn->($elt)}
+   return @result;
+}
+
+________________________________________________________________________
+
+Question 4.
+
+1 pt.  if picture correct
+1 pt:
+adjacent(A,B):-edge(A,B).
+adjacent(A,B):-edge(B,A).
+
+________________________________________________________________________
+
+Question 9.
+
+let rec map f lis = match lis with 
+    | [] -> []
+    | h::t -> f h :: map f t;;
+
+________________________________________________________________________
+
+ 6.    (D) int -> int -> int
+
+
+ 3.    (A) $ O ( 1 ) $
+
+
+ 5.    (B) $ O ( n ) $
+
+
+ 7.    (B) $ O ( n ) $
+
+
+ 8.    (C) Fortran
+
+
+ 5.    (D) $ O ( n ) $
+
+
+ 6.    (A) ++i
+
+
+Question 6.
+
+(define (depth list)
+   (if (not (list? list)) 0
+       (+ 1 (apply max (cons 0 (map depth list)))))
+)
+
+_________________________________________________________________
+
+Question 11.
+
+(define (iota n)
+   (define (iota_ n_ lis)
+      (if (< n_ 1) lis
+          (iota_ (- n_ 1) (cons n_ lis)))
+   )
+   (iota_ n '())
+)
+
+_________________________________________________________________
+
+ 9.    (D) universal parametric
+
+
+Question 5.
+
+(define (contains pred? list)
+        (cond ((null? list) #f)
+              ((pred? (car list)) #t)
+              (else (contains pred? (cdr list)))
+))
+
+_________________________________________________________________
+
+ 4.      (C) $ O ( n ) $
+
+
+ 8.      (A) Strong and dynamic.
+
+
+Question 5.
+
+let rec contains p list = match list with
+    | [] -> false
+    | h::_ when p h -> true
+    | _::t -> contains p t
+;;
+
+_________________________________________________________________
+
+ 6.    (C) int list -> int list
+
+
+Question 7. [2]
+
+let rec exclude n list = match list with
+    | _::tail when n > 0 -> exclude (n - 1) tail
+    | _ -> list
+
+_________________________________________________________________
+
+ 3.    (C) 'a list -> 'a list
+
+
+10.    (A) int *f() {int i = 6; return &i; }
+
+
+11.    (A) Algol 60
+
+
+
+Question 1. [2]
+
+(define (grep pred? list)
+        (if (null? list) '()
+            (let ((head (car list))
+                  (tail (grep pred? (cdr list))))
+                 (if (pred? head) (cons head tail)
+                                  tail))))
+
+_________________________________________________________________
+
+Question 3. [2]
+
+(define (sum list)
+        (define (sum2 list acc)
+                (if (null? list) acc
+                    (sum2 (cdr list) (+ (car list) acc))))
+        (sum2 list 0))
+
+_________________________________________________________________
+
+ 3.    (D) $ O ( 2 sup n ) $
+
+
+ 4.    (A) $ O ( n ) $
+
+
+Question 1. [2]
+
+let reverse list =
+    let rec rev' in out = match in with
+        | [] -> out
+        | h::t -> rev' t (h::out)
+    in rev' list []
+
+________________________________________________________________________
+
+Question 7. [2]
+
+fac  : int -> int
+n    : int
+0    : int
+fac' : int -> int -> int
+n'   : int
+m'   : int
+-    : int -> int -> int
+*    : int -> int -> int
+
+________________________________________________________________________
+
+Question 9. [2]
+
+(define (map f list)
+    (if (null? list) '()
+        (cons (f (car list)) (map f (cdr list)))))
+
+(define (filter p list)
+    (if (null? list) '()
+        (let ((hd (car list))
+              (tl (filter p (cdr list))))
+             (if (p hd) (cons hd tl)
+                        (tl)))))
+
+
+Answers to 2014q4-test3, page 3
+
+________________________________________________________________________
+
+ 4.    (B) fold left $ O ( 1 ) $;  fold right $ O ( n ) $
+
+
+ 8.    (D) unit -> int
+
+
+12.    (C) Donald Knuth
+
+
+Answers to 2014q4-test3, page 5
+
+
+ 2.    (A) (*...*)
+
+
+ 4.    (D) float -> float -> float
+
+
+ 8.    (D) a value: 3.
+
+
+10.    (B) 0.0/0.0
+
+
+ 3.    (A) ((a-b)*c)+d
+
+
+ 4.    (C) [4+9] value
+
+
+10.    (B) 0.0/0.0
+
+
+12.    (A) goto
+
+
+
+Question 8. [1]
+
+non lambda version ....................
+(define (ad n _) (+ n 1))
+(define (len list) (foldleft ad 0 list))
+lambda version ....................
+(define (lenn list) (foldleft (lambda (n _) (+ n 1)) 0 list))
+
+________________________________________________________________________
+
+Question 9. [2]
+
+product := [:vec |
+   |prod|
+   prod := 1.
+   1 to: vec size do: [:i| prod := prod * (vec at: i)].
+   prod
+].
+
+________________________________________________________________________
+
+Question 11. [2]
+
+(define (reverse list)
+        (define (rev list m)
+                (if (null? list) m
+                    (rev (cdr list) (cons (car list) m))))
+        (rev list '()))
+
+
+Answers to 2014q4-test2, page 3
+
+
+Question 3. [1]
+
+Part a:
+(define (length x)
+        (define (len x n)
+                (if (null? x) n
+                    (len (cdr x) (+ n 1))))
+        (len x 0))
+
+Part b:
+let length x =
+    let rec len x n = match x with
+        | [] -> n
+        | _::cdr -> len cdr (n + 1)
+    in len x 0
+
+________________________________________________________________________
+
+ 6.    (A) strong and dynamic
+
+
+ 7.    (B) strong and static
+
+
+12.    (B) goto
+
+
+
+Question 4. [1]
+
+sum := [:array|
+   |sum|
+   sum := 0.
+   1 to: array size do: [:n| sum := sum + n].
+   sum.
+]
+
+________________________________________________________________________
+
+ 1.    (A) ALGOL
+
+
+ 5.    (C) $ O ( 2 sup n ) $
+
+
+ 7.    (B) fold left $ O ( 1 ) $ and fold right $ O ( n ) $
+
+
+Question 2. [2]
+
+arrow(a,b).
+arrow(a,c).
+arrow(b,c).
+arrow(b,e).
+arrow(c,d).
+arrow(d,e).
+
+________________________________________________________________________
+
+10.    (D) val f : int -> int -> int -> int
+
+
+12.    (A) ('a -> 'b) -> 'a list -> 'b list
+
+
+
+1. Refer to the solution PDF for this exam.
+
+
+2. Refer to the solution PDF for this exam.
+
+
+11. Refer to the solution PDF for this exam.
+
+
+18. Refer to the solution PDF for this exam.
+
+
+20. Refer to the solution PDF for this exam.
+
+
+23. Refer to the solution PDF for this exam.
+
+
+Question 3. [2]
+part a:
+let rec fold_left fn unit list = match list with
+    | [] -> unit
+    | x::xs -> fold_left fn (fn unit x) xs;;
+
+part b:
+(define (fold_left fn unit list)
+        (if (null? list) unit
+            (fold_left fn (fn unit (car list)) (cdr list))))
+
+_________________________________________________________________
+
+ 4.    (D) parametric
+
+
+ 5.    (B) inclusion & parametric
+
+

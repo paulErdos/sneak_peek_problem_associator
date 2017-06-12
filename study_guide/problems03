@@ -1,0 +1,33 @@
+Likeness: 0.390243902439
+sample_exams/cmps112-2011q2-final.tt
+11. In Ocaml, what is the type of List.fold_left?
+    (A) ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+    (B) ('a -> 'b) -> 'a list -> 'b list
+    (C) ('a -> bool) -> 'a list -> 'a list
+    (D) ('a -> bool) -> 'a list -> bool
+The First ``Computer Bug''.  Moth found trapped between points at
+Relay #70, Panel F, of the Mark II Aiken Relay Calculator while it was
+being tested at Harvard University, 9 September 1947.  The operators
+affixed the moth to the computer log, with the entry: ``First actual
+case of bug being found''.  They put out the word that they had
+``debugged'' the machine, thus introducing the term ``debugging a
+computer program''.  In 1988, the log, with the moth still taped by
+the entry, was in the Naval Surface Warfare Center Computer Museum at
+Dahlgren, Virginia.
+[http://en.wikipedia.org/wiki/File:H96566k.jpg]
+
+
+Words from problem not in sneak peek:
+wiki, debugging, aiken, moth, thus, surface, ii, fold_left, debugged, file,
+still, out, h96566k, found, museum, wikipedia, 1947, 1988, mark, machine,
+september, program, actual, between, panel, introducing, relay, trapped,
+operators, virginia, affixed, tested, harvard, jpg, 70, put, org, warfare,
+dahlgren, bug, center, case, term, word, naval, being, university, taped, while,
+entry
+
+Words from problem yes in sneak peek:
+en, is, it, computer, at, in, what, log, had, to, bool, 9, type, calculator, 11,
+http, that, they, with, by, a, c, b, d, f, was, list, ocaml, points, of, the,
+first
+
+
