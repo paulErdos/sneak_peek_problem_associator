@@ -1,0 +1,332 @@
+Likeness: 0.285714285714
+sample_exams/cmps112-2009q1-test1.tt
+ 4. What time is the address returned by new determinaed?
+    (A) compile
+    (B) during a function call
+    (C) link
+    (D) program exec
+
+Words from problem not in sneak peek:
+program, c, b, returned, exec, address, compile, determinaed, call, 4, time,
+link, during, by, d
+
+Words from problem yes in sneak peek:
+a, function, what, is, new, the
+
+
+Likeness: 0.2
+sample_exams/cmps112-2009q1-test2.tt
+ 1. What expression will print (3)?
+    (A) (caar '(1 2 3))
+    (B) (cadr '(1 2 3))
+    (C) (cdar '(1 2 3))
+    (D) (cddr '(1 2 3))
+
+Words from problem not in sneak peek:
+c, b, cdar, d, cadr, 1, 3, 2, print, expression, caar, cddr
+
+Words from problem yes in sneak peek:
+a, will, what
+
+
+Likeness: 0.263157894737
+sample_exams/cmps112-2011q2-final.tt
+ 4. Which expression will cause Scheme to print:
+       (3)
+    (A) (caar '(1 2 3))
+    (B) (cadr '(1 2 3))
+    (C) (cdar '(1 2 3))
+    (D) (cddr '(1 2 3))
+
+Words from problem not in sneak peek:
+cadr, b, cdar, d, cause, c, 1, 3, 2, 4, print, expression, caar, cddr
+
+Words from problem yes in sneak peek:
+a, will, scheme, which, to
+
+
+Likeness: 0.280487804878
+sample_exams/cmps112-2011q2-final.tt
+11. In Ocaml, what is the type of List.fold_left?
+    (A) ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+    (B) ('a -> 'b) -> 'a list -> 'b list
+    (C) ('a -> bool) -> 'a list -> 'a list
+    (D) ('a -> bool) -> 'a list -> bool
+The First ``Computer Bug''.  Moth found trapped between points at
+Relay #70, Panel F, of the Mark II Aiken Relay Calculator while it was
+being tested at Harvard University, 9 September 1947.  The operators
+affixed the moth to the computer log, with the entry: ``First actual
+case of bug being found''.  They put out the word that they had
+``debugged'' the machine, thus introducing the term ``debugging a
+computer program''.  In 1988, the log, with the moth still taped by
+the entry, was in the Naval Surface Warfare Center Computer Museum at
+Dahlgren, Virginia.
+[http://en.wikipedia.org/wiki/File:H96566k.jpg]
+
+
+Words from problem not in sneak peek:
+wiki, debugging, aiken, moth, calculator, thus, surface, d, ii, fold_left,
+debugged, at, file, still, out, 11, h96566k, found, c, museum, wikipedia, 1947,
+1988, mark, machine, september, program, bool, actual, bug, between, 9, panel,
+introducing, relay, trapped, operators, virginia, affixed, tested, harvard, jpg,
+70, put, org, warfare, dahlgren, by, center, case, term, b, word, naval, being,
+university, taped, while, entry
+
+Words from problem yes in sneak peek:
+en, is, it, computer, in, what, log, had, was, to, type, http, that, they, with,
+a, f, of, list, ocaml, points, the, first
+
+
+Likeness: 0.266666666667
+sample_exams/cmps112-2011q2-test1.tt
+10. Explain the difference between static and dynamic scope, and give
+    an example of each.  [2pt]
+
+Words from problem not in sneak peek:
+and, 10, 2pt, give, explain, between, an, each, scope, difference, example
+
+Words from problem yes in sneak peek:
+of, static, dynamic, the
+
+
+Likeness: 0.291666666667
+sample_exams/cmps112-2014q4-final.tt
+ 3. What kind of garbage collection fails on cyclic data structures?
+    (A) copying with semispaces
+    (B) generational
+    (C) mark and sweep
+    (D) reference counting
+
+Words from problem not in sneak peek:
+and, c, b, reference, garbage, fails, semispaces, cyclic, sweep, collection,
+mark, 3, generational, copying, counting, data, d
+
+Words from problem yes in sneak peek:
+a, on, what, structures, kind, of, with
+
+
+Likeness: 0.230769230769
+sample_exams/cmps112-2014q4-test2.tt
+ 2. What is 2?
+    (A) (caar '(1 2 3))
+    (B) (cadr '(1 2 3))
+    (C) (cdar '(1 2 3))
+    (D) (cddr '(1 2 3))
+
+Words from problem not in sneak peek:
+c, b, cdar, d, cadr, 1, 3, 2, caar, cddr
+
+Words from problem yes in sneak peek:
+a, what, is
+
+
+Likeness: 0.294117647059
+sample_exams/cmps112-2014q4-test2.tt
+12. Lisp was designed when, by whom, and where?
+    (A) 1953, John Backus, IBM.
+    (B) 1958, John McCarthy, MIT.
+    (C) 1959, Grace Hopper, et al., Department of Defense.
+    (D) 1964, John Kemeny & Thomas Kurtz, Dartmouth College.
+
+
+Words from problem not in sneak peek:
+and, thomas, kurtz, al, defense, college, et, 1964, mccarthy, whom, department,
+dartmouth, john, mit, 1958, 12, 1953, 1959, by, c, b, d, kemeny, backus
+
+Words from problem yes in sneak peek:
+a, ibm, lisp, hopper, when, where, designed, of, was, grace
+
+
+Likeness: 0.2
+sample_exams/cmps112-2015q4-test1.tt
+ 4. What is?
+    (car (cdr (cons '(1 2 3) '(4 5 6))))
+    (A) '(1 2 3)
+    (B) '(4 5 6)
+    (C) 1
+    (D) 4
+
+Words from problem not in sneak peek:
+c, cons, d, car, 1, 3, 2, 5, 4, cdr, 6, b
+
+Words from problem yes in sneak peek:
+a, what, is
+
+
+Likeness: 0.214285714286
+sample_exams/cmps112-2015q4-test1.tt
+ 9. What is 2?
+    (A) (caar '(1 2 3))
+    (B) (cadr '(1 2 3))
+    (C) (cdar '(1 2 3))
+    (D) (cddr '(1 2 3))
+
+Words from problem not in sneak peek:
+c, b, cdar, d, cadr, 1, 3, 2, 9, caar, cddr
+
+Words from problem yes in sneak peek:
+a, what, is
+
+
+Likeness: 0.294117647059
+sample_exams/cmps112-2016q4-final.tt
+ 2. Scripting language covered during the last few lectures.
+    (A) Bash
+    (B) Perl
+    (C) Python
+    (D) Ruby
+
+Words from problem not in sneak peek:
+lectures, c, b, last, d, python, few, 2, covered, during, ruby, scripting
+
+Words from problem yes in sneak peek:
+a, the, bash, language, perl
+
+
+Likeness: 0.272727272727
+sample_exams/cmps112-2016q4-final.tt
+ 6. In Smalltalk:  $ sqrt 2.0 $
+    (A) (sqrt 2.0)
+    (B) 2.0 sqrt
+    (C) 2.718281828459045
+    (D) sqrt (2.0)
+
+Words from problem not in sneak peek:
+c, b, d, sqrt, 718281828459045, 0, 2, 6
+
+Words from problem yes in sneak peek:
+a, smalltalk, in
+
+
+Likeness: 0.296296296296
+sample_exams/cmps112-2016q4-final.tt
+ 8. Lisp was designed when, by whom, and where?
+    (A) 1953, John Backus.
+    (B) 1958, John McCarthy.
+    (C) 1959, Grace Hopper, et al.
+    (D) 1964, John Kemeny, Thomas Kurtz.
+
+Words from problem not in sneak peek:
+and, thomas, b, kurtz, backus, 1964, c, kemeny, al, mccarthy, whom, 1953, 8, et,
+john, 1959, by, 1958, d
+
+Words from problem yes in sneak peek:
+a, lisp, hopper, when, where, designed, was, grace
+
+
+Likeness: 0.222222222222
+sample_exams/cmps112-2016q4-final.tt
+10. Prolog:
+    | ?- X is sin(pi).
+    (A) X = -1.0
+    (B) X = 1.2246467991473532e-16
+    (C) X = 2.7182818284590451
+    (D) X = 3.1415926535897931
+
+Words from problem not in sneak peek:
+10, c, b, d, 7182818284590451, 16, 1415926535897931, 1, 0, 3, 2, pi, sin,
+2246467991473532e
+
+Words from problem yes in sneak peek:
+a, x, is, prolog
+
+
+Likeness: 0.259259259259
+sample_exams/cmps112-2016q4-final.tt
+ 8. What kind of memory management fails to handle a cyclic data
+    structure?
+    (A) copying collector with semispaces
+    (B) malloc and free
+    (C) mark and sweep
+    (D) reference counting
+
+Words from problem not in sneak peek:
+and, malloc, management, handle, d, reference, fails, c, cyclic, sweep, free,
+mark, b, data, copying, memory, 8, semispaces, collector, counting
+
+Words from problem yes in sneak peek:
+a, what, of, kind, to, with, structure
+
+
+Likeness: 0.275862068966
+sample_exams/cmps112-2016q4-midterm.tt
+ 5. Lisp (McCarthy) and Scheme (Steele and Sussman), in general form,
+    are based on a form of mathematics first formulated by Alonzo
+    Church.
+    (A) \lambda-calculus
+    (B) \mu-calculus
+    (C) \pi-calculus
+    (D) \psi-calculus
+
+Words from problem not in sneak peek:
+and, calculus, by, formulated, based, alonzo, form, sussman, steele, c, general,
+mu, psi, 5, are, church, mathematics, pi, b, mccarthy, d
+
+Words from problem yes in sneak peek:
+a, on, lambda, lisp, of, in, scheme, first
+
+
+Likeness: 0.263157894737
+sample_exams/cmps112-2017q2-midterm.tt
+ 1. Replacing $ (\lambdax~ . ~ + ~ x ~ 1) ~  2 $ by $ ( + ~ 2 ~ 1 ) $
+    is an example of
+    (A) \alpha-reduction
+    (B) \beta-reduction
+    (C) \eta-reduction
+    (D) \lambda-reduction
+
+Words from problem not in sneak peek:
+2, c, b, d, replacing, beta, by, an, 1, reduction, eta, lambdax, alpha, example
+
+Words from problem yes in sneak peek:
+a, of, is, lambda, x
+
+
+Likeness: 0.235294117647
+sample_exams/cmps112-2017q2-midterm.tt
+ 3. A garbage collector automatically recycles what kind of objects?
+    (A) dead
+    (B) live
+    (C) reachable
+    (D) unreachable
+
+Words from problem not in sneak peek:
+c, b, garbage, recycles, 3, dead, live, objects, reachable, unreachable,
+collector, automatically, d
+
+Words from problem yes in sneak peek:
+a, of, what, kind
+
+
+Likeness: 0.277777777778
+sample_exams/cmps112-2017q2-midterm.tt
+ 7. Edsger Dijkstra published a paper entitled ``__ statement
+    considered harmful''.
+    (A) continue
+    (B) goto
+    (C) switch
+    (D) throw
+
+Words from problem not in sneak peek:
+__, c, b, goto, considered, harmful, switch, continue, paper, 7, published,
+entitled, d
+
+Words from problem yes in sneak peek:
+a, dijkstra, edsger, statement, throw
+
+
+Likeness: 0.272727272727
+sample_exams/cmps112-2017q2-midterm.tt
+11. Which C operator uses normal order evaluation?
+    (A) ++
+    (B) <<
+    (C) ==
+    (D) ||
+
+Words from problem not in sneak peek:
+11, c, b, d, normal, uses, operator, evaluation
+
+Words from problem yes in sneak peek:
+a, order, which
+
+

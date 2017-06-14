@@ -1,0 +1,123 @@
+Question 3.
+
+# Many ways of coding it.
+sub filter {
+   my ($fn, @arr) = @_;
+   my @result;
+   for $elt (@arr) {push @result, $elt if $fn->($elt)}
+   return @result;
+}
+
+________________________________________________________________________
+
+ 4.    (D) int -> int -> int
+
+
+Question 13.
+
+                 strong typing              weak typing
+
+static types     Haskell, Java, Ocaml       C, C++
+
+dynamic types    Perl, Prolog, Scheme
+
+score: -1/2 for each 2 errors
+
+_________________________________________________________________
+
+ 4.      (C) $ O ( n ) $
+
+
+ 9.    (C) 'a list -> 'a list
+
+
+ 1. overloading
+
+
+Question 1. [2]
+
+(define (grep pred? list)
+        (if (null? list) '()
+            (let ((head (car list))
+                  (tail (grep pred? (cdr list))))
+                 (if (pred? head) (cons head tail)
+                                  tail))))
+
+_________________________________________________________________
+
+Question 3. [2]
+
+(define (sum list)
+        (define (sum2 list acc)
+                (if (null? list) acc
+                    (sum2 (cdr list) (+ (car list) acc))))
+        (sum2 list 0))
+
+_________________________________________________________________
+
+Question 1. [2]
+
+let reverse list =
+    let rec rev' in out = match in with
+        | [] -> out
+        | h::t -> rev' t (h::out)
+    in rev' list []
+
+________________________________________________________________________
+
+12.    (A) goto
+
+
+
+Question 5. [1]
+
+(define (product list)
+        (define (prod list p)
+                (if (null? list) p
+                    (prod (cdr list) (* (car list) p))))
+        (prod list 1))
+            
+
+________________________________________________________________________
+
+Question 8. [1]
+
+non lambda version ....................
+(define (ad n _) (+ n 1))
+(define (len list) (foldleft ad 0 list))
+lambda version ....................
+(define (lenn list) (foldleft (lambda (n _) (+ n 1)) 0 list))
+
+________________________________________________________________________
+
+Question 3. [1]
+
+Part a:
+(define (length x)
+        (define (len x n)
+                (if (null? x) n
+                    (len (cdr x) (+ n 1))))
+        (len x 0))
+
+Part b:
+let length x =
+    let rec len x n = match x with
+        | [] -> n
+        | _::cdr -> len cdr (n + 1)
+    in len x 0
+
+________________________________________________________________________
+
+12.    (B) goto
+
+
+
+10.    (D) val f : int -> int -> int -> int
+
+
+2. Refer to the solution PDF for this exam.
+
+
+19. Refer to the solution PDF for this exam.
+
+

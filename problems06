@@ -1,0 +1,1342 @@
+Likeness: 0.666666666667
+sample_exams/cmps112-2009q1-final.tt
+ 4. Prolog:  Draw a picture of the undirected graph represented by the
+    facts given below.  Write a function adjacent which will succeed if
+    two nodes in the graph are adjacent to each other.  [2pt]
+    edge(a,b).
+    edge(b,c).
+    edge(c,d).
+    edge(d,a).
+    edge(a,c).
+
+Words from problem not in sneak peek:
+c, b, 2pt, d, below, succeed, 4, each, represented, by, are
+
+Words from problem yes in sneak peek:
+in, facts, if, given, graph, two, write, to, other, adjacent, nodes, undirected,
+function, picture, draw, which, a, of, will, edge, the, prolog
+
+
+Likeness: 0.6
+sample_exams/cmps112-2009q1-final.tt
+10. Ocaml:  Write the function reverse which reverses list.  Do not use
+    any higher-order functions.  Your function must be tail-recursive or
+    use a local tail-recursive helper.  [2pt]
+    # reverse;;
+    - : 'a list -> 'a list
+    # reverse [1;2;3];;
+    - : int list = [3; 2; 1]
+
+Words from problem not in sneak peek:
+be, recursive, do, 10, reverses, 1, 3, 2, must, local, any, 2pt
+
+Words from problem yes in sneak peek:
+function, a, use, or, reverse, helper, int, list, functions, ocaml, write, tail,
+which, not, the, order, your, higher
+
+
+Likeness: 0.666666666667
+sample_exams/cmps112-2009q1-final.tt
+ 6. What is the type of f?
+    let f x y = x + y;;
+    (A) int * int * int
+    (B) int * int -> int
+    (C) int -> int * int
+    (D) int -> int -> int
+
+Words from problem not in sneak peek:
+y, c, b, d, 6
+
+Words from problem yes in sneak peek:
+a, what, f, int, of, is, let, x, the, type
+
+
+Likeness: 0.6
+sample_exams/cmps112-2009q1-final.tt
+ 9. Of the ones listed here, the attribute most associated with
+    functional programming is:
+    (A) dynamic dispatch
+    (B) referential transparency
+    (C) static type checking
+    (D) unification
+
+Words from problem not in sneak peek:
+c, b, associated, d, attribute, referential, unification, listed, transparency,
+9
+
+Words from problem yes in sneak peek:
+a, programming, checking, with, is, dynamic, functional, dispatch, most, ones,
+static, here, of, the, type
+
+
+Likeness: 0.625
+sample_exams/cmps112-2009q1-final.tt
+ 1. What is the type of swap?
+    let swap f x y = f y x;;
+    (A) ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+    (B) ('a -> 'b -> 'b) -> 'a list -> 'b -> 'b
+    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+    (D) ('a -> 'b) -> ('c -> 'a) -> 'c -> 'b
+
+Words from problem not in sneak peek:
+c, b, d, 1, swap, y
+
+Words from problem yes in sneak peek:
+a, what, f, of, is, list, let, x, the, type
+
+
+Likeness: 0.68
+sample_exams/cmps112-2009q1-final.tt
+ 3. The function List.fold_left uses up how much stack space on a list
+    of length $n$?
+    (A) $ O ( 1 ) $
+    (B) $ O ( 2 sup n ) $
+    (C) $ O ( log sub 2 n ) $
+    (D) $ O ( n ) $
+
+Words from problem not in sneak peek:
+c, b, d, 3, 1, fold_left, 2, uses
+
+Words from problem yes in sneak peek:
+function, a, log, space, of, list, up, o, n, how, length, much, sup, the, on,
+stack, sub
+
+
+Likeness: 0.666666666667
+sample_exams/cmps112-2009q1-final.tt
+ 5. What is the stack efficiency of this function?
+    let rec f n =
+        if n <= 1 then n
+        else f (n - 1) + f (n - 2);;
+    (A) $ O ( 1 ) $
+    (B) $ O ( n ) $
+    (C) $ O ( n sup 2 ) $
+    (D) $ O ( 2 sup n ) $
+
+Words from problem not in sneak peek:
+c, b, d, else, 1, efficiency, 2, 5
+
+Words from problem yes in sneak peek:
+function, then, what, f, this, of, is, o, n, let, a, sup, rec, the, stack, if
+
+
+Likeness: 0.666666666667
+sample_exams/cmps112-2009q1-final.tt
+ 7. What is the stack efficiency of this function?
+    let rec f n =
+        if n <= 1 then n
+        else f (n - 1) + f (n - 2);;
+    (A) $ O ( 1 ) $
+    (B) $ O ( n ) $
+    (C) $ O ( n sup 2 ) $
+    (D) $ O ( 2 sup n ) $
+
+Words from problem not in sneak peek:
+c, b, d, else, 1, efficiency, 2, 7
+
+Words from problem yes in sneak peek:
+function, then, what, f, this, of, is, o, n, let, a, sup, rec, the, stack, if
+
+
+Likeness: 0.6875
+sample_exams/cmps112-2009q1-test1.tt
+ 8. Of the following languages, which is oldest?
+    (A) Algol 60
+    (B) C++
+    (C) Fortran
+    (D) Java
+
+Words from problem not in sneak peek:
+oldest, 8, c, b, d
+
+Words from problem yes in sneak peek:
+a, languages, java, of, is, 60, fortran, which, following, the, algol
+
+
+Likeness: 0.64
+sample_exams/cmps112-2009q1-test1.tt
+10. In C++, if we have a call of the form a.f(x,y), inside the function
+    f, how is a field x in the object a referred to?
+    (A) this->*x
+    (B) this->x
+    (C) this.x
+    (D) this[x]
+
+Words from problem not in sneak peek:
+10, c, b, d, form, inside, call, y, referred
+
+Words from problem yes in sneak peek:
+function, field, we, f, to, this, of, is, object, how, a, have, in, x, the, if
+
+
+Likeness: 0.636363636364
+sample_exams/cmps112-2009q1-test1.tt
+11. A Case against the GO TO Statement.
+    (A) Edsger Dijkstra
+    (B) Grace Hopper
+    (C) Donald Knuth
+    (D) Niklaus Wirth
+
+____________________
+
+   Total:  31 *
+
+
+Words from problem not in sneak peek:
+case, 11, c, b, d, 31, against, ____________________
+
+Words from problem yes in sneak peek:
+a, edsger, niklaus, hopper, dijkstra, wirth, to, donald, statement, go, knuth,
+the, total, grace
+
+
+Likeness: 0.62962962963
+sample_exams/cmps112-2009q1-test2.tt
+ 1. Scheme:  The following function by filius Bonacci takes $ O ( 2 sup
+    n ) $ time and $ O ( n ) $ stack.  Recode it using a helper function
+    so that it takes $ O ( n ) $ time and $ O ( 1 ) $ stack.  [2pt]
+    (define (f n) (if (< n 2) n (+ (f (- n 1)) (f (- n 2)))))
+
+Words from problem not in sneak peek:
+and, takes, 1, 2, bonacci, recode, time, filius, by, 2pt
+
+Words from problem yes in sneak peek:
+function, a, so, helper, that, f, it, o, n, if, sup, following, using, the,
+scheme, stack, define
+
+
+Likeness: 0.608695652174
+sample_exams/cmps112-2009q1-test2.tt
+ 8. Scheme:  Without using any higher order functions, code reverse,
+    which reverses a list.  Hint:  Think about two stacks.  Use tail
+    recursive form and a helper function that uses accumulator style.
+    [2pt]
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write `Z' if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [11pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   11 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+Words from problem not in sneak peek:
+and, code, are, any, recursive, hint, 1, 0, answer, 8, correct, 2pt, form,
+about, answers, choice, uses, reverses, 11, c, b, column, stacks, accumulator,
+11pt, each, think
+
+Words from problem yes in sneak peek:
+helper, number, two, indicates, want, total, your, if, style, that, question,
+negative, write, to, tail, without, which, you, scheme, worth, higher, function,
+multiple, risk, missing, max, use, functions, wrong, letter, using, a, don,
+reverse, of, list, points, t, the, z, order, left
+
+
+Likeness: 0.68
+sample_exams/cmps112-2009q1-test2.tt
+ 5. Fold right (foldr) uses up how much stack space on a list of length
+    $n$?
+    (A) $ O ( 1 ) $
+    (B) $ O ( 2 sup n ) $
+    (C) $ O ( log sub 2 n ) $
+    (D) $ O ( n ) $
+
+Words from problem not in sneak peek:
+c, b, d, foldr, 1, 2, uses, 5
+
+Words from problem yes in sneak peek:
+a, on, right, log, how, of, space, list, up, o, n, fold, length, much, sup,
+stack, sub
+
+
+Likeness: 0.619047619048
+sample_exams/cmps112-2009q1-test2.tt
+ 6. In the following statement, continue goes to what part ?
+          for (i = 0; i < n; ++i) {
+             f (); continue; g ();
+          } h ();
+    (A) ++i
+    (B) h ();
+    (C) i < n
+    (D) i = 0
+
+Words from problem not in sneak peek:
+c, b, continue, 0, part, goes, 6, d
+
+Words from problem yes in sneak peek:
+a, what, g, for, f, i, h, n, to, statement, in, following, the
+
+
+Likeness: 0.621621621622
+sample_exams/cmps112-2011q2-final.tt
+ 1. Ocaml:  Define a function evenlen in Ocaml which returns true if
+    the list's length is even and false if not.  It must be tail-
+    recursive and may not use the function List.length or any of the
+    folding functions.  [2pt]
+
+    # evenlen [];;
+    - : bool = true
+    # evenlen [1];;
+    - : bool = false
+    # evenlen [1;2;3;4];;
+    - : bool = true
+
+Words from problem not in sneak peek:
+and, be, folding, recursive, evenlen, may, 1, 3, 2, bool, 4, must, any, 2pt
+
+Words from problem yes in sneak peek:
+false, is, it, in, if, even, use, s, tail, which, returns, define, function,
+functions, not, true, a, of, list, ocaml, length, the, or
+
+
+Likeness: 0.617647058824
+sample_exams/cmps112-2011q2-final.tt
+ 2. Prolog:  Define some facts or rules such that the predicate
+    oddlen/1 succeeds if the length of its list is odd and fails
+    otherwise.  Do not do any computation on the length of the list.
+    [2pt]
+
+    | ?- oddlen([]).
+    no
+    | ?- oddlen([1]).
+    yes
+    | ?- oddlen([1,2,3,4]).
+    no
+
+Words from problem not in sneak peek:
+and, do, fails, 2pt, succeeds, 1, 3, 2, 4, such, yes, any, otherwise
+
+Words from problem yes in sneak peek:
+on, predicate, no, rules, of, oddlen, that, some, length, or, not, list, prolog,
+computation, facts, the, define, odd, its, is, if
+
+
+Likeness: 0.6
+sample_exams/cmps112-2011q2-final.tt
+ 6. Scheme:  Using apply and max, define the Scheme function depth.
+    The depth of anything that is not a list is 0.  The depth of a
+    list is one more than the maximum depth of its constituent
+    elements.  [2pt]
+
+    > (depth '(1 2 (3 4 (5 6)) 88))
+    3
+    > (depth '(a b c))
+    1
+    > (depth '())
+    1
+    > (depth 7)
+    0
+
+Words from problem not in sneak peek:
+and, c, b, 2pt, anything, 1, 0, 3, 2, 5, 4, 7, 6, constituent
+
+Words from problem yes in sneak peek:
+function, a, elements, than, that, max, is, of, list, maximum, one, define, 88,
+depth, using, not, apply, the, scheme, its, more
+
+
+Likeness: 0.6
+sample_exams/cmps112-2011q2-final.tt
+ 9. In C++, templates such as stack<int> are an example of what kind
+    of polymorphism?
+    (A) ad-hoc conversion
+    (B) ad-hoc overloading
+    (C) universal inclusion
+    (D) universal parametric
+
+Words from problem not in sneak peek:
+c, b, ad, an, as, are, 9, such, example, d
+
+Words from problem yes in sneak peek:
+templates, a, kind, hoc, inclusion, int, of, universal, conversion, overloading,
+polymorphism, in, what, parametric, stack
+
+
+Likeness: 0.62962962963
+sample_exams/cmps112-2011q2-final.tt
+ 1. In Ocaml, what is the depth of recursive non-tail calls for the
+    following functions, where $n$ is the length of the list argument?
+    (A) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( 1 ) $
+    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+    (C) fold_left:  $ O ( n ) $;  fold_right:  $ O ( 1 ) $
+    (D) fold_left:  $ O ( n ) $;  fold_right:  $ O ( n ) $
+
+Words from problem not in sneak peek:
+non, b, recursive, calls, c, fold_right, argument, 1, fold_left, d
+
+Words from problem yes in sneak peek:
+a, depth, what, for, of, is, list, tail, o, ocaml, length, in, following, the,
+n, where, functions
+
+
+Likeness: 0.666666666667
+sample_exams/cmps112-2011q2-final.tt
+ 9. In Ocaml, the type of (+) is:
+    (A) int * int * int
+    (B) int * int -> int
+    (C) int -> int * int
+    (D) int -> int -> int
+
+Words from problem not in sneak peek:
+9, c, b, d
+
+Words from problem yes in sneak peek:
+a, int, of, is, ocaml, in, the, type
+
+
+Likeness: 0.666666666667
+sample_exams/cmps112-2011q2-final.tt
+10. In Ocaml, what is the type of List.map?
+    (A) ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+    (B) ('a -> 'b) -> 'a list -> 'b list
+    (C) ('a -> bool) -> 'a list -> 'a list
+    (D) ('a -> bool) -> 'a list -> bool
+
+Words from problem not in sneak peek:
+10, c, b, bool, d
+
+Words from problem yes in sneak peek:
+a, map, what, of, is, list, ocaml, in, the, type
+
+
+Likeness: 0.657894736842
+sample_exams/cmps112-2011q2-test1.tt
+ 5. Define a function in Scheme whose first argument is a predicate (a
+    function of one argument which returns either #t or #f) and whose
+    second argument is a list.  If the predicate returns #t for any
+    element of the list, contains returns #t, otherwise it returns #f.
+    [2pt]
+
+    > (contains (lambda (x) (= x 3)) '(1 2 3 4))
+    #t
+    > (contains (lambda (x) (> x 9)) '(1 2 3 4))
+    #f
+
+Words from problem not in sneak peek:
+and, whose, 2pt, argument, either, 1, 3, 2, 5, 4, 9, any, otherwise
+
+Words from problem yes in sneak peek:
+is, it, one, second, in, if, for, contains, returns, which, scheme, define,
+function, predicate, a, f, of, list, element, t, x, the, first, or, lambda
+
+
+Likeness: 0.611111111111
+sample_exams/cmps112-2011q2-test1.tt
+ 8. Perl and Scheme are languages whose type checking is:
+    (A) Strong and dynamic.
+    (B) Strong and static.
+    (C) Weak and dynamic.
+    (D) Weak and static.
+
+Words from problem not in sneak peek:
+and, whose, c, b, d, are, 8
+
+Words from problem yes in sneak peek:
+a, scheme, checking, weak, is, dynamic, perl, languages, static, strong, type
+
+
+Likeness: 0.628571428571
+sample_exams/cmps112-2011q2-test2.tt
+ 2. Scheme:  Define a function that will return the largest number in
+    a list of numbers.  Return 'undef if the list is empty.  The
+    function max will return the largest of its arguments.  You must
+    either use an inner tail-recursive function, or correctly use
+    apply.  [2pt]
+    (define (maxlist list)
+
+Words from problem not in sneak peek:
+either, 2pt, undef, recursive, an, 2, numbers, correctly, largest, maxlist,
+must, empty, arguments
+
+Words from problem yes in sneak peek:
+is, number, in, apply, its, if, use, tail, inner, you, scheme, define, function,
+return, that, max, a, of, list, will, the, or
+
+
+Likeness: 0.642857142857
+sample_exams/cmps112-2011q2-test2.tt
+ 5. Ocaml:  Define a function contains which accepts a predicate and a
+    list and returns true if the predicate is true for some element in
+    the list.  [2pt]
+    # contains ((=)3) [1;2;3;4];;
+    - : bool = true
+    # contains ((<)9) [1;2;3;4];;
+    - : bool = false
+
+Words from problem not in sneak peek:
+and, 2pt, accepts, 1, 3, 2, 5, 4, 9, bool
+
+Words from problem yes in sneak peek:
+function, a, predicate, false, for, list, is, contains, some, ocaml, element,
+returns, which, in, the, define, true, if
+
+
+Likeness: 0.631578947368
+sample_exams/cmps112-2011q2-test2.tt
+ 1. Lazy evaluation of functions is the default in which language?
+    (A) Fortran
+    (B) Haskell
+    (C) Ocaml
+    (D) Scheme
+
+Words from problem not in sneak peek:
+c, b, d, default, lazy, 1, evaluation
+
+Words from problem yes in sneak peek:
+a, functions, language, of, is, ocaml, fortran, haskell, which, in, the, scheme
+
+
+Likeness: 0.625
+sample_exams/cmps112-2011q2-test2.tt
+ 6. What is the type of the Ocaml expression
+       map ((+)3)
+    (A) ('a -> 'b) -> 'a list -> 'b list
+    (B) int list -> (int -> int) list
+    (C) int list -> int list
+    (D) int list
+
+Words from problem not in sneak peek:
+c, b, d, 3, 6, expression
+
+Words from problem yes in sneak peek:
+a, map, what, int, of, is, list, ocaml, the, type
+
+
+Likeness: 0.647058823529
+sample_exams/cmps112-2011q2-test2.tt
+10. The style of programming in Smalltalk is:
+    (A) functional
+    (B) imperative
+    (C) logic
+    (D) object-oriented
+
+Words from problem not in sneak peek:
+10, c, b, d, imperative, logic
+
+Words from problem yes in sneak peek:
+a, style, of, is, object, programming, functional, oriented, in, the, smalltalk
+
+
+Likeness: 0.666666666667
+sample_exams/cmps112-2012q1-final.tt
+ 3. In Ocaml, what is the type of List.tl?  (Hint:  like cdr in
+    Scheme).
+    (A) 'a list * 'a list -> 'a list
+    (B) 'a list -> 'a
+    (C) 'a list -> 'a list
+    (D) 'a list -> 'a list -> 'a list
+
+Words from problem not in sneak peek:
+c, b, d, hint, 3, cdr
+
+Words from problem yes in sneak peek:
+a, what, like, of, is, list, ocaml, tl, in, the, scheme, type
+
+
+Likeness: 0.631578947368
+sample_exams/cmps112-2012q1-final.tt
+10. Which of the following programs will cause a dangling pointer?
+    (A) int *f() {int i = 6; return &i; }
+    (B) int *f() {int i = 6; return *i; }
+    (C) int *f() {int i = 6; return  i; }
+    (D) int  f() {int i = 6; return  i; }
+
+Words from problem not in sneak peek:
+10, c, b, d, dangling, 6, cause
+
+Words from problem yes in sneak peek:
+a, return, f, i, of, programs, will, int, which, following, the, pointer
+
+
+Likeness: 0.608695652174
+sample_exams/cmps112-2012q1-final.tt
+ 2. In Java, if two functions in different classes have the same
+    signature, but one of the classes is a subclass of another, this
+    is referred to as:
+    (A)
+
+Words from problem not in sneak peek:
+different, but, as, 2, subclass, another, signature, classes, referred
+
+Words from problem yes in sneak peek:
+a, functions, java, this, of, is, two, same, one, to, have, in, the, if
+
+
+Likeness: 0.666666666667
+sample_exams/cmps112-2012q1-final.tt
+11. The first language to be described using Backus-Naur form was:
+    (A) Algol 60
+    (B) Basic
+    (C) Cobol
+    (D) Fortran
+
+
+Words from problem not in sneak peek:
+11, be, c, b, d, form, backus
+
+Words from problem yes in sneak peek:
+a, described, language, to, naur, 60, fortran, cobol, basic, using, the, was,
+algol, first
+
+
+Likeness: 0.652173913043
+sample_exams/cmps112-2012q1-test1.tt
+ 3. What is the running time of the following function?
+       (define (f n)
+          (if (< n 2) n
+              (+ (f (- n 1)) (f (- n 2)))))
+    (A) $ O ( n ) $
+    (B) $ O ( log sub 2 n ) $
+    (C) $ O ( n sup 2 ) $
+    (D) $ O ( 2 sup n ) $
+
+Words from problem not in sneak peek:
+c, b, d, running, 1, 3, 2, time
+
+Words from problem yes in sneak peek:
+function, sub, what, log, f, of, is, o, n, a, sup, following, the, if, define
+
+
+Likeness: 0.666666666667
+sample_exams/cmps112-2012q1-test1.tt
+ 4. What amount of stack space is taken up by evaluating that same
+    function?
+    (A) $ O ( n ) $
+    (B) $ O ( log sub 2 n ) $
+    (C) $ O ( n sup 2 ) $
+    (D) $ O ( 2 sup n ) $
+
+Words from problem not in sneak peek:
+c, b, d, amount, 2, 4, evaluating, by
+
+Words from problem yes in sneak peek:
+function, a, what, log, space, of, is, that, up, same, n, o, sup, taken, stack,
+sub
+
+
+Likeness: 0.697478991597
+sample_exams/cmps112-2012q1-test2.tt
+11. The classic paper ``Go To Statement Considered Harmful'', CACM,
+    1968, was written by:
+    (A) John Backus
+    (B) Edsger Dijkstra
+    (C) Grace Hopper
+    (D) Donald Knuth
+
+____________________
+
+ He also said:
+ · ``FORTRAN, the infantile disorder, by now nearly 20 years  old,  is
+   hopelessly inadequate for whatever computer application you have in
+   mind today:  it is now too clumsy, too risky, and too expensive  to
+   use.''
+ · ``PL/I,  the fatal disease, belongs more to the problem set than to
+   the solution set.''
+ · ``It is practically impossible to teach good  programming  to  stu-
+   dents  that  have had a prior exposure to BASIC:  as potential pro-
+   grammers they are mentally mutilated beyond hope of regeneration.''
+ · ``The  use  of COBOL cripples the mind; its teaching should, there-
+   fore, be regarded as a criminal offence.''
+ · ``In the good old days physicists  repeated  each  other's  experi-
+   ments,  just to be sure.  Today they stick to FORTRAN, so that they
+   can share each other's programs, bugs included.''
+
+
+Words from problem not in sneak peek:
+and, classic, pro, clumsy, as, paper, are, hopelessly, said, 20, there, also,
+written, john, be, each, fore, harmful, b, cacm, 1968, by, mentally, he, 11, c,
+experi, d, considered, ____________________, stu, ments, can, grammers, dents,
+backus
+
+Words from problem yes in sneak peek:
+application, set, old, just, inadequate, is, hopper, regeneration, whatever,
+years, dijkstra, computer, cobol, have, in, go, impossible, beyond, the, its,
+expensive, use, potential, infantile, for, fortran, donald, regarded, disease,
+had, should, to, belongs, physicists, statement, basic, teaching, you, fatal,
+was, hope, too, cripples, criminal, good, than, that, offence, problem, it,
+sure, repeated, mutilated, nearly, they, knuth, included, teach, now, grace,
+mind, exposure, a, days, so, programs, i, of, risky, practically, programming,
+solution, prior, s, pl, bugs, today, edsger, share, more, disorder, other, stick
+
+
+Likeness: 0.652173913043
+sample_exams/cmps112-2014q4-final.tt
+2. Ocaml.  Define the functions reverse and sum using fold_left.
+   (Fill in the blanks.)  [3pt]
+   # List.fold_left;;
+   - : ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+
+   # let reverse = List.fold_left
+   ________________________________________;;
+   val reverse : '_a list -> '_a list
+
+   # let sum = List.fold_left
+   ________________________________________;;
+   val sum : int list -> int
+
+   # let length = List.fold_left
+   ________________________________________;;
+   val length : '_a list -> int
+
+Words from problem not in sneak peek:
+and, ________________________________________, blanks, 3pt, fold_left, 2, b, _a
+
+Words from problem yes in sneak peek:
+a, functions, reverse, val, int, sum, list, ocaml, length, let, in, using, the,
+define, fill
+
+
+Likeness: 0.620689655172
+sample_exams/cmps112-2014q4-final.tt
+4. Scheme.  Write a function take in Scheme which will make a copy of
+   the first $n$ elements of a list.  If there are fewer than $n$
+   elements in the list, it returns the complete list.  If $n <= 0$ it
+   returns the empty list.  [2pt]
+
+   (define (take n list)
+
+Words from problem not in sneak peek:
+2pt, make, there, fewer, 0, 4, complete, take, copy, empty, are
+
+Words from problem yes in sneak peek:
+function, a, elements, define, of, list, it, first, n, write, will, returns,
+which, in, the, scheme, than, if
+
+
+Likeness: 0.678571428571
+sample_exams/cmps112-2014q4-final.tt
+7. Ocaml.  Given the function at the left, fill in the table at the
+   right giving the Ocaml types for each item.  [2pt]
+
+                                             +------+--------------------------------+
+   let fac n =                               | fac  |                                |
+       if n < 0                              +------+--------------------------------+
+       then failwith "fac n | n < 0"         | n    |                                |
+       else let rec fac' n' m' =             +------+--------------------------------+
+                if n' = 0                    | 0    |                                |
+                then m'                      +------+--------------------------------+
+                else fac' (n' - 1) (n' * m') | fac' |                                |
+            in fac' n 1                      +------+--------------------------------+
+   ;;                                        | n'   |                                |
+                                             +------+--------------------------------+
+                                             | m'   |                                |
+                                             +------+--------------------------------+
+                                             | -    |                                |
+                                             +------+--------------------------------+
+                                             | *    |                                |
+                                             +------+--------------------------------+
+
+Words from problem not in sneak peek:
+2pt, item, giving, else, 1, 0, at, 7, each
+
+Words from problem yes in sneak peek:
+function, then, given, right, left, for, rec, m, ocaml, n, let, fac, in, table,
+the, fill, failwith, types, if
+
+
+Likeness: 0.605263157895
+sample_exams/cmps112-2014q4-final.tt
+8. Prolog.  Given the graph shown here, write edge facts to describe
+   it.  Write a rule adjacent which uses edge to determine if two
+   nodes are adjacent.  [2pt]
+
+   .PS 0.75i
+   A: circle "a"
+   B: circle "b" at A+(-4*circlerad,-4*circlerad)
+   C: circle "c" at A+(0,-4*circlerad)
+   D: circle "d" at A+(4*circlerad,-4*circlerad)
+   line from A to B chop
+   line from A to C chop
+   line from A to D chop
+   line from B to C chop
+   line from C to D chop
+   .PE
+
+Words from problem not in sneak peek:
+shown, b, 2pt, describe, c, rule, d, 0, uses, are, determine, at, 8, 75i, 4
+
+Words from problem yes in sneak peek:
+it, facts, if, ps, given, from, graph, two, write, to, circlerad, adjacent, pe,
+circle, which, here, line, nodes, a, chop, edge, the, prolog
+
+
+Likeness: 0.666666666667
+sample_exams/cmps112-2014q4-final.tt
+ 2. Which languages do not have parametric polymorphism?
+    (A) C++
+    (B) Java
+    (C) Ocaml
+    (D) Smalltalk
+
+Words from problem not in sneak peek:
+2, do, c, b, d
+
+Words from problem yes in sneak peek:
+a, polymorphism, java, have, ocaml, languages, which, not, parametric, smalltalk
+
+
+Likeness: 0.666666666667
+sample_exams/cmps112-2014q4-final.tt
+ 4. What is the required amount of stack space for fold left and fold
+    right on a list of length $n$?
+    (A) fold left $ O ( 1 ) $;  fold right $ O ( 1 ) $
+    (B) fold left $ O ( 1 ) $;  fold right $ O ( n ) $
+    (C) fold left $ O ( n ) $;  fold right $ O ( 1 ) $
+    (D) fold left $ O ( n ) $;  fold right $ O ( n ) $
+
+Words from problem not in sneak peek:
+and, c, b, d, required, 1, amount, 4
+
+Words from problem yes in sneak peek:
+a, on, what, right, for, space, of, is, list, o, n, fold, length, the, stack,
+left
+
+
+Likeness: 0.615384615385
+sample_exams/cmps112-2014q4-final.tt
+ 6. What is the type of List.map?
+    (A) ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+    (B) ('a -> 'b -> 'b) -> 'a list -> 'b -> 'b
+    (C) ('a -> 'b) -> 'a list -> 'b list
+    (D) ('a -> bool) -> 'a list -> 'a list
+
+Words from problem not in sneak peek:
+c, b, bool, d, 6
+
+Words from problem yes in sneak peek:
+a, map, what, of, is, list, the, type
+
+
+Likeness: 0.647058823529
+sample_exams/cmps112-2014q4-final.tt
+ 8. What is the type of the Ocaml function
+    let g () = 3;;
+    (A) int * unit
+    (B) int -> unit
+    (C) unit * int
+    (D) unit -> int
+
+Words from problem not in sneak peek:
+c, b, d, 3, 8, unit
+
+Words from problem yes in sneak peek:
+function, a, what, g, int, of, is, ocaml, let, the, type
+
+
+Likeness: 0.666666666667
+sample_exams/cmps112-2014q4-final.tt
+12. ``Structured Programming with goto Statements''
+    (A) Edsger Dijkstra
+    (B) C.A.R. Hoare
+    (C) Donald Knuth
+    (D) Niklaus Wirth
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write Z if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [12pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   12 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+Words from problem not in sneak peek:
+c, b, statements, goto, column, 12pt, answers, choice, 1, 0, 12, are, each,
+answer, hoare, r, correct, d
+
+Words from problem yes in sneak peek:
+number, indicates, donald, want, total, your, if, structured, question,
+negative, write, to, knuth, you, worth, multiple, risk, that, max, niklaus,
+wirth, wrong, letter, with, a, don, of, programming, dijkstra, points, t,
+edsger, the, z, missing, left
+
+
+Likeness: 0.615384615385
+sample_exams/cmps112-2014q4-final.tt
+ 4. In Ocaml, what is the type of (/.)?
+    (A) float * float * float
+    (B) float * float -> float
+    (C) float -> float * float
+    (D) float -> float -> float
+
+Words from problem not in sneak peek:
+float, c, b, d, 4
+
+Words from problem yes in sneak peek:
+a, what, of, is, ocaml, in, the, type
+
+
+Likeness: 0.625
+sample_exams/cmps112-2014q4-final.tt
+ 5. In Java or C++, which statement can cause control to pass from the
+    current function to the calling function, or perhaps the caller of
+    the caller, or perhaps even all the way back to the main function?
+    (A) break
+    (B) continue
+    (C) return
+    (D) throw
+
+Words from problem not in sneak peek:
+all, b, d, caller, c, back, break, continue, 5, can, calling, cause
+
+Words from problem yes in sneak peek:
+control, even, or, java, statement, from, perhaps, of, in, the, current, to,
+which, a, way, pass, return, function, main, throw
+
+
+Likeness: 0.611111111111
+sample_exams/cmps112-2014q4-final.tt
+ 7. Which is a fully curried lazy functional language with
+    overloading?
+    (A) Haskell
+    (B) Ocaml
+    (C) Scheme
+    (D) Smalltalk
+
+Words from problem not in sneak peek:
+lazy, b, d, fully, c, 7, curried
+
+Words from problem yes in sneak peek:
+a, language, is, functional, ocaml, overloading, haskell, which, scheme, with,
+smalltalk
+
+
+Likeness: 0.663716814159
+sample_exams/cmps112-2014q4-test1.tt
+1. For each language described here, fill in the name of the language.
+   Choose from among the following languages:  Algol 60, AWK, Basic,
+   C++, C, COBOL, FORTRAN, Haskell, Intercal, Java, Lisp, ML, OCaml,
+   Pascal, Perl, PL/I, Prolog, Simula 67.  (Grading:  deduct 1/2 point
+   for each wrong or missing answer, but do not score less than 0.)
+   [3pt]
+
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Bjarne Stroustrup's most noted contribution to language design.                  |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Business data processing language, designers included Grace Hopper.              |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Designed in Europe to express algorithms in a structured way.                    |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |First version of Unix was 9000 lines of this language (plus some assembly code). |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |List processing language typically used in artificial intelligence.              |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Numeric and scientific computation language developed at IBM.                    |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Simulation language that influenced the design of C++.                           |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Small language for structured programming designed by Niklaus Wirth.             |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Sun Microsystems claimed this language is ``write once, run anywhere''.          |
+   +--------------+---------------------------------------------------------------------------------+
+
+Words from problem not in sneak peek:
+and, among, code, intelligence, unix, deduct, at, claimed, assembly, grading,
+sun, microsystems, artificial, 1, 0, version, choose, answer, algorithms,
+europe, do, run, express, 3pt, but, awk, 9000, 2, data, by, c, bjarne, lines,
+anywhere, plus, each, typically, once
+
+Words from problem yes in sneak peek:
+the, structured, programming, grace, less, developed, is, in, some, numeric, 60,
+included, pascal, haskell, design, computation, 67, influenced, simula, write,
+or, from, score, for, fortran, point, perl, languages, to, that, stroustrup,
+way, basic, i, fill, was, pl, used, scientific, business, missing, hopper,
+algol, processing, niklaus, here, wirth, following, wrong, designed, not,
+described, intercal, designers, than, ibm, a, java, name, language, most, this,
+of, list, ocaml, simulation, lisp, s, ml, small, cobol, contribution, prolog,
+noted, first
+
+
+Likeness: 0.666666666667
+sample_exams/cmps112-2014q4-test2.tt
+7. Scheme.  Using foldl, define the function product, which computes
+   the product of a list of numbers.  [1pt]
+
+Words from problem not in sneak peek:
+computes, 1pt, numbers, 7, foldl
+
+Words from problem yes in sneak peek:
+function, a, product, of, list, which, using, the, scheme, define
+
+
+Likeness: 0.666666666667
+sample_exams/cmps112-2014q4-test2.tt
+11. Scheme.  Define the function reverse, which reverses a list.  Do
+   not use any higher-order functions.  Do not use append.  [2pt]
+
+   (define (reverse list)
+
+Multiple choice.  To the left of each question, write the letter that
+indicates your answer.  Write Z if you don't want to risk a wrong
+answer.  Wrong answers are worth negative points.  [12pt]
+
++--------------------------+------+------+------------+
+|number of                 |      |× 1 = |      $= a$ |
+|correct answers           |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× ½ = |      $= b$ |
+|wrong answers             |      |      |            |
++--------------------------+------+------+------------+
+|number of                 |      |× 0 = |  0         |
+|missing answers           |      |      |            |
++--------------------------+------+------+------------+
+|column total              |   12 |      |      $= c$ |
+|$ c = max ( a - b , 0 ) $ |      |      |            |
++--------------------------+------+------+------------+
+
+Words from problem not in sneak peek:
+11, do, c, 12, 2pt, reverses, column, 12pt, correct, answers, choice, 1, 0, b,
+are, each, answer, any, append
+
+Words from problem yes in sneak peek:
+number, indicates, want, total, your, if, use, that, question, negative, write,
+to, which, you, scheme, worth, higher, function, multiple, risk, missing, max,
+functions, define, wrong, letter, not, a, don, reverse, of, list, points, t,
+the, z, order, left
+
+
+Likeness: 0.6875
+sample_exams/cmps112-2014q4-test2.tt
+11. In Smalltalk and Scheme, type checking is:
+    (A) strong and dynamic.
+    (B) strong and static.
+    (C) weak and dynamic.
+    (D) weak and static.
+
+Words from problem not in sneak peek:
+11, and, c, b, d
+
+Words from problem yes in sneak peek:
+a, scheme, checking, weak, is, dynamic, static, in, strong, type, smalltalk
+
+
+Likeness: 0.651162790698
+sample_exams/cmps112-2015q4-test1.tt
+5. Define the function fold_left:  the first argument is a function to
+   use to fold the list, the second argument is a unit value used to
+   fold the first element, the third argument is a list.  Use tail
+   recursion:  the function must use $ O ( 1 ) $ stack.
+
+    (a) Scheme.  [2pt]
+        > (define (length list) (fold_left (lambda (n _) (+ n 1)) 0
+        list))
+        > (define (sum list) (fold_left + 0 list))
+        > (length '(1 2 3 4 5))
+        5
+        > (sum '(1 2 3 4 5))
+        15
+
+    (b) Ocaml.  [2pt]
+        # fold_left;;
+        - : ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a = <fun>
+        # let length list = fold_left (fun n _ -> n + 1) 0 list;;
+        val length : 'a list -> int = <fun>
+        # let sum list = fold_left (+) 0 list;;
+        val sum : int list -> int = <fun>
+        # length [1;2;3;4;5];;
+        - : int = 5
+        # sum [1;2;3;4;5];;
+        - : int = 15
+
+Words from problem not in sneak peek:
+_, fold_left, b, 15, 2pt, third, argument, 1, 0, 3, 2, 5, 4, unit, must
+
+Words from problem yes in sneak peek:
+int, is, fold, second, value, element, use, val, recursion, sum, to, tail,
+scheme, define, function, used, let, stack, a, list, ocaml, o, n, length, fun,
+the, first, lambda
+
+
+Likeness: 0.666666666667
+sample_exams/cmps112-2015q4-test1.tt
+ 3. What is type of (+) in Ocaml?
+    (A) int * int * int
+    (B) int * int -> int
+    (C) int -> int * int
+    (D) int -> int -> int
+
+Words from problem not in sneak peek:
+c, b, d, 3
+
+Words from problem yes in sneak peek:
+a, what, int, of, is, ocaml, in, type
+
+
+Likeness: 0.681818181818
+sample_exams/cmps112-2015q4-test2.tt
+ 1. Backus-Naur Form, used to define syntax, was first used in the
+    definition of:
+    (A) ALGOL
+    (B) BASIC
+    (C) COBOL
+    (D) FORTRAN
+
+Words from problem not in sneak peek:
+definition, c, b, d, form, 1, backus
+
+Words from problem yes in sneak peek:
+a, used, fortran, of, naur, in, syntax, to, cobol, basic, algol, first, was,
+the, define
+
+
+Likeness: 0.625
+sample_exams/cmps112-2015q4-test2.tt
+ 5. What is the running time of let rec f n = if n <= 1 then n else f
+    (n - 1) + f (n - 2)?
+    (A) $ O ( log sub 2 n ) $
+    (B) $ O ( n ) $
+    (C) $ O ( 2 sup n ) $
+    (D) $ O ( n sup 2 ) $
+
+Words from problem not in sneak peek:
+c, b, d, else, 1, running, 2, 5, time
+
+Words from problem yes in sneak peek:
+a, then, what, sub, f, of, is, o, n, let, log, sup, rec, the, if
+
+
+Likeness: 0.68
+sample_exams/cmps112-2015q4-test2.tt
+ 7. For a list of length $n$, how much function call stack space is
+    used by fold left and fold right?
+    (A) fold left $ O ( 1 ) $ and fold right $ O ( 1 ) $
+    (B) fold left $ O ( 1 ) $ and fold right $ O ( n ) $
+    (C) fold left $ O ( n ) $ and fold right $ O ( 1 ) $
+    (D) fold left $ O ( n ) $ and fold right $ O ( n ) $
+
+Words from problem not in sneak peek:
+and, c, b, d, 1, call, 7, by
+
+Words from problem yes in sneak peek:
+function, a, right, for, space, of, is, list, used, n, fold, length, much, o,
+how, stack, left
+
+
+Likeness: 0.681034482759
+sample_exams/cmps112-2016q4-final.tt
+1. For each language described here, fill in the name of the language.
+   Choose from among the following languages:  Algol 60, AWK, Bash,
+   Basic, BCPL, C, C++, COBOL, Forth, FORTRAN, Haskell, Intercal,
+   Java, Lisp, ML, OCaml, Pascal, Perl, PL/I, Prolog, Simula 67,
+   Smalltalk.  Grading:  deduct ½ point for each wrong or missing
+   answer, but do not score less than 0.  [3pt]
+
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Bjarne Stroustrup's most noted contribution to language design.                  |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Business data processing language, designers included Grace Hopper.              |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Designed in Europe to express algorithms in a structured way.                    |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |First version of Unix was 9000 lines of this language (plus some assembly code). |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |List processing language typically used in artificial intelligence.              |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Numeric and scientific computation language developed at IBM.                    |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Simulation language that influenced the design of C++.                           |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Small language for structured programming designed by Niklaus Wirth.             |
+   +--------------+---------------------------------------------------------------------------------+
+   |              |Sun Microsystems claimed this language is ``write once, run anywhere''.          |
+   +--------------+---------------------------------------------------------------------------------+
+
+Words from problem not in sneak peek:
+and, among, code, intelligence, unix, deduct, at, claimed, assembly, grading,
+sun, microsystems, artificial, 1, 0, version, choose, answer, algorithms,
+europe, do, run, express, 3pt, but, awk, 9000, data, by, c, bjarne, lines,
+anywhere, plus, each, typically, once
+
+Words from problem yes in sneak peek:
+the, structured, designed, programming, grace, less, developed, is, in, some,
+numeric, 60, included, pascal, haskell, design, computation, 67, influenced,
+smalltalk, simula, write, or, from, score, for, fortran, point, was, perl,
+languages, to, that, stroustrup, way, basic, i, fill, forth, pl, used,
+scientific, business, missing, hopper, algol, processing, niklaus, here, wirth,
+following, wrong, bcpl, not, described, intercal, designers, than, bash, ibm, a,
+java, name, language, most, this, of, list, ocaml, simulation, lisp, s, ml,
+small, cobol, contribution, first, noted, prolog
+
+
+Likeness: 0.636363636364
+sample_exams/cmps112-2016q4-final.tt
+ 5. Besides C, the object-oriented language which is an ancestor of
+    C++.
+    (A) Algol 60
+    (B) Fortran IV
+    (C) Pascal
+    (D) Simula 67
+
+Words from problem not in sneak peek:
+c, b, an, d, iv, 5, besides, ancestor
+
+Words from problem yes in sneak peek:
+a, oriented, language, of, is, object, 60, fortran, pascal, which, 67, simula,
+algol, the
+
+
+Likeness: 0.619047619048
+sample_exams/cmps112-2016q4-final.tt
+ 9. Unification is part of the static type checking algorithm used by
+    what language?
+    (A) C++
+    (B) Ocaml
+    (C) Prolog
+    (D) Smalltalk
+
+Words from problem not in sneak peek:
+c, b, d, algorithm, part, unification, 9, by
+
+Words from problem yes in sneak peek:
+a, what, used, language, checking, of, is, ocaml, static, the, type, smalltalk,
+prolog
+
+
+Likeness: 0.625
+sample_exams/cmps112-2016q4-final.tt
+12. What is the signature of Ocaml's List.map?
+    (A) ('a -> 'b) -> 'a list -> 'b list
+    (B) ('a -> bool) -> 'a list -> 'a list
+    (C) ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+    (D) 'a list -> int
+
+
+Words from problem not in sneak peek:
+c, 12, d, b, bool, signature
+
+Words from problem yes in sneak peek:
+a, map, what, int, of, is, list, ocaml, s, the
+
+
+Likeness: 0.675675675676
+sample_exams/cmps112-2016q4-midterm.tt
+1. Ocaml.  Define a tail-recursive function evenlen which returns true
+   if its argument is a list of even length and false if there are an
+   odd number of elements in the list.  Do not use a higher-order
+   function.  [2pt]
+   # evenlen [];;
+   - : bool = true
+   # evenlen [1];;
+   - : bool = false
+   # evenlen [1;2];;
+   - : bool = true
+
+Words from problem not in sneak peek:
+and, do, recursive, evenlen, there, argument, an, 1, 2, bool, are, 2pt
+
+Words from problem yes in sneak peek:
+false, is, number, in, odd, its, if, even, use, returns, tail, which, define,
+function, elements, not, true, a, of, list, ocaml, length, the, higher, order
+
+
+Likeness: 0.615384615385
+sample_exams/cmps112-2016q4-midterm.tt
+ 3. What is the Ocaml type signature of:
+    (/);;
+    (A) - : int * int * int
+    (B) - : int * int -> int
+    (C) - : int -> int * int
+    (D) - : int -> int -> int
+
+Words from problem not in sneak peek:
+c, b, signature, d, 3
+
+Words from problem yes in sneak peek:
+a, what, int, of, is, ocaml, the, type
+
+
+Likeness: 0.6
+sample_exams/cmps112-2017q2-midterm.tt
+3. Ocaml.  Define the function fold_left.
+
+    (a) Ocaml.  [2pt]
+
+    (b) Scheme.  [2pt]
+
+Words from problem not in sneak peek:
+fold_left, b, 2pt, 3
+
+Words from problem yes in sneak peek:
+function, a, ocaml, the, scheme, define
+
+
+Likeness: 0.647058823529
+sample_exams/cmps112-2017q2-midterm.tt
+9. Scheme.  Define the function sum.  You may use the function foldl
+   or explicitly write a tail-recursive function.  [1pt]
+
+Words from problem not in sneak peek:
+recursive, may, explicitly, foldl, 9, 1pt
+
+Words from problem yes in sneak peek:
+function, a, use, sum, you, write, tail, the, scheme, or, define
+
+
+Likeness: 0.666666666667
+sample_exams/cmps112-2017q2-midterm.tt
+ 4. What kind of polymorphism is vector<string> an example of?
+    (A) conversion
+    (B) inclusion
+    (C) overloading
+    (D) parametric
+
+Words from problem not in sneak peek:
+c, b, d, an, 4, example
+
+Words from problem yes in sneak peek:
+a, polymorphism, what, string, inclusion, of, is, kind, overloading, vector,
+parametric, conversion
+
+
+Likeness: 0.6
+sample_exams/cmps112-2017q2-midterm.tt
+ 5. Two kinds of universal polymorphism are:
+    (A) conversion & overloading
+    (B) inclusion & parametric
+    (C) overloading & inclusion
+    (D) parametric & overloading
+
+Words from problem not in sneak peek:
+c, b, kinds, d, 5, are
+
+Words from problem yes in sneak peek:
+a, polymorphism, conversion, inclusion, of, universal, two, overloading,
+parametric
+
+
+Likeness: 0.615384615385
+sample_exams/cmps112-2017q2-midterm.tt
+ 8. Which was a language designed in the 1950s for use mainly in
+    business data processing?
+    (A) 1957 FORTRAN
+    (B) 1958 Algol 58
+    (C) 1958 Lisp
+    (D) 1959 COBOL
+
+Words from problem not in sneak peek:
+c, b, 1950s, 1959, mainly, 58, 8, data, 1958, d
+
+Words from problem yes in sneak peek:
+a, use, business, for, language, processing, fortran, 1957, cobol, designed,
+which, in, lisp, the, was, algol
+
+

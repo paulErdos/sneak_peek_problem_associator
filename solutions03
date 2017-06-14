@@ -1,0 +1,497 @@
+Question 6.
+
+let rec merge less list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | (car1::cdr1 as list1), (car2::cdr2 as list2) ->
+      if less car1 car2 then car1 :: merge less cdr2 list2
+                        else car2 :: merge less list1 cdr2
+
+________________________________________________________________________
+
+Question 8.
+
+let rec zip lis1 lis2 = match lis1, lis2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+    | _, _ -> raise (Invalid_argument "length mismatch");;
+
+________________________________________________________________________
+
+Question 13.
+
+Array implementation of a stack.  Pop a value off the stack,
+but don't nullify the pointer to the object.  The object then
+becomes dead, but still reachable.
+
+________________________________________________________________________
+
+ 2.    (A) closure
+
+
+ 3.    (B) at link (ld) time.
+
+
+ 7.    (A) applicative
+
+
+ 8.    (B) copying collector with semispaces
+
+
+ 2.    (A) ((lambda (x)(+ x 3 ))3)
+
+
+ 4.    (A) virtual function table
+
+
+ 9.    (A) name
+
+
+Question 2.
+
+while ($line = <>) {
+   next unless $line =~ m/\S/;
+   if ($line =~ m/^(.*)=(.*)$/) {
+      ($key, $value) = ($1, $2);
+      $key =~ s/^\s*//; $key =~ s/\s*$//;
+      $value =~ s/^\s*//; $value =~ s/\s*$//;
+      $hash{$key} = $value;
+   }else {
+      print STDERR "invalid line: $line";
+   }
+}
+for $key (sort keys %hash) {
+   print "$key = $hash{$key}\n";
+}
+________________________________________________________________________
+
+Question 3.
+
+sub makexref ($) {
+   my ($filename) = @_;
+   open my $file, "<$filename" or die "$0: $filename: $!\n";
+   while (defined (my $line = <$file>)) {
+      while ($line =~ s/^\s*(\S+)//) {
+         push @{$hash{$1}}, $.;
+      }
+   }
+   map {print "$_ @{$hash{$_}}\n"} sort keys %hash;
+}
+
+
+Answers to test1, page 2
+
+________________________________________________________________________
+
+Question 5.
+
+scope.perl 0            0=glo.//glo
+
+scope.perl s            s=stat. //yes
+
+scope.perl d            d=yes. //glo
+
+scope.perl g            f=yes. //yes
+
+________________________________________________________________________
+
+ 3.    (C) link
+
+
+ 6.    (C) overloading
+
+
+Question 8.
+
+while(<>) {
+   $lc++;
+   $cc += length $_;
+   $wc++ while s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+_________________________________________________________________
+
+Question 10.
+
+sc := SortedCollection new.
+sc add: 23; add: 498; add: 33; add: 87; add: 10.
+sc do: [:x | stdout << x << Character nl].
+
+_________________________________________________________________
+
+ 3.    (D) M but neither D nor U
+
+
+ 6.    (C) a heap allocated structure which points at a function and
+           contains the values of all non-local variables used by that
+           function.
+
+
+ 7.    (D) a structure which holds an unevauated expression used when
+           parameters are passed in normal form.
+
+
+Question 4.
+
+#!/usr/bin/perl
+while (<STDIN>) {
+   $lc++;
+   $cc += length;
+   $wc++ while s/\S+//;
+}
+printf "%7d %7d %7d\n", $lc, $wc, $cc
+
+_________________________________________________________________
+
+Question 6.
+
+#!/usr/bin/perl
+use strict; use warnings;
+my %hash;
+while (my $line = <>) {
+   while ($line =~ s/\w+//) { ++$hash{$&}; }
+}
+for my $word (sort keys %hash) {
+   print "$word $hash{$word}\n";
+}
+
+
+Answers to 2011q2-test1, page 2.
+
+_________________________________________________________________
+
+Question 8.
+
+(define (foldl fn unit list)
+        (if (null? list) unit
+            (foldl fn (fn unit (car list)) (cdr list))))
+
+
+_________________________________________________________________
+
+ 2.      (B) (cadr '(1 2 3))
+
+
+ 5.      (B) When the linker produces an executable image.
+
+
+Question 6.
+
+let rec merge lesseq list1 list2 = match list1, list2 with
+    | [], list2 -> list2
+    | list1, [] -> list1
+    | h1::t1, h2::t2 -> 
+          if lesseq h1 h2 then h1 :: merge lesseq t1 (h2::t2)
+                       else h2 :: merge lesseq (h1::t1) t2
+
+_________________________________________________________________
+
+Question 7.
+
+let rec zip l1 l2 = match l1, l2 with
+    | [], _ -> []
+    | _, [] -> []
+    | h1::t1, h2::t2 -> (h1, h2) :: zip t1 t2
+
+_________________________________________________________________
+
+ 2.    (B) 2 sqrt
+
+
+ 8.    (C) (2 3)
+
+
+11.    (D) Xerox PARC
+
+
+
+
+Question 4. [2]
+
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+
+Answers to 2012a1-test3, page 2
+
+_________________________________________________________________
+
+Question 8. [2]
+
+exclude( _, [], []).
+exclude( N, L, L) :- N =< 0.
+exclude( N, [H|T], U) :- M is N - 1, exclude( M, T, U).
+
+_________________________________________________________________
+
+Question 11. [2]
+
+Stack s = new Stack.
+t = s.pop(); // But pop does not set the pointer of the
+underlying array to null.  So the array continues to point
+at the object popped, even though it shouldn't.  It is
+thus reachable but dead.
+-- Many other possible explanations.
+
+_________________________________________________________________
+
+ 1.    (C) [4 + 5] value.
+
+
+ 2.    (C) 2 sqrt
+
+
+ 5.    (D) zombie
+
+
+ 3.    (A) currying
+
+
+ 6.    (B) monad
+
+
+ 9.    (C) heap
+
+
+10.    (A) daemon
+
+
+Question 7. [5]
+
+use strict;
+use warnings;
+$0 =~ s|.*/||;
+my $status = 0;
+my %hash;
+for my $fname (@ARGV ? @ARGV : "-") {
+   open my $file, "<$fname"
+        or print STDERR "$0: $fname: $!\n" and $status = 1 and next;
+   while (defined (my $line = <$file>)) {
+      map {++$hash{$_}} $line =~ m/(\w+)/g;
+      ##alternate: map {++$hash{$_}} split m/\W+/, $line;
+   }
+}
+map {print "$_ $hash{$_}\n"} sort keys %hash;
+exit $status;
+
+_________________________________________________________________
+
+Question 8. [2]
+
+(define (zip f l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (f (car l1) (car l2)) (zip f (cdr l1) (cdr l2)))
+))
+
+_________________________________________________________________
+
+Question 9. [2]
+
+sub zip {
+   my ($f, $l1, $l2) = @_;
+   my @a;
+   for ($i = 0; $i < @$l1 && $i < @$l2; ++$i) {
+      push @a, $f->($l1->[$i], $l2->[$i]);
+   }
+   return @a
+}
+
+_________________________________________________________________
+
+ 5.    (B) (4 5 6)
+
+
+ 9.    (D) only M, but neither D nor U.
+
+
+Question 5. [3]
+
+$0 =~ s|.*/||;
+my $status = 0;
+my %hash;
+for my $fname (@ARGV ? @ARGV : "-") {
+   open my $file, "<$fname"
+        or print STDERR "$0: $fname: $!\n" and $status = 1 and next;
+   while (defined (my $line = <$file>)) {
+      #map {++$hash{$_}} split m/\W+/, $line;
+      map {++$hash{$_}} $line =~ m/(\w+)/g;
+   }
+}
+map {print "$_ $hash{$_}\n"} sort keys %hash;
+exit $status;
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+Question 6. [3]
+
+let zipwith f x l1 l2 =
+    let rec zipwith' l1 l2 = match l1, l2 with
+        | [], [] -> []
+        | [], h2::t2 -> f x h2 :: zipwith' [] t2
+        | h1::t1, [] -> f h1 x :: zipwith' t1 []
+        | h1::t1, h2::t2 -> f h1 h2 :: zipwith' t1 t2
+    in zipwith' l1 l2
+
+_________________________________________________________________
+
+ 7.    (C) thunk
+
+
+Question 6. [2]
+
+Applicative order    Normal order
+(\x. * x x) 5        (* (+ 2 3) (+ 2 3))
+(* 5 5)              (* 5 5)
+25                   25
+
+________________________________________________________________________
+
+10.    (C) reachable
+
+
+11.    (D) virtual function table
+
+
+Question 2. [3]
+
+while (<>) {
+   @nums = split m/ /;
+   $total[$_] += $nums[$_] for 0..3;
+}
+print " @total\n";
+
+________________________________________________________________________
+
+ 1.    (D) ? :
+
+
+ 6.    (C) When the program is linked.
+
+
+ 8.    (A) $p->{$k}
+
+
+ 5.    (B) $x$ is bound and $y$ is free.
+
+
+ 8.    (B) by the compiler
+
+
+10.    (B) 2 sqrt
+
+
+Question 1. [2]
+(a) Return a value (or void).
+(b) Throw an exception.
+(c) Exit the program.
+(d) Go into an endless loop or recursion.
+
+________________________________________________________________________
+
+10.    (A) \lambda-calculus
+
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+    | _, _ -> failwith "zip";;
+
+________________________________________________________________________
+
+ 6.    (B) duck typing
+
+
+11.    (D) throw
+
+
+Question 6. [2]
+
+let rec zip x y = match x, y with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> (x,y)::zip xs ys
+
+________________________________________________________________________
+
+Question 10. [2]
+
+(define (pairthem l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (list (car l1) (car l2))
+              (pairthem (cdr l1) (cdr l2)))))
+
+________________________________________________________________________
+
+ 3.    (A) #!
+
+
+ 7.    (C) thunk
+
+
+ 7.    (D) throw
+
+
+ 9.    (B) race condition
+
+
+16. Refer to the solution PDF for this exam.
+
+
+21. Refer to the solution PDF for this exam.
+
+
+27. Refer to the solution PDF for this exam.
+
+
+Question 4. [2]
+
+let rec zipwith fn list1 list2 = match list1, list2 with
+    | [], _ -> []
+    | _, [] -> []
+    | x::xs, y::ys -> fn x y :: zipwith fn xs ys;;
+
+
+Answers to 2017q2-midterm, page 2
+
+_________________________________________________________________
+
+Question 7. [3]
+
+(a) highest: unary messages such as: 5 sqrt
+(b) middle: binary messages such as: 5 + 6
+(c) lowest: keyword messages such as: foo from: 5 to: 10
+
+_________________________________________________________________
+
+Question 10. [2]
+
+Many possible answers, but all should be similar.
+
+Example:  use a private array in the implementation of a stack.
+When popping an element off the stack, neglecting to set the pointer
+in the array to null and let it still point at the object,
+then the object will be reachagle, even though it is dead.
+
+
+Answers to 2017q2-midterm, page 3
+
+_________________________________________________________________
+
+Question 13. [2]
+
+(define (map2 op list1 list2)
+        (if (or (null? list1) (null? list2)) '()
+            (cons (op (car list1) (car list2))
+                  (map2 op (cdr list1) (cdr list2))))):w
+
+_________________________________________________________________
+
+ 2.    (C) Alonzo Church
+
+

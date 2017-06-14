@@ -1,0 +1,384 @@
+Question 4.
+
+1 pt.  if picture correct
+1 pt:
+adjacent(A,B):-edge(A,B).
+adjacent(A,B):-edge(B,A).
+
+________________________________________________________________________
+
+Question 10.
+
+let reverse lis =
+    let rec rev lis out = match lis with
+        | [] -> out
+        | h::t -> rev t (h::out)
+    in rev lis [];;
+
+
+Answers to test2, page 3.
+
+________________________________________________________________________
+
+ 6.    (D) int -> int -> int
+
+
+ 9.    (B) referential transparency
+
+
+ 1.    (C) ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+
+
+ 3.    (A) $ O ( 1 ) $
+
+
+ 5.    (B) $ O ( n ) $
+
+
+ 7.    (B) $ O ( n ) $
+
+
+ 8.    (C) Fortran
+
+
+10.    (B) this->x
+
+
+11.    (A) Edsger Dijkstra
+
+
+
+Question 1.
+
+(define (f n)
+   (define (f* n a b)
+      (if (< n 1) a
+          (f* (- n 1) b (+ a b))))
+   (f* n 0 1))
+
+________________________________________________________________________
+
+Question 8.
+
+(define (reverse list)
+   (define (reverse* in out)
+      (if (null? in) out
+          (reverse* (cdr in) (cons (car in) out))))
+   (reverse* list '()))
+
+
+Answers to test2, page 3.
+
+
+ 5.    (D) $ O ( n ) $
+
+
+ 6.    (A) ++i
+
+
+Question 1.
+
+let rec evenlen list = match list with
+    | [] -> true
+    | [x] -> false
+    | x::y::cddr -> evenlen cddr
+
+_________________________________________________________________
+
+Question 2.
+
+oddlen([_]).
+oddlen([H1,H2|T]) :- oddlen(T).
+
+_________________________________________________________________
+
+Question 6.
+
+(define (depth list)
+   (if (not (list? list)) 0
+       (+ 1 (apply max (cons 0 (map depth list)))))
+)
+
+_________________________________________________________________
+
+ 9.    (D) universal parametric
+
+
+ 1.    (B) fold_left:  $ O ( 1 ) $;  fold_right:  $ O ( n ) $
+
+
+ 9.    (D) int -> int -> int
+
+
+10.    (B) ('a -> 'b) -> 'a list -> 'b list
+
+
+Question 5.
+
+(define (contains pred? list)
+        (cond ((null? list) #f)
+              ((pred? (car list)) #t)
+              (else (contains pred? (cdr list)))
+))
+
+_________________________________________________________________
+
+ 8.      (A) Strong and dynamic.
+
+
+Question 2.
+
+;;;; Tail recursive version.
+(define (maxlist list)
+   (define (maxl max list)
+      (cond ((null? list) max)
+            ((> max (car list)) (maxl max (cdr list)))
+            (true (maxl (car list) (cdr list)))))
+   (if (null? list) 'undef
+       (maxl (car list) (cdr list))))
+
+;;;; Version using apply.
+(define (maxlist list)
+   (if (null? list) 'undef
+       (apply max list)))
+
+_________________________________________________________________
+
+Question 5.
+
+let rec contains p list = match list with
+    | [] -> false
+    | h::_ when p h -> true
+    | _::t -> contains p t
+;;
+
+_________________________________________________________________
+
+ 1.    (B) Haskell
+
+
+ 6.    (C) int list -> int list
+
+
+10.    (D) object-oriented
+
+
+ 3.    (C) 'a list -> 'a list
+
+
+10.    (A) int *f() {int i = 6; return &i; }
+
+
+ 2. overriding
+
+
+11.    (A) Algol 60
+
+
+
+ 3.    (D) $ O ( 2 sup n ) $
+
+
+ 4.    (A) $ O ( n ) $
+
+
+11.    (B) Edsger Dijkstra
+
+
+
+Question 2. [3]
+
+let reverse = List.fold_left (fun tl hd -> hd::tl) []
+let sum = List.fold_left (+) 0
+let length = List.fold_left (fun _ n -> n + 1) 0
+
+________________________________________________________________________
+
+Question 4. [2]
+
+(define (takex n list)
+    (if (or (null? list) (<= n 0)) '()
+        (cons (car list) (takex (- n 1) (cdr list)))))
+
+
+Answers to 2014q4-test3, page 2
+
+________________________________________________________________________
+
+Question 7. [2]
+
+fac  : int -> int
+n    : int
+0    : int
+fac' : int -> int -> int
+n'   : int
+m'   : int
+-    : int -> int -> int
+*    : int -> int -> int
+
+________________________________________________________________________
+
+Question 8. [2]
+
+edge(a,b).       % Note: the edge facts may be listed in either order.
+edge(a,c).       % e.g., edge(a,b) and edge(b,a) mean the same thing.
+edge(a,d).
+edge(b,c).
+edge(c,d).
+adjacent(X,Y) :- edge(X,Y).
+adjacent(X,Y) :- edge(Y,X).
+
+________________________________________________________________________
+
+ 2.    (D) Smalltalk
+
+
+ 4.    (B) fold left $ O ( 1 ) $;  fold right $ O ( n ) $
+
+
+ 6.    (C) ('a -> 'b) -> 'a list -> 'b list
+
+
+ 8.    (D) unit -> int
+
+
+12.    (C) Donald Knuth
+
+
+Answers to 2014q4-test3, page 5
+
+
+ 4.    (D) float -> float -> float
+
+
+ 5.    (D) throw
+
+
+ 7.    (A) Haskell
+
+
+Question 1. [3]
+
+C++      |Bjarne Stroustrup's most noted contribution to language design
+COBOL    |Business data processing language, designers included Grace
+Algol 60 |Designed in Europe to express algorithms in a structured way.
+C        |First version of Unix was 9000 lines of this language
+Lisp     |List processing language typically used in artificial
+FORTRAN  |Numeric and scientific computation language developed at IBM.
+Simula 67|Simulation language that influenced the design of C++.
+Pascal   |Small language for structured programming designed by Niklaus
+Java     |Sun Microsystems claimed this language is ``write once, run
+
+________________________________________________________________________
+
+Question 7. [1]
+
+(define (product list) (foldl * 1 list))
+
+________________________________________________________________________
+
+Question 11. [2]
+
+(define (reverse list)
+        (define (rev list m)
+                (if (null? list) m
+                    (rev (cdr list) (cons (car list) m))))
+        (rev list '()))
+
+
+Answers to 2014q4-test2, page 3
+
+
+11.    (A) strong and dynamic.
+
+
+Question 5. [2]
+
+Part a:
+(define (fold_left fn unit list)
+        (if (null? list) unit
+            (fold_left fn (fn unit (car list)) (cdr list))))
+
+Part b:
+let rec fold_left fn unit list = match list with
+    | [] -> unit
+    | car::cdr -> fold_left fn (fn unit car) cdr
+
+________________________________________________________________________
+
+ 3.    (D) int -> int -> int
+
+
+ 1.    (A) ALGOL
+
+
+ 5.    (C) $ O ( 2 sup n ) $
+
+
+ 7.    (B) fold left $ O ( 1 ) $ and fold right $ O ( n ) $
+
+
+Question 1. [3]
+
+C++       |Bjarne Stroustrup's noted contribution to language design.
+COBOL     |Business data processing language, designers Grace Hopper.
+Algol 60  |Designed in Europe to express algorithms in a structured way.
+C         |First version of Unix was 9000 lines of this language.
+Lisp      |List processing language used in artificial intelligence.
+FORTRAN   |Numeric and scientific computation language developed at IBM.
+Simula 67 |Simulation language that influenced the design of C++.
+Pascal    |Small language for structured programming by Niklaus Wirth.
+Java      |Sun Micro claimed this language write once, run anywhere.
+
+________________________________________________________________________
+
+ 5.    (D) Simula 67
+
+
+ 9.    (B) Ocaml
+
+
+12.    (A) ('a -> 'b) -> 'a list -> 'b list
+
+
+
+1. Refer to the solution PDF for this exam.
+
+
+20. Refer to the solution PDF for this exam.
+
+
+Question 3. [2]
+part a:
+let rec fold_left fn unit list = match list with
+    | [] -> unit
+    | x::xs -> fold_left fn (fn unit x) xs;;
+
+part b:
+(define (fold_left fn unit list)
+        (if (null? list) unit
+            (fold_left fn (fn unit (car list)) (cdr list))))
+
+_________________________________________________________________
+
+Question 9. [1]
+
+(define (sum list) (foldl + 0 list))
+or:
+(define (sum list)
+        (define (summ list acc)
+                (if (null? list) acc
+                    (summ (cdr list) (+ acc (car list)))))
+        (summ list 0))
+
+_________________________________________________________________
+
+ 4.    (D) parametric
+
+
+ 5.    (B) inclusion & parametric
+
+
+ 8.    (D) 1959 COBOL
+
+

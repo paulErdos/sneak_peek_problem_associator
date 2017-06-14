@@ -1,0 +1,915 @@
+Question 1.
+
+Many different answers.... e.g.,
+f (g (), h());
+Assume h() loops, but g() finishes.
+applicative order:  eval g, then h and loop, never calling f.
+normal order:  pass in g and h as thunks.  suppose f never
+calls h, only g.  f then returns
+
+________________________________________________________________________
+
+Question 2.
+
+vector<foo>::const_iterator itor = vec.begin();
+vector<foo>::const_iterator end = vec.end();
+for (; itor != end; ++itor) cout << *itor;
+
+________________________________________________________________________
+
+Question 5.
+
+drop(_,[],[]).
+drop(H,[H|T],[H|T]).
+drop(H,[_|T],X):-drop(H,T,X).
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+Question 9.
+
+let rec map f lis = match lis with 
+    | [] -> []
+    | h::t -> f h :: map f t;;
+
+________________________________________________________________________
+
+Question 11.
+
+let iota n =
+    let rec iota' n list = 
+        if n <= 0 then list else iota' (n - 1) (n :: list)
+    in iota' n [];;
+
+________________________________________________________________________
+
+Question 12.
+
+Many ways, but either return a fn or store in a global var.
+typedef void (*fn) ();
+fn f () {
+   int i;
+   void g () {
+      i = 6;
+   }
+   return g;
+}
+fn h = f();
+h();
+
+________________________________________________________________________
+
+Question 14.
+
+product(1,[]).
+product(N,[H|T]):-product(X,T),N is X * H.
+
+________________________________________________________________________
+
+Question 15.
+
+(define (elim atom list)
+    (cond ((null? list) list)
+          ((eqv? atom (car list)) list)
+          (else (elim atom (cdr list)))))
+
+
+Answers to test2, page 4.
+
+
+ 1.    (C) monad
+
+
+11.    (D) Thread
+
+
+Answers to test2, page 4.
+
+
+ 6.    (A) find(X) :- guess(X), verify(X).
+
+
+ 8.    (A) array
+
+
+Question 6.
+
+Part a:
+class base {
+   public:
+      virtual void print() = 0;
+};
+
+class dstr: public base {
+   public:
+      virtual void print();
+   private:
+      string s;
+};
+
+class dint: public base {
+   public:
+      virtual void print();
+   private:
+      int i;
+};
+
+Part b:
+#include <iostream>
+
+using namespace std;
+
+#include "base.h"
+
+void dstr::print () {
+   cout << s << endl;
+}
+
+void dint::print () {
+   cout << i << endl;
+}
+
+
+Answers to test1, page 3
+
+
+ 1.    (D) p + p
+
+
+Question 3.
+
+(define (map fn list)
+   (if (null? list) '()
+       (cons (fn (car list)) (map fn (cdr list)))))
+
+________________________________________________________________________
+
+ 2.    (D) $@
+
+
+ 8.    (A) strong and dynamic.
+
+
+ 9.    (A) int &f (int &i) {int j; return j; }
+
+
+10.    (A) &&
+
+
+Question 4.
+
+Object subclass: List [
+   |car cdr|
+   List class >> new [
+      ^ nil
+   ]
+   List class >> cons: car with: cdr [
+      |r|
+      r := super new.
+      r setcar: car setcdr: cdr.
+      ^ r
+   ]
+   setcar: xcar setcdr: xcdr [
+      car := xcar.
+      cdr := xcdr.
+   ]
+   car [
+      ^car
+   ]
+   cdr [
+      ^ cdr
+   ]
+]
+
+
+Answers to 2011q2-test3, page 2.
+
+_________________________________________________________________
+
+Question 7.
+
+edge(a,b).
+edge(a,e).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+edge(e,d).
+adjacent(X,Y):-edge(X,Y).
+adjacent(X,Y):-edge(Y,X).
+
+_________________________________________________________________
+
+Question 12.
+
+after(_,[],[]).
+after(H,[H|T],T).
+after(H,[_|T],U) :- after(H,T,U).
+
+_________________________________________________________________
+
+ 4.    (C) throw
+
+
+ 5.    (B) Prolog
+
+
+ 8.    (B) \s+
+
+
+11.    (B) Harvard
+
+
+Answers to 2011q2-test3, page 5.
+
+
+ 2.    (B) $ O ( log sub 2 n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+ 6.    (B) operator overloading
+
+
+ 8.    (A) curried
+
+
+Question 11.
+
+See picture.
+
+
+Answers to 2011q2-test1, page 3.
+
+
+ 7.      (C) Multiple functions with the same name and different
+             signatures, defined in the same class.
+
+
+10.      (A) (f '())
+
+
+Question 3.
+
+(define (rev list)
+   (define (rev2 in out)
+      (if (null? in) out
+          (rev2 (cdr in) (cons (car in) out))))
+   (rev2 list '()))
+
+_________________________________________________________________
+
+Question 8.
+
+let rec unzip list = match list with
+    | [] -> [], []
+    | (h1,h2) :: tail -> 
+      let t1, t2 = unzip tail
+      in h1::t1, h2::t2
+
+
+Answers to 2011q2-test2, page 3.
+
+
+Question 1. [3]
+
+let rec split pred list = match list with
+    [] -> [], []
+    | head::tail ->
+      let (out1, out2) = split pred tail
+      in  if pred head then (head::out1), out2
+                       else out1, (head::out2)
+
+_________________________________________________________________
+
+Question 2. [2]
+
+filter( _, [], []).
+filter( P, [H|T], [H|U]) :- call( P, H), filter( P, T, U).
+filter( P, [_|T], U) :- filter( P, T, U).
+
+_________________________________________________________________
+
+Question 10. [2]
+
+   static class say implements Runnable {
+      public void run () {
+         System.out.println ("Hello");
+      }
+   }
+
+_________________________________________________________________
+
+ 4.    (C) structural
+
+
+11.    (C) throw
+
+
+Answers to 2012a1-test3, page 5
+
+
+ 5.    (A) array
+
+
+ 7.    (B) Ocaml
+
+
+Question 2. [1]
+
+(define (positives list)
+        (grep (lambda (x) (> x 0)) list))
+
+_________________________________________________________________
+
+Question 4. [1]
+
+(define (sum list) (foldleft 0 (lambda (a b) (+ a b)) list))
+(define (sum list) (foldleft 0 + list))
+
+_________________________________________________________________
+
+Question 10. [1]
+
+print "@ARGV\n";
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 1.    (A) Haskell
+
+
+ 2.    (A) &&
+
+
+ 7.    (A) strong and dynamic.
+
+
+ 8.    (C) the stack frame of the function in which this function is
+        nested.
+
+
+Question 2. [2]
+
+let mapf fn list = fold_right (fun h t -> fn h :: t) list []
+
+_________________________________________________________________
+
+Question 3. [2]
+
+let rec mapr fn list = match list with
+    | [] -> []
+    | h::t -> fn h :: mapr fn t
+
+_________________________________________________________________
+
+Question 4. [2]
+
+let car list = match list with
+    | [] -> failwith "car []"
+    | h::_ -> h
+let cdr list = match list with
+    | [] -> failwith "cdr []"
+    | _::t -> t
+
+_________________________________________________________________
+
+Question 7. [3]
+
+let max gt list = match list with
+    | [] -> None
+    | mx::t ->
+        let rec max' mx u = match u with
+            | [] -> Some mx
+            | h::t -> max' (if gt mx h then mx else h) t
+        in max' mx t
+
+_________________________________________________________________
+
+Question 8. [4]
+
+(define (zipwith f x l1 l2)
+        (define (zip l1 l2)
+                (if (null? l1)
+                    (if (null? l2)
+                        '()
+                        (cons (f x (car l2))
+                              (zip '() (cdr l2))))
+                    (if (null? l2)
+                        (cons (f (car l1) x)
+                              (zip (cdr l1) '()))
+                        (cons (f (car l1) (car l2))
+                              (zip (cdr l1) (cdr l2))))))
+        (zip l1 l2))
+
+
+Answers to 2012a1-test1, page 3
+
+
+ 2.    (C) List.fold_right
+
+
+ 6.    (B) $line = <$file>;
+
+
+ 8.    (B) int list
+
+
+10.    (D) Smalltalk
+
+
+Question 11. [2]
+
+mother(Mother,Child) :- parents(_,Mother,Child).
+father(Father,Child) :- parents(Father,_,Child).
+
+________________________________________________________________________
+
+Question 12. [3]
+
+let rec range n m =
+    if n > m then []
+             else n::range (n+1) m;;
+
+(define (range n m)
+    (if (> n m) '()
+        (cons n (range (+ n 1) m))))
+
+sub range {
+   my ($n,$m) = @_;
+   return $n..$m;
+}
+
+________________________________________________________________________
+
+Question 13. [4]
+
+(define (pairthem l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (cons (list (car l1) (car l2))
+              (pairthem (cdr l1) (cdr l2)))))
+
+let rec pairthem l1 l2 = match l1, l2 with
+   | [], _ -> []
+   | _, [] -> []
+   | h1::t1, h2::t2 -> (h1,h2):: pairthem t1 t2;;
+
+
+Answers to 2014q4-test3, page 4
+
+
+ 1.    (B) lambda
+
+
+ 3.    (D) fold left $ O ( n ) $;  fold right $ O ( n ) $
+
+
+ 5.    (A) find(X) :- guess(X), verify(X).
+
+
+ 7.    (A) The message +4 is sent to the object 3.
+
+
+ 9.    (C) ML and Ocaml
+
+
+ 1.    (A) C++
+
+
+ 2.    (A) (*...*)
+
+
+ 6.    (C) a pointer to the stack frame in which the current
+           function is nested.
+
+
+ 8.    (D) a value: 3.
+
+
+10.    (B) 0.0/0.0
+
+
+12.    (A) Edsger Dijkstra
+
+
+
+Question 4. [1]
+
+Part a:
+sub fac{
+   my ($n) = @_;
+   my $s = 1;
+   $s *= $_ for 1..$n;
+   return $s;
+}
+
+Part b:
+Number extend [
+   fac [
+      |s|
+      s := 1.
+      1 to: self do: [:i | s := s * i].
+      ^ s
+   ]
+]
+
+________________________________________________________________________
+
+ 3.    (A) ((a-b)*c)+d
+
+
+ 7.    (C) map
+
+
+ 9.    (D) sum value: 3 value: 4
+
+
+10.    (B) 0.0/0.0
+
+
+Question 1. [2]
+
+Give 1/2 point for each correct answer, but not more than 2 points
+total for the question.  Ignore any "Intercal" answer.
+Haskell |Language which uses primarily lazy evaluation, based on the $la
+Basic   |Kemeny and Kurtz designed this language included in the IBM PC
+AWK     |Scripting language designed by Aho, Weinberger, and Kernighan.
+Python  |Van Rossum designed this scripting language named after Monty's
+Scheme  |Steele and Sussman designed this functional language with lexic
+
+________________________________________________________________________
+
+Question 6. [2]
+
+(define (foldl fn unit list)
+        (if (null? list) unit
+            (foldl fn (fn unit (car list)) (cdr list))))
+
+________________________________________________________________________
+
+Question 9. [2]
+
+product := [:vec |
+   |prod|
+   prod := 1.
+   1 to: vec size do: [:i| prod := prod * (vec at: i)].
+   prod
+].
+
+________________________________________________________________________
+
+Question 10. [1]
+
+$product = 1;
+map {$product *= $_} @array;
+________________________________________________________________________
+
+ 6.    (B) multiple (mixin) inheritance of functions (methods) but not
+           fields.
+
+
+ 9.    (D) reverse
+
+
+Question 2. [2]
+
+Part a:
+(define (filter p? list)
+        (if (null? list) '()
+            (let ((a (car list))
+                  (fd (filter p? (cdr list))))
+                 (if (p? a) (cons a fd) fd))))
+
+Part b:
+let rec filter p list = match list with
+    | [] -> []
+    | car::cdr -> if p car then car::filter p cdr
+                           else filter p cdr
+
+________________________________________________________________________
+
+Question 6. [2]
+
+Part a:
+---- The following is 2 points, if correct.
+(define (reverse list)
+        (define (rev list m)
+                (if (null? list) m
+                    (rev (cdr list) (cons (car list) m))))
+        (rev list '()))
+---- Either of the following for 3 points, if correct.
+(define (snoc cdr car) (cons car cdr))
+(define (reverse list) (fold_left snoc '() list))
+(define (reverse list) (fold_left (lambda (d a) (cons a d)) '() list))
+
+Part b:
+---- The following is 2 points, if correct.
+let reverse list =
+    let rec rev' src out = match src with
+        | [] -> out
+        | h::t -> rev' t (h::out)
+    in rev' list []
+---- Either of the following for 3 points, if correct.
+let reverse = List.fold_left (fun tl hd -> hd::tl) []
+let reverse = fold_left (fun tl hd -> hd::tl) []
+
+________________________________________________________________________
+
+Question 7. [2]
+node* reverse (node* head) { 
+   node* out = NULL;
+   while (head != NULL) {
+      node* t = head;
+      head = head->link;
+      t->link = out;
+      out = t;
+   }
+   return out;
+}
+
+
+Answers to cmps112-2015q4-exam1, page 3
+
+
+ 1.    (D) parametric
+
+
+ 2.    (C) 3
+
+
+ 5.    (B) int list
+
+
+ 6.    (A) strong and dynamic
+
+
+ 7.    (B) strong and static
+
+
+11.    (C) loops
+
+
+Question 3. [2]
+
+(define (eval expr)
+   (if (number? expr) expr
+       (apply (car expr) (map eval (cdr expr)))))
+
+________________________________________________________________________
+
+Question 4. [1]
+
+sum := [:array|
+   |sum|
+   sum := 0.
+   1 to: array size do: [:n| sum := sum + n].
+   sum.
+]
+
+________________________________________________________________________
+
+Question 5. [2]
+
+
+let ip a b =
+    let rec ip' a b m = match a, b with
+        | [], [] -> m
+        | x::xs, y::ys -> ip' xs ys (m +. x *. y)
+        | _, _ -> raise (Invalid_argument "ip")
+    in ip' a b 0.0;;
+
+
+Answers to cmps112-2015q4-exam1, page 2
+
+________________________________________________________________________
+
+Question 7. [4]
+
+Object subclass: List [ |i_car i_cdr|
+   List class >> new [ ^ nil ]
+   List class >> car: a_car cdr: a_cdr [ |result|
+      result := super new.
+      result car: a_car cdr: a_cdr.
+      ^ result
+   ]
+   car: a_car cdr: a_cdr [
+      i_car := a_car.
+      i_cdr := a_cdr.
+   ]
+   car [ ^ i_car ]
+   cdr [ ^ i_cdr ]
+]
+
+________________________________________________________________________
+
+Question 8. [4]
+
+Object subclass: Num [ |val|
+   Num class >> new: n [ |r|
+      r := super new.
+      r set: n.
+      ^ r.
+   ]
+   set: n [ val := n. ]
+   value [ ^ val. ]
+]
+Object subclass: Mul [ |left right|
+   Mul class >> left: n right: m [ |r|
+      r := super new.
+      r left: n right: m.
+      ^ r.
+   ]
+   left: n right: m [ left := n.  right := m.  ]
+   value [ ^ left value * right value. ]
+]
+
+
+Answers to cmps112-2015q4-exam1, page 3
+
+
+ 2.    (B) 2 sqrt
+
+
+12.    (D) sum value: 3 value: 4
+
+
+
+Question 2. [2]
+
+arrow(a,b).
+arrow(a,c).
+arrow(b,c).
+arrow(b,e).
+arrow(c,d).
+arrow(d,e).
+
+________________________________________________________________________
+
+Question 3. [2]
+
+ispath(X,Y) :- arrow(X,Y).
+ispath(X,Y) :- arrow(X,Z), ispath(Z,Y).
+
+________________________________________________________________________
+
+Question 4. [3]
+
+findpath(X,Y,P) :- arrow(X,Y), P=[X,Y].
+findpath(X,Y,P) :- arrow(X,Z), findpath(Z,Y,Q), P=[X|Q].
+
+alternate:
+
+findpath(X,Y,[X,Y]) :- arrow(X,Y).
+findpath(X,Y,[X|Q]) :- arrow(X,Z), findpath(Z,Y,Q).
+
+
+Answers to cmps112-2016q4-final, page 2
+
+________________________________________________________________________
+
+Question 5. [4]
+
+let max gt list = match list with
+    | [] -> failwith "max"
+    | x::xs -> let rec max' x xs = match xs with
+                    | [] -> x
+                    | y::ys -> if gt x y then max' x ys
+                                         else max' y ys
+               in max' x xs
+;;
+
+________________________________________________________________________
+
+ 1.    (A) APL
+
+
+ 4.    (D) Lisp
+
+
+11.    (B) duck-typing
+
+
+12.    (D) virtual function table
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 4.    (D) ? :
+
+
+ 6.    (A) function call stack
+
+
+11.    (A) (f '())
+
+
+3. Refer to the solution PDF for this exam.
+
+
+4. Refer to the solution PDF for this exam.
+
+
+5. Refer to the solution PDF for this exam.
+
+
+6. Refer to the solution PDF for this exam.
+
+
+7. Refer to the solution PDF for this exam.
+
+
+11. Refer to the solution PDF for this exam.
+
+
+13. Refer to the solution PDF for this exam.
+
+
+17. Refer to the solution PDF for this exam.
+
+
+23. Refer to the solution PDF for this exam.
+
+
+24. Refer to the solution PDF for this exam.
+
+
+25. Refer to the solution PDF for this exam.
+
+
+26. Refer to the solution PDF for this exam.
+
+
+Question 2. [2]
+
+let sum = List.fold_left (+) 0;;
+
+let length = List.fold_left (fun x _ -> x + 1) 0;;
+
+_________________________________________________________________
+
+Question 5. [2]
+
+let rec filter fn list = match list with
+    | [] -> []
+    | x::xs -> if fn x then x :: filter fn xs
+                       else filter fn xs;;
+
+_________________________________________________________________
+
+Question 6. [1]
+
+filter (fun x -> 0 > x) [1;2;-3;-4;8;-3];;
+
+_________________________________________________________________
+
+Question 11. [3]
+
+let max (>?) list = match list with
+    | [] -> None
+    | x::xs -> let rec max' y ys = match ys with
+                   | [] -> y
+                   | z::zs -> if y >? z then max' y zs
+                                        else max' z zs
+               in Some (max' x xs);;
+
+_________________________________________________________________
+
+Question 12. [2]
+
+(define (reverse list)
+        (define (rev in out)
+                (if (null? in) out
+                    (rev (cdr in) (cons (car in) out))))
+        (rev list '()))
+
+_________________________________________________________________
+
+Question 14. [3]
+
+Typo in question:  it should ask for add', not mul'.
+
+let rec add' list1 list2 carry = match (list1, list2, carry) with
+    | list1, [], 0       -> list1
+    | [], list2, 0       -> list2
+    | list1, [], carry   -> add' list1 [carry] 0
+    | [], list2, carry   -> add' [carry] list2 0
+    | car1::cdr1, car2::cdr2, carry ->
+      let sum = car1 + car2 + carry
+      in  sum mod 10 :: add' cdr1 cdr2 (sum / 10);;
+
+
+Answers to 2017q2-midterm, page 4
+
+
+10.    (D) parametric
+
+
+12.    (D) - : int -> int -> int = <fun>
+
+
+
+

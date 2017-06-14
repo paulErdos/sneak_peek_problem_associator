@@ -1,0 +1,330 @@
+Likeness: 0.703703703704
+sample_exams/cmps112-2009q1-final.tt
+ 3. Perl:  Write a function that will accept a function and an array and
+    return all elements of the array in the same order, for which the
+    function applied to an element of the array returns true.  [2pt]
+
+Words from problem not in sneak peek:
+and, applied, all, 2pt, accept, an, 3, array
+
+Words from problem yes in sneak peek:
+function, a, elements, return, for, that, of, same, perl, write, to, returns,
+will, which, in, the, element, true, order
+
+
+Likeness: 0.714285714286
+sample_exams/cmps112-2009q1-test2.tt
+ 4. In Ocaml, what is the type of the function (+)?
+    (A) int * int * int
+    (B) int * int -> int
+    (C) int -> int * int
+    (D) int -> int -> int
+
+Words from problem not in sneak peek:
+c, b, d, 4
+
+Words from problem yes in sneak peek:
+function, a, what, int, of, is, ocaml, in, the, type
+
+
+Likeness: 0.72
+sample_exams/cmps112-2011q2-final.tt
+13. Enter the names of these programming languages in the appropriate
+    box:  C, C++, Haskell, Java, Ocaml, Perl, Prolog, Scheme.  [1pt]
+
+                   +---------------------------+--------------------------+
+                   |      strong typing        |       weak typing        |
+    +--------------+---------------------------+--------------------------+
+    |static types  |                           |                          |
+    |              |                           |                          |
+    +--------------+---------------------------+--------------------------+
+    |dynamic types |                           |                          |
+    |              |                           |                          |
+    +--------------+---------------------------+--------------------------+
+
+Words from problem not in sneak peek:
+box, c, 13, appropriate, names, typing, 1pt
+
+Words from problem yes in sneak peek:
+strong, java, programming, enter, these, weak, of, dynamic, ocaml, perl,
+languages, haskell, static, in, the, scheme, types, prolog
+
+
+Likeness: 0.703703703704
+sample_exams/cmps112-2011q2-test1.tt
+ 4. For a list of length $n$, foldr, which does not use tail
+    recursion, will take up how much stack space?
+    (A) $ O ( 1 ) $
+    (B) $ O ( log n ) $
+    (C) $ O ( n ) $
+    (D) $ O ( n log n ) $
+
+Words from problem not in sneak peek:
+c, b, d, foldr, 1, does, 4, take
+
+Words from problem yes in sneak peek:
+a, use, log, for, space, recursion, list, up, o, n, will, how, tail, much,
+which, of, not, length, stack
+
+
+Likeness: 0.736842105263
+sample_exams/cmps112-2011q2-test2.tt
+ 9. The Ocaml function List.tl functions like cdr in Scheme.  Its type
+    is:
+    (A) 'a list -> 'a
+    (B) 'a list -> 'a list -> 'a list
+    (C) 'a list -> 'a list
+    (D) 'a list -> int
+
+Words from problem not in sneak peek:
+9, c, b, d, cdr
+
+Words from problem yes in sneak peek:
+function, a, functions, like, int, is, list, ocaml, tl, in, the, scheme, type,
+its
+
+
+Likeness: 0.7
+sample_exams/cmps112-2012q1-final.tt
+ 1. In Java, if two functions have the same name in the same class,
+    but have different signatures, this is referred to as:
+    (A)
+
+Words from problem not in sneak peek:
+different, signatures, but, 1, as, referred
+
+Words from problem yes in sneak peek:
+a, functions, java, name, this, is, two, same, to, have, in, the, class, if
+
+
+Likeness: 0.741935483871
+sample_exams/cmps112-2012q1-test1.tt
+ 1. Define a function grep in Scheme whose first argument is a
+    predicate and second argument a list.  It returns a new list of
+    all of the elements of the argument list for which the predicate
+    is true.  Do not use a higher-order function.  [2pt]
+
+Words from problem not in sneak peek:
+and, whose, all, grep, 2pt, do, argument, 1
+
+Words from problem yes in sneak peek:
+is, it, second, in, use, for, returns, which, new, scheme, higher, function,
+predicate, elements, not, true, a, of, list, the, define, order, first
+
+
+Likeness: 0.72
+sample_exams/cmps112-2012q1-test1.tt
+ 3. Define a function sum which returns the sum of all elements of a
+    list.  Do not use any higher-order functions.  Use constant ($ O (
+    1 ) $) stack space.  [2pt]
+
+Words from problem not in sneak peek:
+do, all, constant, 2pt, 1, 3, any
+
+Words from problem yes in sneak peek:
+function, a, use, elements, space, of, sum, list, functions, o, order, returns,
+which, not, the, define, stack, higher
+
+
+Likeness: 0.739130434783
+sample_exams/cmps112-2014q4-final.tt
+1. Ocaml.  Define the function reverse which reverses a list.  Use an
+   inner function that is tail recursive.  Do not use a higher-order
+   function.  [2pt]
+   val reverse : 'a list -> 'a list
+
+Words from problem not in sneak peek:
+do, 2pt, an, 1, reverses, recursive
+
+Words from problem yes in sneak peek:
+function, a, use, reverse, val, that, is, list, ocaml, tail, inner, which, not,
+the, define, order, higher
+
+
+Likeness: 0.794117647059
+sample_exams/cmps112-2014q4-test1.tt
+12. Structured programming demands the elimination of what statement?
+    (A) goto
+    (B) switch
+    (C) throw
+    (D) while
+
+____________________
+
+ EWD498:   How do we tell truths that might hurt?  Prof. Dr. Edsger W.
+ Dijkstra, June 1975.
+ · FORTRAN, ``the infantile disorder'', by now nearly 20 years old, is
+   hopelessly inadequate for whatever computer application you have in
+   mind today:  it is now too clumsy, too risky, and too expensive  to
+   use.
+ · PL/I,  ``the  fatal disease'', belongs more to the problem set than
+   to the solution set.
+ · It is practically impossible to teach good programming to  students
+   that  have had a prior exposure to BASIC:  as potential programmers
+   they are mentally mutilated beyond hope of regeneration.
+ · The  use  of  COBOL  cripples  the  mind;   its  teaching   should,
+   therefore, be regarded as a criminal offence.
+
+
+Words from problem not in sneak peek:
+and, do, c, 12, 20, d, demands, switch, june, as, ____________________, clumsy,
+while, b, are, hopelessly, elimination, be, by, mentally, goto
+
+Words from problem yes in sneak peek:
+application, set, old, ewd498, programming, is, mind, regeneration, whatever,
+years, inadequate, dijkstra, computer, cobol, have, in, impossible, beyond, the,
+its, expensive, what, potential, infantile, for, how, regarded, to, had, should,
+fortran, belongs, therefore, statement, basic, it, teaching, you, fatal, might,
+tell, hope, too, cripples, we, good, w, than, that, students, offence, use,
+hurt, mutilated, nearly, they, prof, teach, now, dr, throw, exposure, a,
+criminal, practically, i, of, 1975, truths, solution, disease, structured,
+prior, pl, today, edsger, programmers, problem, more, disorder, risky
+
+
+Likeness: 0.7
+sample_exams/cmps112-2014q4-test2.tt
+5. Scheme.  Write the function product in tail recursive accumulator
+   style so that it computes the product of a list of numbers.  [1pt]
+
+Words from problem not in sneak peek:
+recursive, accumulator, computes, 5, numbers, 1pt
+
+Words from problem yes in sneak peek:
+function, a, product, that, of, list, style, it, write, tail, so, in, the,
+scheme
+
+
+Likeness: 0.785714285714
+sample_exams/cmps112-2014q4-test2.tt
+8. Scheme.  Using foldl, define the function length, which returns the
+   length of a list.  [1pt]
+
+Words from problem not in sneak peek:
+8, 1pt, foldl
+
+Words from problem yes in sneak peek:
+function, a, of, list, length, returns, which, using, the, scheme, define
+
+
+Likeness: 0.7
+sample_exams/cmps112-2015q4-test1.tt
+3. Define the function length, which returns the length of a list.
+   Use tail-recursion:  the function must use $ O ( 1 ) $ stack.  Do
+   not use a higher-order function.
+
+    (a) Scheme.  [1pt]
+        > (length '(1 2 3 4 5))
+        5
+
+    (b) Ocaml.  [1pt]
+        # length;;
+        - : 'a list -> int = <fun>
+        # length [1;2;3;4;5];;
+        - : int = 5
+
+Words from problem not in sneak peek:
+do, b, 1, 3, 2, 5, 4, 1pt, must
+
+Words from problem yes in sneak peek:
+function, a, use, define, int, recursion, list, tail, o, ocaml, order, fun,
+returns, which, of, not, length, the, scheme, stack, higher
+
+
+Likeness: 0.752380952381
+sample_exams/cmps112-2015q4-test1.tt
+12. In 1968, Edsger W. Dijkstra published a paper entitled ``___
+    statement considered harmful''.
+    (A) call
+    (B) goto
+    (C) switch
+    (D) throw
+
+____________________
+
+*EWD498:   How do we tell truths that might hurt?  Prof. Dr. Edsger W.
+ Dijkstra, June 1975.
+ · FORTRAN, ``the infantile disorder'', by now nearly 20 years old, is
+   hopelessly inadequate for whatever computer application you have in
+   mind today:  it is now too clumsy, too risky, and too expensive  to
+   use.
+ · PL/I,  ``the  fatal disease'', belongs more to the problem set than
+   to the solution set.
+ · It is practically impossible to teach good programming to  students
+   that  have had a prior exposure to BASIC:  as potential programmers
+   they are mentally mutilated beyond hope of regeneration.
+ · The  use  of  COBOL  cripples  the  mind;   its  teaching   should,
+   therefore, be regarded as a criminal offence.
+
+
+Words from problem not in sneak peek:
+and, be, clumsy, as, paper, are, hopelessly, 20, call, entitled, do, goto, june,
+harmful, b, 1968, ___, by, mentally, c, 12, d, considered, ____________________,
+switch, published
+
+Words from problem yes in sneak peek:
+application, set, old, ewd498, programming, is, mind, regeneration, whatever,
+years, inadequate, dijkstra, computer, cobol, have, in, impossible, beyond, the,
+its, expensive, use, potential, infantile, for, how, regarded, disease, had,
+should, fortran, belongs, therefore, statement, basic, it, teaching, you, fatal,
+might, tell, hope, too, cripples, we, good, w, than, that, programmers, offence,
+to, hurt, mutilated, nearly, they, prof, teach, now, dr, throw, exposure, a,
+criminal, practically, i, of, 1975, truths, solution, prior, pl, students,
+today, edsger, problem, more, disorder, risky
+
+
+Likeness: 0.705882352941
+sample_exams/cmps112-2016q4-final.tt
+10. What is the type of
+    let f x y z = x + y + z;;
+    (A) val f : int * int * int -> int
+    (B) val f : int * int -> int -> int
+    (C) val f : int -> int * int -> int
+    (D) val f : int -> int -> int -> int
+
+Words from problem not in sneak peek:
+y, 10, c, b, d
+
+Words from problem yes in sneak peek:
+a, what, val, f, int, of, is, let, x, the, z, type
+
+
+Likeness: 0.758620689655
+sample_exams/cmps112-2016q4-midterm.tt
+2. Scheme.  Define a tail-recursive function oddlen which returns #t
+   if the list has an odd number of elements, and #f if not.  Do not
+   use a higher-order function.  [2pt]
+   > (oddlen '())
+   #f
+   > (oddlen '(1))
+   #t
+   > (oddlen '(1 2))
+   #f
+
+Words from problem not in sneak peek:
+and, do, recursive, an, 1, 2, 2pt
+
+Words from problem yes in sneak peek:
+oddlen, number, odd, if, use, returns, tail, which, has, higher, function,
+elements, not, a, scheme, f, of, list, t, the, define, order
+
+
+Likeness: 0.72
+sample_exams/cmps112-2016q4-midterm.tt
+ 2. How much stack space does the following function use?
+    let rec f n = match n with
+        | 0 -> 0
+        | 1 -> 1
+        | n -> f (n - 1) + f (n - 2)
+    (A) $ O ( 1 ) $
+    (B) $ O ( log n ) $
+    (C) $ O ( n ) $
+    (D) $ O ( 2 sup n ) $
+
+Words from problem not in sneak peek:
+c, b, d, 1, 0, 2, does
+
+Words from problem yes in sneak peek:
+function, a, use, log, space, f, o, n, how, much, let, sup, following, rec, the,
+with, stack, match
+
+

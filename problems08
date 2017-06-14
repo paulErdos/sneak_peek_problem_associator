@@ -1,0 +1,46 @@
+Likeness: 0.843137254902
+sample_exams/cmps112-2012q1-test2.tt
+ 5. A closure is:
+    (A) A special field of a structure or class used to point at a
+        base class when implementing shared multiple inheritance.
+    (B) A special type declaration in Ocaml used to distinguish sum
+        types from product types.
+    (C) A structure on the heap, used to hold variables of an outer
+        function when referenced by an inner function.
+    (D) A table used to dynamically dispatch virtual functions in an
+        object-oriented environment.
+
+Words from problem not in sneak peek:
+closure, c, b, d, an, 5, at, by
+
+Words from problem yes in sneak peek:
+referenced, point, variables, dynamically, in, table, special, environment,
+functions, from, inheritance, sum, when, virtual, oriented, to, inner, shared,
+type, is, function, field, product, used, multiple, structure, object,
+implementing, base, dispatch, heap, declaration, distinguish, outer, hold,
+class, types, a, on, of, ocaml, the, or
+
+
+Likeness: 0.843137254902
+sample_exams/cmps112-2016q4-final.tt
+ 1. A closure is:
+    (A) A special field of a structure or class used to point at a
+        base class when implementing shared multiple inheritance.
+    (B) A special type declaration in Ocaml used to distinguish sum
+        types from product types.
+    (C) A structure on the heap, used to hold variables of an outer
+        function when referenced by an inner function.
+    (D) A table used to dynamically dispatch virtual functions in an
+        object-oriented environment.
+
+Words from problem not in sneak peek:
+closure, c, b, d, an, 1, at, by
+
+Words from problem yes in sneak peek:
+referenced, point, variables, dynamically, in, table, special, environment,
+functions, from, inheritance, sum, when, virtual, oriented, to, inner, shared,
+type, is, function, field, product, used, multiple, structure, object,
+implementing, base, dispatch, heap, declaration, distinguish, outer, hold,
+class, types, a, on, of, ocaml, the, or
+
+

@@ -1,0 +1,85 @@
+ 4.    (B) during a function call
+
+
+ 1.    (D) (cddr '(1 2 3))
+
+
+ 4.    (D) (cddr '(1 2 3))
+
+
+11.    (A) ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+
+
+
+
+Question 10.
+
+Static scope uses a compile time search between {...} to
+establish range of variables.  Dynamic scope pushes variables
+on a global stack and pops them when exiting.
+
+$x = 8; 
+sub set { $x = 22; }
+sub static {
+   my $x = 6; set;
+   print "static: x=$x\n";
+}
+sub dynamic {
+   local $x = 6; set;
+   print "dynamic: x=$x\n";
+}
+static;
+dynamic;
+
+output is:
+static: x=6
+dynamic: x=22
+
+_________________________________________________________________
+
+ 3.    (D) reference counting
+
+
+ 2.    (B) (cadr '(1 2 3))
+
+
+12.    (B) 1958, John McCarthy, MIT.
+
+
+
+ 4.    (D) 4
+
+
+ 9.    (B) (cadr '(1 2 3))
+
+
+ 2.    (B) Perl
+
+
+ 6.    (B) 2.0 sqrt
+
+
+ 8.    (B) 1958, John McCarthy.
+
+
+10.    (B) X = 1.2246467991473532e-16
+
+
+ 8.    (D) reference counting
+
+
+22. Refer to the solution PDF for this exam.
+
+
+ 1.    (B) \beta-reduction
+
+
+ 3.    (D) unreachable
+
+
+ 7.    (B) goto
+
+
+11.    (D) ||
+
+

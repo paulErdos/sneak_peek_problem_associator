@@ -1,0 +1,813 @@
+Question 7.
+
+let sum = List.fold_left (+) 0;;
+
+________________________________________________________________________
+
+ 4.    (C) when the class is loaded.
+
+
+ 5.    (B) heap
+
+
+10.    (C) (cons (car a) (cdr a))
+
+
+10.    (A) access (static) link
+
+
+11.    (B) R6RS
+
+
+
+Question 1.
+
+universal, inheritance              universal, template
+
+ad hoc, overloading                 ad hoc, conversion
+
+________________________________________________________________________
+
+Question 4.
+
+box ();
+box (const box &);
+box &operator= (const box &);
+~box ();
+
+________________________________________________________________________
+
+ 2.    (D) object oriented
+
+
+ 5.    (C) cerr
+
+
+ 7.    (B) of foo, any class that inherits from foo, and any
+	   class that foo names as a friend
+
+
+ 9.    (A) delete
+
+
+Question 2.
+
+(define (foldl fn unit list)
+   (if (null? list) unit
+       (foldl fn (fn (car list) unit) (cdr list))))
+
+(define (length list)
+   (foldl (lambda (_ len) (+ len 1)) 0 list))
+
+________________________________________________________________________
+
+Question 4.
+
+// two point answer:
+void print (const vector<string> &vec) {
+   vector<string>::const_iterator itor = vec.begin();
+   vector<string>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+// three point answer:
+template <class item_t>
+void printt (const vector<item_t> &vec) {
+   vector<item_t>::const_iterator itor = vec.begin();
+   vector<item_t>::const_iterator end = vec.end();
+   for (; itor != end; ++itor) cout << *itor << endl;
+}
+
+
+Answers to test2, page 2.
+
+________________________________________________________________________
+
+Question 5.
+
+(define (evaltree tree) {
+   (if (symbol? tree) (hash-ref symtab tree)
+       ((hash-ref hash (car tree)) (evaltree (cadr tree))
+                                   (evaltree (caddr tree)))))
+
+________________________________________________________________________
+
+Question 6.
+
+sub fold ($$$) {
+   my ($fn, $unit, $array) = @_;
+   $unit = $fn->($unit, $_) for @$array;
+   $unit;
+}
+
+________________________________________________________________________
+
+Question 7.
+
+(define (split lst)
+    (if (or (null? lst) (null? (cdr lst)))
+        (list lst ())
+        (let ((rem (split (cddr lst))))
+             (list (cons (car lst) (car rem))
+                   (cons (cadr lst) (cadr rem)))))
+)
+
+________________________________________________________________________
+
+ 3.    (B) delete
+
+
+ 7.    (B) map <string, int> m;
+
+
+11.    (C) $_
+
+
+
+Question 3.
+
+- return a value
+- throw an exception
+- not return (infinite loop or recursion)
+- exit the program
+
+_________________________________________________________________
+
+Question 5.
+
+filter f list = [x | x <- list, f x]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+Question 9.
+
+let collatz n =
+    let even n = n mod 2 = 0 in
+    let rec collatz' n c =
+        if n <= 1
+           then c
+           else if even n
+                   then collatz' (n / 2) (c + 1)
+                   else collatz' (n * 3 + 1) (c + 1)
+    in  collatz' n 0;;
+
+
+Answers to 2011q2-test3, page 3.
+
+_________________________________________________________________
+
+Question 11.
+
+(define (iota n)
+   (define (iota_ n_ lis)
+      (if (< n_ 1) lis
+          (iota_ (- n_ 1) (cons n_ lis)))
+   )
+   (iota_ n '())
+)
+
+_________________________________________________________________
+
+Question 14.
+
+let rec zipwith f l1 l2 = match l1, l2 with
+    | [], [] -> []
+    | [], _ -> raise (Invalid_argument "zipwith")
+    | _, [] -> raise (Invalid_argument "zipwith")
+    | h1::t1, h2::t2 -> f h1 h2 :: zipwith f t1 t2
+
+let rec zipwith f l1 l2 = match l1, l2 with
+    | [], [] -> []
+    | h1::t1, h2::t2 -> f h1 h2 :: zipwith f t1 t2
+    | _, _ -> raise (Invalid_argument "zipwith")
+
+
+Answers to 2011q2-test3, page 4.
+
+
+ 1.    (B) The message +4 is sent to the number 3.
+
+
+ 2.    (C) The operator + is applied to the operand 3, the result of
+           which is a function which is applied to the number 4.
+
+
+10.    (D) stack frame of the most recent function activation for the
+           function in which the current function is nested.
+
+
+ 3.    (A) $h{$k}
+
+
+ 7.    (B) $0
+
+
+Question 1.
+
+(lambda (x) (lambda (y) (* x y)))
+
+_________________________________________________________________
+
+Question 2.
+
+FORTRAN: Backus; LISP: McCarthy; COBOL: Hopper; BASIC: Kemeny
+
+_________________________________________________________________
+
+Question 3.
+
+/// There are thousands of answers, but a couple are:
+i != 0 && n / i
+i >= 0 && i < a.length && a[i] == 6
+
+_________________________________________________________________
+
+Question 7.
+
+(define (map2 fn list1 list2)
+        (if (or (null? list1) (null? list2)) '()
+            (cons (fn (car list1) (car list2))
+                  (map2 fn (cdr list1) (cdr list2)))))
+
+_________________________________________________________________
+
+Question 9.
+
+(define (ip list1 list2)
+        (foldl + 0 (map2 * list1 list2)))
+
+_________________________________________________________________
+
+ 1.      (A) &&
+
+
+ 3.      (D) map
+
+
+ 6.      (C) Static scope and dynamic lifetime.
+
+
+ 9.      (C) $?
+
+
+11.      (B) COBOL
+
+
+
+Question 1.
+
+universal generic        universal generic
+
+ad hoc overloading       ad hoc conversion
+
+_________________________________________________________________
+
+Question 4.
+
+   real: r imag: i [
+      real := r.
+      imag := i.
+   ]
+
+   + other [
+      |tmp|
+      tmp := Cplx real: self real + other real
+                  imag: self imag + other imag.
+      ^ tmp
+   ]
+
+
+Answers to 2011q2-test2, page 2.
+
+_________________________________________________________________
+
+ 3.    (C) [4 + 5]
+
+
+ 4.    (A) dangling pointers
+
+
+ 5.    (B) fold_left
+
+
+ 7.    (B) a at:1 put:6.
+
+
+Question 3. [3]
+
+(define (maxzip p l1 l2)
+    (if (or (null? l1) (null? l2)) '()
+        (let ((c1 (car l1))
+              (c2 (car l2)))
+         (if (p c1 c2) (cons c1 (maxzip p (cdr l1) (cdr l2)))
+                       (cons c2 (maxzip p (cdr l1) (cdr l2)))))))
+
+_________________________________________________________________
+
+Question 5. [1]
+
+universal: parametric (generic, template)
+           inclusion (subclassing, object-oriented)
+
+ad hoc: conversion (coercion)
+        overloading
+
+_________________________________________________________________
+
+Question 6. [2]
+
+(define (exclude n list)
+    (if (or (<= n 0) (null? list)) list
+        (exclude (- n 1) (cdr list))))
+
+_________________________________________________________________
+
+Question 7. [2]
+
+let rec exclude n list = match list with
+    | _::tail when n > 0 -> exclude (n - 1) tail
+    | _ -> list
+
+_________________________________________________________________
+
+Question 9. [3]
+
+Object subclass: Find [
+   Find class >> key: key array: array [
+      1 to: array size do: [:index|
+         (array at: index) = key ifTrue: [^ index]
+      ].
+      ^ nil.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 3
+
+_________________________________________________________________
+
+Question 12. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to 2012a1-test3, page 4
+
+
+ 6.    (C) $_
+
+
+ 7.    (D) map
+
+
+ 8.    (B) foldl
+
+
+ 9.    (B) my @a;
+
+
+ 4.    (D) virtual function table
+
+
+ 8.    (D) p + p
+
+
+Question 5. [2]
+
+Hundreds of answers:
+- inclusion (or subtype) polymorphism
+     - example shows something object-oriented
+- generic (or template) polymorphism
+     - example shows someting using Java generics or C++ templates
+       or equivalent in another language
+
+_________________________________________________________________
+
+Question 6. [2]
+
+Hundreds of answers:
+- overloading polymorphism
+     - example shows a function with same name but different
+       signatures (prototypes)
+- conversion polymorphism
+     - example shows automatic conversion of one type to another,
+       e.g. float->int, etc.
+
+
+Answers to 2012a1-test1, page 2
+
+_________________________________________________________________
+
+ 6.    (B) When the program is linked.
+
+
+10.    (A) &(&p)
+
+
+11.    (C) FORTRAN
+
+
+
+Question 1. [1]
+
+map f list = [f x | x <- list]
+
+_________________________________________________________________
+
+ 1.    (D) float -> float -> float
+
+
+ 3.    (A) ((3-4)/5)-6
+
+
+ 4.    (A) compose
+
+
+ 9.    (B) access (static) link
+
+
+Question 3. [3]
+
+let collatz n =
+    let rec collatz' n rest =
+        if n <= 1
+           then 1::rest
+           else if even n
+                   then collatz' (n / 2) (n::rest)
+                   else collatz' (n * 3 + 1) (n::rest)
+    in  reverse (collatz' n [])
+
+________________________________________________________________________
+
+Question 5. [2]
+
+   It may return a result (including unit or void).
+   It may raise (throw) an exception.
+   It may never return (infinite loop or recursion).
+   It may exit the program.
+
+________________________________________________________________________
+
+Question 9. [2]
+
+(define (map f list)
+    (if (null? list) '()
+        (cons (f (car list)) (map f (cdr list)))))
+
+(define (filter p list)
+    (if (null? list) '()
+        (let ((hd (car list))
+              (tl (filter p (cdr list))))
+             (if (p hd) (cons hd tl)
+                        (tl)))))
+
+
+Answers to 2014q4-test3, page 3
+
+________________________________________________________________________
+
+Question 10. [1]
+
+print while <>;
+
+________________________________________________________________________
+
+ 9.    (D) print `date`;
+
+
+11.    (B) [4 + 5] value.
+
+
+Question 3. [4]
+
+Object subclass: Complex [
+   |real imag|
+   real [ ^ real ]
+   imag [ ^ imag ]
+   real: r [ real := r. imag := 0. ] 
+   imag: i [ real := 0. imag := i. ] 
+   real: r imag: i [ real := r. imag := i. ] 
+   + other [ 
+      |r|
+      r := Complex new.
+      r real: self real + other real imag: self imag + other imag.
+      ^ r
+   ]
+]
+
+
+Answers to 2014q4-test1, page 2
+
+________________________________________________________________________
+
+Question 5. [2]
+
+Parametric (template, generic):
+        template <typename T> class stack {...}
+        class stack<T> {...}
+Inclusion (inheritance):
+        class bar {...}
+        class foo extends bar {...}
+
+________________________________________________________________________
+
+Question 6. [2]
+
+Coercion (conversion):
+        int a; double b; a = b;
+Overloading:
+        void foo (double);
+        void foo (stringnt);
+
+________________________________________________________________________
+
+Question 7. [3]
+
+while ($line = <>) {
+   ++$count{$_} for split m/\W+/, $line;
+}
+
+push @array, sprintf "%10d %s\n", $count{$_}, $_ for keys %count;
+@array = sort { $b cmp $a } @array;
+print $array[$_] for 0..9;
+
+
+Answers to 2014q4-test1, page 3
+
+
+ 2.    (A) $!
+
+
+ 4.    (C) [4+9] value
+
+
+ 5.    (B) M is possible, but not D.
+
+
+11.    (C) The stack frame of the function in which this function is
+
+
+Question 2. [2]
+
+brief answer ....................
+$lc++, $cc+= length, $wc+= @{[m/(\S+)/g]} while <>;
+print "$lc $wc $cc\n";
+
+verbose answer ....................
+while ($line = <>) {
+   ++$lc;
+   $cc += length $line;
+   ++wc while $line =~ s/\S+//;
+}
+print "$lc $wc $cc\n";
+
+________________________________________________________________________
+
+Question 3. [3]
+
+Object extend [
+   fibonacci: n [
+      |array a b c|
+      array := Array new: n.
+      a := 0.
+      b := 1.
+      1 to: n do: [:i|
+         array at: i put: a.
+         c := a + b. a := b. b := c.
+      ].
+      ^ array
+   ]
+]
+
+________________________________________________________________________
+
+Question 4. [4]
+
+(define (merge l1 l2)
+   (cond ((null? l1) l2)
+         ((null? l2) l1)
+         (else (let ((a1 (car l1))
+                     (a2 (car l2)))
+                    (if (< a1 a2)
+                        (cons a1 (merge (cdr l1) l2))
+                        (cons a2 (merge l1 (cdr l2)))
+)))))
+
+Answers to 2014q4-test2, page 2
+________________________________________________________________________
+
+ 1.    (C) An unevaluated expression passed into a function which may be
+           evaluated by the function if needed.
+
+
+ 3.    (C) 5
+
+
+ 4.    (A) ((a b) c: d)
+
+
+ 7.    (A) (+ 2 3)
+
+
+Question 4. [2]
+let rec sub' num1 num2 carry = match (num1, num2, carry) with
+    | list1, [], 0 -> list1
+    | list1, [], carry -> sub' list1 [- carry] 0
+    | [], _::_, _ -> raise (Invalid_argument "sub'")
+    | h1::t1, h2::t2, carry ->
+      let diff = h1 - h2 + carry + 10
+      in diff mod 10 :: sub' t1 t2 (diff / 10 - 1)
+
+
+Answers to cmps112-2015q4-exam1, page 2
+
+________________________________________________________________________
+
+ 8.    (D) ||
+
+
+Question 1. [2]
+
+Examples are multitudinous, so many other than these are correct.
+
+parametric               template <typename T> class stack
+                 -or-    class stack<T>
+
+inclusion                class B extends A
+or inheritance
+
+________________________________________________________________________
+
+Question 2. [2]
+
+conversion       void f(double);    f(6)
+
+overloading      void f(double); void f(int);
+
+________________________________________________________________________
+
+ 3.    (D) 5
+
+
+ 4.    (B) M but not D
+
+
+ 8.    (A) ((foo bar) + foo) set: (3 + (4 next))
+
+
+ 9.    (C) [3+4] value.
+
+
+10.    (B) fold_left
+
+
+Question 7. [2]
+
+let rec unzip list = match list with
+    | [] -> ([],[])
+    | (a,b)::rest -> let (al,bl) = unzip rest
+                     in (a::al, b::bl);;
+
+________________________________________________________________________
+
+Question 8. [2]
+
+gcd( X, Y, Z ) :- X > Y, T is X - Y, gcd( T, Y, Z ).
+gcd( X, Y, Z ) :- X < Y, T is Y - X, gcd( X, T, Z ).
+gcd( X, X, X ).
+
+
+Answers to cmps112-2016q4-final, page 3
+
+________________________________________________________________________
+
+Question 9. [2]
+
+universal    parametric (template, generic)
+             inclusion (inheritance, OO)
+
+ad hoc       conversion (coercion)
+             overloading
+
+________________________________________________________________________
+
+Question 11. [6]
+
+Object subclass: Stack [
+   |array top|
+   Stack class >> new [
+      ^ Stack new: 10
+   ]
+   Stack class >> new: size [
+      ^ super new init: size
+   ]
+   init: size [
+      top := 0.
+      array := Array new: size.
+   ]
+   pop [
+      |result|
+      result := array at: top.
+      top := top - 1.
+      ^ result.
+   ]
+   push: item [
+      top := top + 1.
+      array at: top put: item
+   ]
+   empty [
+      ^ top = 0.
+   ]
+]
+
+
+Answers to cmps112-2016q4-final, page 4
+
+
+ 2.    (B) Edsger Dijkstra
+
+
+ 3.    (D) \w+
+
+
+ 5.    (A) (apply + '(1 2 3))
+
+
+8. Refer to the solution PDF for this exam.
+
+
+9. Refer to the solution PDF for this exam.
+
+
+10. Refer to the solution PDF for this exam.
+
+
+12. Refer to the solution PDF for this exam.
+
+
+14. Refer to the solution PDF for this exam.
+
+
+15. Refer to the solution PDF for this exam.
+
+
+18. Refer to the solution PDF for this exam.
+
+
+28. Refer to the solution PDF for this exam.
+
+
+29. Refer to the solution PDF for this exam.
+
+
+Question 1. [2]
+
+- return a value
+- throw (raise) an exception
+- exit the program
+- infinite loop or recursion
+
+_________________________________________________________________
+
+Question 8. [1]
+
+Fortran: John Backus
+Cobol: Grace Hopper
+Basic John Kemeny & Thomas Kurtz
+Lisp: John McCarthy
+
+_________________________________________________________________
+
+ 6.    (B) fold_left
+
+
+ 9.    (B) link time
+
+

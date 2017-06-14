@@ -1,0 +1,1434 @@
+Likeness: 0.382352941176
+sample_exams/cmps112-2009q1-final.tt
+ 6. Ocaml:  Define the function merge which takes a predicate as an
+    argument and a pair of sorted lists.  The result is a single list in
+    sorted order.  [3pt]
+    # merge;;
+    - : ('a -> 'a -> bool) -> 'a list -> 'a list -> 'a list
+    # merge (<) [1;3;5] [2;4;8;9];;
+    - : int list = [1; 2; 4; 4; 8; 9; 9]
+
+Words from problem not in sneak peek:
+and, takes, sorted, 3, 3pt, argument, lists, an, 1, pair, as, 2, bool, result,
+6, 9, 5, 8, merge, single, 4
+
+Words from problem yes in sneak peek:
+function, a, predicate, int, of, is, list, ocaml, which, in, the, order, define
+
+
+Likeness: 0.307692307692
+sample_exams/cmps112-2009q1-final.tt
+ 8. Ocaml:  Define the function zip whose arguments are a curried pair
+    of lists and whose result is a list of tuples.  Raise Invalid_
+    argument if the lengths are different.  [2pt]
+    # zip;;
+    - : 'a list -> 'b list -> ('a * 'b) list
+    # zip [1;2;3] ["foo";"bar";"baz"];;
+    - : (int * string) list = [(1, "foo"); (2, "bar"); (3, "baz")]
+    # zip [1;2;3] [];;
+    Exception: Invalid_argument "length mismatch".
+
+Words from problem not in sneak peek:
+and, invalid_, argument, result, whose, different, raise, zip, lengths, 1,
+tuples, 3, 2, arguments, 8, foo, 2pt, mismatch, lists, curried, pair, exception,
+b, bar, invalid_argument, baz, are
+
+Words from problem yes in sneak peek:
+function, a, string, int, of, is, list, ocaml, length, the, if, define
+
+
+Likeness: 0.384615384615
+sample_exams/cmps112-2009q1-final.tt
+13. Give an example of how memory leak might occur in Java.  [2pt]
+
+Words from problem not in sneak peek:
+13, 2pt, give, leak, an, example, memory, occur
+
+Words from problem yes in sneak peek:
+might, of, java, how, in
+
+
+Likeness: 0.352941176471
+sample_exams/cmps112-2009q1-final.tt
+ 2. Partial parameterization of a currried function keeps arguments in
+    a:
+    (A) closure
+    (B) daemon
+    (C) monad
+    (D) thunk
+
+Words from problem not in sneak peek:
+closure, c, b, partial, d, parameterization, daemon, 2, arguments, keeps,
+currried
+
+Words from problem yes in sneak peek:
+a, function, monad, of, thunk, in
+
+
+Likeness: 0.391304347826
+sample_exams/cmps112-2009q1-final.tt
+ 3. In C++, a static variable is bound to a virtual address:
+    (A) at compile (CC) time.
+    (B) at link (ld) time.
+    (C) at exec() time.
+    (D) when main() is called.
+
+Words from problem not in sneak peek:
+ld, b, d, exec, cc, c, time, bound, compile, 3, link, at, address, called
+
+Words from problem yes in sneak peek:
+a, is, when, virtual, to, static, in, variable, main
+
+
+Likeness: 0.375
+sample_exams/cmps112-2009q1-final.tt
+ 7. When arguments to functions are evaluated before the function is
+    called, this is __ order.
+    (A) applicative
+    (B) efficient
+    (C) normal
+    (D) short circuit
+
+Words from problem not in sneak peek:
+__, applicative, c, short, d, normal, efficient, evaluated, circuit, b, are, 7,
+before, called, arguments
+
+Words from problem yes in sneak peek:
+function, a, functions, this, is, when, to, the, order
+
+
+Likeness: 0.305555555556
+sample_exams/cmps112-2009q1-final.tt
+ 8. A garbage collector which is most friendly to the page tables by
+    compacting heap objects into as few pages as possible:
+    (A) concurrent reclamation of live objects
+    (B) copying collector with semispaces
+    (C) mark and sweep collector
+    (D) reference counting
+
+Words from problem not in sneak peek:
+and, compacting, reference, reclamation, sweep, as, counting, collector, tables,
+garbage, mark, few, live, copying, 8, friendly, pages, possible, concurrent,
+objects, by, c, b, d, semispaces
+
+Words from problem yes in sneak peek:
+a, which, most, of, is, page, to, heap, the, with, into
+
+
+Likeness: 0.388888888889
+sample_exams/cmps112-2009q1-final.tt
+ 2. What is 6?
+    (A) ((lambda (x)(+ x 3 ))3)
+    (B) (cdar '(7 6 5 4 3))
+    (C) (if (2 < 3) 4 6)
+    (D) (map * '(1 2 3))
+
+Words from problem not in sneak peek:
+c, b, cdar, d, 1, 3, 2, 5, 4, 7, 6
+
+Words from problem yes in sneak peek:
+a, map, what, is, x, lambda, if
+
+
+Likeness: 0.392857142857
+sample_exams/cmps112-2009q1-final.tt
+ 4. An object-oriented language such as C++ does dynamic dispatching of
+    method calls by means of a:
+    (A) virtual function table
+    (B) template declaration
+    (C) heap-allocated closure
+    (D) friend function
+
+Words from problem not in sneak peek:
+closure, by, b, d, calls, means, c, an, dispatching, as, does, 4, template,
+such, allocated, method, friend
+
+Words from problem yes in sneak peek:
+function, a, language, of, object, dynamic, virtual, oriented, heap,
+declaration, table
+
+
+Likeness: 0.384615384615
+sample_exams/cmps112-2009q1-final.tt
+ 9. Passing a parameter by __ means that it is passed in unevaluated and
+    then evaluated only if needed.
+    (A) name
+    (B) reference
+    (C) value
+    (D) value-result
+
+Words from problem not in sneak peek:
+__, and, c, b, d, reference, means, evaluated, needed, result, passed, 9,
+passing, unevaluated, parameter, by
+
+Words from problem yes in sneak peek:
+a, then, name, that, is, it, value, only, in, if
+
+
+Likeness: 0.35593220339
+sample_exams/cmps112-2009q1-test1.tt
+ 2. Write a Perl program which reads in a sequence of lines using <>.
+    Each line consists of a key and a value separated by an equal (=)
+    sign.  Strip off leading and trailing whitespace from each key and
+    value.  Put the key and value into a hash.  Print an error message
+    if any line does not have an equal sign, but ignore any line
+    containing only whitespace.  At end of file, print out each key and
+    value pair in lexicographic order.  You need not use strict or use
+    warnings.  [4pt]
+
+Words from problem not in sneak peek:
+and, sequence, lines, an, need, reads, 4pt, file, strip, consists, trailing,
+any, out, containing, end, whitespace, leading, lexicographic, strict, program,
+print, separated, hash, warnings, each, but, key, pair, 2, sign, by, off, put,
+equal, ignore, does, error, at
+
+Words from problem yes in sneak peek:
+a, the, use, or, from, which, of, into, line, value, perl, write, only, have,
+in, not, using, message, order, you, if
+
+
+Likeness: 0.323076923077
+sample_exams/cmps112-2009q1-test1.tt
+ 3. Write a function in Perl which takes a filename as an argument and
+    prints out a lexicographically sorted list of words in the file.
+    Each word is printed only once, followed by a list of line numbers
+    where they occur.  A word is any sequence of characters that match
+    \S+ (Note the capital S, meaning non-whitespace.)  [4pt]
+
+    sub makexref ($) {                                             Example output:   bar 7 7 88 88 9
+       my ($filename) = @_;                                                          foo 3 44 98
+       open my $file, "<$filename" or die "$0: $filename: $!\n";
+
+Words from problem not in sneak peek:
+and, prints, followed, characters, sequence, argument, an, as, numbers, file,
+open, occur, out, takes, 44, filename, note, 0, 3, 4pt, makexref, 7, capital, 9,
+foo, lexicographically, non, any, word, 98, meaning, printed, words, sorted, by,
+_, whitespace, bar, die, each, output, my, example, once
+
+Words from problem yes in sneak peek:
+function, a, which, that, of, is, list, 88, perl, write, s, only, they, in,
+where, line, n, the, or, match, sub
+
+
+Likeness: 0.382978723404
+sample_exams/cmps112-2009q1-test1.tt
+ 5. In perl, lexical scope is introduced by the my declaration, while
+    dynamic scope is introduced via a local declaration.  Lacking a
+    declaration implies global scope.  What is the output of running
+    this program with each of the statements on the right?  [2pt]
+
+    +-----------------------------------------------------------------+---------------------+
+    |                                                                 | scope.perl 0        |
+    |                                                                 |                     |
+    |%fn = ("0" => sub {print "0=$var."},                             +---------------------+
+    |       "d" => sub {local $var = "dyn"; yes(); print "d=$var. "}, | scope.perl s        |
+    |       "s" => sub {my $var = "stat"; yes(); print "s=$var. "},   |                     |
+    |       "g" => sub {$var = "foo"; yes(); print "f=$var. "},       +---------------------+
+    |      );                                                         | scope.perl d        |
+    |sub yes {$var = "yes"}                                           |                     |
+    |$var = "glo"; $fn{$ARGV[0]}(); print "//$var\n";                 +---------------------+
+    |                                                                 | scope.perl g        |
+    |                                                                 |                     |
+    +-----------------------------------------------------------------+---------------------+
+
+Words from problem not in sneak peek:
+via, statements, global, yes, lexical, 0, program, 5, var, scope, foo, local,
+stat, 2pt, lacking, argv, print, running, by, fn, implies, d, glo, dyn, while,
+each, output, introduced, my
+
+Words from problem yes in sneak peek:
+a, on, what, right, sub, g, f, this, of, is, declaration, dynamic, perl, s, in,
+the, n, with
+
+
+Likeness: 0.391304347826
+sample_exams/cmps112-2009q1-test1.tt
+ 3. The address of a static variable in C++ is determined at what time?
+    (A) compile
+    (B) during a function call
+    (C) link
+    (D) program exec
+
+Words from problem not in sneak peek:
+c, b, d, exec, time, compile, 3, program, link, at, during, address, call,
+determined
+
+Words from problem yes in sneak peek:
+function, a, what, of, is, static, in, variable, the
+
+
+Likeness: 0.333333333333
+sample_exams/cmps112-2009q1-test1.tt
+ 6. The following two declarations are examples of:
+    ostream &operator<< (ostream &,
+                const string &);
+    template <typename item_t>
+    ostream &operator<< (ostream &,
+                const vector<item_t> &);
+    (A) overhanging
+    (B) overlapping
+    (C) overloading
+    (D) overriding
+
+Words from problem not in sneak peek:
+overhanging, c, overriding, const, d, typename, declarations, overlapping,
+ostream, item_t, b, are, template, 6, operator, examples
+
+Words from problem yes in sneak peek:
+a, string, of, two, overloading, vector, following, the
+
+
+Likeness: 0.36170212766
+sample_exams/cmps112-2011q2-final.tt
+ 8. Perl:  Write a program in Perl that uses <> to read all of the
+    input lines.  At end of the last file, it prints the number of
+    characters, words, and lines found in the file.  A word is any
+    sequence of characters that does not match white space.  (A word
+    matches \S+).  [2pt]
+
+    bash-3.2$ (echo this is a test; \
+    > echo 2 lines in the file) \
+    > | wc.perl
+    2 9 35
+
+Words from problem not in sneak peek:
+and, program, all, characters, sequence, prints, echo, at, file, any, end, read,
+3, 2, 9, input, white, wc, 2pt, matches, test, uses, words, 8, last, word,
+lines, 35, does, found
+
+Words from problem yes in sneak peek:
+a, number, space, this, of, is, that, it, perl, write, to, s, bash, in, not,
+the, match
+
+
+Likeness: 0.394736842105
+sample_exams/cmps112-2011q2-final.tt
+10. Smalltalk:  Write some smalltalk code to create a SortedCollection
+    and store it in a variable called sc.  Then use cascaded (chained)
+    messages to add the numbers 23, 498, 33, 87, and 10, in that
+    order.  Then print out all the numbers, one per line, in sorted
+    order.  [2pt]
+
+Words from problem not in sneak peek:
+and, all, code, cascaded, sortedcollection, 498, numbers, 87, out, 23, create,
+per, add, print, store, 2pt, sorted, 10, chained, 33, messages, sc, called
+
+Words from problem yes in sneak peek:
+a, then, use, that, the, some, it, one, write, to, in, variable, line, order,
+smalltalk
+
+
+Likeness: 0.321428571429
+sample_exams/cmps112-2011q2-final.tt
+ 3. If M = memory leak, D = dangling references, and U = unsafe type
+    conversions, which is possible in Java?
+    (A) all of them
+    (B) none of them
+    (C) D but neither M nor U
+    (D) M but neither D nor U
+
+Words from problem not in sneak peek:
+and, conversions, all, b, d, dangling, leak, c, unsafe, them, but, possible, 3,
+references, none, memory, u, neither, nor
+
+Words from problem yes in sneak peek:
+a, java, of, is, m, which, in, type, if
+
+
+Likeness: 0.333333333333
+sample_exams/cmps112-2011q2-final.tt
+ 6. A closure is:
+    (A) the address of the local variables that are passed to another
+        function during a function call.
+    (B) automatically closing all opened files when the exit function
+        is called.
+    (C) a heap allocated structure which points at a function and
+        contains the values of all non-local variables used by that
+        function.
+    (D) a structure which holds an unevauated expression used when
+        parameters are passed in normal form.
+
+Words from problem not in sneak peek:
+and, all, an, are, another, allocated, opened, parameters, holds, call, passed,
+6, exit, local, files, non, form, normal, address, during, by, closure, c, b, d,
+unevauated, values, closing, expression, called, automatically, at
+
+Words from problem yes in sneak peek:
+function, a, used, heap, that, of, is, contains, when, to, points, which, in,
+the, variables, structure
+
+
+Likeness: 0.354166666667
+sample_exams/cmps112-2011q2-final.tt
+ 7. A thunk is:
+    (A) the address of the local variables that are passed to another
+        function during a function call.
+    (B) automatically closing all opened files when the exit function
+        is called.
+    (C) a heap allocated structure which points at a function and
+        contains the values of all non-local variables used by that
+        function.
+    (D) a structure which holds an unevauated expression used when
+        parameters are passed in normal form.
+
+Words from problem not in sneak peek:
+and, all, an, are, another, allocated, opened, parameters, holds, call, passed,
+exit, local, files, non, 7, form, normal, address, during, by, c, b, d,
+unevauated, values, closing, expression, called, automatically, at
+
+Words from problem yes in sneak peek:
+function, a, used, heap, to, of, is, contains, when, thunk, that, points, which,
+in, the, variables, structure
+
+
+Likeness: 0.378378378378
+sample_exams/cmps112-2011q2-test1.tt
+ 4. Write a Perl program that will read STDIN and print the number of
+    characters, words, and lines in the file.  A word is any sequence
+    of non-whitespace characters.  [2pt]
+
+    % cat t
+    this is a test
+    second line
+    last line in the file
+    % wc.perl  <t
+          3      11      49
+
+Words from problem not in sneak peek:
+and, words, sequence, file, any, whitespace, 49, 3, program, 4, test, non, wc,
+2pt, read, print, characters, word, 11, last, stdin, lines, cat
+
+Words from problem yes in sneak peek:
+a, will, that, this, of, is, number, perl, write, second, t, in, line, the
+
+
+Likeness: 0.344827586207
+sample_exams/cmps112-2011q2-test1.tt
+ 6. Write a program in Perl which reads either the standard input or
+    all of the files whose names are given on the command line and
+    prints out each word followed by the number of times it appears in
+    the file.  Words are printed in lexicographic order.  A word
+    matches \w+ and each word is printed only once.  Your program must
+    use strict; use warnings;.  [3pt]
+
+    % ./count.perl f1 f2
+    a 4
+    file 10
+    second 2
+    test 4
+    the 10
+
+Words from problem not in sneak peek:
+and, f1, all, followed, prints, reads, are, file, out, whose, by, lexicographic,
+strict, program, 4, 6, test, input, files, names, warnings, matches, 3pt, f2,
+standard, printed, words, 2, appears, must, count, 10, word, times, command,
+either, each, once
+
+Words from problem yes in sneak peek:
+a, on, given, or, w, second, of, is, use, number, perl, write, only, which, in,
+it, line, order, the, your
+
+
+Likeness: 0.314285714286
+sample_exams/cmps112-2011q2-test1.tt
+ 8. Define a function foldl which takes a function, a unit value, and
+    a list, and returns a single value by applying the function
+    between each member of the list.  It must be tail recursive.
+    [2pt]
+
+    > (foldl + 0 '(4 10 18))
+    27
+    > (foldl cons '() '(1 2 3))
+    (((() . 1) . 2) . 3)
+
+Words from problem not in sneak peek:
+and, cons, single, foldl, unit, 1, 27, recursive, member, 0, 3, 2, 4, between,
+8, be, 2pt, by, must, 10, applying, takes, 18, each
+
+Words from problem yes in sneak peek:
+function, a, of, list, returns, value, it, tail, which, the, define
+
+
+Likeness: 0.315789473684
+sample_exams/cmps112-2011q2-test1.tt
+ 2. Which Scheme expression will evaluate to the atom 2?
+    (A) (caar '(1 2 3))
+    (B) (cadr '(1 2 3))
+    (C) (cdar '(1 2 3))
+    (D) (cddr '(1 2 3))
+
+Words from problem not in sneak peek:
+cadr, b, cdar, d, evaluate, c, 1, 3, 2, atom, expression, caar, cddr
+
+Words from problem yes in sneak peek:
+a, will, to, which, the, scheme
+
+
+Likeness: 0.363636363636
+sample_exams/cmps112-2011q2-test1.tt
+ 5. When is a static variable in C bound to a specific virtual
+    address?
+    (A) When the compiler produces an object file.
+    (B) When the linker produces an executable image.
+    (C) When the program is loaded via the exec system call.
+    (D) When the main function is called.
+
+Words from problem not in sneak peek:
+exec, executable, via, system, produces, c, image, linker, bound, an, specific,
+d, program, 5, file, address, call, loaded, b, called, compiler
+
+Words from problem yes in sneak peek:
+function, a, is, object, when, virtual, to, static, in, variable, the, main
+
+
+Likeness: 0.35
+sample_exams/cmps112-2011q2-test2.tt
+ 6. Ocaml:  Define a function merge whose arguments are a binary
+    predicate returning a relative ordering and two lists that are
+    assumed sorted.  Return a merged with combining the two lists into
+    a single sorted list.  [3pt]
+    # merge (<=) [1;5;7;9] [2;4;6;88];;
+    - : int list = [1; 2; 4; 5; 6; 7; 9; 88]
+    # merge (>) [9;5;3;1] [100;13];;
+    - : int list = [100; 13; 9; 5; 3; 1]
+
+Words from problem not in sneak peek:
+and, relative, single, are, combining, whose, ordering, assumed, 1, 3, 2, 5,
+arguments, 7, 6, 9, merged, 4, returning, 3pt, lists, binary, sorted, 100, 13,
+merge
+
+Words from problem yes in sneak peek:
+function, a, predicate, return, that, int, into, list, two, ocaml, 88, the,
+with, define
+
+
+Likeness: 0.394736842105
+sample_exams/cmps112-2011q2-test2.tt
+ 7. Ocaml:  Define a function zip which takes two lists and returns a
+    list of tuples, pairing each corresponding element.  If the lists
+    are of different lengths, ignore excess elements in the longer
+    list.  [2pt]
+    # zip [1;2;3] ['a';'b';'c';'d'];;
+    - : (int * char) list = [(1, 'a'); (2, 'b'); (3, 'c')]
+
+Words from problem not in sneak peek:
+and, char, are, different, takes, zip, lengths, pairing, 1, 3, tuples, 7,
+corresponding, 2pt, lists, excess, 2, longer, c, b, d, ignore, each
+
+Words from problem yes in sneak peek:
+function, a, elements, int, of, list, two, ocaml, returns, which, in, element,
+define, the, if
+
+
+Likeness: 0.375
+sample_exams/cmps112-2011q2-test2.tt
+ 2. In Smalltalk, $ sqrt 2 $ can be computed with the following
+    expression:
+    (A) (sqrt 2)
+    (B) 2 sqrt
+    (C) sqrt (2)
+    (D) sqrt 2.0;;
+
+Words from problem not in sneak peek:
+be, c, b, computed, sqrt, 0, 2, can, expression, d
+
+Words from problem yes in sneak peek:
+a, in, following, the, with, smalltalk
+
+
+Likeness: 0.315789473684
+sample_exams/cmps112-2011q2-test2.tt
+ 8. What is the value of
+       (cdr (car (cons '(1 2 3) '(4 5 6))))
+    (A) ((1 2 3) 4 5 6)
+    (B) (1 2 3)
+    (C) (2 3)
+    (D) (cons '(1 2 3) '(4 5 6))
+
+Words from problem not in sneak peek:
+c, cons, d, car, 1, 3, 2, 5, 4, cdr, 6, 8, b
+
+Words from problem yes in sneak peek:
+a, what, of, is, value, the
+
+
+Likeness: 0.3
+sample_exams/cmps112-2011q2-test2.tt
+11. Smalltalk was originally designed at:
+    (A) Bell Labs
+    (B) INRIA
+    (C) MIT AI Lab
+    (D) Xerox PARC
+The Antikythera mechanism, built ca. 150-100 BCE, is the oldest known
+complex scientific calculator, and is sometimes called the first known
+analog computer, with operational instructions written in Greek.
+http://en.wikipedia.org/wiki/Antikythera_mechanism
+
+
+Words from problem not in sneak peek:
+and, 150, bell, ai, ca, at, oldest, analog, wikipedia, mechanism, operational,
+written, complex, antikythera, mit, parc, xerox, lab, labs, inria, known, org,
+100, calculator, instructions, 11, c, b, d, bce, wiki, sometimes, called,
+antikythera_mechanism, originally
+
+Words from problem yes in sneak peek:
+a, en, http, built, with, is, greek, computer, designed, in, the, first, was,
+smalltalk, scientific
+
+
+Likeness: 0.393939393939
+sample_exams/cmps112-2012q1-final.tt
+ 4. Perl:  Write a program which uses <> to read files and at end
+    prints the number of characters, words, and lines in these files.
+    A word is anything that matches /\S+/.  [2pt]
+    % wc.perl foo
+    4 28 149
+
+Words from problem not in sneak peek:
+and, files, prints, end, 2pt, anything, matches, word, 28, 149, read, program,
+uses, at, words, wc, foo, lines, characters, 4
+
+Words from problem yes in sneak peek:
+a, that, these, of, is, number, perl, write, to, s, which, in, the
+
+
+Likeness: 0.358974358974
+sample_exams/cmps112-2012q1-final.tt
+ 8. Prolog:  Define A function exclude/3 with the same semantics.  The
+    first two arguments are as before, and the third argument is the
+    output list.  Do not consider the result of backtracking from the
+    ? prompt.  [2pt]
+    | ?- exclude(2,[1,2,3,4,5],U).
+    U = [3,4,5] ?
+    yes
+    | ?- exclude(-5,[1,2,3,4,5],U).
+    U = [1,2,3,4,5] ?
+    yes
+    | ?- exclude(10,[1,2,3],U).
+    U = [] ?
+    yes
+
+Words from problem not in sneak peek:
+and, prompt, consider, argument, as, result, exclude, yes, backtracking, before,
+1, 3, 2, 5, arguments, 8, 4, do, 2pt, semantics, 10, third, u, output, are
+
+Words from problem yes in sneak peek:
+function, a, from, of, is, first, list, two, same, not, the, prolog, with,
+define
+
+
+Likeness: 0.384615384615
+sample_exams/cmps112-2012q1-final.tt
+11. Give an example of how memory leak might occur in Java.  [2pt]
+
+Words from problem not in sneak peek:
+11, 2pt, give, leak, an, example, memory, occur
+
+Words from problem yes in sneak peek:
+might, of, java, how, in
+
+
+Likeness: 0.357142857143
+sample_exams/cmps112-2012q1-final.tt
+ 1. What will make Smalltalk print 9?
+    (A) (4 + 5) value.
+    (B) (4 + 5) value:.
+    (C) [4 + 5] value.
+    (D) [4 + 5] value:.
+
+Words from problem not in sneak peek:
+c, b, d, make, 1, print, 5, 4, 9
+
+Words from problem yes in sneak peek:
+a, will, what, smalltalk, value
+
+
+Likeness: 0.384615384615
+sample_exams/cmps112-2012q1-final.tt
+ 2. In Smalltalk, what is 1.4142135623730951?
+    (A) (sqrt 2)
+    (B) 2 ** .5
+    (C) 2 sqrt
+    (D) sqrt (2)
+
+Words from problem not in sneak peek:
+c, b, d, sqrt, 1, 4142135623730951, 2, 5
+
+Words from problem yes in sneak peek:
+a, what, is, smalltalk, in
+
+
+Likeness: 0.322580645161
+sample_exams/cmps112-2012q1-final.tt
+ 5. A process that has exited, either by calling exit or from a
+    signal, but has not yet been waited for by its parent process is
+    called a:
+    (A) daemon
+    (B) fork bomb
+    (C) init
+    (D) zombie
+
+Words from problem not in sneak peek:
+fork, c, b, bomb, d, by, called, process, signal, daemon, been, exited, zombie,
+init, 5, but, exit, calling, yet, waited, either
+
+Words from problem yes in sneak peek:
+a, from, for, parent, that, is, or, not, has, its
+
+
+Likeness: 0.391304347826
+sample_exams/cmps112-2012q1-final.tt
+ 3. Allowing partial parameterization of a function in a functional
+    language such as Ocaml is called:
+    (A) currying
+    (B) lambda lifting
+    (C) tupling
+    (D) unification
+
+Words from problem not in sneak peek:
+c, b, partial, d, currying, tupling, 3, as, unification, allowing,
+parameterization, such, called, lifting
+
+Words from problem yes in sneak peek:
+function, a, language, of, is, functional, ocaml, in, lambda
+
+
+Likeness: 0.333333333333
+sample_exams/cmps112-2012q1-final.tt
+ 6. All imperative featurs of Haskell must be isolated from the rest
+    of the program and contained in a:
+    (A) closure
+    (B) monad
+    (C) proxy
+    (D) thunk
+
+Words from problem not in sneak peek:
+and, be, all, b, d, closure, c, isolated, rest, contained, program, imperative,
+proxy, 6, featurs, must
+
+Words from problem yes in sneak peek:
+a, from, monad, of, thunk, haskell, in, the
+
+
+Likeness: 0.368421052632
+sample_exams/cmps112-2012q1-final.tt
+ 9. From what memory segment does the malloc(3) function allocate
+    memory?
+    (A) test
+    (B) data
+    (C) heap
+    (D) stack
+
+Words from problem not in sneak peek:
+c, b, d, segment, malloc, 9, 3, does, allocate, memory, test, data
+
+Words from problem yes in sneak peek:
+function, a, what, from, heap, the, stack
+
+
+Likeness: 0.333333333333
+sample_exams/cmps112-2012q1-final.tt
+10. A process that sleeps in the background and wakes up whenever a
+    request is made on its port, then performs that service, and
+    returns to sleep to wait for the next request is called a:
+    (A) daemon
+    (B) fork bomb
+    (C) init
+    (D) zombie
+
+Words from problem not in sneak peek:
+and, bomb, wakes, process, sleep, port, sleeps, service, next, init, performs,
+fork, daemon, zombie, made, background, wait, 10, c, b, d, whenever, request,
+called
+
+Words from problem yes in sneak peek:
+a, then, for, that, is, up, to, returns, in, the, on, its
+
+
+Likeness: 0.320512820513
+sample_exams/cmps112-2012q1-test1.tt
+ 7. Write a complete program in Perl that reads in words from all of
+    the filenames specified in @ARGV, and after end of file of the
+    last file, prints out each word, one per line, sorted
+    lexicographically, with each word followed by a count of the
+    number of times it occurred.  Exit status is 0 for success and 1
+    if any file could not be opened.  Print suitable error messaages
+    for files that could not be opened.  If no files are specified,
+    read the standard input.  Do not use the <> operator.  Use /\w+/
+    to match words or /\W+/ to split delimiters.  If @ARGV is empty,
+    use "-" (standard input).  [5pt]
+
+    #!/usr/bin/perl
+    use strict;
+    use warnings;
+    $0 =~ s|.*/||;
+
+Words from problem not in sneak peek:
+and, bin, all, followed, be, prints, reads, are, file, specified, operator, any,
+out, end, opened, strict, per, 1, 0, program, exit, split, 7, print, input, 5pt,
+lexicographically, empty, usr, files, do, complete, warnings, read, each,
+occurred, argv, filenames, words, sorted, standard, messaages, by, count, word,
+last, success, could, times, delimiters, status, error, suitable
+
+Words from problem yes in sneak peek:
+is, number, one, in, if, use, from, for, no, perl, write, to, match, that,
+after, it, not, line, with, a, of, s, w, the, or
+
+
+Likeness: 0.357142857143
+sample_exams/cmps112-2012q1-test1.tt
+ 8. Define the function zip in Scheme.  It takes a function and a pair
+    of lists and returns a list having pairwise applied the function
+    to corresponding pairs of elements in the list.  If the lists are
+    of unequal length, the function stops when the shorter list runs
+    out.  [2pt]
+    Example:  (zip + '(1 2 3) '(4 5 6 7))
+    Returns:  (5 7 9)
+
+Words from problem not in sneak peek:
+and, are, out, 1, takes, zip, stops, shorter, 3, 2, 5, 4, 7, 6, 9, 8,
+corresponding, 2pt, runs, lists, pair, applied, pairs, unequal, having,
+pairwise, example
+
+Words from problem yes in sneak peek:
+function, define, elements, of, when, it, list, to, returns, a, in, length, the,
+scheme, if
+
+
+Likeness: 0.340909090909
+sample_exams/cmps112-2012q1-test1.tt
+ 9. Define the same function in Perl.  It takes a reference to a
+    function of two arguments, followed by references to two arrays
+    and applies the function pairwise to the arrays, returning an
+    array of the shorter length.  [2pt]
+    Example:  @y = zip sub{$_[0]+$_[1]}, [1, 2, 3], [4, 5, 6, 7];
+    print "@y\n";
+    Prints:  5 7 9
+
+Words from problem not in sneak peek:
+and, prints, followed, reference, an, references, array, 1, takes, zip, shorter,
+0, 3, 2, 5, 4, 7, 6, 9, arguments, 2pt, returning, print, by, _, arrays,
+pairwise, y, example
+
+Words from problem yes in sneak peek:
+function, a, sub, of, applies, it, same, perl, to, length, two, in, the, n,
+define
+
+
+Likeness: 0.315789473684
+sample_exams/cmps112-2012q1-test1.tt
+ 5. What is the value of:
+       (cadr '((1 2 3) (4 5 6) (7 8 9)))
+    (A) 1
+    (B) (4 5 6)
+    (C) (2 3)
+    (D) ((7 8 9))
+
+Words from problem not in sneak peek:
+c, b, d, cadr, 1, 3, 2, 5, 4, 7, 6, 9, 8
+
+Words from problem yes in sneak peek:
+a, what, of, is, value, the
+
+
+Likeness: 0.365853658537
+sample_exams/cmps112-2012q1-test1.tt
+ 9. Assuming only pure Java code with no sneaky tricks written in C,
+    If M = memory leaks, D = dangling references, and U = unsafe type
+    conversions or casting, which of the following are possible in
+    Java?
+    (A) all of them.
+    (B) none of them.
+    (C) only D, but neither M nor U.
+    (D) only M, but neither D nor U.
+
+Words from problem not in sneak peek:
+and, conversions, all, code, unsafe, references, are, sneaky, leaks, written,
+assuming, 9, neither, them, casting, dangling, memory, none, but, possible, nor,
+c, b, d, tricks, u
+
+Words from problem yes in sneak peek:
+a, java, which, no, with, of, m, only, pure, in, following, the, type, or, if
+
+
+Likeness: 0.365079365079
+sample_exams/cmps112-2012q1-test2.tt
+ 5. Perl:  Write a program in Perl which reads words and keeps track
+    of their lengths.  At end of file, print out a table of two
+    columns, with each line consisting of the length of a word and the
+    number of words of that length.  Use <> to read lines.  A word is
+    any sequence of characters that matches the regex m/\w+/.  The
+    example output shows that for this input, there is 1 word of
+    length 1, 4 words of length 3, and 3 words of length 5.  [3pt]
+
+    +--------------+----------------+
+    |example input | example output |
+    +--------------+----------------+
+    |foo bar baz x |      1     1   |
+    |hello world   |      3     4   |
+    |qux quuux     |      5     3   |
+    +--------------+----------------+
+
+Words from problem not in sneak peek:
+and, words, sequence, lines, reads, at, file, world, any, out, end, lengths,
+there, 1, their, 3, program, 5, 4, print, input, foo, consisting, columns,
+shows, matches, qux, keeps, 3pt, track, characters, word, quuux, bar, read, baz,
+example, each, output, hello
+
+Words from problem yes in sneak peek:
+is, number, in, table, regex, use, for, two, perl, write, to, which, that, line,
+with, a, this, of, m, length, w, x, the
+
+
+Likeness: 0.375
+sample_exams/cmps112-2012q1-test2.tt
+ 6. Ocaml:  Define a function zipwith whose first argument is a
+    curried function of two arguments, second argument is a single
+    value, and whose third and fourth arguments are lists.  It merges
+    the lists into a single list by applying the function in a
+    pairwise manner, using the single value if one list runs out
+    first.  [3pt]
+    # zipwith;;
+    - : ('a -> 'a -> 'b) -> 'a -> 'a list -> 'a list -> 'b list =
+    <fun>
+    # (+);;
+    - : int -> int -> int = <fun>
+    # zipwith (+) 0;;
+    - : int list -> int list -> int list = <fun>
+    # zipwith (+) 0 [1; 2; 3] [4; 5; 6; 7; 8];;
+    - : int list = [5; 7; 9; 7; 8]
+    # zipwith (^) "**" ["foo"] ["bar"; "baz"];;
+    - : string list = ["foobar"; "**baz"]
+    # zipwith (^) "**" ["foo"; "bar"] ["baz"];;
+    - : string list = ["foobaz"; "bar**"]
+
+Words from problem not in sneak peek:
+and, foobaz, foobar, argument, single, manner, out, whose, merges, 1, 0, 3, 2,
+5, arguments, 7, 6, 9, curried, foo, 4, fourth, 3pt, lists, 8, applying, by,
+runs, b, bar, third, zipwith, baz, pairwise, are
+
+Words from problem yes in sneak peek:
+function, a, ocaml, string, int, of, is, first, list, two, value, one, fun,
+second, in, it, using, the, define, into, if
+
+
+Likeness: 0.333333333333
+sample_exams/cmps112-2012q1-test2.tt
+ 7. In a lazy language, unevaluated arguments are passed into
+    functions by means of a:
+    (A) closure
+    (B) curry
+    (C) thunk
+    (D) tuple
+
+Words from problem not in sneak peek:
+closure, lazy, b, d, means, tuple, c, 7, arguments, passed, unevaluated, curry,
+by, are
+
+Words from problem yes in sneak peek:
+a, functions, language, of, into, thunk, in
+
+
+Likeness: 0.35
+sample_exams/cmps112-2014q4-final.tt
+6. \lambda-calculus.  For both applicative and normal order, perform
+   \beta-reduction on the following expression.  [2pt]
+
+   +-------------------------------------------------+--------------------------------------------------+
+   |Applicative order                                | Normal order                                     |
+   +-------------------------------------------------+--------------------------------------------------+
+   |$ ( lambda x . ~ ~ * ~ x ~ x ) ~ ( + ~ 2 ~ 3 ) $ | $ ( lambda x . ~ ~ * ~ x ~ x ) ~ ( + ~ 2 ~ 3 ) $ |
+   |                                                 |                                                  |
+   |                                                 |                                                  |
+   |                                                 |                                                  |
+   |                                                 |                                                  |
+   |                                                 |                                                  |
+   |                                                 |                                                  |
+   +-------------------------------------------------+--------------------------------------------------+
+
+Words from problem not in sneak peek:
+calculus, both, and, 2pt, applicative, perform, normal, 3, reduction, beta, 6,
+2, expression
+
+Words from problem yes in sneak peek:
+on, for, following, x, the, order, lambda
+
+
+Likeness: 0.32
+sample_exams/cmps112-2014q4-final.tt
+10. When a garbage collector forms the closure of the root set, it
+    identifies all ___ objects on the heap.
+    (A) dead
+    (B) live
+    (C) reachable
+    (D) unreachable
+
+Words from problem not in sneak peek:
+closure, 10, all, b, d, garbage, root, c, dead, forms, live, objects, reachable,
+unreachable, ___, collector, identifies
+
+Words from problem yes in sneak peek:
+a, on, set, of, when, it, heap, the
+
+
+Likeness: 0.375
+sample_exams/cmps112-2014q4-final.tt
+11. A C++ compiler does object-oriented dynamic dispatch via:
+    (A) default memory allocator
+    (B) help-allocated closure
+    (C) inferential type indicator
+    (D) virtual function table
+
+Words from problem not in sneak peek:
+closure, inferential, indicator, via, help, default, c, d, does, memory, 11,
+allocated, b, allocator, compiler
+
+Words from problem yes in sneak peek:
+function, a, object, dynamic, virtual, oriented, dispatch, table, type
+
+
+Likeness: 0.36
+sample_exams/cmps112-2014q4-test1.tt
+2. Write a program in perl which reads in lines using <>.  Each line
+   consists of three numbers.  At end of file print out the totals of
+   each of the three columns of numbers.  [3pt]
+
+Words from problem not in sneak peek:
+end, lines, 3pt, three, totals, print, reads, program, numbers, file, each,
+consists, 2, at, columns, out
+
+Words from problem yes in sneak peek:
+a, of, perl, write, which, in, using, line, the
+
+
+Likeness: 0.384615384615
+sample_exams/cmps112-2014q4-test1.tt
+ 1. Which of the following C operators uses lazy evaluation?
+    (A) !=
+    (B) *=
+    (C) >>
+    (D) ? :
+
+Words from problem not in sneak peek:
+lazy, b, d, operators, c, 1, uses, evaluation
+
+Words from problem yes in sneak peek:
+a, of, the, which, following
+
+
+Likeness: 0.36
+sample_exams/cmps112-2014q4-test1.tt
+ 6. In C and C++, when is an external variable bound to a particular
+    address?
+    (A) When the preprocessor is run.
+    (B) When the program is compiled.
+    (C) When the program is linked.
+    (D) When the main function is called.
+
+Words from problem not in sneak peek:
+and, c, b, run, d, called, compiled, 6, bound, an, program, preprocessor,
+particular, linked, address, external
+
+Words from problem yes in sneak peek:
+function, a, is, when, to, in, variable, the, main
+
+
+Likeness: 0.363636363636
+sample_exams/cmps112-2014q4-test1.tt
+ 8. If $p is a reference to a Perl hash and $k is a key whose
+    corresponding value is a scalar, how is the value extracted?
+    (A) $p->{$k}
+    (B) $p{$k}
+    (C) %p->{$k}
+    (D) %p{$k}
+
+Words from problem not in sneak peek:
+and, whose, c, b, corresponding, d, reference, p, k, extracted, scalar, key, 8,
+hash
+
+Words from problem yes in sneak peek:
+a, to, is, value, perl, how, the, if
+
+
+Likeness: 0.375
+sample_exams/cmps112-2014q4-test2.tt
+ 5. In the \lambda-calculus expression $ ( lambda x . ^ + ^ x ^ y ) $:
+    (A) $x$ is bound and $y$ is bound.
+    (B) $x$ is bound and $y$ is free.
+    (C) $x$ is free and $y$ is bound.
+    (D) $x$ is free and $y$ is free.
+
+Words from problem not in sneak peek:
+calculus, and, c, b, d, bound, free, 5, y, expression
+
+Words from problem yes in sneak peek:
+a, is, in, x, the, lambda
+
+
+Likeness: 0.35
+sample_exams/cmps112-2014q4-test2.tt
+ 8. Static type checking in C and C++ is done:
+    (A) by the preprocessor
+    (B) by the compiler
+    (C) by the linker
+    (D) at run time
+
+Words from problem not in sneak peek:
+and, c, b, run, d, linker, done, preprocessor, time, 8, compiler, by, at
+
+Words from problem yes in sneak peek:
+a, checking, is, static, in, the, type
+
+
+Likeness: 0.375
+sample_exams/cmps112-2014q4-test2.tt
+10. In Smalltalk, how does one compute $ sqrt 2 $?
+    (A) 2 **: 0.5
+    (B) 2 sqrt
+    (C) Number sqrt: 2
+    (D) sqrt 2
+
+Words from problem not in sneak peek:
+10, c, b, compute, d, sqrt, 0, does, 5, 2
+
+Words from problem yes in sneak peek:
+a, number, one, how, in, smalltalk
+
+
+Likeness: 0.388888888889
+sample_exams/cmps112-2015q4-test1.tt
+1. What are the very general possibilities that a function might
+   exhibit when called?  [2pt]
+
+    (a)
+
+    (b)
+
+    (c)
+
+    (d)
+
+Words from problem not in sneak peek:
+exhibit, 1, c, b, 2pt, very, general, possibilities, are, called, d
+
+Words from problem yes in sneak peek:
+a, function, what, that, when, the, might
+
+
+Likeness: 0.307692307692
+sample_exams/cmps112-2015q4-test1.tt
+10. Lisp and Scheme, in general form, are based on a form of
+    mathematics first formulated by Alonzo Church.
+    (A) \lambda-calculus
+    (B) \mu-calculus
+    (C) \pi-calculus
+    (D) \psi-calculus
+
+Words from problem not in sneak peek:
+and, calculus, by, formulated, based, d, form, 10, c, general, mu, psi, are,
+church, mathematics, pi, b, alonzo
+
+Words from problem yes in sneak peek:
+a, on, lambda, lisp, of, in, scheme, first
+
+
+Likeness: 0.368421052632
+sample_exams/cmps112-2015q4-test2.tt
+6. Ocaml.  Define the function zip which takes two lists as arguments
+   and returns a single list of pairwise tuples with the same data.
+   Raise an exception of the lengths of the lists are different.
+   [2pt]
+   # zip;;
+   - : 'a list -> 'b list -> ('a * 'b) list = <fun>
+   # zip [1;2;3] [4;5;5];;
+   - : (int * int) list = [(1, 4); (2, 5); (3, 5)]
+
+Words from problem not in sneak peek:
+and, an, as, are, different, takes, zip, lengths, 1, 3, tuples, 5, arguments, 6,
+4, 2pt, lists, 2, data, raise, exception, b, single, pairwise
+
+Words from problem yes in sneak peek:
+function, a, int, of, list, two, same, ocaml, returns, which, fun, the, with,
+define
+
+
+Likeness: 0.375
+sample_exams/cmps112-2015q4-test2.tt
+ 6. The Java idea of an interface is implemented in Smalltalk as:
+    (A) abstract classes
+    (B) duck typing
+    (C) multiple inheritance of fields
+    (D) single inheritance
+
+Words from problem not in sneak peek:
+6, c, b, d, fields, abstract, duck, idea, an, as, classes, typing, interface,
+implemented, single
+
+Words from problem yes in sneak peek:
+a, multiple, inheritance, of, is, in, java, the, smalltalk
+
+
+Likeness: 0.357142857143
+sample_exams/cmps112-2015q4-test2.tt
+11. The PL/1 language allows a non-local goto directly from a function
+    to a label in a function deeper down in the function call stack,
+    thus returning past several levels of function calls.  In Java,
+    something similar can be accomplished by what statement?
+    (A) goto
+    (B) implements
+    (C) synchronized
+    (D) throw
+
+Words from problem not in sneak peek:
+synchronized, thus, down, something, directly, goto, 11, label, 1, call,
+several, local, be, non, deeper, returning, levels, by, implements, c, b, d,
+calls, allows, accomplished, can, similar
+
+Words from problem yes in sneak peek:
+function, a, what, from, language, of, stack, past, to, statement, in, java,
+the, throw, pl
+
+
+Likeness: 0.394736842105
+sample_exams/cmps112-2016q4-final.tt
+6. Ocaml:  Define a function zip which takes two lists and returns a
+   list of tuples, pairing each corresponding element.  If the lists
+   are of different lengths, ignore excess elements in the longer
+   list.  [2pt]
+   # zip [1;2;3] ['a';'b';'c';'d'];;
+   - : (int * char) list = [(1, 'a'); (2, 'b'); (3, 'c')]
+
+Words from problem not in sneak peek:
+and, char, are, different, takes, zip, lengths, pairing, 1, 3, tuples, 6,
+corresponding, 2pt, lists, excess, 2, longer, c, b, d, ignore, each
+
+Words from problem yes in sneak peek:
+function, a, elements, int, of, list, two, ocaml, returns, which, in, element,
+define, the, if
+
+
+Likeness: 0.372093023256
+sample_exams/cmps112-2016q4-final.tt
+10. Scheme.  Write a function that takes two lists as arguments and
+   which returns a single list where each element is a list of
+   corresponding pairs.  If the lists are of different lengths,
+   trailing elements of the longer list are ignored.  [2pt]
+   > (pairthem '(1 2 3 4) '(a b c d e))
+   ((1 a) (2 b) (3 c) (4 d))
+   > (pairthem '(1 2 3 4 5) '(a b))
+   ((1 a) (2 b))
+
+Words from problem not in sneak peek:
+and, ignored, as, are, trailing, different, takes, lengths, 1, 3, 2, 5, 4,
+arguments, corresponding, 2pt, pairs, lists, single, longer, 10, c, b, e, d,
+pairthem, each
+
+Words from problem yes in sneak peek:
+function, a, elements, that, of, is, list, two, element, write, returns, which,
+the, scheme, where, if
+
+
+Likeness: 0.333333333333
+sample_exams/cmps112-2016q4-final.tt
+ 3. First two characters of a script source file.
+    (A) #!
+    (B) /*
+    (C) //
+    (D) ;;
+
+Words from problem not in sneak peek:
+c, b, d, script, characters, source, 3, file
+
+Words from problem yes in sneak peek:
+a, of, two, first
+
+
+Likeness: 0.333333333333
+sample_exams/cmps112-2016q4-final.tt
+ 7. In a ``lazy'' language, unevaluated arguments are passed into
+    functions by means of a:
+    (A) closure
+    (B) curry
+    (C) thunk
+    (D) tuple
+
+Words from problem not in sneak peek:
+closure, lazy, b, d, means, tuple, c, 7, arguments, passed, unevaluated, curry,
+by, are
+
+Words from problem yes in sneak peek:
+a, functions, language, of, into, thunk, in
+
+
+Likeness: 0.357142857143
+sample_exams/cmps112-2016q4-final.tt
+ 7. The PL/1 language allows a non-local goto directly from a function
+    to a label in a function deeper down in the function call stack,
+    thus returning past several levels of function calls.  In Java,
+    something similar can be accomplished by what statement?
+    (A) goto
+    (B) implements
+    (C) synchronized
+    (D) throw
+
+Words from problem not in sneak peek:
+synchronized, thus, down, something, directly, goto, label, 1, call, 7, several,
+local, be, non, deeper, returning, levels, by, implements, c, b, d, calls,
+allows, accomplished, can, similar
+
+Words from problem yes in sneak peek:
+function, a, what, from, language, of, stack, past, to, statement, in, java,
+the, throw, pl
+
+
+Likeness: 0.3
+sample_exams/cmps112-2016q4-final.tt
+ 9. If multiple threads sharing global variables are not synchronized
+    by means of a critical section, what program problem will appear?
+    (A) deadlock
+    (B) race condition
+    (C) segmentation fault
+    (D) semaphores
+
+Words from problem not in sneak peek:
+deadlock, segmentation, semaphores, critical, appear, synchronized, means,
+fault, section, global, c, sharing, program, threads, are, race, 9, b, by,
+condition, d
+
+Words from problem yes in sneak peek:
+a, what, multiple, of, variables, will, not, problem, if
+
+
+Likeness: 0.368421052632
+sample_exams/cmps112-2016q4-midterm.tt
+ 5. The make language can be referred to as:
+    (A) a functional language.
+    (B) a ``little'' language.
+    (C) a logic language.
+    (D) an object-oriented language.
+
+Words from problem not in sneak peek:
+be, little, b, d, make, c, an, as, 5, can, logic, referred
+
+Words from problem yes in sneak peek:
+a, language, object, functional, oriented, to, the
+
+
+Likeness: 0.35
+sample_exams/cmps112-2016q4-midterm.tt
+ 4. Which function can be written in a tail recursive purely
+    functional manner?
+    (A) filter
+    (B) fold_left
+    (C) fold_right
+    (D) map
+
+Words from problem not in sneak peek:
+be, c, b, recursive, can, fold_right, written, filter, purely, fold_left, 4,
+manner, d
+
+Words from problem yes in sneak peek:
+function, map, functional, tail, a, which, in
+
+
+Likeness: 0.392857142857
+sample_exams/cmps112-2016q4-midterm.tt
+10. In both Java and C++, what keyword is used to restrict access to a
+    class itself but allow access to classes derived from it?
+    (A) inheritance
+    (B) private
+    (C) protected
+    (D) public
+
+Words from problem not in sneak peek:
+and, access, c, b, d, keyword, both, derived, private, restrict, itself,
+classes, but, allow, protected, public, 10
+
+Words from problem yes in sneak peek:
+a, what, used, java, inheritance, is, it, to, in, from, class
+
+
+Likeness: 0.361111111111
+sample_exams/cmps112-2017q2-midterm.tt
+4. Define the function zipwith that takes a function and two lists and
+   uses the function to join the lists.  If the lists are of different
+   lengths, ignore the excess elements of the longer list.  [2pt]
+   # zipwith;;
+   - : ('a -> 'b -> 'c) -> 'a list -> 'b list -> 'c list = <fun>
+   # zipwith (+) [1;2;3] [4;5;6;7];;
+   - : int list = [5; 7; 9]
+
+Words from problem not in sneak peek:
+and, are, different, takes, lengths, 1, 3, 2, 5, 4, 7, 6, 9, 2pt, lists, uses,
+excess, c, b, join, longer, zipwith, ignore
+
+Words from problem yes in sneak peek:
+function, a, elements, that, int, of, list, two, to, fun, the, if, define
+
+
+Likeness: 0.307692307692
+sample_exams/cmps112-2017q2-midterm.tt
+7. Smalltalk.  List the kinds of messages that can be sent to a
+   Smalltalk object, and give an example of each.  [3pt]
+
+    (a) Highest precedence:
+
+    (b) Middle precedence:
+
+    (c) Lowest precedence:
+
+Words from problem not in sneak peek:
+and, lowest, c, b, kinds, precedence, give, messages, 3pt, an, middle, can, 7,
+each, be, highest, example, sent
+
+Words from problem yes in sneak peek:
+a, that, of, object, list, to, the, smalltalk
+
+
+Likeness: 0.384615384615
+sample_exams/cmps112-2017q2-midterm.tt
+10. Java.  Give an example of how memory leak might happen in Java.
+   [2pt]
+
+Words from problem not in sneak peek:
+10, 2pt, give, leak, an, memory, happen, example
+
+Words from problem yes in sneak peek:
+might, of, java, how, in
+
+
+Likeness: 0.357142857143
+sample_exams/cmps112-2017q2-midterm.tt
+13. Scheme.  Define the function map2 which takes three arguments:  a
+   binary function and two lists.  It returns a list with the two
+   lists merged using the function.  If the lists are of different
+   lengths, excess elements of the long list are ignored.  [2pt]
+   > (map2 + '(1 2 3) '(4 5 6 7))
+   (5 7 9)
+   > (map2 * '(1 2 3 4 5) '(6 7 8))
+   (6 14 24)
+
+Words from problem not in sneak peek:
+and, ignored, are, 24, binary, different, takes, lengths, three, long, 1, 3, 2,
+5, arguments, 7, 6, 9, 8, merged, 4, 2pt, lists, excess, 13, 14, map2
+
+Words from problem yes in sneak peek:
+function, a, elements, of, list, it, two, define, returns, which, using, the,
+scheme, with, if
+
+
+Likeness: 0.315789473684
+sample_exams/cmps112-2017q2-midterm.tt
+ 2. The \lambda-calculus was invented by:
+    (A) Ada Lovelace
+    (B) Alan Turing
+    (C) Alonzo Church
+    (D) Grace Hopper
+
+Words from problem not in sneak peek:
+calculus, c, b, d, turing, ada, lovelace, alan, alonzo, 2, church, invented, by
+
+Words from problem yes in sneak peek:
+a, hopper, the, was, grace, lambda
+
+
